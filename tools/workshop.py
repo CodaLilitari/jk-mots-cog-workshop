@@ -24,8 +24,8 @@ DEFAULT_FEED = "https://richard-pemberton-research.darkahn.chatgpt.site/updates/
 ROOT = Path(__file__).resolve().parents[1]
 MAX_FEED = 1024 * 1024
 MAX_DOWNLOAD = 512 * 1024 * 1024
-MAX_EXTRACTED = 1024 * 1024 * 1024
-MAX_FILES = 20000
+MAX_EXTRACTED = 256 * 1024 * 1024
+MAX_FILES = 2048
 MIRROR_HOSTS = frozenset({"github.com", "gitlab.com", "release-assets.githubusercontent.com", "objects.githubusercontent.com"})
 VERSION_RE = re.compile(r"^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$")
 RESERVED = {"CON", "PRN", "AUX", "NUL", *(f"COM{i}" for i in range(1, 10)), *(f"LPT{i}" for i in range(1, 10))}
@@ -33,6 +33,20 @@ RESERVED = {"CON", "PRN", "AUX", "NUL", *(f"COM{i}" for i in range(1, 10)), *(f"
 
 class WorkshopError(Exception):
     """An actionable validation or update error."""
+
+
+def outside_checkout(path):
+    """Reject lexical and resolved Git ancestors without launching Git."""
+    path = Path(path).expanduser().absolute()
+    for candidate in (path, path.resolve()):
+        for ancestor in (candidate, *candidate.parents):
+            if (ancestor / '.git').exists():
+                raise WorkshopError('Managed update storage must be outside Git checkouts; choose a separate --home.')
+    return path.resolve()
+
+
+def is_link(path):
+    return path.is_symlink() or bool(getattr(path.lstat(), 'st_file_attributes', 0) & 0x400)
 
 
 def version_key(value):
@@ -70,7 +84,7 @@ def atomic_json(path, value):
 def data_home():
     custom = os.environ.get("COG_WORKSHOP_HOME")
     if custom:
-        return Path(custom).expanduser().resolve()
+        return Path(custom).expanduser().absolute()
     if os.name == "nt":
         return Path(os.environ.get("LOCALAPPDATA", str(Path.home() / "AppData/Local"))) / "COGWorkshop"
     return Path(os.environ.get("XDG_DATA_HOME", str(Path.home() / ".local/share"))) / PRODUCT
@@ -182,6 +196,8 @@ def safe_members(archive):
     for item in infos:
         name = item.filename
         pieces = name.rstrip("/").split("/")
+        if len(pieces) > 16:
+            raise WorkshopError('Archive member path is too deeply nested.')
         if name != item.orig_filename or not name or "\\" in name or name.startswith("/") or any(not p or p in (".", "..") or p.endswith((".", " ")) or any(ord(c) < 32 or c in ':<>"|?*' for c in p) or p.split(".", 1)[0].upper() in RESERVED for p in pieces):
             raise WorkshopError("Unsafe archive member path.")
         if item.flag_bits & 1:
@@ -196,6 +212,8 @@ def safe_members(archive):
             if canonical in spellings and spellings[canonical] != spelling:
                 raise WorkshopError("Archive has case/Unicode-colliding directory paths.")
             spellings[canonical] = spelling
+            if len(spellings) > MAX_FILES:
+                raise WorkshopError('Archive has too many files and implicit directories.')
         if key in all_paths:
             raise WorkshopError("Archive has duplicate or case/Unicode-colliding paths.")
         all_paths[key] = item.is_dir()
@@ -228,6 +246,7 @@ def extract_release(package, destination, expected_version):
 
 @contextlib.contextmanager
 def update_lock(home):
+    home = outside_checkout(home)
     home.mkdir(parents=True, exist_ok=True)
     stream = (home / "update.lock").open("a+b")
     try:
@@ -279,6 +298,7 @@ def current_version(home, source_root=ROOT):
 
 
 def activate_package(package, latest, home, source_root=ROOT):
+    home = outside_checkout(home)
     if version_key(latest["version"]) <= version_key(current_version(home, source_root)):
         raise WorkshopError("Refusing a downgrade or reinstall of the current release.")
     package = Path(package)
@@ -338,21 +358,33 @@ def update(home, feed_url=DEFAULT_FEED, check_only=False, source_root=ROOT):
 
 def tree_hashes(folder, exclude_receipt=False):
     folder = Path(folder)
-    if folder.is_symlink():
+    if is_link(folder):
         raise WorkshopError("A managed skill cannot be a symlink.")
     result = {}
-    for path in folder.rglob("*"):
-        if "__pycache__" in path.relative_to(folder).parts or path.suffix == ".pyc" or (exclude_receipt and path.name == ".verified-install.json"):
-            continue
-        if path.is_symlink():
-            raise WorkshopError("A managed skill cannot contain symlinks.")
-        if path.is_file():
-            result[path.relative_to(folder).as_posix()] = sha256_file(path)
+    entries, total, pending = 0, 0, [folder]
+    while pending:
+        with os.scandir(pending.pop()) as children:
+            for child in children:
+                path = Path(child.path)
+                if child.name == '__pycache__' or path.suffix == '.pyc' or (exclude_receipt and child.name == '.verified-install.json'):
+                    continue
+                entries += 1
+                if entries > MAX_FILES:
+                    raise WorkshopError('Managed tree has too many entries; keep private corpora outside the installation.')
+                if is_link(path):
+                    raise WorkshopError('A managed tree cannot contain symlinks or junctions.')
+                if child.is_dir(follow_symlinks=False):
+                    pending.append(path)
+                elif child.is_file(follow_symlinks=False):
+                    total += child.stat(follow_symlinks=False).st_size
+                    if total > MAX_EXTRACTED:
+                        raise WorkshopError('Managed tree exceeds its byte budget.')
+                    result[path.relative_to(folder).as_posix()] = sha256_file(path)
     return result
 
 
 def install_skill(home, release_root, target=None):
-    home = Path(home).expanduser().resolve()
+    home = outside_checkout(home)
     release_root = Path(release_root).expanduser().resolve()
     source = Path(release_root) / "skill/jk-mots-cog-workflow"
     if not (source / "SKILL.md").is_file():
@@ -448,12 +480,13 @@ def main(argv=None):
     reporter = sub.add_parser("report", help="Optional local research-finding drafts. Never sends or checks for updates.")
     reporting.add_commands(reporter)
     args = parser.parse_args(argv)
-    home = args.home.expanduser().resolve()
+    home = args.home.expanduser().absolute()
     offline = args.offline or os.environ.get("COG_WORKSHOP_OFFLINE", "").lower() in ("1", "true", "yes")
     no_auto = args.no_auto_update or os.environ.get("COG_WORKSHOP_AUTO_UPDATE", "").lower() in ("0", "false", "off", "no")
     try:
         if args.command == "report":
             return reporting.run(args)
+        home = outside_checkout(home)
         if args.command in ("update", "check-update"):
             if offline:
                 raise WorkshopError("Offline mode forbids an update check.")

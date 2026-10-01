@@ -1,5 +1,15 @@
 # Changes
 
+## 0.1.1 — 1 October 2026
+
+Workload and storage safeguards.
+
+- Reject private import and managed update output inside Git checkouts, including worktrees and linked paths, without launching Git.
+- Bound import discovery, member counts, source objects and provenance occurrences; stop and report incomplete batches when a global limit is reached.
+- Stream nested archive members through a temporary spool to limit retained RAM.
+- Bound managed integrity scans and archive directory expansion, and keep bulk research outside source repositories in the machine and human instructions.
+- Add 20 small synthetic regression tests for these workload boundaries.
+
 ## 0.1.0 — 1 October 2026
 
 Initial public research release of the JK / MotS COG Workshop.
