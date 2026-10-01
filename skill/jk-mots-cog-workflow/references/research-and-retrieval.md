@@ -18,6 +18,8 @@ python scripts/inspect_cog.py candidate.cog --target mots --strict
 
 For full-body work, import your own files:
 
+Choose an absolute `PRIVATE_JK` or `PRIVATE_MOTS` path outside all Git checkouts, input folders and installed skills, such as a dedicated research directory under your user Documents folder. Do not use a project-relative `artifacts` folder. Git ignore rules alone are not the storage strategy. Output inside a Git checkout, including a linked worktree or junction into one, is rejected before extraction.
+
 ```text
 python scripts/import_local.py --game jk --out PRIVATE_JK GAME_DIRECTORY
 python scripts/import_local.py --game mots --out PRIVATE_MOTS GAME_DIRECTORY
@@ -28,6 +30,8 @@ python scripts/corpus.py --root PRIVATE_JK show FULL_SHA256 --source
 `COG_CORPUS_ROOT` can replace repeated `--root` arguments. An existing authorized full research corpus containing `scripts/corpus_index.py` can also be selected; the wrapper delegates only stats/search/show to its local tool. The full corpus's richer options remain available through that route. No tool here starts a crawl, posts messages, publishes data or executes a downloaded game tool.
 
 The local importer writes exact original COG bytes under hash names, retains ZIP/GOB member provenance, and reports excluded/encrypted or malformed members separately. Its output is private, including its absolute local paths. It accepts ordinary ZIP, GOB/GOO and loose COG input; it does not execute self-extractors or automatically install additional archive software. A new empty output directory avoids mixing a partial import with an earlier run. Exit 2 signals incomplete import; inspect `import-errors.json` before interpreting counts.
+
+One import is limited to 4,096 input files, 50,000 visited filesystem entries, 50,000 total archive members, 20,000 COG occurrences and 8,192 distinct bodies. Existing byte and nesting limits also apply. Global exhaustion stops the batch and records a partial result; split larger collections into deliberate batches. Large nested members spool to temporary disk above 8 MiB, rather than retaining whole nested containers in RAM. The importer skips filesystem links, junctions and `.git` directories during discovery. Ordinary retrieval uses the existing catalog and does not rescan source folders.
 
 ## Read each record at its actual evidence level
 

@@ -4,7 +4,7 @@ Write, understand, debug and port COG scripts for **Jedi Knight: Dark Forces II*
 and **Mysteries of the Sith**, using a human guide, a reusable Codex skill,
 measured compatibility tables and a source-backed research catalog.
 
-**Initial release: 0.1.0.** The public edition contains authored research notes,
+**Current release: 0.1.1.** The public edition contains authored research notes,
 metadata, original examples and tools. Original game files and private source
 archives remain local. Read [the distribution notice](NOTICE.md) for the exact
 boundary and [the corpus guide](corpus/README.md) for public coverage.
@@ -26,6 +26,10 @@ or [GitHub](https://github.com/CodaLilitari/jk-mots-cog-workshop/releases), and
 extract it into a new folder. Python 3.10 or newer is required for the tools;
 the guides can be read without Python. The runtime tools use Python's standard
 library.
+
+Keep private research imports and bulk downloads outside Git repositories and outside the installed skill. Use a separate user data directory; the importer and managed updater reject output inside Git checkouts. Routine COG work uses the bundled catalog or an existing local index and does not require crawling or rebuilding a corpus.
+
+See [workflow resource validation](docs/WORKFLOW_STABILITY.md) for the tested safeguards and their limits.
 
 From the extracted folder:
 
