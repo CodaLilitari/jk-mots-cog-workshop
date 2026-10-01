@@ -1,0 +1,2 @@
+# Preserve exact bytes for reproducible packages and recorded evidence hashes.
+* -text

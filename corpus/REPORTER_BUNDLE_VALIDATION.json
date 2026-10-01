@@ -1,0 +1,8 @@
+{
+  "source_module": "tools/reporting.py",
+  "source_sha256": "8a72d7b67f53c717bc6f823bcf8dcf28ea91e763e6888f185b3f0d1cdf6e5ddd",
+  "bundled_module": "skill/jk-mots-cog-workflow/scripts/prepare_finding.py",
+  "bundled_sha256": "8a72d7b67f53c717bc6f823bcf8dcf28ea91e763e6888f185b3f0d1cdf6e5ddd",
+  "module_exact_copy": true,
+  "reference_adaptation": "Same reviewed reporting instructions, with commands made relative to the installed skill. No sending function or network operation added."
+}

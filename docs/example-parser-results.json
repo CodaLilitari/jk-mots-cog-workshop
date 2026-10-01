@@ -1,0 +1,146 @@
+{
+  "executed_utc": "2026-10-01T04:34:56.422491+00:00",
+  "source_commit": "b1be98bd4f170b5384cb71b15443a274aac6a937",
+  "adapter_script_sha256": "cf92167ee750fa4f3f86008df1979f1efa5dd78a007f9173972240103284ff26",
+  "host_adapter_sha256": "a6e6527e796dc23a486c8bf8bbc204a3e230ad11b7b4fa0e69f69ca6673832d8",
+  "scope": "Pinned generated lexer/parser and extracted AST/codegen with host/symbol adapters under UBSan. Only code sections; excludes symbols/resource loading, actual native symbol IDs, VM/game/retail/network execution. Adapter lives in research checkout and is not bundled in this initial release.",
+  "compile_options": [
+    "gcc",
+    "-std=gnu11",
+    "-O1",
+    "-g",
+    "-fsanitize=undefined",
+    "-fno-sanitize-recover=undefined"
+  ],
+  "accepted_cases": 6,
+  "cases": [
+    {
+      "path": "examples/jk/cw_weapon_index.cog",
+      "sha256": "fd59a52a32d2014b973cd5ec76b4c96f60622aa44a25558c9629f9f09d6d2351",
+      "code_section_sha256": "112857612f08cdb1f02c219658c2388f7449efaaa31cfef2296eef58d8bd2bbb",
+      "accepted": true,
+      "syntax_errors": 0,
+      "code_size_words": 33,
+      "stderr": ""
+    },
+    {
+      "path": "examples/mots/cw_weapon_index.cog",
+      "sha256": "a46ced23a2029b6016b0823b5b8443eb4138f67402f129795eb1214bf6ef9e42",
+      "code_section_sha256": "90476cf6c98bdaa1c89a9ea04fe9ef1c34427b5a2b341abc91f19cf9e4cd7bc4",
+      "accepted": true,
+      "syntax_errors": 0,
+      "code_size_words": 33,
+      "stderr": ""
+    },
+    {
+      "path": "examples/shared/cw_ai_destination.cog",
+      "sha256": "03dc083d3b8d7ed5851da341365f2a2efbc15e2da6237afe807d83bcbb684765",
+      "code_section_sha256": "4d4094bd2ddf2634db277457daedc5184c6cc0afaee53305d813fa93ebc00f32",
+      "accepted": true,
+      "syntax_errors": 0,
+      "code_size_words": 49,
+      "stderr": ""
+    },
+    {
+      "path": "examples/shared/cw_counter.cog",
+      "sha256": "7640a6dea20d16d236382d5a7181af2741c534a1a34d1a5d3cbc96934915c050",
+      "code_section_sha256": "e60d1f149168cbb6dc88f426fdbfc6317d828e6a96b98d5295300204194bf60c",
+      "accepted": true,
+      "syntax_errors": 0,
+      "code_size_words": 30,
+      "stderr": ""
+    },
+    {
+      "path": "examples/shared/cw_timed_light.cog",
+      "sha256": "33602a1efdab2b419ff944af712e80036ad017bb8ee2dc15b2437b222ac25334",
+      "code_section_sha256": "78b7aaecb10d86b3520d5c2ad83f7a8340c4d0fa540dd5efdbf7e27dfc0e1e6d",
+      "accepted": true,
+      "syntax_errors": 0,
+      "code_size_words": 117,
+      "stderr": ""
+    },
+    {
+      "path": "examples/shared/cw_two_stop.cog",
+      "sha256": "032c19a8bc16f93a7b6d5c378299d568319d348b8fdbb5f8e1ada4d631f08f16",
+      "code_section_sha256": "824b4d2a56257bf5373e7a07d438561487db062d83c96dc3286256e86b70008d",
+      "accepted": true,
+      "syntax_errors": 0,
+      "code_size_words": 115,
+      "stderr": ""
+    }
+  ],
+  "source_units": [
+    {
+      "path": "src/Cog/lex.yy.c",
+      "sha256": "4c5f68d1cc28bafc7d94cedce0a17012ed325e07498bfc95091d19335f54c081",
+      "transformation": "none"
+    },
+    {
+      "path": "src/Cog/y.tab.c",
+      "sha256": "0b7fd726fc54e887ea5f0d79114cf05fe18f4f43cc816d57607291382bd4296c",
+      "transformation": "none"
+    },
+    {
+      "path": "src/Cog/y.tab.h",
+      "sha256": "6a7c44705e7165c913d4c58c2c8a8287cb0a99edcce46c08f883112c568a7205",
+      "transformation": "none"
+    },
+    {
+      "path": "src/Cog/sithCogParse.c",
+      "function": "sithCogParse_MakeLeafNode",
+      "start_line": 653,
+      "sha256_fragment": "719ba0924ff825c9a91ca8a35d1b2478b83b4361397cf89883445d2aee98fda3",
+      "transformation": "complete body extracted unchanged; host/type declarations supplied by harness"
+    },
+    {
+      "path": "src/Cog/sithCogParse.c",
+      "function": "sithCogParse_MakeVectorLeafNode",
+      "start_line": 658,
+      "sha256_fragment": "596deb90f1c67cb4922502a18fdd3e4aa2a5d25d3300a2b9e69f939f731e2180",
+      "transformation": "complete body extracted unchanged; host/type declarations supplied by harness"
+    },
+    {
+      "path": "src/Cog/sithCogParse.c",
+      "function": "sithCogParse_MakeNode",
+      "start_line": 685,
+      "sha256_fragment": "3af1a85ceead832dd9112ca9f8ef39c0a9a888871c519e0ca7f47be9c6058ac8",
+      "transformation": "complete body extracted unchanged; host/type declarations supplied by harness"
+    },
+    {
+      "path": "src/Cog/sithCogParse.c",
+      "function": "sithCogParse_GetNextLabel",
+      "start_line": 712,
+      "sha256_fragment": "d4052f39a38eafadf432eef0c68effed9829686dbb2ac6dff15f13b52aa5c724",
+      "transformation": "complete body extracted unchanged; host/type declarations supplied by harness"
+    },
+    {
+      "path": "src/Cog/sithCogParse.c",
+      "function": "sithCogParse_LexerSetVector",
+      "start_line": 766,
+      "sha256_fragment": "e41f569bf8b8966f8ec714621f7e7b7d60e4b063e80ad3897fd0ab543172cb20",
+      "transformation": "complete body extracted unchanged; host/type declarations supplied by harness"
+    },
+    {
+      "path": "src/Cog/sithCogParse.c",
+      "function": "sithCogParse_GenerateLabelTable",
+      "start_line": 783,
+      "sha256_fragment": "5242ef1009056c9d10cf8e6bff2bef92933ad811c39b17f414da6ce77b82527a",
+      "transformation": "complete body extracted unchanged; host/type declarations supplied by harness"
+    },
+    {
+      "path": "src/Cog/sithCogParse.c",
+      "function": "sithCogParse_GenerateCode",
+      "start_line": 829,
+      "sha256_fragment": "104c137d7c3cca91e77a715a826fa61da86ead4f81b263a3919d475ea238f37a",
+      "transformation": "complete body extracted unchanged; host/type declarations supplied by harness"
+    },
+    {
+      "path": "src/General/util.c",
+      "function": "util_Weirdchecksum",
+      "start_line": 72,
+      "sha256_fragment": "4b3b9465b17872617b71aeefce02b18db0e4211b802842c624f42b1ef7c9b880",
+      "transformation": "complete body extracted unchanged; called with seed0 and both count conventions"
+    }
+  ],
+  "build_diagnostics": ""
+}

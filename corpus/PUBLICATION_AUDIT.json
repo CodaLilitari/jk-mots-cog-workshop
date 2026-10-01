@@ -1,0 +1,249 @@
+{
+  "schema": 1,
+  "policy": "Explicit source-lane, field, host, note-version and output allowlists; no raw payload redistribution.",
+  "inputs": [
+    {
+      "label": "massassi-packages/sources.jsonl",
+      "sha256": "2a7d183e852944c4f298feddbf45568f5ee94b6b2650111fd4f64c0121ef7ddf",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "forums/sources.jsonl",
+      "sha256": "b68b168657f84a91affe65b7fa024363351656b6c6e463ec351b927b95be5c8d",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "editing-forums/sources.jsonl",
+      "sha256": "eb9580b51577229d7f1a6b0a82ae7e3ddcd7535cefcfb659681299b1fccdf4f0",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "documentation/sources.jsonl",
+      "sha256": "681007b7187840125242c90e168cbff57b04149dcc08bd29d060b33c4e61a024",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "supplemental/sources.jsonl",
+      "sha256": "4638129d82db657d92d79292776b3a4988fcff4cba87429fd81836321a2106bc",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "external-community/jkarchive-payloads.jsonl",
+      "sha256": "9d354ae730a7d4bfe8328f9639cc506b98a0b0378fd5908b46638c15aeb319a2",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "external-community/payloads.jsonl",
+      "sha256": "cbbef321021461616f02e3c399535cc314be2499ba77835042466c3dcaabcc25",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "external-community/tool-payloads.jsonl",
+      "sha256": "0cff466e11c9a0b9a9135bd2b5ded74432de3cc7e1b67ce10932b7a6d2783aea",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "external-sites/sources.jsonl",
+      "sha256": "86f4c8c46c8dee25fb04de6522b96c163753eedfe96216d0399f7caacc63d5b0",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "reference-sites/sources.jsonl",
+      "sha256": "2dd88b7a54b84935025611074d673069408af19169437bdaec7567e593aade64",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "gamebanana/author-payloads.json",
+      "sha256": "72fa3d2efcbf2ac303e514b52bac3fd88eb9fbdcd7a7b8934b9588095429376e",
+      "kind": "public-source-metadata-input"
+    },
+    {
+      "label": "historical/retrievals.jsonl",
+      "sha256": "56634a8f18ed56aebdc589ec42102bf72f818459b7cf9974bad6bfa569aacf01",
+      "kind": "public-author-archive-metadata-input"
+    },
+    {
+      "label": "analysis/profiles.jsonl",
+      "sha256": "7790a723ef1e6b1836c24867db3890e732605e481dd88097ffcc0cadf9a3ff3e",
+      "kind": "field-filtered-local-profile-input"
+    },
+    {
+      "label": "scripts/inspect_cog.py",
+      "sha256": "7a21a462e94f033cd10a92f17850140a01b7ef77e608ade5a236b1696189e84f",
+      "kind": "original-helper-or-template"
+    },
+    {
+      "label": "assets/cog-test-plan.json",
+      "sha256": "ff9bb0cf1b83c7f2a646546022edabd666553c74a5f7300da472975a2a05141e",
+      "kind": "original-helper-or-template"
+    }
+  ],
+  "note_reviews": [
+    {
+      "note": "language-and-execution.md",
+      "reviewed_input_sha256": "90d2d2a78cdc8a10d34cd0ddeb4c5614485d86f52f80bcd08607cddb636ae585",
+      "decision": "Reviewed original authored analysis; exact-version gate; public commit links replace local source links; raw local evidence excluded; technical observations retained."
+    },
+    {
+      "note": "authoring-and-testing.md",
+      "reviewed_input_sha256": "a01a4154c61f807460581be1617b59567ae7091be51721fbec6f3d361c02fa65",
+      "decision": "Reviewed original authored analysis; exact-version gate; public commit links replace local source links; raw local evidence excluded; technical observations retained."
+    },
+    {
+      "note": "authoring-decisions.md",
+      "reviewed_input_sha256": "be8759f3503a1c2450cf36e81cde38da978fd5846a3df2efd74667370dfd9e6f",
+      "decision": "Reviewed original authored analysis; exact-version gate; public commit links replace local source links; raw local evidence excluded; technical observations retained."
+    },
+    {
+      "note": "checksums-and-retail.md",
+      "reviewed_input_sha256": "5c51dd3c33a5bce960c9e877b9aaf81dbc512f0b80f7ab6c5892959e1a804a7e",
+      "decision": "Reviewed original authored analysis; exact-version gate; public commit links replace local source links; raw local evidence excluded; technical observations retained."
+    },
+    {
+      "note": "engine-findings.md",
+      "reviewed_input_sha256": "a056fdab701c1040d890ffceb1660c5559f009e129fdf9cdddfb6d7685cab3f4",
+      "decision": "Reviewed original authored analysis; exact-version gate; public commit links replace local source links; raw local evidence excluded; technical observations retained."
+    },
+    {
+      "note": "verb-families.md",
+      "reviewed_input_sha256": "de320c8e7c5b24d40f8ef3452619c91ed4dc28b7e489b590212466700841e481",
+      "decision": "Reviewed original authored analysis; exact-version gate; public commit links replace local source links; raw local evidence excluded; technical observations retained."
+    },
+    {
+      "note": "pattern-atlas.md",
+      "reviewed_input_sha256": "b3b152bfc042a06953d243f41a3ff35876536e5e8fc587a0fc70cbab50c2e1db",
+      "decision": "Reviewed original authored analysis; exact-version gate; public commit links replace local source links; raw local evidence excluded; technical observations retained."
+    },
+    {
+      "note": "beefcaike-cog-study.md",
+      "reviewed_input_sha256": "9de6f03dc931bfa4117037dbc4b9e9b4497f8dc6cbc8e694600ea4c4949ee065",
+      "decision": "Reviewed original authored analysis; exact-version gate; public commit links replace local source links; raw local evidence excluded; technical observations retained."
+    },
+    {
+      "note": "triscuit-generator-engine.md",
+      "reviewed_input_sha256": "cd25ba758524c187d1edde62f5b2b34568ff1e518f01738f3487b1a2baf25a49",
+      "decision": "Reviewed original authored analysis; exact-version gate; public commit links replace local source links; raw local evidence excluded; technical observations retained."
+    },
+    {
+      "note": "case-lessons.md",
+      "public_authored_sha256": "a850ed6fe6144f2db98947ad27d3960e6c3bb597f1914630053d25d9ab4b8e9b",
+      "decision": "Written for public edition; generalized original prose, public attribution and no private identifiers or raw communication material."
+    },
+    {
+      "note": "historical-sources.md",
+      "public_authored_sha256": "f5e0ed651863e8cbd2c3a8413ddc6284a8dad46873d81640d5c4616e81eb4f9f",
+      "decision": "Written for public edition; generalized original prose, public attribution and no private identifiers or raw communication material."
+    },
+    {
+      "note": "research-and-retrieval.md",
+      "public_authored_sha256": "d9e5cf034f2d806ab77a442a672dae862225efe94580440b9e36d6c3c3110997",
+      "decision": "Written for public edition; generalized original prose, public attribution and no private identifiers or raw communication material."
+    }
+  ],
+  "omissions": {
+    "private_or_unapproved_only_cog_profiles": 4388,
+    "raw_source_bodies": "all",
+    "private_messages_captures_ids_links": "all",
+    "retail_payloads": "all",
+    "third_party_manuals_and_executables": "all",
+    "unapproved_fields": "all"
+  },
+  "output_files": [
+    {
+      "path": "corpus/catalog/sources.jsonl",
+      "bytes": 11145829,
+      "sha256": "57de8996f15a4241f10ed156a3326715549679dc68d922db417d4ce3fe7e0998"
+    },
+    {
+      "path": "corpus/catalog/cogs.jsonl",
+      "bytes": 21379586,
+      "sha256": "015f8e1bf571942b9ab604a0714af9a347ada6d7999f6c1b403cfba5203f6fea"
+    },
+    {
+      "path": "corpus/stats.json",
+      "bytes": 949,
+      "sha256": "f1eb52d97eae1d544540b33d8cf52a91068a4ce50a9a28dc1790fb8184ba114d"
+    },
+    {
+      "path": "corpus/registries/jk101-retail-registry.json",
+      "bytes": 152571,
+      "sha256": "7ae8556f8f71de231bdc06e8617f658ba3c140fc8319c7796cac132e80810255"
+    },
+    {
+      "path": "corpus/registries/mots-retail-registry.json",
+      "bytes": 181106,
+      "sha256": "2d7f33ef8d51ac2e07eb08f5fa2215737d535e64baa254fc1421a2629de9ab09"
+    },
+    {
+      "path": "corpus/registries/retail-global-floats.json",
+      "bytes": 15921,
+      "sha256": "80b05b9b64f80b7802debf6bfcc4a01ba69750fb4e2b87dcea58c4130e41aab8"
+    },
+    {
+      "path": "corpus/registries/compatibility.jsonl",
+      "bytes": 96522,
+      "sha256": "27f8d7e6d022820381cdd695dcb2914140d8e544964ca180cdf1ad4777e075f4"
+    },
+    {
+      "path": "corpus/notes/language-and-execution.md",
+      "bytes": 23852,
+      "sha256": "052081ed2b1ef0891ddcced40566af760d2b114f2446859892ff94ce151e9158"
+    },
+    {
+      "path": "corpus/notes/authoring-and-testing.md",
+      "bytes": 5370,
+      "sha256": "41db4b4ea9a2facb4c027ca56fbe2c1e6556cc01880186abe069a9afe9c1148e"
+    },
+    {
+      "path": "corpus/notes/authoring-decisions.md",
+      "bytes": 15170,
+      "sha256": "34ed8441b66716b226bb2df908e155bf05dbcb5b3aed219110f10695c2376643"
+    },
+    {
+      "path": "corpus/notes/checksums-and-retail.md",
+      "bytes": 13853,
+      "sha256": "446697aef756924cde8b22716c6d664a9679e517f8358ede8cc7c800ddb3cfbd"
+    },
+    {
+      "path": "corpus/notes/engine-findings.md",
+      "bytes": 11836,
+      "sha256": "ac946f60441620322c75d7dff4665d4ea75f3ad9eac0d3947a2413b38a939c4f"
+    },
+    {
+      "path": "corpus/notes/verb-families.md",
+      "bytes": 24876,
+      "sha256": "0b79952637af8aa2d2780e26844e25050c31c5b81e30e895af87baa8144a56f8"
+    },
+    {
+      "path": "corpus/notes/pattern-atlas.md",
+      "bytes": 32116,
+      "sha256": "fdf6ee2b39b9b4da5ed273706e1d8e70de18f2185f908a1659cd502a38ca5c5f"
+    },
+    {
+      "path": "corpus/notes/beefcaike-cog-study.md",
+      "bytes": 9777,
+      "sha256": "6ae53b3af4dbb85a49c21ccc3c752362be7b9cfcf61eebf7486b0a47f7d71d51"
+    },
+    {
+      "path": "corpus/notes/triscuit-generator-engine.md",
+      "bytes": 10604,
+      "sha256": "2302af934cd0463b086f5a7a2cf9d214903e80e689ec0d37b66b421412777386"
+    },
+    {
+      "path": "corpus/notes/case-lessons.md",
+      "bytes": 10316,
+      "sha256": "a850ed6fe6144f2db98947ad27d3960e6c3bb597f1914630053d25d9ab4b8e9b"
+    },
+    {
+      "path": "corpus/notes/historical-sources.md",
+      "bytes": 6708,
+      "sha256": "f5e0ed651863e8cbd2c3a8413ddc6284a8dad46873d81640d5c4616e81eb4f9f"
+    },
+    {
+      "path": "corpus/notes/research-and-retrieval.md",
+      "bytes": 5931,
+      "sha256": "d9e5cf034f2d806ab77a442a672dae862225efe94580440b9e36d6c3c3110997"
+    }
+  ],
+  "scope_limit": "Records prove the recorded observed identities and authored analysis scope, not global collection completeness, rights to redistribute referenced works, or target runtime success."
+}

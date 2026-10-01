@@ -1,0 +1,74 @@
+{
+  "scope": "Comparison against pre-test public-export input hashes; these cover listed private-skill files, not the entire private skill tree. Public fixture absence independently observed after updater-owner cleanup.",
+  "public_skill_directory_exists": false,
+  "public_fixture_file_exists": false,
+  "checks": [
+    {
+      "relative_path": "references/language-and-execution.md",
+      "before_sha256": "90d2d2a78cdc8a10d34cd0ddeb4c5614485d86f52f80bcd08607cddb636ae585",
+      "current_sha256": "90d2d2a78cdc8a10d34cd0ddeb4c5614485d86f52f80bcd08607cddb636ae585",
+      "equal": true
+    },
+    {
+      "relative_path": "references/authoring-and-testing.md",
+      "before_sha256": "a01a4154c61f807460581be1617b59567ae7091be51721fbec6f3d361c02fa65",
+      "current_sha256": "a01a4154c61f807460581be1617b59567ae7091be51721fbec6f3d361c02fa65",
+      "equal": true
+    },
+    {
+      "relative_path": "references/authoring-decisions.md",
+      "before_sha256": "be8759f3503a1c2450cf36e81cde38da978fd5846a3df2efd74667370dfd9e6f",
+      "current_sha256": "be8759f3503a1c2450cf36e81cde38da978fd5846a3df2efd74667370dfd9e6f",
+      "equal": true
+    },
+    {
+      "relative_path": "references/checksums-and-retail.md",
+      "before_sha256": "5c51dd3c33a5bce960c9e877b9aaf81dbc512f0b80f7ab6c5892959e1a804a7e",
+      "current_sha256": "5c51dd3c33a5bce960c9e877b9aaf81dbc512f0b80f7ab6c5892959e1a804a7e",
+      "equal": true
+    },
+    {
+      "relative_path": "references/engine-findings.md",
+      "before_sha256": "a056fdab701c1040d890ffceb1660c5559f009e129fdf9cdddfb6d7685cab3f4",
+      "current_sha256": "a056fdab701c1040d890ffceb1660c5559f009e129fdf9cdddfb6d7685cab3f4",
+      "equal": true
+    },
+    {
+      "relative_path": "references/verb-families.md",
+      "before_sha256": "de320c8e7c5b24d40f8ef3452619c91ed4dc28b7e489b590212466700841e481",
+      "current_sha256": "de320c8e7c5b24d40f8ef3452619c91ed4dc28b7e489b590212466700841e481",
+      "equal": true
+    },
+    {
+      "relative_path": "references/pattern-atlas.md",
+      "before_sha256": "b3b152bfc042a06953d243f41a3ff35876536e5e8fc587a0fc70cbab50c2e1db",
+      "current_sha256": "b3b152bfc042a06953d243f41a3ff35876536e5e8fc587a0fc70cbab50c2e1db",
+      "equal": true
+    },
+    {
+      "relative_path": "references/beefcaike-cog-study.md",
+      "before_sha256": "9de6f03dc931bfa4117037dbc4b9e9b4497f8dc6cbc8e694600ea4c4949ee065",
+      "current_sha256": "9de6f03dc931bfa4117037dbc4b9e9b4497f8dc6cbc8e694600ea4c4949ee065",
+      "equal": true
+    },
+    {
+      "relative_path": "references/triscuit-generator-engine.md",
+      "before_sha256": "cd25ba758524c187d1edde62f5b2b34568ff1e518f01738f3487b1a2baf25a49",
+      "current_sha256": "cd25ba758524c187d1edde62f5b2b34568ff1e518f01738f3487b1a2baf25a49",
+      "equal": true
+    },
+    {
+      "relative_path": "scripts/inspect_cog.py",
+      "before_sha256": "7a21a462e94f033cd10a92f17850140a01b7ef77e608ade5a236b1696189e84f",
+      "current_sha256": "7a21a462e94f033cd10a92f17850140a01b7ef77e608ade5a236b1696189e84f",
+      "equal": true
+    },
+    {
+      "relative_path": "assets/cog-test-plan.json",
+      "before_sha256": "ff9bb0cf1b83c7f2a646546022edabd666553c74a5f7300da472975a2a05141e",
+      "current_sha256": "ff9bb0cf1b83c7f2a646546022edabd666553c74a5f7300da472975a2a05141e",
+      "equal": true
+    }
+  ],
+  "all_compared_files_equal": true
+}

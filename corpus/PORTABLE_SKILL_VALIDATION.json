@@ -1,0 +1,12 @@
+{
+  "standalone_skill_relocated": true,
+  "bundled_catalog_stats_and_game_filtered_search": true,
+  "bundled_notes_search": true,
+  "jk_strict_rejects_mots_only_verb": true,
+  "mots_strict_accepts_same_spelling": true,
+  "report_template_and_local_draft_prepared": true,
+  "report_sent": false,
+  "report_attachments": 0,
+  "broken_relative_markdown_links": 0,
+  "scope": "Copied only the skill folder to a temporary unrelated directory; ran helpers without repository or private-corpus override. Synthetic source and report fixtures only. No network or game execution."
+}

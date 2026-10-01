@@ -1,0 +1,77 @@
+{
+  "scope": "Independent release-guide lane review: full catalog field/provenance checks; all compatibility booleans compared with bundled registries; forbidden raw-private locator scan over listed text artifacts; human sample review of target/evidence claims. This is not blanket rights clearance or retail execution.",
+  "catalog_source_records": 17723,
+  "catalog_cog_profiles": 20976,
+  "provenance_rows": 45970,
+  "registry_counts": {
+    "jk": {
+      "verb": 451,
+      "message": 41
+    },
+    "mots": {
+      "verb": 538,
+      "message": 47
+    }
+  },
+  "compatibility_rows": 586,
+  "raw_private_locator_scan_files": 45,
+  "scanned_files": [
+    "corpus/catalog/cogs.jsonl",
+    "corpus/catalog/sources.jsonl",
+    "corpus/notes/authoring-and-testing.md",
+    "corpus/notes/authoring-decisions.md",
+    "corpus/notes/beefcaike-cog-study.md",
+    "corpus/notes/checksums-and-retail.md",
+    "corpus/notes/engine-findings.md",
+    "corpus/notes/language-and-execution.md",
+    "corpus/notes/pattern-atlas.md",
+    "corpus/notes/triscuit-generator-engine.md",
+    "corpus/notes/verb-families.md",
+    "corpus/PUBLICATION_AUDIT.json",
+    "corpus/registries/compatibility.jsonl",
+    "corpus/registries/jk101-retail-registry.json",
+    "corpus/registries/mots-retail-registry.json",
+    "corpus/registries/retail-global-floats.json",
+    "corpus/stats.json",
+    "docs/COMPATIBILITY.md",
+    "docs/example-availability.json",
+    "docs/example-parser-results.json",
+    "docs/EXAMPLE_VALIDATION.md",
+    "docs/GUIDE.md",
+    "docs/SOURCES.md",
+    "docs/UPDATER.md",
+    "examples/jk/cw_weapon_index.cog",
+    "examples/mots/cw_weapon_index.cog",
+    "examples/README.md",
+    "examples/shared/cw_ai_destination.cog",
+    "examples/shared/cw_counter.cog",
+    "examples/shared/cw_timed_light.cog",
+    "examples/shared/cw_two_stop.cog",
+    "skill/jk-mots-cog-workflow/assets/cog-test-plan.json",
+    "skill/jk-mots-cog-workflow/references/authoring-and-testing.md",
+    "skill/jk-mots-cog-workflow/references/authoring-decisions.md",
+    "skill/jk-mots-cog-workflow/references/beefcaike-cog-study.md",
+    "skill/jk-mots-cog-workflow/references/checksums-and-retail.md",
+    "skill/jk-mots-cog-workflow/references/engine-findings.md",
+    "skill/jk-mots-cog-workflow/references/jk101-retail-registry.json",
+    "skill/jk-mots-cog-workflow/references/language-and-execution.md",
+    "skill/jk-mots-cog-workflow/references/mots-retail-registry.json",
+    "skill/jk-mots-cog-workflow/references/pattern-atlas.md",
+    "skill/jk-mots-cog-workflow/references/retail-global-floats.json",
+    "skill/jk-mots-cog-workflow/references/triscuit-generator-engine.md",
+    "skill/jk-mots-cog-workflow/references/verb-families.md",
+    "skill/jk-mots-cog-workflow/SKILL.md"
+  ],
+  "observations": [
+    "COG profiles contain lexical features and approved provenance only, not source bodies.",
+    "Every published provenance source resolves to a published source record or an explicit owned-retail identity.",
+    "All compatibility rows describe original registrations, with runtime/signature limitations.",
+    "No raw private locator pattern was found in the enumerated text files.",
+    "Reviewed notes distinguish source/parser/binary findings from retail and network execution."
+  ],
+  "files": {
+    "corpus/catalog/cogs.jsonl": "015f8e1bf571942b9ab604a0714af9a347ada6d7999f6c1b403cfba5203f6fea",
+    "corpus/catalog/sources.jsonl": "55f9b45fd3e2a6f3d1670b2319aee16c56ca26b504375fd68df85865ac6e4d59",
+    "corpus/registries/compatibility.jsonl": "27f8d7e6d022820381cdd695dcb2914140d8e544964ca180cdf1ad4777e075f4"
+  }
+}

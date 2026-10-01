@@ -1,0 +1,23 @@
+{
+  "tests": [
+    {
+      "game": "jk",
+      "input_archive_filename": "JK1.GOB",
+      "input_archive_sha256": "41591e570d5a2173873465e4c061e61edb5efea9883533ed70d78b3a81a10e46",
+      "distinct_bodies": 269,
+      "matches_previous_independently_checked_retail_manifest": true,
+      "fresh_output_object_hashes_verified": true,
+      "errors": 0
+    },
+    {
+      "game": "mots",
+      "input_archive_filename": "JKM.GOO",
+      "input_archive_sha256": "08e5717915c8fc37bab80b8ffd5e7e1fb0ff2817fe48cb151884c5bf8639a66a",
+      "distinct_bodies": 351,
+      "matches_previous_independently_checked_retail_manifest": true,
+      "fresh_output_object_hashes_verified": true,
+      "errors": 0
+    }
+  ],
+  "scope": "Executed public passive importer on one actual owned archive from each game; compared every imported body hash with prior verified research extraction. This is extraction/integrity evidence, not COG or game execution."
+}

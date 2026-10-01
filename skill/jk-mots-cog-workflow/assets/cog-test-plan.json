@@ -1,0 +1,19 @@
+{
+  "purpose": "Replace applicable not_run states with observed results; remove irrelevant cases.",
+  "target": {"game": null, "engine_version": null, "executable_sha256": null, "patches": [], "renderer": null},
+  "inputs": {"original_script_sha256": null, "candidate_sha256": null, "episode": null, "load_order": [], "dependencies": []},
+  "role": null,
+  "event_contract": {"symbols_and_order": [], "messages": [], "sender_source_parameters": [], "authoritative_peer": null, "local_effects": [], "replicated_state": []},
+  "cases": [
+    {"name": "availability_and_dependencies", "status": "not_run"},
+    {"name": "load_and_startup", "status": "not_run"},
+    {"name": "requested_behavior", "status": "not_run"},
+    {"name": "repeat_and_reentry", "status": "not_run"},
+    {"name": "save_reload_or_level_exit", "status": "not_run"},
+    {"name": "death_respawn_cleanup", "status": "not_run"},
+    {"name": "separate_client_join_checksum", "status": "not_run"},
+    {"name": "remote_behavior_and_late_join", "status": "not_run"}
+  ],
+  "evidence": [],
+  "unresolved": []
+}

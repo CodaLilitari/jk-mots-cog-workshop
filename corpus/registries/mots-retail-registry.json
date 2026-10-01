@@ -1,0 +1,5263 @@
+[
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "enterbubble",
+    "implementation_address_or_message_id": 45,
+    "registration_call_address": "0x40b04f",
+    "name_address": "0x57e298"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "exitbubble",
+    "implementation_address_or_message_id": 46,
+    "registration_call_address": "0x40b05f",
+    "name_address": "0x57e2a4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetlocalplayer",
+    "implementation_address_or_message_id": "0x5301c0",
+    "registration_call_address": "0x40b072",
+    "name_address": "0x57e2b0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetflags",
+    "implementation_address_or_message_id": "0x40b4b0",
+    "registration_call_address": "0x40b085",
+    "name_address": "0x57e2c4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetflags",
+    "implementation_address_or_message_id": "0x40b590",
+    "registration_call_address": "0x40b098",
+    "name_address": "0x57e2d0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkclearflags",
+    "implementation_address_or_message_id": "0x40b520",
+    "registration_call_address": "0x40b0ab",
+    "name_address": "0x57e2dc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkendlevel",
+    "implementation_address_or_message_id": "0x40b660",
+    "registration_call_address": "0x40b0be",
+    "name_address": "0x57e2ec"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkprintunistring",
+    "implementation_address_or_message_id": "0x40b900",
+    "registration_call_address": "0x40b0d1",
+    "name_address": "0x57e2f8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkprintunivoice",
+    "implementation_address_or_message_id": "0x40ba70",
+    "registration_call_address": "0x40b0e4",
+    "name_address": "0x57e30c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetpovmodel",
+    "implementation_address_or_message_id": "0x40b6b0",
+    "registration_call_address": "0x40b0f7",
+    "name_address": "0x57e31c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkplaypovkey",
+    "implementation_address_or_message_id": "0x40b700",
+    "registration_call_address": "0x40b10a",
+    "name_address": "0x57e32c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstoppovkey",
+    "implementation_address_or_message_id": "0x40b790",
+    "registration_call_address": "0x40b11d",
+    "name_address": "0x57e33c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetweaponmesh",
+    "implementation_address_or_message_id": "0x40b5c0",
+    "registration_call_address": "0x40b130",
+    "name_address": "0x57e34c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkenablesaber",
+    "implementation_address_or_message_id": "0x40bbd0",
+    "registration_call_address": "0x40b143",
+    "name_address": "0x57e35c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkdisablesaber",
+    "implementation_address_or_message_id": "0x40bc50",
+    "registration_call_address": "0x40b156",
+    "name_address": "0x57e36c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetsaberinfo",
+    "implementation_address_or_message_id": "0x40bcd0",
+    "registration_call_address": "0x40b169",
+    "name_address": "0x57e37c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetsabersidemat",
+    "implementation_address_or_message_id": "0x40bdc0",
+    "registration_call_address": "0x40b17c",
+    "name_address": "0x57e38c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetpersuasioninfo",
+    "implementation_address_or_message_id": "0x40bdf0",
+    "registration_call_address": "0x40b18f",
+    "name_address": "0x57e3a0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetforcespeed",
+    "implementation_address_or_message_id": "0x40b7f0",
+    "registration_call_address": "0x40b1a2",
+    "name_address": "0x57e3b4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetinvis",
+    "implementation_address_or_message_id": "0x40b810",
+    "registration_call_address": "0x40b1b5",
+    "name_address": "0x57e3c4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetinvulnerable",
+    "implementation_address_or_message_id": "0x40b880",
+    "registration_call_address": "0x40b1c8",
+    "name_address": "0x57e3d0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksyncforcepowers",
+    "implementation_address_or_message_id": "0x40b8e0",
+    "registration_call_address": "0x40b1db",
+    "name_address": "0x57e3e4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetwaggle",
+    "implementation_address_or_message_id": "0x40bc80",
+    "registration_call_address": "0x40b1ee",
+    "name_address": "0x57e3f8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetsuperflags",
+    "implementation_address_or_message_id": "0x40baa0",
+    "registration_call_address": "0x40b201",
+    "name_address": "0x57e404"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkclearsuperflags",
+    "implementation_address_or_message_id": "0x40bb10",
+    "registration_call_address": "0x40b214",
+    "name_address": "0x57e414"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetsuperflags",
+    "implementation_address_or_message_id": "0x40bb80",
+    "registration_call_address": "0x40b227",
+    "name_address": "0x57e428"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksettarget",
+    "implementation_address_or_message_id": "0x40be60",
+    "registration_call_address": "0x40b23a",
+    "name_address": "0x57e438"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkendtarget",
+    "implementation_address_or_message_id": "0x40be80",
+    "registration_call_address": "0x40b24d",
+    "name_address": "0x57e444"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksettargetcolors",
+    "implementation_address_or_message_id": "0x40be90",
+    "registration_call_address": "0x40b260",
+    "name_address": "0x57e450"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringclear",
+    "implementation_address_or_message_id": "0x40bee0",
+    "registration_call_address": "0x40b273",
+    "name_address": "0x57e464"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringconcatspace",
+    "implementation_address_or_message_id": "0x40c070",
+    "registration_call_address": "0x40b286",
+    "name_address": "0x57e474"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringconcatunistring",
+    "implementation_address_or_message_id": "0x40bf00",
+    "registration_call_address": "0x40b299",
+    "name_address": "0x57e488"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringconcatasciistring",
+    "implementation_address_or_message_id": "0x40bf90",
+    "registration_call_address": "0x40b2ac",
+    "name_address": "0x57e4a0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringconcatplayername",
+    "implementation_address_or_message_id": "0x40c010",
+    "registration_call_address": "0x40b2bf",
+    "name_address": "0x57e4bc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringconcatint",
+    "implementation_address_or_message_id": "0x40c0d0",
+    "registration_call_address": "0x40b2d2",
+    "name_address": "0x57e4d8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringconcatformattedint",
+    "implementation_address_or_message_id": "0x40c140",
+    "registration_call_address": "0x40b2e5",
+    "name_address": "0x57e4ec"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringconcatflex",
+    "implementation_address_or_message_id": "0x40c1f0",
+    "registration_call_address": "0x40b2f8",
+    "name_address": "0x57e508"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringconcatformattedflex",
+    "implementation_address_or_message_id": "0x40c260",
+    "registration_call_address": "0x40b30b",
+    "name_address": "0x57e51c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringconcatvector",
+    "implementation_address_or_message_id": "0x40c320",
+    "registration_call_address": "0x40b31e",
+    "name_address": "0x57e538"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstringoutput",
+    "implementation_address_or_message_id": "0x40c3d0",
+    "registration_call_address": "0x40b331",
+    "name_address": "0x57e550"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetsabercam",
+    "implementation_address_or_message_id": "0x40c510",
+    "registration_call_address": "0x40b344",
+    "name_address": "0x57e560"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetchoice",
+    "implementation_address_or_message_id": "0x40c530",
+    "registration_call_address": "0x40b357",
+    "name_address": "0x57e570"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkbegincutscene",
+    "implementation_address_or_message_id": "0x40c550",
+    "registration_call_address": "0x40b36a",
+    "name_address": "0x57e57c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkendcutscene",
+    "implementation_address_or_message_id": "0x40c570",
+    "registration_call_address": "0x40b37d",
+    "name_address": "0x57e58c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkstartupcutscene",
+    "implementation_address_or_message_id": "0x40c590",
+    "registration_call_address": "0x40b390",
+    "name_address": "0x57e59c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetmultiparam",
+    "implementation_address_or_message_id": "0x40c5b0",
+    "registration_call_address": "0x40b3a3",
+    "name_address": "0x57e5b0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "insideleia",
+    "implementation_address_or_message_id": "0x40c610",
+    "registration_call_address": "0x40b3b6",
+    "name_address": "0x57e5c0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkcreatebubble",
+    "implementation_address_or_message_id": "0x40c620",
+    "registration_call_address": "0x40b3c9",
+    "name_address": "0x57e5cc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkdestroybubble",
+    "implementation_address_or_message_id": "0x40c670",
+    "registration_call_address": "0x40b3dc",
+    "name_address": "0x57e5dc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetbubbledistance",
+    "implementation_address_or_message_id": "0x40c690",
+    "registration_call_address": "0x40b3ef",
+    "name_address": "0x57e5ec"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkthinginbubble",
+    "implementation_address_or_message_id": "0x40c710",
+    "registration_call_address": "0x40b402",
+    "name_address": "0x57e600"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetfirstbubble",
+    "implementation_address_or_message_id": "0x40c760",
+    "registration_call_address": "0x40b415",
+    "name_address": "0x57e610"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetnextbubble",
+    "implementation_address_or_message_id": "0x40c7b0",
+    "registration_call_address": "0x40b428",
+    "name_address": "0x57e624"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetbubbletype",
+    "implementation_address_or_message_id": "0x40c810",
+    "registration_call_address": "0x40b43b",
+    "name_address": "0x57e634"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetbubbleradius",
+    "implementation_address_or_message_id": "0x40c860",
+    "registration_call_address": "0x40b44e",
+    "name_address": "0x57e644"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetbubbletype",
+    "implementation_address_or_message_id": "0x40c8b0",
+    "registration_call_address": "0x40b461",
+    "name_address": "0x57e658"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jksetbubbleradius",
+    "implementation_address_or_message_id": "0x40c900",
+    "registration_call_address": "0x40b474",
+    "name_address": "0x57e668"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkscreenshot",
+    "implementation_address_or_message_id": "0x40c950",
+    "registration_call_address": "0x40b487",
+    "name_address": "0x57e67c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jkgetopenframes",
+    "implementation_address_or_message_id": "0x40c960",
+    "registration_call_address": "0x40b49a",
+    "name_address": "0x57e68c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "blocked",
+    "implementation_address_or_message_id": 5,
+    "registration_call_address": "0x52a349",
+    "name_address": "0x5a3e04"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "entered",
+    "implementation_address_or_message_id": 6,
+    "registration_call_address": "0x52a359",
+    "name_address": "0x5a3e0c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "exited",
+    "implementation_address_or_message_id": 7,
+    "registration_call_address": "0x52a369",
+    "name_address": "0x5a3e14"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "crossed",
+    "implementation_address_or_message_id": 8,
+    "registration_call_address": "0x52a379",
+    "name_address": "0x5a3e1c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "sighted",
+    "implementation_address_or_message_id": 9,
+    "registration_call_address": "0x52a389",
+    "name_address": "0x5a3e24"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "damaged",
+    "implementation_address_or_message_id": 10,
+    "registration_call_address": "0x52a399",
+    "name_address": "0x5a3e2c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "arrived",
+    "implementation_address_or_message_id": 11,
+    "registration_call_address": "0x52a3a9",
+    "name_address": "0x5a3e34"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "killed",
+    "implementation_address_or_message_id": 12,
+    "registration_call_address": "0x52a3b9",
+    "name_address": "0x5a3e3c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "pulse",
+    "implementation_address_or_message_id": 13,
+    "registration_call_address": "0x52a3c9",
+    "name_address": "0x5a3e44"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "touched",
+    "implementation_address_or_message_id": 14,
+    "registration_call_address": "0x52a3d9",
+    "name_address": "0x5a3e4c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "created",
+    "implementation_address_or_message_id": 15,
+    "registration_call_address": "0x52a3e9",
+    "name_address": "0x5a3e54"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "loading",
+    "implementation_address_or_message_id": 16,
+    "registration_call_address": "0x52a3f9",
+    "name_address": "0x5a3e5c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "selected",
+    "implementation_address_or_message_id": 17,
+    "registration_call_address": "0x52a409",
+    "name_address": "0x5a3e64"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "deselected",
+    "implementation_address_or_message_id": 18,
+    "registration_call_address": "0x52a419",
+    "name_address": "0x5a3e70"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "changed",
+    "implementation_address_or_message_id": 20,
+    "registration_call_address": "0x52a429",
+    "name_address": "0x5a3e7c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "deactivated",
+    "implementation_address_or_message_id": 21,
+    "registration_call_address": "0x52a439",
+    "name_address": "0x5a3e84"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "shutdown",
+    "implementation_address_or_message_id": 22,
+    "registration_call_address": "0x52a449",
+    "name_address": "0x5a3e90"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "respawn",
+    "implementation_address_or_message_id": 23,
+    "registration_call_address": "0x52a459",
+    "name_address": "0x5a3e9c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "removed",
+    "implementation_address_or_message_id": 2,
+    "registration_call_address": "0x52a469",
+    "name_address": "0x5a3ea4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "autoselect",
+    "implementation_address_or_message_id": 19,
+    "registration_call_address": "0x52a479",
+    "name_address": "0x5a3eac"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "aievent",
+    "implementation_address_or_message_id": 24,
+    "registration_call_address": "0x52a489",
+    "name_address": "0x5a3eb8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "skill",
+    "implementation_address_or_message_id": 25,
+    "registration_call_address": "0x52a499",
+    "name_address": "0x5a3ec0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "taken",
+    "implementation_address_or_message_id": 26,
+    "registration_call_address": "0x52a4a9",
+    "name_address": "0x5a3ec8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "user0",
+    "implementation_address_or_message_id": 27,
+    "registration_call_address": "0x52a4b9",
+    "name_address": "0x5a3ed0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "user1",
+    "implementation_address_or_message_id": 28,
+    "registration_call_address": "0x52a4c9",
+    "name_address": "0x5a3ed8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "user2",
+    "implementation_address_or_message_id": 29,
+    "registration_call_address": "0x52a4d9",
+    "name_address": "0x5a3ee0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "user3",
+    "implementation_address_or_message_id": 30,
+    "registration_call_address": "0x52a4e9",
+    "name_address": "0x5a3ee8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "user4",
+    "implementation_address_or_message_id": 31,
+    "registration_call_address": "0x52a4f9",
+    "name_address": "0x5a3ef0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "user5",
+    "implementation_address_or_message_id": 32,
+    "registration_call_address": "0x52a509",
+    "name_address": "0x5a3ef8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "user6",
+    "implementation_address_or_message_id": 33,
+    "registration_call_address": "0x52a519",
+    "name_address": "0x5a3f00"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "user7",
+    "implementation_address_or_message_id": 34,
+    "registration_call_address": "0x52a529",
+    "name_address": "0x5a3f08"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "newplayer",
+    "implementation_address_or_message_id": 35,
+    "registration_call_address": "0x52a539",
+    "name_address": "0x5a3f10"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "fire",
+    "implementation_address_or_message_id": 36,
+    "registration_call_address": "0x52a549",
+    "name_address": "0x5a3f1c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "join",
+    "implementation_address_or_message_id": 37,
+    "registration_call_address": "0x52a559",
+    "name_address": "0x5a3f24"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "leave",
+    "implementation_address_or_message_id": 38,
+    "registration_call_address": "0x52a569",
+    "name_address": "0x5a3f2c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "splash",
+    "implementation_address_or_message_id": 39,
+    "registration_call_address": "0x52a579",
+    "name_address": "0x5a3f34"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "trigger",
+    "implementation_address_or_message_id": 40,
+    "registration_call_address": "0x52a589",
+    "name_address": "0x5a3f3c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "preblock",
+    "implementation_address_or_message_id": 41,
+    "registration_call_address": "0x52a599",
+    "name_address": "0x5a3f44"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "escaped",
+    "implementation_address_or_message_id": 42,
+    "registration_call_address": "0x52a5a9",
+    "name_address": "0x5a3f50"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "attachkilled",
+    "implementation_address_or_message_id": 43,
+    "registration_call_address": "0x52a5b9",
+    "name_address": "0x5a3f58"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "playeraction",
+    "implementation_address_or_message_id": 44,
+    "registration_call_address": "0x52a5c9",
+    "name_address": "0x5a3f68"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setinvactivated",
+    "implementation_address_or_message_id": "0x52fec0",
+    "registration_call_address": "0x52fba0",
+    "name_address": "0x5a4070"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setinvavailable",
+    "implementation_address_or_message_id": "0x52ff30",
+    "registration_call_address": "0x52fbb3",
+    "name_address": "0x5a4080"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "isinvactivated",
+    "implementation_address_or_message_id": "0x52ffa0",
+    "registration_call_address": "0x52fbc6",
+    "name_address": "0x5a4090"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "isinvavailable",
+    "implementation_address_or_message_id": "0x530000",
+    "registration_call_address": "0x52fbd9",
+    "name_address": "0x5a40a0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setgoalflags",
+    "implementation_address_or_message_id": "0x530060",
+    "registration_call_address": "0x52fbec",
+    "name_address": "0x5a40b0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "cleargoalflags",
+    "implementation_address_or_message_id": "0x5300e0",
+    "registration_call_address": "0x52fbff",
+    "name_address": "0x5a40c0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getnumplayers",
+    "implementation_address_or_message_id": "0x530160",
+    "registration_call_address": "0x52fc12",
+    "name_address": "0x5a40d0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getmaxplayers",
+    "implementation_address_or_message_id": "0x530190",
+    "registration_call_address": "0x52fc25",
+    "name_address": "0x5a40e0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getabsolutemaxplayers",
+    "implementation_address_or_message_id": "0x5301b0",
+    "registration_call_address": "0x52fc38",
+    "name_address": "0x5a40f0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getlocalplayerthing",
+    "implementation_address_or_message_id": "0x5301c0",
+    "registration_call_address": "0x52fc4b",
+    "name_address": "0x5a4108"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getplayerthing",
+    "implementation_address_or_message_id": "0x5301f0",
+    "registration_call_address": "0x52fc5e",
+    "name_address": "0x5a411c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getplayernum",
+    "implementation_address_or_message_id": "0x530240",
+    "registration_call_address": "0x52fc71",
+    "name_address": "0x5a412c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getplayerteam",
+    "implementation_address_or_message_id": "0x530280",
+    "registration_call_address": "0x52fc84",
+    "name_address": "0x5a413c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setplayerteam",
+    "implementation_address_or_message_id": "0x5302d0",
+    "registration_call_address": "0x52fc97",
+    "name_address": "0x5a414c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getplayerscore",
+    "implementation_address_or_message_id": "0x530330",
+    "registration_call_address": "0x52fcaa",
+    "name_address": "0x5a415c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setplayerscore",
+    "implementation_address_or_message_id": "0x530380",
+    "registration_call_address": "0x52fcbd",
+    "name_address": "0x5a416c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getplayerkills",
+    "implementation_address_or_message_id": "0x5303e0",
+    "registration_call_address": "0x52fcd0",
+    "name_address": "0x5a417c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setplayerkills",
+    "implementation_address_or_message_id": "0x530430",
+    "registration_call_address": "0x52fce3",
+    "name_address": "0x5a418c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getplayerkilled",
+    "implementation_address_or_message_id": "0x530490",
+    "registration_call_address": "0x52fcf6",
+    "name_address": "0x5a419c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setplayerkilled",
+    "implementation_address_or_message_id": "0x5304e0",
+    "registration_call_address": "0x52fd09",
+    "name_address": "0x5a41ac"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getplayersuicides",
+    "implementation_address_or_message_id": "0x530540",
+    "registration_call_address": "0x52fd1c",
+    "name_address": "0x5a41bc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setplayersuicides",
+    "implementation_address_or_message_id": "0x530590",
+    "registration_call_address": "0x52fd2f",
+    "name_address": "0x5a41d0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "pickupbackpack",
+    "implementation_address_or_message_id": "0x5305e0",
+    "registration_call_address": "0x52fd42",
+    "name_address": "0x5a41e4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "createbackpack",
+    "implementation_address_or_message_id": "0x530710",
+    "registration_call_address": "0x52fd55",
+    "name_address": "0x5a41f4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "nthbackpackbin",
+    "implementation_address_or_message_id": "0x530630",
+    "registration_call_address": "0x52fd68",
+    "name_address": "0x5a4204"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "nthbackpackvalue",
+    "implementation_address_or_message_id": "0x530680",
+    "registration_call_address": "0x52fd7b",
+    "name_address": "0x5a4214"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "numbackpackitems",
+    "implementation_address_or_message_id": "0x5306d0",
+    "registration_call_address": "0x52fd8e",
+    "name_address": "0x5a4228"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getautoswitch",
+    "implementation_address_or_message_id": "0x530760",
+    "registration_call_address": "0x52fda1",
+    "name_address": "0x5a423c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setautoswitch",
+    "implementation_address_or_message_id": "0x5307a0",
+    "registration_call_address": "0x52fdb4",
+    "name_address": "0x5a424c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getautopickup",
+    "implementation_address_or_message_id": "0x5307d0",
+    "registration_call_address": "0x52fdc7",
+    "name_address": "0x5a425c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setautopickup",
+    "implementation_address_or_message_id": "0x530810",
+    "registration_call_address": "0x52fdda",
+    "name_address": "0x5a426c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getautoreload",
+    "implementation_address_or_message_id": "0x530840",
+    "registration_call_address": "0x52fded",
+    "name_address": "0x5a427c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setautoreload",
+    "implementation_address_or_message_id": "0x530880",
+    "registration_call_address": "0x52fe00",
+    "name_address": "0x5a428c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getrespawnmask",
+    "implementation_address_or_message_id": "0x5308b0",
+    "registration_call_address": "0x52fe13",
+    "name_address": "0x5a429c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setrespawnmask",
+    "implementation_address_or_message_id": "0x530900",
+    "registration_call_address": "0x52fe26",
+    "name_address": "0x5a42ac"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "activatebin",
+    "implementation_address_or_message_id": "0x530940",
+    "registration_call_address": "0x52fe39",
+    "name_address": "0x5a42bc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "deactivatebin",
+    "implementation_address_or_message_id": "0x5309b0",
+    "registration_call_address": "0x52fe4c",
+    "name_address": "0x5a42c8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setbinwait",
+    "implementation_address_or_message_id": "0x530ab0",
+    "registration_call_address": "0x52fe5f",
+    "name_address": "0x5a42d8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getnumplayersinteam",
+    "implementation_address_or_message_id": "0x530a10",
+    "registration_call_address": "0x52fe72",
+    "name_address": "0x5a42e4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "addscoretoteammembers",
+    "implementation_address_or_message_id": "0x530a60",
+    "registration_call_address": "0x52fe85",
+    "name_address": "0x5a42f8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "syncscores",
+    "implementation_address_or_message_id": "0x530b10",
+    "registration_call_address": "0x52fe98",
+    "name_address": "0x5a4310"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "killplayerquietly",
+    "implementation_address_or_message_id": "0x530b20",
+    "registration_call_address": "0x52feab",
+    "name_address": "0x5a431c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectortint",
+    "implementation_address_or_message_id": "0x54e660",
+    "registration_call_address": "0x54e3f0",
+    "name_address": "0x5a5d34"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsectortint",
+    "implementation_address_or_message_id": "0x54e6b0",
+    "registration_call_address": "0x54e403",
+    "name_address": "0x5a5d44"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsectoradjoins",
+    "implementation_address_or_message_id": "0x54e900",
+    "registration_call_address": "0x54e416",
+    "name_address": "0x5a5d54"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sectoradjoins",
+    "implementation_address_or_message_id": "0x54e900",
+    "registration_call_address": "0x54e429",
+    "name_address": "0x5a5d68"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorlight",
+    "implementation_address_or_message_id": "0x54e7c0",
+    "registration_call_address": "0x54e43c",
+    "name_address": "0x5a5d78"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsectorlight",
+    "implementation_address_or_message_id": "0x54e7f0",
+    "registration_call_address": "0x54e44f",
+    "name_address": "0x5a5d88"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sectorlight",
+    "implementation_address_or_message_id": "0x54e7f0",
+    "registration_call_address": "0x54e462",
+    "name_address": "0x5a5d98"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getcolormap",
+    "implementation_address_or_message_id": "0x54e980",
+    "registration_call_address": "0x54e475",
+    "name_address": "0x5a5da4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorcolormap",
+    "implementation_address_or_message_id": "0x54e980",
+    "registration_call_address": "0x54e488",
+    "name_address": "0x5a5db0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setcolormap",
+    "implementation_address_or_message_id": "0x54e9e0",
+    "registration_call_address": "0x54e49b",
+    "name_address": "0x5a5dc4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsectorcolormap",
+    "implementation_address_or_message_id": "0x54e9e0",
+    "registration_call_address": "0x54e4ae",
+    "name_address": "0x5a5dd0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorthrust",
+    "implementation_address_or_message_id": "0x54ea60",
+    "registration_call_address": "0x54e4c1",
+    "name_address": "0x5a5de4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsectorthrust",
+    "implementation_address_or_message_id": "0x54eaa0",
+    "registration_call_address": "0x54e4d4",
+    "name_address": "0x5a5df4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sectorthrust",
+    "implementation_address_or_message_id": "0x54eaa0",
+    "registration_call_address": "0x54e4e7",
+    "name_address": "0x5a5e04"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorflags",
+    "implementation_address_or_message_id": "0x54ec50",
+    "registration_call_address": "0x54e4fa",
+    "name_address": "0x5a5e14"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsectorflags",
+    "implementation_address_or_message_id": "0x54eb90",
+    "registration_call_address": "0x54e50d",
+    "name_address": "0x5a5e24"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearsectorflags",
+    "implementation_address_or_message_id": "0x54ebf0",
+    "registration_call_address": "0x54e520",
+    "name_address": "0x5a5e34"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorthingcount",
+    "implementation_address_or_message_id": "0x54ec80",
+    "registration_call_address": "0x54e533",
+    "name_address": "0x5a5e48"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sectorthingcount",
+    "implementation_address_or_message_id": "0x54ec80",
+    "registration_call_address": "0x54e546",
+    "name_address": "0x5a5e5c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorplayercount",
+    "implementation_address_or_message_id": "0x54ecc0",
+    "registration_call_address": "0x54e559",
+    "name_address": "0x5a5e70"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sectorplayercount",
+    "implementation_address_or_message_id": "0x54ecc0",
+    "registration_call_address": "0x54e56c",
+    "name_address": "0x5a5e88"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorcount",
+    "implementation_address_or_message_id": "0x54ed00",
+    "registration_call_address": "0x54e57f",
+    "name_address": "0x5a5e9c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorcenter",
+    "implementation_address_or_message_id": "0x54ed20",
+    "registration_call_address": "0x54e592",
+    "name_address": "0x5a5eac"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getnumsectorvertices",
+    "implementation_address_or_message_id": "0x54ed60",
+    "registration_call_address": "0x54e5a5",
+    "name_address": "0x5a5ebc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorvertexpos",
+    "implementation_address_or_message_id": "0x54edc0",
+    "registration_call_address": "0x54e5b8",
+    "name_address": "0x5a5ed4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getnumsectorsurfaces",
+    "implementation_address_or_message_id": "0x54ed90",
+    "registration_call_address": "0x54e5cb",
+    "name_address": "0x5a5ee8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorsurfaceref",
+    "implementation_address_or_message_id": "0x54ee20",
+    "registration_call_address": "0x54e5de",
+    "name_address": "0x5a5f00"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "syncsector",
+    "implementation_address_or_message_id": "0x54ee70",
+    "registration_call_address": "0x54e5f1",
+    "name_address": "0x5a5f14"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "changeallsectorslight",
+    "implementation_address_or_message_id": "0x54ee90",
+    "registration_call_address": "0x54e604",
+    "name_address": "0x5a5f20"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "findsectoratpos",
+    "implementation_address_or_message_id": "0x54eed0",
+    "registration_call_address": "0x54e617",
+    "name_address": "0x5a5f38"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "issphereinsector",
+    "implementation_address_or_message_id": "0x54ef20",
+    "registration_call_address": "0x54e62a",
+    "name_address": "0x5a5f48"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsectorambientlight",
+    "implementation_address_or_message_id": "0x54e890",
+    "registration_call_address": "0x54e63d",
+    "name_address": "0x5a5f5c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsectorambientlight",
+    "implementation_address_or_message_id": "0x54e8c0",
+    "registration_call_address": "0x54e650",
+    "name_address": "0x5a5f74"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playsong",
+    "implementation_address_or_message_id": "0x54f110",
+    "registration_call_address": "0x54efb0",
+    "name_address": "0x5a5f8c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playsoundthing",
+    "implementation_address_or_message_id": "0x54f160",
+    "registration_call_address": "0x54efc3",
+    "name_address": "0x5a5f98"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playsoundthinglocal",
+    "implementation_address_or_message_id": "0x54f3b0",
+    "registration_call_address": "0x54efd6",
+    "name_address": "0x5a5fa8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playsoundpos",
+    "implementation_address_or_message_id": "0x54f530",
+    "registration_call_address": "0x54efe9",
+    "name_address": "0x5a5fbc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playsoundposlocal",
+    "implementation_address_or_message_id": "0x54f6e0",
+    "registration_call_address": "0x54effc",
+    "name_address": "0x5a5fcc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playsoundlocal",
+    "implementation_address_or_message_id": "0x54f840",
+    "registration_call_address": "0x54f00f",
+    "name_address": "0x5a5fe0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playsoundglobal",
+    "implementation_address_or_message_id": "0x54f930",
+    "registration_call_address": "0x54f022",
+    "name_address": "0x5a5ff0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playvoicething",
+    "implementation_address_or_message_id": "0x54f160",
+    "registration_call_address": "0x54f035",
+    "name_address": "0x5a6000"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playvoicepos",
+    "implementation_address_or_message_id": "0x54f530",
+    "registration_call_address": "0x54f048",
+    "name_address": "0x5a6010"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playvoicelocal",
+    "implementation_address_or_message_id": "0x54f840",
+    "registration_call_address": "0x54f05b",
+    "name_address": "0x5a6020"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playvoiceglobal",
+    "implementation_address_or_message_id": "0x54f930",
+    "registration_call_address": "0x54f06e",
+    "name_address": "0x5a6030"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "stopsound",
+    "implementation_address_or_message_id": "0x54fa60",
+    "registration_call_address": "0x54f081",
+    "name_address": "0x5a6040"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "loadsound",
+    "implementation_address_or_message_id": "0x54fb10",
+    "registration_call_address": "0x54f094",
+    "name_address": "0x5a604c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playsoundclass",
+    "implementation_address_or_message_id": "0x54fb50",
+    "registration_call_address": "0x54f0a7",
+    "name_address": "0x5a6058"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "changesoundvol",
+    "implementation_address_or_message_id": "0x54fbe0",
+    "registration_call_address": "0x54f0ba",
+    "name_address": "0x5a6068"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "changesoundpitch",
+    "implementation_address_or_message_id": "0x54fc80",
+    "registration_call_address": "0x54f0cd",
+    "name_address": "0x5a6078"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sectorsound",
+    "implementation_address_or_message_id": "0x54fcf0",
+    "registration_call_address": "0x54f0e0",
+    "name_address": "0x5a608c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setmusicvol",
+    "implementation_address_or_message_id": "0x54fd30",
+    "registration_call_address": "0x54f0f3",
+    "name_address": "0x5a6098"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsoundlen",
+    "implementation_address_or_message_id": "0x54fd90",
+    "registration_call_address": "0x54f106",
+    "name_address": "0x5a60a4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfaceadjoin",
+    "implementation_address_or_message_id": "0x550160",
+    "registration_call_address": "0x54fdf0",
+    "name_address": "0x5a60b0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfacesector",
+    "implementation_address_or_message_id": "0x5501a0",
+    "registration_call_address": "0x54fe03",
+    "name_address": "0x5a60c4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getnumsurfacevertices",
+    "implementation_address_or_message_id": "0x5501e0",
+    "registration_call_address": "0x54fe16",
+    "name_address": "0x5a60d8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfacevertexpos",
+    "implementation_address_or_message_id": "0x550210",
+    "registration_call_address": "0x54fe29",
+    "name_address": "0x5a60f0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sethorizonskyoffset",
+    "implementation_address_or_message_id": "0x550490",
+    "registration_call_address": "0x54fe3c",
+    "name_address": "0x5a6104"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "gethorizonskyoffset",
+    "implementation_address_or_message_id": "0x5504d0",
+    "registration_call_address": "0x54fe4f",
+    "name_address": "0x5a6118"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setceilingskyoffset",
+    "implementation_address_or_message_id": "0x550510",
+    "registration_call_address": "0x54fe62",
+    "name_address": "0x5a612c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getceilingskyoffset",
+    "implementation_address_or_message_id": "0x550550",
+    "registration_call_address": "0x54fe75",
+    "name_address": "0x5a6140"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "slidehorizonsky",
+    "implementation_address_or_message_id": "0x550590",
+    "registration_call_address": "0x54fe88",
+    "name_address": "0x5a6154"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "slideceilingsky",
+    "implementation_address_or_message_id": "0x550600",
+    "registration_call_address": "0x54fe9b",
+    "name_address": "0x5a6164"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfacecount",
+    "implementation_address_or_message_id": "0x550f80",
+    "registration_call_address": "0x54feae",
+    "name_address": "0x5a6174"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "slidewall",
+    "implementation_address_or_message_id": "0x550720",
+    "registration_call_address": "0x54fec1",
+    "name_address": "0x5a6184"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "slidesurface",
+    "implementation_address_or_message_id": "0x550720",
+    "registration_call_address": "0x54fed4",
+    "name_address": "0x5a6190"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getwallcel",
+    "implementation_address_or_message_id": "0x550800",
+    "registration_call_address": "0x54fee7",
+    "name_address": "0x5a61a0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setwallcel",
+    "implementation_address_or_message_id": "0x550840",
+    "registration_call_address": "0x54fefa",
+    "name_address": "0x5a61ac"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfacecel",
+    "implementation_address_or_message_id": "0x550800",
+    "registration_call_address": "0x54ff0d",
+    "name_address": "0x5a61b8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsurfacecel",
+    "implementation_address_or_message_id": "0x550840",
+    "registration_call_address": "0x54ff20",
+    "name_address": "0x5a61c8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfacemat",
+    "implementation_address_or_message_id": "0x5508c0",
+    "registration_call_address": "0x54ff33",
+    "name_address": "0x5a61d8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsurfacemat",
+    "implementation_address_or_message_id": "0x550910",
+    "registration_call_address": "0x54ff46",
+    "name_address": "0x5a61e8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfaceflags",
+    "implementation_address_or_message_id": "0x550a70",
+    "registration_call_address": "0x54ff59",
+    "name_address": "0x5a61f8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsurfaceflags",
+    "implementation_address_or_message_id": "0x5509b0",
+    "registration_call_address": "0x54ff6c",
+    "name_address": "0x5a6208"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearsurfaceflags",
+    "implementation_address_or_message_id": "0x550a10",
+    "registration_call_address": "0x54ff7f",
+    "name_address": "0x5a6218"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getadjoinflags",
+    "implementation_address_or_message_id": "0x550b60",
+    "registration_call_address": "0x54ff92",
+    "name_address": "0x5a622c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setadjoinflags",
+    "implementation_address_or_message_id": "0x550aa0",
+    "registration_call_address": "0x54ffa5",
+    "name_address": "0x5a623c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearadjoinflags",
+    "implementation_address_or_message_id": "0x550b00",
+    "registration_call_address": "0x54ffb8",
+    "name_address": "0x5a624c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setfacetype",
+    "implementation_address_or_message_id": "0x550ba0",
+    "registration_call_address": "0x54ffcb",
+    "name_address": "0x5a6260"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearfacetype",
+    "implementation_address_or_message_id": "0x550c00",
+    "registration_call_address": "0x54ffde",
+    "name_address": "0x5a626c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getfacetype",
+    "implementation_address_or_message_id": "0x550c60",
+    "registration_call_address": "0x54fff1",
+    "name_address": "0x5a627c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setfacegeomode",
+    "implementation_address_or_message_id": "0x550c90",
+    "registration_call_address": "0x550004",
+    "name_address": "0x5a6288"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getfacegeomode",
+    "implementation_address_or_message_id": "0x550d30",
+    "registration_call_address": "0x550017",
+    "name_address": "0x5a6298"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setfacelightmode",
+    "implementation_address_or_message_id": "0x550d60",
+    "registration_call_address": "0x55002a",
+    "name_address": "0x5a62a8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getfacelightmode",
+    "implementation_address_or_message_id": "0x550db0",
+    "registration_call_address": "0x55003d",
+    "name_address": "0x5a62bc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setfacetexmode",
+    "implementation_address_or_message_id": "0x550de0",
+    "registration_call_address": "0x550050",
+    "name_address": "0x5a62d0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getfacetexmode",
+    "implementation_address_or_message_id": "0x550e30",
+    "registration_call_address": "0x550063",
+    "name_address": "0x5a62e0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfacelight",
+    "implementation_address_or_message_id": "0x550f00",
+    "registration_call_address": "0x550076",
+    "name_address": "0x5a62f0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsurfacelight",
+    "implementation_address_or_message_id": "0x550e60",
+    "registration_call_address": "0x550089",
+    "name_address": "0x5a6300"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "surfacelight",
+    "implementation_address_or_message_id": "0x550e60",
+    "registration_call_address": "0x55009c",
+    "name_address": "0x5a6310"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfacecenter",
+    "implementation_address_or_message_id": "0x550f30",
+    "registration_call_address": "0x5500af",
+    "name_address": "0x5a6320"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "surfacecenter",
+    "implementation_address_or_message_id": "0x550f30",
+    "registration_call_address": "0x5500c2",
+    "name_address": "0x5a6334"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "surfacelightanim",
+    "implementation_address_or_message_id": "0x550670",
+    "registration_call_address": "0x5500d5",
+    "name_address": "0x5a6344"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfacenormal",
+    "implementation_address_or_message_id": "0x550fb0",
+    "registration_call_address": "0x5500e8",
+    "name_address": "0x5a6358"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "syncsurface",
+    "implementation_address_or_message_id": "0x550ff0",
+    "registration_call_address": "0x5500fb",
+    "name_address": "0x5a636c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfacevertexlight",
+    "implementation_address_or_message_id": "0x550270",
+    "registration_call_address": "0x55010e",
+    "name_address": "0x5a6378"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsurfacevertexlight",
+    "implementation_address_or_message_id": "0x5502c0",
+    "registration_call_address": "0x550121",
+    "name_address": "0x5a6390"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfacevertexlightrgb",
+    "implementation_address_or_message_id": "0x550310",
+    "registration_call_address": "0x550134",
+    "name_address": "0x5a63a8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsurfacevertexlightrgb",
+    "implementation_address_or_message_id": "0x550410",
+    "registration_call_address": "0x550147",
+    "name_address": "0x5a63c4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aigetmode",
+    "implementation_address_or_message_id": "0x5516c0",
+    "registration_call_address": "0x551020",
+    "name_address": "0x5a63e0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetmode",
+    "implementation_address_or_message_id": "0x551670",
+    "registration_call_address": "0x551033",
+    "name_address": "0x5a63ec"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aiclearmode",
+    "implementation_address_or_message_id": "0x551830",
+    "registration_call_address": "0x551046",
+    "name_address": "0x5a63f8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aigetmovepos",
+    "implementation_address_or_message_id": "0x551630",
+    "registration_call_address": "0x551059",
+    "name_address": "0x5a6404"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetmovepos",
+    "implementation_address_or_message_id": "0x5513f0",
+    "registration_call_address": "0x55106c",
+    "name_address": "0x5a6414"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "firstthinginview",
+    "implementation_address_or_message_id": "0x551880",
+    "registration_call_address": "0x55107f",
+    "name_address": "0x5a6424"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "firstthingincone",
+    "implementation_address_or_message_id": "0x5519a0",
+    "registration_call_address": "0x551092",
+    "name_address": "0x5a6438"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "nextthinginview",
+    "implementation_address_or_message_id": "0x551ac0",
+    "registration_call_address": "0x5510a5",
+    "name_address": "0x5a644c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "nextthingincone",
+    "implementation_address_or_message_id": "0x551ac0",
+    "registration_call_address": "0x5510b8",
+    "name_address": "0x5a645c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "thingviewdot",
+    "implementation_address_or_message_id": "0x551b10",
+    "registration_call_address": "0x5510cb",
+    "name_address": "0x5a646c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetfiretarget",
+    "implementation_address_or_message_id": "0x551c30",
+    "registration_call_address": "0x5510de",
+    "name_address": "0x5a647c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetmovething",
+    "implementation_address_or_message_id": "0x551520",
+    "registration_call_address": "0x5510f1",
+    "name_address": "0x5a648c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetlookpos",
+    "implementation_address_or_message_id": "0x551580",
+    "registration_call_address": "0x551104",
+    "name_address": "0x5a649c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetmovespeed",
+    "implementation_address_or_message_id": "0x551220",
+    "registration_call_address": "0x551117",
+    "name_address": "0x5a64ac"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetlookframe",
+    "implementation_address_or_message_id": "0x5515d0",
+    "registration_call_address": "0x55112a",
+    "name_address": "0x5a64bc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetmoveframe",
+    "implementation_address_or_message_id": "0x5514c0",
+    "registration_call_address": "0x55113d",
+    "name_address": "0x5a64cc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "isaitargetinsight",
+    "implementation_address_or_message_id": "0x551d30",
+    "registration_call_address": "0x551150",
+    "name_address": "0x5a64dc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aiflee",
+    "implementation_address_or_message_id": "0x551d90",
+    "registration_call_address": "0x551163",
+    "name_address": "0x5a64f0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetclass",
+    "implementation_address_or_message_id": "0x551e00",
+    "registration_call_address": "0x551176",
+    "name_address": "0x5a64f8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aijump",
+    "implementation_address_or_message_id": "0x551450",
+    "registration_call_address": "0x551189",
+    "name_address": "0x5a6504"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aigetalignment",
+    "implementation_address_or_message_id": "0x551700",
+    "registration_call_address": "0x55119c",
+    "name_address": "0x5a650c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetalignment",
+    "implementation_address_or_message_id": "0x551750",
+    "registration_call_address": "0x5511af",
+    "name_address": "0x5a651c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetinterest",
+    "implementation_address_or_message_id": "0x551790",
+    "registration_call_address": "0x5511c2",
+    "name_address": "0x5a652c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aigetinterest",
+    "implementation_address_or_message_id": "0x5517e0",
+    "registration_call_address": "0x5511d5",
+    "name_address": "0x5a653c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aisetdistractor",
+    "implementation_address_or_message_id": "0x551290",
+    "registration_call_address": "0x5511e8",
+    "name_address": "0x5a654c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "aiaddalignmentpriority",
+    "implementation_address_or_message_id": "0x5512b0",
+    "registration_call_address": "0x5511fb",
+    "name_address": "0x5a655c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "airemovealignmentpriority",
+    "implementation_address_or_message_id": "0x551360",
+    "registration_call_address": "0x55120e",
+    "name_address": "0x5a6574"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "waitforstop",
+    "implementation_address_or_message_id": "0x5538e0",
+    "registration_call_address": "0x551e60",
+    "name_address": "0x5a6590"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "stopthing",
+    "implementation_address_or_message_id": "0x553a10",
+    "registration_call_address": "0x551e73",
+    "name_address": "0x5a659c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "destroything",
+    "implementation_address_or_message_id": "0x5533d0",
+    "registration_call_address": "0x551e86",
+    "name_address": "0x5a65a8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthinghealth",
+    "implementation_address_or_message_id": "0x553340",
+    "registration_call_address": "0x551e99",
+    "name_address": "0x5a65b8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "gethealth",
+    "implementation_address_or_message_id": "0x553340",
+    "registration_call_address": "0x551eac",
+    "name_address": "0x5a65c8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "healthing",
+    "implementation_address_or_message_id": "0x5532d0",
+    "registration_call_address": "0x551ebf",
+    "name_address": "0x5a65d4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthinglight",
+    "implementation_address_or_message_id": "0x553760",
+    "registration_call_address": "0x551ed2",
+    "name_address": "0x5a65e0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthinglight",
+    "implementation_address_or_message_id": "0x5537a0",
+    "registration_call_address": "0x551ee5",
+    "name_address": "0x5a65f0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "thinglight",
+    "implementation_address_or_message_id": "0x5537a0",
+    "registration_call_address": "0x551ef8",
+    "name_address": "0x5a6600"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "thinglightanim",
+    "implementation_address_or_message_id": "0x553830",
+    "registration_call_address": "0x551f0b",
+    "name_address": "0x5a660c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "rotate",
+    "implementation_address_or_message_id": "0x553720",
+    "registration_call_address": "0x551f1e",
+    "name_address": "0x5a661c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "creatething",
+    "implementation_address_or_message_id": "0x552bc0",
+    "registration_call_address": "0x551f31",
+    "name_address": "0x5a6624"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "createthinglocal",
+    "implementation_address_or_message_id": "0x552da0",
+    "registration_call_address": "0x551f44",
+    "name_address": "0x5a6630"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "createthingnr",
+    "implementation_address_or_message_id": "0x552c60",
+    "registration_call_address": "0x551f57",
+    "name_address": "0x5a6644"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "createthingatpos",
+    "implementation_address_or_message_id": "0x552e00",
+    "registration_call_address": "0x551f6a",
+    "name_address": "0x5a6654"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "createthingatposowner",
+    "implementation_address_or_message_id": "0x552e20",
+    "registration_call_address": "0x551f7d",
+    "name_address": "0x5a6668"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "createthingatposold",
+    "implementation_address_or_message_id": "0x553070",
+    "registration_call_address": "0x551f90",
+    "name_address": "0x5a6680"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "createthingatposnr",
+    "implementation_address_or_message_id": "0x552e40",
+    "registration_call_address": "0x551fa3",
+    "name_address": "0x5a6694"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "rotatepivot",
+    "implementation_address_or_message_id": "0x553650",
+    "registration_call_address": "0x551fb6",
+    "name_address": "0x5a66a8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "capturething",
+    "implementation_address_or_message_id": "0x553c10",
+    "registration_call_address": "0x551fc9",
+    "name_address": "0x5a66b4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "releasething",
+    "implementation_address_or_message_id": "0x553c40",
+    "registration_call_address": "0x551fdc",
+    "name_address": "0x5a66c4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingvel",
+    "implementation_address_or_message_id": "0x554190",
+    "registration_call_address": "0x551fef",
+    "name_address": "0x5a66d4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "addthingvel",
+    "implementation_address_or_message_id": "0x554280",
+    "registration_call_address": "0x552002",
+    "name_address": "0x5a66e0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "applyforce",
+    "implementation_address_or_message_id": "0x554210",
+    "registration_call_address": "0x552015",
+    "name_address": "0x5a66ec"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "detachthing",
+    "implementation_address_or_message_id": "0x554440",
+    "registration_call_address": "0x552028",
+    "name_address": "0x5a66f8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getattachflags",
+    "implementation_address_or_message_id": "0x5544a0",
+    "registration_call_address": "0x55203b",
+    "name_address": "0x5a6704"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingattachflags",
+    "implementation_address_or_message_id": "0x5544a0",
+    "registration_call_address": "0x55204e",
+    "name_address": "0x5a6714"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "attachthingtosurf",
+    "implementation_address_or_message_id": "0x5544d0",
+    "registration_call_address": "0x552061",
+    "name_address": "0x5a6728"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "attachthingtothing",
+    "implementation_address_or_message_id": "0x554540",
+    "registration_call_address": "0x552074",
+    "name_address": "0x5a673c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setarmedmode",
+    "implementation_address_or_message_id": "0x5549e0",
+    "registration_call_address": "0x552087",
+    "name_address": "0x5a6750"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingflags",
+    "implementation_address_or_message_id": "0x554a80",
+    "registration_call_address": "0x55209a",
+    "name_address": "0x5a6760"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearthingflags",
+    "implementation_address_or_message_id": "0x554ae0",
+    "registration_call_address": "0x5520ad",
+    "name_address": "0x5a6770"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "teleportthing",
+    "implementation_address_or_message_id": "0x554b40",
+    "registration_call_address": "0x5520c0",
+    "name_address": "0x5a6780"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingtype",
+    "implementation_address_or_message_id": "0x554c30",
+    "registration_call_address": "0x5520d3",
+    "name_address": "0x5a6790"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setcollidetype",
+    "implementation_address_or_message_id": "0x554c90",
+    "registration_call_address": "0x5520e6",
+    "name_address": "0x5a67a0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setheadlightintensity",
+    "implementation_address_or_message_id": "0x555010",
+    "registration_call_address": "0x5520f9",
+    "name_address": "0x5a67b0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthinggeomode",
+    "implementation_address_or_message_id": "0x555240",
+    "registration_call_address": "0x55210c",
+    "name_address": "0x5a67c8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthinggeomode",
+    "implementation_address_or_message_id": "0x555210",
+    "registration_call_address": "0x55211f",
+    "name_address": "0x5a67d8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthinglightmode",
+    "implementation_address_or_message_id": "0x5552a0",
+    "registration_call_address": "0x552132",
+    "name_address": "0x5a67e8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthinglightmode",
+    "implementation_address_or_message_id": "0x555270",
+    "registration_call_address": "0x552145",
+    "name_address": "0x5a67fc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingtexmode",
+    "implementation_address_or_message_id": "0x555300",
+    "registration_call_address": "0x552158",
+    "name_address": "0x5a6810"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingtexmode",
+    "implementation_address_or_message_id": "0x5552d0",
+    "registration_call_address": "0x55216b",
+    "name_address": "0x5a6820"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingcurgeomode",
+    "implementation_address_or_message_id": "0x555390",
+    "registration_call_address": "0x55217e",
+    "name_address": "0x5a6830"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingcurgeomode",
+    "implementation_address_or_message_id": "0x555330",
+    "registration_call_address": "0x552191",
+    "name_address": "0x5a6844"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingcurlightmode",
+    "implementation_address_or_message_id": "0x5553f0",
+    "registration_call_address": "0x5521a4",
+    "name_address": "0x5a6858"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingcurlightmode",
+    "implementation_address_or_message_id": "0x5553c0",
+    "registration_call_address": "0x5521b7",
+    "name_address": "0x5a6870"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingcurtexmode",
+    "implementation_address_or_message_id": "0x555450",
+    "registration_call_address": "0x5521ca",
+    "name_address": "0x5a6888"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingcurtexmode",
+    "implementation_address_or_message_id": "0x555420",
+    "registration_call_address": "0x5521dd",
+    "name_address": "0x5a689c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setactorextraspeed",
+    "implementation_address_or_message_id": "0x555480",
+    "registration_call_address": "0x5521f0",
+    "name_address": "0x5a68b0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingtype",
+    "implementation_address_or_message_id": "0x552b90",
+    "registration_call_address": "0x552203",
+    "name_address": "0x5a68c4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "isthingmoving",
+    "implementation_address_or_message_id": "0x553a80",
+    "registration_call_address": "0x552216",
+    "name_address": "0x5a68d4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "ismoving",
+    "implementation_address_or_message_id": "0x553a80",
+    "registration_call_address": "0x552229",
+    "name_address": "0x5a68e4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getcurframe",
+    "implementation_address_or_message_id": "0x553990",
+    "registration_call_address": "0x55223c",
+    "name_address": "0x5a68f0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getgoalframe",
+    "implementation_address_or_message_id": "0x5539d0",
+    "registration_call_address": "0x55224f",
+    "name_address": "0x5a68fc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingparent",
+    "implementation_address_or_message_id": "0x553c80",
+    "registration_call_address": "0x552262",
+    "name_address": "0x5a690c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingparent",
+    "implementation_address_or_message_id": "0x553cc0",
+    "registration_call_address": "0x552275",
+    "name_address": "0x5a691c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingsector",
+    "implementation_address_or_message_id": "0x553950",
+    "registration_call_address": "0x552288",
+    "name_address": "0x5a692c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingpos",
+    "implementation_address_or_message_id": "0x553d00",
+    "registration_call_address": "0x55229b",
+    "name_address": "0x5a693c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingpos",
+    "implementation_address_or_message_id": "0x553d40",
+    "registration_call_address": "0x5522ae",
+    "name_address": "0x5a6948"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingposex",
+    "implementation_address_or_message_id": "0x553dd0",
+    "registration_call_address": "0x5522c1",
+    "name_address": "0x5a6954"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingvel",
+    "implementation_address_or_message_id": "0x5540e0",
+    "registration_call_address": "0x5522d4",
+    "name_address": "0x5a6964"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthinguvec",
+    "implementation_address_or_message_id": "0x5543c0",
+    "registration_call_address": "0x5522e7",
+    "name_address": "0x5a6970"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthinglvec",
+    "implementation_address_or_message_id": "0x554310",
+    "registration_call_address": "0x5522fa",
+    "name_address": "0x5a6980"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthinglvecpyr",
+    "implementation_address_or_message_id": "0x554350",
+    "registration_call_address": "0x55230d",
+    "name_address": "0x5a6990"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingrvec",
+    "implementation_address_or_message_id": "0x554400",
+    "registration_call_address": "0x552320",
+    "name_address": "0x5a69a0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingflags",
+    "implementation_address_or_message_id": "0x554a50",
+    "registration_call_address": "0x552333",
+    "name_address": "0x5a69b0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getcollidetype",
+    "implementation_address_or_message_id": "0x554c60",
+    "registration_call_address": "0x552346",
+    "name_address": "0x5a69c0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getheadlightintensity",
+    "implementation_address_or_message_id": "0x555070",
+    "registration_call_address": "0x552359",
+    "name_address": "0x5a69d0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "isthingvisible",
+    "implementation_address_or_message_id": "0x5550c0",
+    "registration_call_address": "0x55236c",
+    "name_address": "0x5a69e8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingpulse",
+    "implementation_address_or_message_id": "0x553b30",
+    "registration_call_address": "0x55237f",
+    "name_address": "0x5a69f8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingtimer",
+    "implementation_address_or_message_id": "0x553ba0",
+    "registration_call_address": "0x552392",
+    "name_address": "0x5a6a08"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getinv",
+    "implementation_address_or_message_id": "0x553ed0",
+    "registration_call_address": "0x5523a5",
+    "name_address": "0x5a6a18"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setinv",
+    "implementation_address_or_message_id": "0x553f50",
+    "registration_call_address": "0x5523b8",
+    "name_address": "0x5a6a20"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "changeinv",
+    "implementation_address_or_message_id": "0x553fc0",
+    "registration_call_address": "0x5523cb",
+    "name_address": "0x5a6a28"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getinvcog",
+    "implementation_address_or_message_id": "0x554050",
+    "registration_call_address": "0x5523de",
+    "name_address": "0x5a6a34"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getinvmin",
+    "implementation_address_or_message_id": "0x554dc0",
+    "registration_call_address": "0x5523f1",
+    "name_address": "0x5a6a40"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getinvmax",
+    "implementation_address_or_message_id": "0x554e40",
+    "registration_call_address": "0x552404",
+    "name_address": "0x5a6a4c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getcurinvweapon2",
+    "implementation_address_or_message_id": "0x5551d0",
+    "registration_call_address": "0x552417",
+    "name_address": "0x5a6a58"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setcurinvweapon",
+    "implementation_address_or_message_id": "0x555150",
+    "registration_call_address": "0x55242a",
+    "name_address": "0x5a6a6c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playkey",
+    "implementation_address_or_message_id": "0x554710",
+    "registration_call_address": "0x55243d",
+    "name_address": "0x5a6a7c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "stopkey",
+    "implementation_address_or_message_id": "0x554850",
+    "registration_call_address": "0x552450",
+    "name_address": "0x5a6a84"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingmodel",
+    "implementation_address_or_message_id": "0x554900",
+    "registration_call_address": "0x552463",
+    "name_address": "0x5a6a8c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingmodel",
+    "implementation_address_or_message_id": "0x554990",
+    "registration_call_address": "0x552476",
+    "name_address": "0x5a6a9c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "playmode",
+    "implementation_address_or_message_id": "0x554630",
+    "registration_call_address": "0x552489",
+    "name_address": "0x5a6aac"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getmajormode",
+    "implementation_address_or_message_id": "0x5565c0",
+    "registration_call_address": "0x55249c",
+    "name_address": "0x5a6ab8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "firstthinginsector",
+    "implementation_address_or_message_id": "0x554cf0",
+    "registration_call_address": "0x5524af",
+    "name_address": "0x5a6ac8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "nextthinginsector",
+    "implementation_address_or_message_id": "0x554d40",
+    "registration_call_address": "0x5524c2",
+    "name_address": "0x5a6adc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "prevthinginsector",
+    "implementation_address_or_message_id": "0x554d80",
+    "registration_call_address": "0x5524d5",
+    "name_address": "0x5a6af0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "movetoframe",
+    "implementation_address_or_message_id": "0x5534f0",
+    "registration_call_address": "0x5524e8",
+    "name_address": "0x5a6b04"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "skiptoframe",
+    "implementation_address_or_message_id": "0x5535a0",
+    "registration_call_address": "0x5524fb",
+    "name_address": "0x5a6b10"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "jumptoframe",
+    "implementation_address_or_message_id": "0x553420",
+    "registration_call_address": "0x55250e",
+    "name_address": "0x5a6b1c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "pathmovepause",
+    "implementation_address_or_message_id": "0x554fc0",
+    "registration_call_address": "0x552521",
+    "name_address": "0x5a6b28"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "pathmoveresume",
+    "implementation_address_or_message_id": "0x555100",
+    "registration_call_address": "0x552534",
+    "name_address": "0x5a6b38"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingtemplate",
+    "implementation_address_or_message_id": "0x5554b0",
+    "registration_call_address": "0x552547",
+    "name_address": "0x5a6b48"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "damagething",
+    "implementation_address_or_message_id": "0x553200",
+    "registration_call_address": "0x55255a",
+    "name_address": "0x5a6b5c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setlifeleft",
+    "implementation_address_or_message_id": "0x5554f0",
+    "registration_call_address": "0x55256d",
+    "name_address": "0x5a6b68"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getlifeleft",
+    "implementation_address_or_message_id": "0x555570",
+    "registration_call_address": "0x552580",
+    "name_address": "0x5a6b74"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingthrust",
+    "implementation_address_or_message_id": "0x5555b0",
+    "registration_call_address": "0x552593",
+    "name_address": "0x5a6b80"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingthrust",
+    "implementation_address_or_message_id": "0x555610",
+    "registration_call_address": "0x5525a6",
+    "name_address": "0x5a6b90"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthinghealth",
+    "implementation_address_or_message_id": "0x553390",
+    "registration_call_address": "0x5525b9",
+    "name_address": "0x5a6ba0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sethealth",
+    "implementation_address_or_message_id": "0x553390",
+    "registration_call_address": "0x5525cc",
+    "name_address": "0x5a6bb0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "amputatejoint",
+    "implementation_address_or_message_id": "0x555640",
+    "registration_call_address": "0x5525df",
+    "name_address": "0x5a6bbc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setactorweapon",
+    "implementation_address_or_message_id": "0x555690",
+    "registration_call_address": "0x5525f2",
+    "name_address": "0x5a6bcc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getactorweapon",
+    "implementation_address_or_message_id": "0x5556f0",
+    "registration_call_address": "0x552605",
+    "name_address": "0x5a6bdc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getactorweapon2",
+    "implementation_address_or_message_id": "0x555780",
+    "registration_call_address": "0x552618",
+    "name_address": "0x5a6bec"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getphysicsflags",
+    "implementation_address_or_message_id": "0x5557f0",
+    "registration_call_address": "0x55262b",
+    "name_address": "0x5a6bfc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setphysicsflags",
+    "implementation_address_or_message_id": "0x555830",
+    "registration_call_address": "0x55263e",
+    "name_address": "0x5a6c0c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearphysicsflags",
+    "implementation_address_or_message_id": "0x5558a0",
+    "registration_call_address": "0x552651",
+    "name_address": "0x5a6c1c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "skilltarget",
+    "implementation_address_or_message_id": "0x5558e0",
+    "registration_call_address": "0x552664",
+    "name_address": "0x5a6c30"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "parsearg",
+    "implementation_address_or_message_id": "0x5559d0",
+    "registration_call_address": "0x552677",
+    "name_address": "0x5a6c3c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingrotvel",
+    "implementation_address_or_message_id": "0x555ad0",
+    "registration_call_address": "0x55268a",
+    "name_address": "0x5a6c48"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingrotvel",
+    "implementation_address_or_message_id": "0x555a50",
+    "registration_call_address": "0x55269d",
+    "name_address": "0x5a6c58"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthinglook",
+    "implementation_address_or_message_id": "0x555b10",
+    "registration_call_address": "0x5526b0",
+    "name_address": "0x5a6c68"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthinglookpyr",
+    "implementation_address_or_message_id": "0x555b90",
+    "registration_call_address": "0x5526c3",
+    "name_address": "0x5a6c78"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "isthingcrouching",
+    "implementation_address_or_message_id": "0x555c30",
+    "registration_call_address": "0x5526d6",
+    "name_address": "0x5a6c88"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "iscrouching",
+    "implementation_address_or_message_id": "0x555c30",
+    "registration_call_address": "0x5526e9",
+    "name_address": "0x5a6c9c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingclasscog",
+    "implementation_address_or_message_id": "0x555c80",
+    "registration_call_address": "0x5526fc",
+    "name_address": "0x5a6ca8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingclasscog",
+    "implementation_address_or_message_id": "0x555cc0",
+    "registration_call_address": "0x55270f",
+    "name_address": "0x5a6cbc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingcapturecog",
+    "implementation_address_or_message_id": "0x555cf0",
+    "registration_call_address": "0x552722",
+    "name_address": "0x5a6cd0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingcapturecog",
+    "implementation_address_or_message_id": "0x555d30",
+    "registration_call_address": "0x552735",
+    "name_address": "0x5a6ce4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingrespawn",
+    "implementation_address_or_message_id": "0x555d60",
+    "registration_call_address": "0x552748",
+    "name_address": "0x5a6cf8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingsignature",
+    "implementation_address_or_message_id": "0x555d90",
+    "registration_call_address": "0x55275b",
+    "name_address": "0x5a6d08"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingguid",
+    "implementation_address_or_message_id": "0x555dc0",
+    "registration_call_address": "0x55276e",
+    "name_address": "0x5a6d1c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getguidthing",
+    "implementation_address_or_message_id": "0x555df0",
+    "registration_call_address": "0x552781",
+    "name_address": "0x5a6d2c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingattachflags",
+    "implementation_address_or_message_id": "0x555e30",
+    "registration_call_address": "0x552794",
+    "name_address": "0x5a6d3c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearthingattachflags",
+    "implementation_address_or_message_id": "0x555e90",
+    "registration_call_address": "0x5527a7",
+    "name_address": "0x5a6d50"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getparticlesize",
+    "implementation_address_or_message_id": "0x555ef0",
+    "registration_call_address": "0x5527ba",
+    "name_address": "0x5a6d68"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setparticlesize",
+    "implementation_address_or_message_id": "0x555f30",
+    "registration_call_address": "0x5527cd",
+    "name_address": "0x5a6d78"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getparticlegrowthspeed",
+    "implementation_address_or_message_id": "0x555f70",
+    "registration_call_address": "0x5527e0",
+    "name_address": "0x5a6d88"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setparticlegrowthspeed",
+    "implementation_address_or_message_id": "0x555fb0",
+    "registration_call_address": "0x5527f3",
+    "name_address": "0x5a6da0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getparticletimeoutrate",
+    "implementation_address_or_message_id": "0x555ff0",
+    "registration_call_address": "0x552806",
+    "name_address": "0x5a6db8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setparticletimeoutrate",
+    "implementation_address_or_message_id": "0x556030",
+    "registration_call_address": "0x552819",
+    "name_address": "0x5a6dd0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "gettypeflags",
+    "implementation_address_or_message_id": "0x556070",
+    "registration_call_address": "0x55282c",
+    "name_address": "0x5a6de8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "settypeflags",
+    "implementation_address_or_message_id": "0x556100",
+    "registration_call_address": "0x55283f",
+    "name_address": "0x5a6df8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "cleartypeflags",
+    "implementation_address_or_message_id": "0x556190",
+    "registration_call_address": "0x552852",
+    "name_address": "0x5a6e08"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getactorflags",
+    "implementation_address_or_message_id": "0x556070",
+    "registration_call_address": "0x552865",
+    "name_address": "0x5a6e18"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setactorflags",
+    "implementation_address_or_message_id": "0x556100",
+    "registration_call_address": "0x552878",
+    "name_address": "0x5a6e28"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearactorflags",
+    "implementation_address_or_message_id": "0x556190",
+    "registration_call_address": "0x55288b",
+    "name_address": "0x5a6e38"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getweaponflags",
+    "implementation_address_or_message_id": "0x556070",
+    "registration_call_address": "0x55289e",
+    "name_address": "0x5a6e48"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setweaponflags",
+    "implementation_address_or_message_id": "0x556100",
+    "registration_call_address": "0x5528b1",
+    "name_address": "0x5a6e58"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearweaponflags",
+    "implementation_address_or_message_id": "0x556190",
+    "registration_call_address": "0x5528c4",
+    "name_address": "0x5a6e68"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getexplosionflags",
+    "implementation_address_or_message_id": "0x556070",
+    "registration_call_address": "0x5528d7",
+    "name_address": "0x5a6e7c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setexplosionflags",
+    "implementation_address_or_message_id": "0x556100",
+    "registration_call_address": "0x5528ea",
+    "name_address": "0x5a6e90"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearexplosionflags",
+    "implementation_address_or_message_id": "0x556190",
+    "registration_call_address": "0x5528fd",
+    "name_address": "0x5a6ea4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getitemflags",
+    "implementation_address_or_message_id": "0x556070",
+    "registration_call_address": "0x552910",
+    "name_address": "0x5a6eb8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setitemflags",
+    "implementation_address_or_message_id": "0x556100",
+    "registration_call_address": "0x552923",
+    "name_address": "0x5a6ec8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearitemflags",
+    "implementation_address_or_message_id": "0x556190",
+    "registration_call_address": "0x552936",
+    "name_address": "0x5a6ed8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getparticleflags",
+    "implementation_address_or_message_id": "0x556070",
+    "registration_call_address": "0x552949",
+    "name_address": "0x5a6ee8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setparticleflags",
+    "implementation_address_or_message_id": "0x556100",
+    "registration_call_address": "0x55295c",
+    "name_address": "0x5a6efc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearparticleflags",
+    "implementation_address_or_message_id": "0x556190",
+    "registration_call_address": "0x55296f",
+    "name_address": "0x5a6f10"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "takeitem",
+    "implementation_address_or_message_id": "0x556230",
+    "registration_call_address": "0x552982",
+    "name_address": "0x5a6f24"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "haslos",
+    "implementation_address_or_message_id": "0x556270",
+    "registration_call_address": "0x552995",
+    "name_address": "0x5a6f30"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingfireoffset",
+    "implementation_address_or_message_id": "0x5562d0",
+    "registration_call_address": "0x5529a8",
+    "name_address": "0x5a6f38"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingfireoffset",
+    "implementation_address_or_message_id": "0x556310",
+    "registration_call_address": "0x5529bb",
+    "name_address": "0x5a6f4c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthinguserdata",
+    "implementation_address_or_message_id": "0x556360",
+    "registration_call_address": "0x5529ce",
+    "name_address": "0x5a6f60"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthinguserdata",
+    "implementation_address_or_message_id": "0x5563a0",
+    "registration_call_address": "0x5529e1",
+    "name_address": "0x5a6f74"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingcollidesize",
+    "implementation_address_or_message_id": "0x5563d0",
+    "registration_call_address": "0x5529f4",
+    "name_address": "0x5a6f88"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingcollidesize",
+    "implementation_address_or_message_id": "0x556410",
+    "registration_call_address": "0x552a07",
+    "name_address": "0x5a6f9c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingmovesize",
+    "implementation_address_or_message_id": "0x556440",
+    "registration_call_address": "0x552a1a",
+    "name_address": "0x5a6fb0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingmovesize",
+    "implementation_address_or_message_id": "0x556480",
+    "registration_call_address": "0x552a2d",
+    "name_address": "0x5a6fc4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingmass",
+    "implementation_address_or_message_id": "0x5564b0",
+    "registration_call_address": "0x552a40",
+    "name_address": "0x5a6fd8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingmass",
+    "implementation_address_or_message_id": "0x5564f0",
+    "registration_call_address": "0x552a53",
+    "name_address": "0x5a6fe8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "syncthingpos",
+    "implementation_address_or_message_id": "0x556550",
+    "registration_call_address": "0x552a66",
+    "name_address": "0x5a6ff8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "syncthingattachment",
+    "implementation_address_or_message_id": "0x556570",
+    "registration_call_address": "0x552a79",
+    "name_address": "0x5a7008"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "syncthingstate",
+    "implementation_address_or_message_id": "0x5565a0",
+    "registration_call_address": "0x552a8c",
+    "name_address": "0x5a701c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "attachthingtothingex",
+    "implementation_address_or_message_id": "0x5545b0",
+    "registration_call_address": "0x552a9f",
+    "name_address": "0x5a702c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingmaxvelocity",
+    "implementation_address_or_message_id": "0x556610",
+    "registration_call_address": "0x552ab2",
+    "name_address": "0x5a7044"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingmaxvelocity",
+    "implementation_address_or_message_id": "0x556650",
+    "registration_call_address": "0x552ac5",
+    "name_address": "0x5a7058"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingmaxangularvelocity",
+    "implementation_address_or_message_id": "0x556690",
+    "registration_call_address": "0x552ad8",
+    "name_address": "0x5a706c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingmaxangularvelocity",
+    "implementation_address_or_message_id": "0x5566d0",
+    "registration_call_address": "0x552aeb",
+    "name_address": "0x5a7088"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getactorheadpyr",
+    "implementation_address_or_message_id": "0x556710",
+    "registration_call_address": "0x552afe",
+    "name_address": "0x5a70a4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setactorheadpyr",
+    "implementation_address_or_message_id": "0x556750",
+    "registration_call_address": "0x552b11",
+    "name_address": "0x5a70b4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingjointangle",
+    "implementation_address_or_message_id": "0x5567a0",
+    "registration_call_address": "0x552b24",
+    "name_address": "0x5a70c4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingjointangle",
+    "implementation_address_or_message_id": "0x556820",
+    "registration_call_address": "0x552b37",
+    "name_address": "0x5a70d8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingmaxheadpitch",
+    "implementation_address_or_message_id": "0x5568b0",
+    "registration_call_address": "0x552b4a",
+    "name_address": "0x5a70ec"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setthingminheadpitch",
+    "implementation_address_or_message_id": "0x5568f0",
+    "registration_call_address": "0x552b5d",
+    "name_address": "0x5a7104"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "interpolatepyr",
+    "implementation_address_or_message_id": "0x556930",
+    "registration_call_address": "0x552b70",
+    "name_address": "0x5a711c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setweapontarget",
+    "implementation_address_or_message_id": "0x556a70",
+    "registration_call_address": "0x552b83",
+    "name_address": "0x5a712c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sleep",
+    "implementation_address_or_message_id": "0x557640",
+    "registration_call_address": "0x556ae0",
+    "name_address": "0x5a7164"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "pow",
+    "implementation_address_or_message_id": "0x5576c0",
+    "registration_call_address": "0x556af3",
+    "name_address": "0x5a716c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "wakeup",
+    "implementation_address_or_message_id": "0x557730",
+    "registration_call_address": "0x556b06",
+    "name_address": "0x5a7170"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "rand",
+    "implementation_address_or_message_id": "0x557590",
+    "registration_call_address": "0x556b19",
+    "name_address": "0x5a7178"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "randvec",
+    "implementation_address_or_message_id": "0x5575c0",
+    "registration_call_address": "0x556b2c",
+    "name_address": "0x5a7180"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsenderref",
+    "implementation_address_or_message_id": "0x557510",
+    "registration_call_address": "0x556b3f",
+    "name_address": "0x5a7188"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsendertype",
+    "implementation_address_or_message_id": "0x557530",
+    "registration_call_address": "0x556b52",
+    "name_address": "0x5a7198"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsenderid",
+    "implementation_address_or_message_id": "0x5574f0",
+    "registration_call_address": "0x556b65",
+    "name_address": "0x5a71a8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsourcetype",
+    "implementation_address_or_message_id": "0x557570",
+    "registration_call_address": "0x556b78",
+    "name_address": "0x5a71b4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsourceref",
+    "implementation_address_or_message_id": "0x557550",
+    "registration_call_address": "0x556b8b",
+    "name_address": "0x5a71c4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingcount",
+    "implementation_address_or_message_id": "0x5586a0",
+    "registration_call_address": "0x556b9e",
+    "name_address": "0x5a71d4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getgravity",
+    "implementation_address_or_message_id": "0x558720",
+    "registration_call_address": "0x556bb1",
+    "name_address": "0x5a71e4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setgravity",
+    "implementation_address_or_message_id": "0x558740",
+    "registration_call_address": "0x556bc4",
+    "name_address": "0x5a71f0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getleveltime",
+    "implementation_address_or_message_id": "0x558660",
+    "registration_call_address": "0x556bd7",
+    "name_address": "0x5a71fc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getgametime",
+    "implementation_address_or_message_id": "0x5584b0",
+    "registration_call_address": "0x556bea",
+    "name_address": "0x5a720c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getflexgametime",
+    "implementation_address_or_message_id": "0x5584d0",
+    "registration_call_address": "0x556bfd",
+    "name_address": "0x5a7218"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getthingtemplatecount",
+    "implementation_address_or_message_id": "0x5586c0",
+    "registration_call_address": "0x556c10",
+    "name_address": "0x5a7228"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setpulse",
+    "implementation_address_or_message_id": "0x557b50",
+    "registration_call_address": "0x556c23",
+    "name_address": "0x5a7240"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "settimer",
+    "implementation_address_or_message_id": "0x557c10",
+    "registration_call_address": "0x556c36",
+    "name_address": "0x5a724c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "settimerex",
+    "implementation_address_or_message_id": "0x557cc0",
+    "registration_call_address": "0x556c49",
+    "name_address": "0x5a7258"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "killtimerex",
+    "implementation_address_or_message_id": "0x557d40",
+    "registration_call_address": "0x556c5c",
+    "name_address": "0x5a7264"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "reset",
+    "implementation_address_or_message_id": "0x557db0",
+    "registration_call_address": "0x556c6f",
+    "name_address": "0x5a7270"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "materialanim",
+    "implementation_address_or_message_id": "0x557900",
+    "registration_call_address": "0x556c82",
+    "name_address": "0x5a7278"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "stopanim",
+    "implementation_address_or_message_id": "0x5579b0",
+    "registration_call_address": "0x556c95",
+    "name_address": "0x5a7288"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "stopsurfaceanim",
+    "implementation_address_or_message_id": "0x557a00",
+    "registration_call_address": "0x556ca8",
+    "name_address": "0x5a7294"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsurfaceanim",
+    "implementation_address_or_message_id": "0x557a50",
+    "registration_call_address": "0x556cbb",
+    "name_address": "0x5a72a4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "surfaceanim",
+    "implementation_address_or_message_id": "0x557880",
+    "registration_call_address": "0x556cce",
+    "name_address": "0x5a72b4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getkeylen",
+    "implementation_address_or_message_id": "0x558430",
+    "registration_call_address": "0x556ce1",
+    "name_address": "0x5a72c0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "loadtemplate",
+    "implementation_address_or_message_id": "0x557a90",
+    "registration_call_address": "0x556cf4",
+    "name_address": "0x5a72cc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "loadkeyframe",
+    "implementation_address_or_message_id": "0x557ad0",
+    "registration_call_address": "0x556d07",
+    "name_address": "0x5a72dc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "loadmodel",
+    "implementation_address_or_message_id": "0x557b10",
+    "registration_call_address": "0x556d1a",
+    "name_address": "0x5a72ec"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "print",
+    "implementation_address_or_message_id": "0x557750",
+    "registration_call_address": "0x556d2d",
+    "name_address": "0x5a72f8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "printint",
+    "implementation_address_or_message_id": "0x557770",
+    "registration_call_address": "0x556d40",
+    "name_address": "0x5a7300"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "printflex",
+    "implementation_address_or_message_id": "0x557840",
+    "registration_call_address": "0x556d53",
+    "name_address": "0x5a730c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "printvector",
+    "implementation_address_or_message_id": "0x5577b0",
+    "registration_call_address": "0x556d66",
+    "name_address": "0x5a7318"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectoradd",
+    "implementation_address_or_message_id": "0x557e20",
+    "registration_call_address": "0x556d79",
+    "name_address": "0x5a7324"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectorsub",
+    "implementation_address_or_message_id": "0x557e80",
+    "registration_call_address": "0x556d8c",
+    "name_address": "0x5a7330"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectordot",
+    "implementation_address_or_message_id": "0x557ee0",
+    "registration_call_address": "0x556d9f",
+    "name_address": "0x5a733c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectorcross",
+    "implementation_address_or_message_id": "0x557f40",
+    "registration_call_address": "0x556db2",
+    "name_address": "0x5a7348"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectorset",
+    "implementation_address_or_message_id": "0x557dc0",
+    "registration_call_address": "0x556dc5",
+    "name_address": "0x5a7354"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectorlen",
+    "implementation_address_or_message_id": "0x557fd0",
+    "registration_call_address": "0x556dd8",
+    "name_address": "0x5a7360"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectorscale",
+    "implementation_address_or_message_id": "0x558030",
+    "registration_call_address": "0x556deb",
+    "name_address": "0x5a736c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectordist",
+    "implementation_address_or_message_id": "0x5580a0",
+    "registration_call_address": "0x556dfe",
+    "name_address": "0x5a7378"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectorx",
+    "implementation_address_or_message_id": "0x5587f0",
+    "registration_call_address": "0x556e11",
+    "name_address": "0x5a7384"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectory",
+    "implementation_address_or_message_id": "0x558820",
+    "registration_call_address": "0x556e24",
+    "name_address": "0x5a738c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectorz",
+    "implementation_address_or_message_id": "0x558850",
+    "registration_call_address": "0x556e37",
+    "name_address": "0x5a7394"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectornorm",
+    "implementation_address_or_message_id": "0x558880",
+    "registration_call_address": "0x556e4a",
+    "name_address": "0x5a739c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "vectorequal",
+    "implementation_address_or_message_id": "0x558120",
+    "registration_call_address": "0x556e5d",
+    "name_address": "0x5a73a8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsithmode",
+    "implementation_address_or_message_id": "0x558490",
+    "registration_call_address": "0x556e70",
+    "name_address": "0x5a73b4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getdifficulty",
+    "implementation_address_or_message_id": "0x5584f0",
+    "registration_call_address": "0x556e83",
+    "name_address": "0x5a73c0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setsubmodeflags",
+    "implementation_address_or_message_id": "0x558510",
+    "registration_call_address": "0x556e96",
+    "name_address": "0x5a73d0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsubmodeflags",
+    "implementation_address_or_message_id": "0x558550",
+    "registration_call_address": "0x556ea9",
+    "name_address": "0x5a73e0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearsubmodeflags",
+    "implementation_address_or_message_id": "0x558530",
+    "registration_call_address": "0x556ebc",
+    "name_address": "0x5a73f0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setdebugmodeflags",
+    "implementation_address_or_message_id": "0x558570",
+    "registration_call_address": "0x556ecf",
+    "name_address": "0x5a7404"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getdebugmodeflags",
+    "implementation_address_or_message_id": "0x5585b0",
+    "registration_call_address": "0x556ee2",
+    "name_address": "0x5a7418"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "cleardebugmodeflags",
+    "implementation_address_or_message_id": "0x558590",
+    "registration_call_address": "0x556ef5",
+    "name_address": "0x5a742c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "bitset",
+    "implementation_address_or_message_id": "0x5585d0",
+    "registration_call_address": "0x556f08",
+    "name_address": "0x5a7440"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "bittest",
+    "implementation_address_or_message_id": "0x558600",
+    "registration_call_address": "0x556f1b",
+    "name_address": "0x5a7448"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "bitclear",
+    "implementation_address_or_message_id": "0x558630",
+    "registration_call_address": "0x556f2e",
+    "name_address": "0x5a7450"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "fireprojectile",
+    "implementation_address_or_message_id": "0x559240",
+    "registration_call_address": "0x556f41",
+    "name_address": "0x5a745c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "fireprojectiledata",
+    "implementation_address_or_message_id": "0x559250",
+    "registration_call_address": "0x556f54",
+    "name_address": "0x5a746c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "fireprojectilelocal",
+    "implementation_address_or_message_id": "0x559360",
+    "registration_call_address": "0x556f67",
+    "name_address": "0x5a7480"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "activateweapon",
+    "implementation_address_or_message_id": "0x5594d0",
+    "registration_call_address": "0x556f7a",
+    "name_address": "0x5a7494"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "deactivateweapon",
+    "implementation_address_or_message_id": "0x559530",
+    "registration_call_address": "0x556f8d",
+    "name_address": "0x5a74a4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setmountwait",
+    "implementation_address_or_message_id": "0x5595e0",
+    "registration_call_address": "0x556fa0",
+    "name_address": "0x5a74b8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setfirewait",
+    "implementation_address_or_message_id": "0x559590",
+    "registration_call_address": "0x556fb3",
+    "name_address": "0x5a74c8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "selectweapon",
+    "implementation_address_or_message_id": "0x559630",
+    "registration_call_address": "0x556fc6",
+    "name_address": "0x5a74d4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "assignweapon",
+    "implementation_address_or_message_id": "0x559680",
+    "registration_call_address": "0x556fd9",
+    "name_address": "0x5a74e4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "autoselectweapon",
+    "implementation_address_or_message_id": "0x5596d0",
+    "registration_call_address": "0x556fec",
+    "name_address": "0x5a74f4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getweaponpriority",
+    "implementation_address_or_message_id": "0x559780",
+    "registration_call_address": "0x556fff",
+    "name_address": "0x5a7508"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setcurweapon",
+    "implementation_address_or_message_id": "0x559730",
+    "registration_call_address": "0x557012",
+    "name_address": "0x5a751c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getcurweapon",
+    "implementation_address_or_message_id": "0x559840",
+    "registration_call_address": "0x557025",
+    "name_address": "0x5a752c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getcurweaponmode",
+    "implementation_address_or_message_id": "0x559820",
+    "registration_call_address": "0x557038",
+    "name_address": "0x5a753c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getweaponbin",
+    "implementation_address_or_message_id": "0x559890",
+    "registration_call_address": "0x55704b",
+    "name_address": "0x5a7550"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "changefirerate",
+    "implementation_address_or_message_id": "0x559ae0",
+    "registration_call_address": "0x55705e",
+    "name_address": "0x5a7560"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sendmessage",
+    "implementation_address_or_message_id": "0x5581a0",
+    "registration_call_address": "0x557071",
+    "name_address": "0x5a7570"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sendmessageex",
+    "implementation_address_or_message_id": "0x5581f0",
+    "registration_call_address": "0x557084",
+    "name_address": "0x5a757c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sendmessageexradius",
+    "implementation_address_or_message_id": "0x5582a0",
+    "registration_call_address": "0x557097",
+    "name_address": "0x5a758c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "returnex",
+    "implementation_address_or_message_id": "0x558760",
+    "registration_call_address": "0x5570aa",
+    "name_address": "0x5a75a0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getparam",
+    "implementation_address_or_message_id": "0x558780",
+    "registration_call_address": "0x5570bd",
+    "name_address": "0x5a75ac"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setparam",
+    "implementation_address_or_message_id": "0x5587c0",
+    "registration_call_address": "0x5570d0",
+    "name_address": "0x5a75b8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "worldflash",
+    "implementation_address_or_message_id": "0x558930",
+    "registration_call_address": "0x5570e3",
+    "name_address": "0x5a75c4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "enableirmode",
+    "implementation_address_or_message_id": "0x558970",
+    "registration_call_address": "0x5570f6",
+    "name_address": "0x5a75d0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "disableirmode",
+    "implementation_address_or_message_id": "0x5589b0",
+    "registration_call_address": "0x557109",
+    "name_address": "0x5a75e0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setinvflags",
+    "implementation_address_or_message_id": "0x5589c0",
+    "registration_call_address": "0x55711c",
+    "name_address": "0x5a75f0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setmapmodeflags",
+    "implementation_address_or_message_id": "0x558a30",
+    "registration_call_address": "0x55712f",
+    "name_address": "0x5a75fc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getmapmodeflags",
+    "implementation_address_or_message_id": "0x558a50",
+    "registration_call_address": "0x557142",
+    "name_address": "0x5a760c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearmapmodeflags",
+    "implementation_address_or_message_id": "0x558a70",
+    "registration_call_address": "0x557155",
+    "name_address": "0x5a761c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "newcoloreffect",
+    "implementation_address_or_message_id": "0x558f50",
+    "registration_call_address": "0x557168",
+    "name_address": "0x5a7630"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "freecoloreffect",
+    "implementation_address_or_message_id": "0x559150",
+    "registration_call_address": "0x55717b",
+    "name_address": "0x5a7640"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "modifycoloreffect",
+    "implementation_address_or_message_id": "0x559150",
+    "registration_call_address": "0x55718e",
+    "name_address": "0x5a7650"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "adddynamictint",
+    "implementation_address_or_message_id": "0x559170",
+    "registration_call_address": "0x5571a1",
+    "name_address": "0x5a7664"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "adddynamicadd",
+    "implementation_address_or_message_id": "0x5591e0",
+    "registration_call_address": "0x5571b4",
+    "name_address": "0x5a7674"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getmaterialcel",
+    "implementation_address_or_message_id": "0x558900",
+    "registration_call_address": "0x5571c7",
+    "name_address": "0x5a7684"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setmaterialcel",
+    "implementation_address_or_message_id": "0x5588c0",
+    "registration_call_address": "0x5571da",
+    "name_address": "0x5a7694"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setcamerafocus",
+    "implementation_address_or_message_id": "0x558a90",
+    "registration_call_address": "0x5571ed",
+    "name_address": "0x5a76a4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getprimaryfocus",
+    "implementation_address_or_message_id": "0x558ae0",
+    "registration_call_address": "0x557200",
+    "name_address": "0x5a76b4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsecondaryfocus",
+    "implementation_address_or_message_id": "0x558b40",
+    "registration_call_address": "0x557213",
+    "name_address": "0x5a76c4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setcurrentcamera",
+    "implementation_address_or_message_id": "0x558ba0",
+    "registration_call_address": "0x557226",
+    "name_address": "0x5a76d8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getcurrentcamera",
+    "implementation_address_or_message_id": "0x558be0",
+    "registration_call_address": "0x557239",
+    "name_address": "0x5a76ec"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "cyclecamera",
+    "implementation_address_or_message_id": "0x558c30",
+    "registration_call_address": "0x55724c",
+    "name_address": "0x5a7700"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setpovshake",
+    "implementation_address_or_message_id": "0x558ca0",
+    "registration_call_address": "0x55725f",
+    "name_address": "0x5a770c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setcamerastateflags",
+    "implementation_address_or_message_id": "0x5598e0",
+    "registration_call_address": "0x557272",
+    "name_address": "0x5a7718"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getcamerastateflags",
+    "implementation_address_or_message_id": "0x5598c0",
+    "registration_call_address": "0x557285",
+    "name_address": "0x5a772c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setcamerazoom",
+    "implementation_address_or_message_id": "0x558c40",
+    "registration_call_address": "0x557298",
+    "name_address": "0x5a7740"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "heapnew",
+    "implementation_address_or_message_id": "0x558d10",
+    "registration_call_address": "0x5572ab",
+    "name_address": "0x5a7750"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "heapset",
+    "implementation_address_or_message_id": "0x558d80",
+    "registration_call_address": "0x5572be",
+    "name_address": "0x5a7758"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "heapget",
+    "implementation_address_or_message_id": "0x558de0",
+    "registration_call_address": "0x5572d1",
+    "name_address": "0x5a7760"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "heapfree",
+    "implementation_address_or_message_id": "0x558e50",
+    "registration_call_address": "0x5572e4",
+    "name_address": "0x5a7768"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getselfcog",
+    "implementation_address_or_message_id": "0x558e80",
+    "registration_call_address": "0x5572f7",
+    "name_address": "0x5a7774"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getmastercog",
+    "implementation_address_or_message_id": "0x558ea0",
+    "registration_call_address": "0x55730a",
+    "name_address": "0x5a7780"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setmastercog",
+    "implementation_address_or_message_id": "0x558ed0",
+    "registration_call_address": "0x55731d",
+    "name_address": "0x5a7790"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getactioncog",
+    "implementation_address_or_message_id": "0x558ef0",
+    "registration_call_address": "0x557330",
+    "name_address": "0x5a77a0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setactioncog",
+    "implementation_address_or_message_id": "0x558f20",
+    "registration_call_address": "0x557343",
+    "name_address": "0x5a77b0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setmultimodeflags",
+    "implementation_address_or_message_id": "0x559900",
+    "registration_call_address": "0x557356",
+    "name_address": "0x5a77c0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getmultimodeflags",
+    "implementation_address_or_message_id": "0x559940",
+    "registration_call_address": "0x557369",
+    "name_address": "0x5a77d4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearmultimodeflags",
+    "implementation_address_or_message_id": "0x559920",
+    "registration_call_address": "0x55737c",
+    "name_address": "0x5a77e8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "ismulti",
+    "implementation_address_or_message_id": "0x559960",
+    "registration_call_address": "0x55738f",
+    "name_address": "0x5a77fc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "isserver",
+    "implementation_address_or_message_id": "0x559990",
+    "registration_call_address": "0x5573a2",
+    "name_address": "0x5a7804"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setteamscore",
+    "implementation_address_or_message_id": "0x559a00",
+    "registration_call_address": "0x5573b5",
+    "name_address": "0x5a7810"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getteamscore",
+    "implementation_address_or_message_id": "0x5599c0",
+    "registration_call_address": "0x5573c8",
+    "name_address": "0x5a7820"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "settimelimit",
+    "implementation_address_or_message_id": "0x559a70",
+    "registration_call_address": "0x5573db",
+    "name_address": "0x5a7830"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "gettimelimit",
+    "implementation_address_or_message_id": "0x559a30",
+    "registration_call_address": "0x5573ee",
+    "name_address": "0x5a7840"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setscorelimit",
+    "implementation_address_or_message_id": "0x559ac0",
+    "registration_call_address": "0x557401",
+    "name_address": "0x5a7850"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getscorelimit",
+    "implementation_address_or_message_id": "0x559aa0",
+    "registration_call_address": "0x557414",
+    "name_address": "0x5a7860"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sendtrigger",
+    "implementation_address_or_message_id": "0x559390",
+    "registration_call_address": "0x557427",
+    "name_address": "0x5a7870"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "autosavegame",
+    "implementation_address_or_message_id": "0x559b30",
+    "registration_call_address": "0x55743a",
+    "name_address": "0x5a787c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "sin",
+    "implementation_address_or_message_id": "0x559b90",
+    "registration_call_address": "0x55744d",
+    "name_address": "0x5a788c"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "cos",
+    "implementation_address_or_message_id": "0x559bd0",
+    "registration_call_address": "0x557460",
+    "name_address": "0x5a7890"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "tan",
+    "implementation_address_or_message_id": "0x559c10",
+    "registration_call_address": "0x557473",
+    "name_address": "0x5a7894"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getcogflags",
+    "implementation_address_or_message_id": "0x559c50",
+    "registration_call_address": "0x557486",
+    "name_address": "0x5a7898"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "setcogflags",
+    "implementation_address_or_message_id": "0x559c70",
+    "registration_call_address": "0x557499",
+    "name_address": "0x5a78a4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "clearcogflags",
+    "implementation_address_or_message_id": "0x559ca0",
+    "registration_call_address": "0x5574ac",
+    "name_address": "0x5a78b0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "debugbreak",
+    "implementation_address_or_message_id": "0x559cd0",
+    "registration_call_address": "0x5574bf",
+    "name_address": "0x5a78c0"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsysdate",
+    "implementation_address_or_message_id": "0x559ce0",
+    "registration_call_address": "0x5574d2",
+    "name_address": "0x5a78cc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "verb",
+    "name": "getsystime",
+    "implementation_address_or_message_id": "0x559d50",
+    "registration_call_address": "0x5574e5",
+    "name_address": "0x5a78d8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "activate",
+    "implementation_address_or_message_id": 1,
+    "name_address": "0x5a3ddc"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "activated",
+    "implementation_address_or_message_id": 1,
+    "name_address": "0x5a3de8"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "startup",
+    "implementation_address_or_message_id": 3,
+    "name_address": "0x5a3df4"
+  },
+  {
+    "binary": "mots",
+    "binary_sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+    "kind": "message",
+    "name": "timer",
+    "implementation_address_or_message_id": 4,
+    "name_address": "0x5a3dfc"
+  }
+]

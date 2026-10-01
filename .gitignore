@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+dist/
+.workshop/
+local-corpus/
+private/
+*.sqlite3
+*.building
+*.tmp
+

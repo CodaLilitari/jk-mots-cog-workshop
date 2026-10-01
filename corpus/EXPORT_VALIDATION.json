@@ -1,0 +1,6 @@
+{
+  "export_replay_identical": true,
+  "files_compared": 46,
+  "changed_files": [],
+  "scope": "Two consecutive local exports with unchanged reviewed inputs; all corpus and portable-skill output hashes equal. This does not validate raw game behavior or authorize future new sources."
+}

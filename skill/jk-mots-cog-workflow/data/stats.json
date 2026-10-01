@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "source_snapshot_utc": "2026-10-01T04:08:04.651187+00:00",
+  "full_local_research": {
+    "cog_occurrences": 70346,
+    "distinct_cog_bodies": 25364,
+    "redistributed_bodies": 0
+  },
+  "public_export": {
+    "source_records": 17723,
+    "distinct_cog_identity_profiles": 20976,
+    "provenance_rows": 45970,
+    "compatibility_rows": 586,
+    "reviewed_adapted_notes": 9,
+    "reviewed_adapted_note_bytes": 147454,
+    "total_authored_research_notes": 12,
+    "total_authored_research_note_bytes": 170409
+  },
+  "scope": "Public metadata and authored analysis. Includes only approved public-source and retail identities. No raw retail/custom script bodies or private communications are included.",
+  "game_labels": "Source/catalog association, not a declaration that the body works in that engine. Use measured registry preflight and target tests.",
+  "omitted_private_or_unapproved_only_profiles": 4388
+}

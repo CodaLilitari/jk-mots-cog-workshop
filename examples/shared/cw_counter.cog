@@ -1,0 +1,21 @@
+# Original COG Workshop teaching example. SPDX-License-Identifier: MIT
+# Target: stock JK 1.01 and stock MotS; single-player level COG.
+# Ordered level parameter: switchSurface. No retail execution claimed.
+symbols
+surface switchSurface linkid=1
+int count=0 local
+message startup
+message activated
+end
+
+code
+startup:
+    count = 0;
+    return;
+
+activated:
+    if (GetSenderID() != 1) return;
+    count = count + 1;
+    PrintInt(count);
+    return;
+end

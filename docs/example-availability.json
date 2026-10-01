@@ -1,0 +1,145 @@
+{
+  "scope": "Native/message spelling availability only; no syntax, loading, VM, retail or multiplayer execution.",
+  "checks": 12,
+  "intended_target_checks": 10,
+  "expected_cross_target_rejections": 2,
+  "inspector_sha256": "7a21a462e94f033cd10a92f17850140a01b7ef77e608ade5a236b1696189e84f",
+  "cases": [
+    {
+      "path": "examples/jk/cw_weapon_index.cog",
+      "sha256": "fd59a52a32d2014b973cd5ec76b4c96f60622aa44a25558c9629f9f09d6d2351",
+      "target": "jk",
+      "intended_target": true,
+      "absent_calls": [],
+      "absent_messages": [],
+      "expected_findings": 0,
+      "actual_findings": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/jk/cw_weapon_index.cog",
+      "sha256": "fd59a52a32d2014b973cd5ec76b4c96f60622aa44a25558c9629f9f09d6d2351",
+      "target": "mots",
+      "intended_target": false,
+      "absent_calls": [
+        "getcurinvweapon"
+      ],
+      "absent_messages": [],
+      "expected_findings": 1,
+      "actual_findings": 1,
+      "passed": true
+    },
+    {
+      "path": "examples/mots/cw_weapon_index.cog",
+      "sha256": "a46ced23a2029b6016b0823b5b8443eb4138f67402f129795eb1214bf6ef9e42",
+      "target": "jk",
+      "intended_target": false,
+      "absent_calls": [
+        "getcurinvweapon2"
+      ],
+      "absent_messages": [],
+      "expected_findings": 1,
+      "actual_findings": 1,
+      "passed": true
+    },
+    {
+      "path": "examples/mots/cw_weapon_index.cog",
+      "sha256": "a46ced23a2029b6016b0823b5b8443eb4138f67402f129795eb1214bf6ef9e42",
+      "target": "mots",
+      "intended_target": true,
+      "absent_calls": [],
+      "absent_messages": [],
+      "expected_findings": 0,
+      "actual_findings": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/shared/cw_ai_destination.cog",
+      "sha256": "03dc083d3b8d7ed5851da341365f2a2efbc15e2da6237afe807d83bcbb684765",
+      "target": "jk",
+      "intended_target": true,
+      "absent_calls": [],
+      "absent_messages": [],
+      "expected_findings": 0,
+      "actual_findings": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/shared/cw_ai_destination.cog",
+      "sha256": "03dc083d3b8d7ed5851da341365f2a2efbc15e2da6237afe807d83bcbb684765",
+      "target": "mots",
+      "intended_target": true,
+      "absent_calls": [],
+      "absent_messages": [],
+      "expected_findings": 0,
+      "actual_findings": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/shared/cw_counter.cog",
+      "sha256": "7640a6dea20d16d236382d5a7181af2741c534a1a34d1a5d3cbc96934915c050",
+      "target": "jk",
+      "intended_target": true,
+      "absent_calls": [],
+      "absent_messages": [],
+      "expected_findings": 0,
+      "actual_findings": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/shared/cw_counter.cog",
+      "sha256": "7640a6dea20d16d236382d5a7181af2741c534a1a34d1a5d3cbc96934915c050",
+      "target": "mots",
+      "intended_target": true,
+      "absent_calls": [],
+      "absent_messages": [],
+      "expected_findings": 0,
+      "actual_findings": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/shared/cw_timed_light.cog",
+      "sha256": "33602a1efdab2b419ff944af712e80036ad017bb8ee2dc15b2437b222ac25334",
+      "target": "jk",
+      "intended_target": true,
+      "absent_calls": [],
+      "absent_messages": [],
+      "expected_findings": 0,
+      "actual_findings": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/shared/cw_timed_light.cog",
+      "sha256": "33602a1efdab2b419ff944af712e80036ad017bb8ee2dc15b2437b222ac25334",
+      "target": "mots",
+      "intended_target": true,
+      "absent_calls": [],
+      "absent_messages": [],
+      "expected_findings": 0,
+      "actual_findings": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/shared/cw_two_stop.cog",
+      "sha256": "032c19a8bc16f93a7b6d5c378299d568319d348b8fdbb5f8e1ada4d631f08f16",
+      "target": "jk",
+      "intended_target": true,
+      "absent_calls": [],
+      "absent_messages": [],
+      "expected_findings": 0,
+      "actual_findings": 0,
+      "passed": true
+    },
+    {
+      "path": "examples/shared/cw_two_stop.cog",
+      "sha256": "032c19a8bc16f93a7b6d5c378299d568319d348b8fdbb5f8e1ada4d631f08f16",
+      "target": "mots",
+      "intended_target": true,
+      "absent_calls": [],
+      "absent_messages": [],
+      "expected_findings": 0,
+      "actual_findings": 0,
+      "passed": true
+    }
+  ]
+}

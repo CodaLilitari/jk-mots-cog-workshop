@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "product": "jk-mots-cog-workshop",
+  "version": "0.1.0",
+  "released": "2026-10-01",
+  "edition": "public-research",
+  "python": ">=3.10",
+  "feed": "https://richard-pemberton-research.darkahn.chatgpt.site/updates/jk-mots-cog-workshop/releases.json",
+  "targets": ["JKDF2 1.01", "Mysteries of the Sith", "explicitly identified enhanced engines and cogext versions"]
+}

@@ -1,0 +1,23 @@
+# Original COG Workshop teaching example. SPDX-License-Identifier: MIT
+# Target: stock JK 1.01 and stock MotS; single-player level COG.
+# Parameters in order: switchSurface, actor, destinationMarker.
+# Fixed level objects only. The actor needs an AI class that permits movement.
+# This requests a destination; it does not guarantee successful navigation.
+symbols
+surface switchSurface linkid=1
+thing actor nolink
+thing destinationMarker nolink
+vector targetPosition local
+message activated
+end
+
+code
+activated:
+    if (GetSenderID() != 1) return;
+    if (actor < 0) return;
+    if (destinationMarker < 0) return;
+    targetPosition = GetThingPos(destinationMarker);
+    AISetLookPos(actor, targetPosition);
+    AISetMovePos(actor, targetPosition);
+    return;
+end
