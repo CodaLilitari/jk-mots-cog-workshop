@@ -42,6 +42,8 @@ Distinguish original JK 1.01, original MotS, a specific patch, a specific enhanc
 - Resources have distinct domains: template versus thing, surface versus material, sound resource versus playback handle, weapon ordinal versus inventory bin. A clean availability report does not catch these errors.
 - Check existence, loading and reachability separately. A packaged alternative can be unused, comments can promise retransmission absent from the body, and a future timer does not stop current fallthrough.
 
+For classic God sabers, faders, or legacy level integration, read [classic COG and binding lessons](references/classic-cogs-and-binding-lessons.md). Keep the bolt model, damage, victim-state edits, loaded bindings and network proof separate. Check complete handler flow and shared object ownership; `activate` is a valid original-game alias, while `timmer` is absent from both measured tables and `jkSyncForcePowers` is absent from JK 1.01.
+
 Use [authoring decisions](references/authoring-decisions.md) to select a discriminating check, [BeefCaike's integration study](references/beefcaike-cog-study.md) for substantial community systems, and [generalized recovered lessons](references/case-lessons.md) for advanced lifecycle, cache and protocol pitfalls.
 
 ## Portable retrieval and private data

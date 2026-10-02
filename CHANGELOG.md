@@ -1,5 +1,13 @@
 # Changes
 
+## 0.1.2 — 2026-10-02
+
+- Add original source-backed studies of classic bowcaster-bolt God saber hilts, Triscuit-derived saber control flow, and the historical Fade operation. Separate appearance, damage, state changes, synchronization and retail evidence.
+- Add Sphere as a complete package-to-instance case: all eight embedded COGs are bound, with shared elevator ownership, fallthrough, symbol mismatches and an optional invalid surface reference requiring review.
+- Extend the human guide and public skill with these authoring decisions. Clarify valid `activate`/`activated` aliases, absent `timmer`, and MotS-only `jkSyncForcePowers` in the measured original tables.
+- Clarify bounded research checkpoints and deferred indexing. The frozen public catalog is unchanged; later private acquisitions are not presented as newly indexed coverage.
+- Preserve the 0.1.1 workload safeguards, portfolio updater, and optional draft-only discovery reporter. No retail files, community source bodies or private communications are added.
+
 ## 0.1.1 — 1 October 2026
 
 Workload and storage safeguards.

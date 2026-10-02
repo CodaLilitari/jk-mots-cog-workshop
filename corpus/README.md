@@ -15,6 +15,10 @@ The frozen local research snapshot contains 70,346 COG occurrences and 25,364 di
 
 The registry union has 539 verb spellings and 47 message spellings. Original JK has 451/41, original MotS 538/47; aliases count as spellings. The full source-specific explanation is in [engine findings](notes/engine-findings.md). Metadata lookup and availability checks work offline through the bundled skill scripts.
 
+## Research checkpoint in 0.1.2
+
+The [classic COG and binding study](notes/classic-cogs-and-binding-lessons.md) adds original analysis of public historical material and measured registries. The large catalog remains the frozen snapshot described above. Newly captured private material is not added to this public catalog or represented as a complete search of any server. Acquisition is paused at this release checkpoint; standalone fader variants, a separately identified CL0wN maker, the missing Sanctium package and uncensored SM Purgatory remain recovery gaps. Those gaps are not evidence of nonexistence.
+
 ## Optional local source import
 
 Use your own installation or another source you are authorized to inspect. From the release root:

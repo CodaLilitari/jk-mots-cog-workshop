@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "product": "jk-mots-cog-workshop",
-  "version": "0.1.1",
-  "released": "2026-10-01",
+  "version": "0.1.2",
+  "released": "2026-10-02",
   "edition": "public-research",
   "python": ">=3.10",
   "feed": "https://richard-pemberton-research.darkahn.chatgpt.site/updates/jk-mots-cog-workshop/releases.json",
