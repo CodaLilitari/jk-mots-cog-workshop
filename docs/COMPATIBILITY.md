@@ -36,6 +36,9 @@ These hashes identify the inspected versions without distributing the executable
 | `GetCurInvWeapon` | Registered | Absent | Original registration. Some enhanced builds restore the name; do not use that as retail evidence. |
 | `GetCurInvWeapon2` | Absent | Registered | Original registration. Review the returned index domain and same-game caller; a suffix replacement alone is not a complete weapon port. |
 | `GetWeaponBin` | Absent | Registered | Original registration; pinned source maps selection order through weapon definitions. |
+| `jkSyncForcePowers` | Absent | Registered | A JK-labeled community package can contain a MotS-only native call; package category is not a compatibility test. |
+| `activate` / `activated` | Both message ID 1 | Both message ID 1 | Valid aliases in both measured tables. Do not automatically correct `activate` as a typo. |
+| `timmer` | Absent | Absent | Distinct from registered `timer`; inspect the declaration and handler label together. |
 | `FireProjectile` | Registered | Registered | Shared spelling and reviewed base call contract; templates and weapon lifecycle still differ. |
 | `FireProjectileData` | Absent | Registered | Original registration; pinned source adds a final extra-data integer to the base call. |
 | `AISetAlignment` | Absent | Registered | Original registration; pinned source writes through AI class state, requiring shared-class review. |

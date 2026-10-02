@@ -245,3 +245,15 @@ Use the searchable public research metadata to locate relevant evidence, then us
 For a new system, finish with four things: the COG, the integration instructions, the declared target and a test record. Add the closest successful and failed cases to your project notes. This makes the next change easier to reason about and keeps “parses,” “loads,” “works in one engine” and “works in original two-client multiplayer” from collapsing into one unsupported claim.
 
 The [source guide](SOURCES.md), [target matrix](COMPATIBILITY.md) and [original example set](../examples/README.md) provide the next steps without requiring the private research archive.
+
+## 15. Learn from complete historical systems
+
+Start with the actual package, then trace the script through its inventory or level binding. A file's presence establishes neither that it is loaded nor that the surrounding mod supplies all of its resources. In Sphere, all eight embedded COGs have explicit JKL instance rows, and two different controllers reference elevator thing 7. That shared ownership matters even if each controller appears reasonable in isolation. A `World cogs` capacity is not the number of explicit instances.
+
+Check declarations against every use, and follow execution past each event label. Scheduling a timer does not end the current handler. Sphere's startup source requests a timer and falls directly into its timer body; a switch source similarly falls into its arrived body. Missing symbol declarations, an optional surface passed as -1, and inconsistent spellings need separate investigation. The name inspector does not validate those contracts. Conversely, `activate` is a valid alias of `activated` in both measured original games.
+
+Classic cheat scripts illustrate why a feature name is an inadequate specification. Recovered God sabers select `bow0.3do`, the bowcaster projectile model, for their visible weapon mesh. A contemporary account describes its green lower-blade effect and handle bulge. That visual choice is independent of damage values and any attempt to alter another actor's protection. A Triscuit-derived saber selects only one candidate and conditionally changes its collision and flags; it does not thereby prove a successful attack against every protected player.
+
+The recovered Fade operation sets actor flag `0x400000`. The inspected enhanced engine associates it with a local-player palette fade and a later self-kill path, separate from ordinary weapon damage. A combined weapon may also inflict damage, change health, or spawn an explosion. Isolate those effects before attributing a result to Fade. Original retail behavior and remote delivery require their own observations.
+
+For a JK-to-MotS rail-weapon port, the inspected inventory bindings use JK bin 7 with `weap_raildet.cog`, and MotS bin 127 with `weap_raildet_m.cog`; both use ammo bin 15. Review each verb's numbering contract before changing constants. Read the [full historical case studies](../corpus/notes/classic-cogs-and-binding-lessons.md) for attributed sources, exact identities, and the limits of these findings.

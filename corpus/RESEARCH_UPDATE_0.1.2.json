@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "version": "0.1.2",
+  "scope": "Original authored synthesis and guide/workflow updates; frozen catalog and registry snapshot unchanged. The initial PUBLICATION_AUDIT.json records the original projection, while this supplement identifies reviewed maintained-file revisions.",
+  "review": "Root read the complete new reference and its supporting studies; an independent bounded review checked the Sphere bindings and public documentation. Marker scans supplement editorial review.",
+  "excluded": "Raw retail assets, third-party source bodies and packages, private communications and identifying capture metadata.",
+  "runtime_claims": "No new original retail execution or connected-client result.",
+  "reviewed_changes": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "d5adeb98616af145f1af32ea061eb074758af8690a4ebbed817f63deac8c6ea6",
+      "action": "update"
+    },
+    {
+      "path": "README.md",
+      "sha256": "32b7bdd2c7a090033dcaf83c56c3b5a4d1a3cf871b9774ecc6c6178e80ce355e",
+      "action": "update"
+    },
+    {
+      "path": "corpus/README.md",
+      "sha256": "0a2f3b2160b673ff205de220122b592344e7342ea38d1debdb223d407238da1a",
+      "action": "update"
+    },
+    {
+      "path": "corpus/notes/classic-cogs-and-binding-lessons.md",
+      "sha256": "7c24c5ebf811b44a9061fdfdd147681d30b879b52b373df37bb497267c2f7d31",
+      "action": "create"
+    },
+    {
+      "path": "corpus/notes/research-and-retrieval.md",
+      "sha256": "86d6aa3bc61cda7e88fa244199a269c91a97d53925a1662dbaa3869d7dbf1c79",
+      "action": "update"
+    },
+    {
+      "path": "docs/COMPATIBILITY.md",
+      "sha256": "6f14fa2dc346816ceffe608709951c22a3fc808e0c8129bb1dea86d8fe2d574c",
+      "action": "update"
+    },
+    {
+      "path": "docs/GUIDE.md",
+      "sha256": "684b45587eea1899aaf633d60911c727a6f3965be410d609ce6940d22ddeed9a",
+      "action": "update"
+    },
+    {
+      "path": "release.json",
+      "sha256": "23b2eda1e6dd32b891db2478568da2602b14146384e4dce5640acdf14a0efdb5",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/SKILL.md",
+      "sha256": "ba259c388df81fa7cc86b32fad49ff9cf7e0d5ae7c8040f2f6dca4bfac26a8cb",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/references/classic-cogs-and-binding-lessons.md",
+      "sha256": "7c24c5ebf811b44a9061fdfdd147681d30b879b52b373df37bb497267c2f7d31",
+      "action": "create"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/references/research-and-retrieval.md",
+      "sha256": "86d6aa3bc61cda7e88fa244199a269c91a97d53925a1662dbaa3869d7dbf1c79",
+      "action": "update"
+    },
+    {
+      "path": "tools/render_site.mjs",
+      "sha256": "2b68d1c4e5d101dabad2698435bc870444d2bbae730b66cfc2386ecd8f585936",
+      "action": "update"
+    }
+  ]
+}
