@@ -1,5 +1,13 @@
 # Changes
 
+## 0.1.3 — 2026-10-03
+
+- Correct the original MotS versus enhanced-engine weapon getter contract, selection thresholds and bin/ordinal guidance in both human and machine references.
+- Add authored guidance for timer renewal/cancellation, visibility failure values, model/effect ownership, dynamic POV and extension boundaries.
+- Add SM HQ swinging-door and generator lessons, with 13 of 37 source bodies completely reviewed and original-game tests still unperformed.
+- Record the recovered Sneaky Hax III archive as a public metadata supplement: 46 COG identities in one verified GOB, with complete functional review pending. Original files are not redistributed.
+- Keep the frozen catalog date and source-review/acquisition coverage distinct. Preserve workload limits, the portfolio updater and the optional draft-only reporter. Research remains paused; no raw private communications or retail/custom source bodies are added.
+
 ## 0.1.2 — 2026-10-02
 
 - Add original source-backed studies of classic bowcaster-bolt God saber hilts, Triscuit-derived saber control flow, and the historical Fade operation. Separate appearance, damage, state changes, synchronization and retail evidence.

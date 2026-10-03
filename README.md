@@ -4,7 +4,7 @@ Write, understand, debug and port COG scripts for **Jedi Knight: Dark Forces II*
 and **Mysteries of the Sith**, using a human guide, a reusable Codex skill,
 measured compatibility tables and a source-backed research catalog.
 
-**Current release: 0.1.2.** The public edition contains authored research notes,
+**Current release: 0.1.3.** The public edition contains authored research notes,
 metadata, original examples and tools. Original game files and private source
 archives remain local. Read [the distribution notice](NOTICE.md) for the exact
 boundary and [the corpus guide](corpus/README.md) for public coverage.
@@ -14,6 +14,7 @@ boundary and [the corpus guide](corpus/README.md) for public coverage.
 | [Human COG-writing guide](docs/GUIDE.md) | A practical path from symbols and messages to complete game systems |
 | [JKDF2 versus MotS](docs/COMPATIBILITY.md) | Stock-game differences, shared names with different contracts, and extension boundaries |
 | [Classic COG case studies](corpus/notes/classic-cogs-and-binding-lessons.md) | Bolt-hilt God sabers, faders, and complete level-binding analysis |
+| [New target and lifecycle findings](corpus/notes/target-contracts-and-lifecycle.md) | Original MotS weapon domains, timers, visibility, SM HQ and recovery evidence |
 | [Original examples](examples/README.md) | Small teaching components with explicit targets and validation limits |
 | [Machine workflow](skill/jk-mots-cog-workflow/SKILL.md) | Retrieval, authoring, debugging and validation guidance for Codex |
 | [Research corpus](corpus/README.md) | Reviewed notes, public-source records and exact COG identities |

@@ -10,12 +10,20 @@ The frozen local research snapshot contains 70,346 COG occurrences and 25,364 di
 | [catalog/cogs.jsonl](catalog/cogs.jsonl) | Exact COG hash/size, public or retail member names, game associations, lexical calls/messages/tags and approved provenance IDs. No source bodies, declarations or literal string data. |
 | [registries/compatibility.jsonl](registries/compatibility.jsonl) | Per-name JK 1.01 versus MotS availability for native verbs and integer message spellings. |
 | [registries/jk101-retail-registry.json](registries/jk101-retail-registry.json) and [MotS registry](registries/mots-retail-registry.json) | Measured binary hashes, registration/name addresses and implementation address or message ID. No executable or disassembly payload. |
-| [notes/](notes/) | Original research on language/execution, target differences, checksums, 15 verb families, 21 retail examples, historical generators, community integration and generalized lessons from authorized private research. |
+| [notes/](notes/) | Original research on language/execution, target differences, checksums, 16 verb families, 21 retail examples, historical generators, community integration and generalized lessons from authorized private research. |
 | [PUBLICATION_AUDIT.json](PUBLICATION_AUDIT.json) | Approved input identities, exact-version note gates, output hashes, exclusions and scope limits. |
 
 The registry union has 539 verb spellings and 47 message spellings. Original JK has 451/41, original MotS 538/47; aliases count as spellings. The full source-specific explanation is in [engine findings](notes/engine-findings.md). Metadata lookup and availability checks work offline through the bundled skill scripts.
 
-## Research checkpoint in 0.1.2
+## Research checkpoint in 0.1.3
+
+The [target contracts and lifecycle study](notes/target-contracts-and-lifecycle.md) updates the human guide and machine workflow with original MotS weapon-bin findings, bounded timer ownership, visibility/containment distinctions, model cleanup, multiplayer acknowledgements and extension resource contracts. Thirteen of SM HQ's 37 unique COG bodies have complete source reviews; the remaining 24 have availability checks only. Static review is not a retail or connected-client test.
+
+The [Sneaky Hax III recovery record](recoveries/sneaky-hax-iii.json) identifies its archived wrapper, recovered GOB and 46 COG members by hash and size. None of those 46 bodies has a complete functional review in this checkpoint. These identity records remain separate from the frozen catalog totals. No installer was executed and no third-party script body is redistributed. A recovered cheat package does not establish recovery of its author's COG maker.
+
+Catalog and registry snapshots remain unchanged. [RESEARCH_UPDATE_0.1.3.json](RESEARCH_UPDATE_0.1.3.json) records the maintained public-file revisions and publication boundary. Research is paused after this checkpoint.
+
+## Previous checkpoint in 0.1.2
 
 The [classic COG and binding study](notes/classic-cogs-and-binding-lessons.md) adds original analysis of public historical material and measured registries. The large catalog remains the frozen snapshot described above. Newly captured private material is not added to this public catalog or represented as a complete search of any server. Acquisition is paused at this release checkpoint; standalone fader variants, a separately identified CL0wN maker, the missing Sanctium package and uncensored SM Purgatory remain recovery gaps. Those gaps are not evidence of nonexistence.
 

@@ -3,7 +3,7 @@
 > Public research edition. This is original authored analysis, not a source-code dump. References marked "retained local evidence" were inspected during research but their raw artifacts are not distributed. Binary identities, measured registries and public package identities are included; source execution and retail gameplay remain different evidence grades.
 
 
-These 15 families are a working reference for authoring and review, not an exhaustive API dictionary. Signatures were reconstructed by reading the complete pinned implementations, including wrappers and conditional pops; arguments below are in **COG call order**, not C helper order or stack-pop order. The source revision is `b1be98bd4f170b5384cb71b15443a274aac6a937`. The original source receipt (retained local evidence) and three supplemental complete source files (retained local evidence) preserve exact evidence. The original-binary tables establish spelling availability; the semantics below describe this pinned source unless expressly stated otherwise. They do not certify every original executable's behavior.
+These 16 families are a working reference for authoring and review, not an exhaustive API dictionary. Signatures were reconstructed by reading the complete pinned implementations, including wrappers and conditional pops; arguments below are in **COG call order**, not C helper order or stack-pop order. The source revision is `b1be98bd4f170b5384cb71b15443a274aac6a937`. The original source receipt (retained local evidence) and three supplemental complete source files (retained local evidence) preserve exact evidence. The original-binary tables establish spelling availability; the semantics below describe this pinned source unless expressly stated otherwise. They do not certify every original executable's behavior.
 
 Notation: `thing`, `sector`, `surface`, `template`, `sound`, `keyframe`, and `cog` are different reference domains. `flex` is a numeric value; a vector is a three-component vector value. `void` means the inspected wrapper pushes no return value, so do not assign it to a variable. An invalid-input path that pushes nothing is explicitly called out. Unless labeled **MotS**, the listed spellings occur in both measured original-game tables. A source synchronization gate refers to `COG_SHOULD_SYNC`: output stream present, no `0x200` no-sync flag, and not startup/shutdown; it does not describe every network path in the engine.
 
@@ -35,6 +35,8 @@ KillTimerEx(timerID) -> void
 `Sleep` suspends the current continuation; another handler may still enter the same COG instance. `SetPulse` controls one repeating pulse, and `SetTimer` replaces the simple timer deadline. Nonpositive values disable those two facilities. `SetTimerEx` converts seconds to integer milliseconds and creates a separate event when that result is nonnegative; its timer ID arrives via `GetSenderID`, with the two values in `GetParam(0/1)`. The inspected `KillTimerEx` searches only IDs greater than zero and removes all matching queued timer events owned by the current COG. Use positive IDs and explicit state guards when cancellation or repeat activation matters.
 
 Full source: [sithCogFunction.c](https://github.com/CodaLilitari/OpenJKDF2-MotS-Fixes/blob/b1be98bd4f170b5384cb71b15443a274aac6a937/src/Cog/sithCogFunction.c), lines 82–113 and 317–422; [sithCog.c](https://github.com/CodaLilitari/OpenJKDF2-MotS-Fixes/blob/b1be98bd4f170b5384cb71b15443a274aac6a937/src/Cog/sithCog.c), lines 1704–1773; [sithCogExec.c](https://github.com/CodaLilitari/OpenJKDF2-MotS-Fixes/blob/b1be98bd4f170b5384cb71b15443a274aac6a937/src/Cog/sithCogExec.c), lines 289–319 and 1198–1231.
+
+The separate 3 October event-manager review found that successful repeated extended-timer IDs coexist. Cancellation removes queued events matching the current COG and a positive ID; it does not match a player payload or cancel a callback already removed for dispatch. A 256-entry shared pool can reject an event while `SetTimerEx` supplies no COG success result. This manager was inspected from a separately hashed current-local source file, absent from the pinned snapshot; matching pinned/current wrapper bodies do not make it original-retail evidence. Plan renewal, stale callbacks and effect/audio ownership explicitly. See [the lifecycle update](target-contracts-and-lifecycle.md).
 
 ## 3. Vectors and scalar operations
 
@@ -143,15 +145,19 @@ Full source: [sithCogFunctionThing.c](https://github.com/CodaLilitari/OpenJKDF2-
 
 ```text
 GetCurWeapon(player) -> selectionIndex/-1
-GetCurInvWeapon(player) -> index/-1       [JK spelling]
-GetCurInvWeapon2(player) -> index/-1      [MotS spelling]
+GetCurInvWeapon(player) -> bin/-1         [original JK spelling]
+GetCurInvWeapon2(player) -> bin/-1        [inspected original MotS; enhanced binding differs]
 GetWeaponBin(selectionIndex) -> bin/-1   [MotS]
 FireProjectile(shooter, template, fireSound, mode, fireOffset, aimError,
                scale, scaleFlags, autoaimFov, autoaimMaxDistance) -> thing/-1
 FireProjectileData(the same ten arguments, extraData) -> thing/-1   [MotS]
 ```
 
-The original MotS registry lacks `GetCurInvWeapon` and exposes `GetCurInvWeapon2`; an enhanced MotS alias is not retail spelling evidence. In the source, `GetCurWeapon` and the ordinary `GetCurInvWeapon` implementation convert a MotS internal weapon bin to selection order. `GetWeaponBin` converts selection order back by scanning weapon-marked inventory definitions. Treat this as a domain conversion, not an offset that can safely be hardcoded.
+The inspected original MotS registry binds `GetCurInvWeapon2` to the raw inventory-bin getter at `0x5551d0`. It does not apply weapon-ordinal conversion. The nearby converting function at `0x555190` is not that registration. The pinned enhanced source instead binds the name to a getter that converts the bin to selection order in MotS mode. Keep these two implementations separate.
+
+`GetCurWeapon` returns an ordinal in the inspected original MotS binary; `GetWeaponBin` maps an ordinal through weapon-marked inventory definitions. Stock fists map ordinal 1 to bin 121 and the saber maps ordinal 11 to bin 131. This is not a universal `+120` rule. Original MotS `SelectWeapon` and `SetCurInvWeapon` convert arguments `<=10` as ordinals; larger values are treated as bins. Passing saber ordinal 11 directly therefore supplies bin 11, not the saber. `SetInvAvailable` takes a bin without that conversion.
+
+For that original MotS executable, retain `GetCurInvWeapon2(player)` as a bin and restore a validated, available bin through `SelectWeapon`; do not map that result again. For an adaptation spanning the original target and this fork, obtain a validated ordinal from `GetCurWeapon`, convert it once with `GetWeaponBin`, and preserve the bin. A request to select a weapon does not prove the transition completed. See [the target-contract update](target-contracts-and-lifecycle.md) for evidence grades and test boundaries.
 
 `FireProjectileData` pops the **last** extra integer before entering the shared ten-argument helper. That helper requires a valid shooter, delegates projectile/autoaim/template handling, truncates scale flags to 16 bits, and returns the new thing index or `-1`. Availability says nothing about whether the selected template, POV animation, fire sound and ammunition lifecycle agree. Preserve the same-game stock weapon's activated/fire/deactivated/selected/deselected contract.
 
@@ -215,6 +221,12 @@ The recovered DataMaster 0.19 page instead documents two arguments and a return.
 The pinned `HeapFree` frees the pointer and sets size to zero but does **not** null the stored pointer. Consequently, repeated freeing or a later allocation path that tests only the pointer deserves explicit review for this revision; do not infer safe idempotence from the verb name. This is a source finding, not a tested retail crash claim. Bound storage, own its lifetime once, and avoid confusing heap indices with the contiguous-symbol `base[index]` technique.
 
 Full source: [sithCogFunction.c](https://github.com/CodaLilitari/OpenJKDF2-MotS-Fixes/blob/b1be98bd4f170b5384cb71b15443a274aac6a937/src/Cog/sithCogFunction.c), lines 935–1002.
+
+## 16. Visibility, containment and failed queries
+
+Measured original tables register `HasLOS` in both games, while `FindSectorAtPos` and `IsSphereInSector` are MotS-only against those tables. Line of sight, sector containment and collision are different questions. In the inspected enhanced path, an invalid ghost handle can make `HasLOS` return -1, which is truthy. Validate handles, then require the success value explicitly; a bare nonzero test is insufficient. This is not an original-game runtime observation.
+
+The historical sector-finding example also has an index/count boundary error and globally enables adjoins without restoring their prior state. A bounds error yielding a zero vector is not proof that the origin is the desired point. Review shared world state and verb-specific replication before using a temporary all-open pass. See [target contracts and lifecycle](target-contracts-and-lifecycle.md).
 
 ## Using this reference in a real change
 
