@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "version": "0.1.3",
+  "scope": "Original authored synthesis, maintained guide/workflow corrections and public archive identity metadata. Frozen catalog and registry snapshot unchanged. The initial PUBLICATION_AUDIT.json records the original projection; this supplement identifies maintained revisions.",
+  "review": "Root read the new reference and supporting current research summaries. An independent bounded review checked changed public documentation and privacy boundaries. Marker scans supplement editorial review.",
+  "excluded": "Raw retail assets, third-party source bodies and packages, private communications and identifying capture metadata.",
+  "runtime_claims": "No new original retail execution or connected-client result.",
+  "coverage": {
+    "smhq_unique_cog_bodies": 37,
+    "smhq_complete_body_reviews": 13,
+    "sneaky_hax_iii_recovered_cog_members": 46,
+    "sneaky_hax_iii_complete_body_reviews": 0,
+    "recovery_merged_into_frozen_catalog": false
+  },
+  "reviewed_changes": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "dc932c713652a93f089b2af5f4dcde2730a5d1aa25f7de91535a0ef453d967d4",
+      "action": "update"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e56c97f1aef46510c4e2b709d117945505f514c1371346bc84ee67bec99a9c8e",
+      "action": "update"
+    },
+    {
+      "path": "corpus/README.md",
+      "sha256": "bc671073a09cfcd11b01b36c8657f3f27c76bd940a46d6582c0d2606b9b33684",
+      "action": "update"
+    },
+    {
+      "path": "corpus/notes/target-contracts-and-lifecycle.md",
+      "sha256": "57d9061dbbb8f1f06f1ec775d8a94cdabdc7867e9d7db72afd7ecb35dcfac4b4",
+      "action": "create"
+    },
+    {
+      "path": "corpus/notes/verb-families.md",
+      "sha256": "122b6a1e6b3a8673198933ef025bf1f53e4b066993e1e8f3a5c06a7d9e7cb702",
+      "action": "update"
+    },
+    {
+      "path": "corpus/recoveries/sneaky-hax-iii.json",
+      "sha256": "35c993f943fc53ed0f255959295a141939aec8106aa8c96a3ac59ca61cd0615b",
+      "action": "create"
+    },
+    {
+      "path": "corpus/stats.json",
+      "sha256": "0b8cae8deeebe56786a7d09b5d6cd7b581e710b2beb755b5caa0d5d4ad0b6263",
+      "action": "update"
+    },
+    {
+      "path": "docs/COMPATIBILITY.md",
+      "sha256": "ed02b56210288e94821d9724dd9a711c4a8645f0dde7eca3120940e9fa211011",
+      "action": "update"
+    },
+    {
+      "path": "docs/GUIDE.md",
+      "sha256": "dff2baad4a31ab7beff7eda9a2d8effad58f97414189758f2bd60e95d3d6d0de",
+      "action": "update"
+    },
+    {
+      "path": "release.json",
+      "sha256": "e774395719444511d7305fd0c4f30b0a60b91db52be29cc39a743cab15b60e40",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/SKILL.md",
+      "sha256": "012b92bc507764ff5b1139fe9831b6a4a977e42d681e8eccd2d084b1bd63b986",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/data/recoveries/sneaky-hax-iii.json",
+      "sha256": "35c993f943fc53ed0f255959295a141939aec8106aa8c96a3ac59ca61cd0615b",
+      "action": "create"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/data/stats.json",
+      "sha256": "0b8cae8deeebe56786a7d09b5d6cd7b581e710b2beb755b5caa0d5d4ad0b6263",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/references/target-contracts-and-lifecycle.md",
+      "sha256": "57d9061dbbb8f1f06f1ec775d8a94cdabdc7867e9d7db72afd7ecb35dcfac4b4",
+      "action": "create"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/references/verb-families.md",
+      "sha256": "122b6a1e6b3a8673198933ef025bf1f53e4b066993e1e8f3a5c06a7d9e7cb702",
+      "action": "update"
+    },
+    {
+      "path": "tools/render_site.mjs",
+      "sha256": "8aea61dde05013768fd764cfb9f010a9fb1a83162c91098e34bce0000c1ae77b",
+      "action": "update"
+    }
+  ]
+}

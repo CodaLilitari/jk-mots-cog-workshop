@@ -1,6 +1,6 @@
 # Target compatibility: JK 1.01, MotS and extensions
 
-This is an authoring and evidence matrix, not a blanket certification that every registered verb works in every situation. **JK** below means the inspected original JK 1.01 executable; **MotS** means the inspected original Mysteries of the Sith executable. Enhanced-engine behavior is tied to source commit `b1be98bd4f170b5384cb71b15443a274aac6a937`, inspected on 30 September 2026. Other revisions, unofficial patches and extension versions need their own checks.
+This is an authoring and evidence matrix, not a blanket certification that every registered verb works in every situation. **JK** below means the inspected original JK 1.01 executable; **MotS** means the inspected original Mysteries of the Sith executable. Unless explicitly labeled as separately hashed current-local evidence or another pinned extension revision in the [target-contract study](../corpus/notes/target-contracts-and-lifecycle.md), enhanced-engine behavior is tied to source commit `b1be98bd4f170b5384cb71b15443a274aac6a937`, inspected on 30 September 2026. Other revisions, unofficial patches and extension versions need their own checks.
 
 ## Evidence labels
 
@@ -34,7 +34,9 @@ These hashes identify the inspected versions without distributing the executable
 | Feature | Stock JK 1.01 | Stock MotS | Guidance and evidence |
 | --- | --- | --- | --- |
 | `GetCurInvWeapon` | Registered | Absent | Original registration. Some enhanced builds restore the name; do not use that as retail evidence. |
-| `GetCurInvWeapon2` | Absent | Registered | Original registration. Review the returned index domain and same-game caller; a suffix replacement alone is not a complete weapon port. |
+| `GetCurInvWeapon2` | Absent | Registered; inspected original getter returns a raw bin | Original binary registration/body evidence. The pinned enhanced binding instead converts to an ordinal in MotS mode. Do not convert the original getter result twice. |
+| `HasLOS` | Registered | Registered | Validate the handles and explicit success result; the inspected enhanced invalid-handle path returns truthy -1. |
+| `FindSectorAtPos` / `IsSphereInSector` | Absent | Registered | Original name availability; sector containment is distinct from visibility and collision. |
 | `GetWeaponBin` | Absent | Registered | Original registration; pinned source maps selection order through weapon definitions. |
 | `jkSyncForcePowers` | Absent | Registered | A JK-labeled community package can contain a MotS-only native call; package category is not a compatibility test. |
 | `activate` / `activated` | Both message ID 1 | Both message ID 1 | Valid aliases in both measured tables. Do not automatically correct `activate` as a typo. |
