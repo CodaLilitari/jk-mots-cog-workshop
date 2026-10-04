@@ -1,9 +1,8 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "research_date": "2026-10-03",
-  "baseline_release": "0.1.5",
-  "status": "released",
-  "scope": "Target-specific supplement for unresolved or misleading flag entries; supersedes only the described interpretations, not the entire baseline catalog.",
+  "status": "maintained",
+  "scope": "Cumulative flag findings, target-specific evidence and unresolved meanings; updated at the same canonical URLs independently of downloadable package snapshots.",
   "evidence_policy": {
     "original-retail-static": "Selected control-flow/field evidence from hash-identified original executables; no game execution or network test.",
     "current-source-consumer": "Selected reader/writer in individually hashed enhanced source; no original-retail equivalence claimed."
@@ -34,7 +33,25 @@
         "MotS 0x51D36B-0x51D37E and 0x51D527-0x51D53A",
         "World/sithThing.c:1547-1552,1599-1601; Dss/sithMulti.c:211"
       ],
-      "source_alias": "SITH_TF_10000"
+      "source_alias": "SITH_TF_10000",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "thing",
@@ -51,7 +68,25 @@
         "JK corresponding routine 0x4C7DD0-0x4C8241 (end exclusive)",
         "Engine/sithRender.c:2736-2737,2970-2997"
       ],
-      "source_alias": "SITH_TF_80000000"
+      "source_alias": "SITH_TF_80000000",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "absent-in-compared-render-routine",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "surface",
@@ -68,7 +103,25 @@
         "MotS 0x5365BD,0x5365D7,0x536ED3-0x536F33",
         "Engine/sithCollision.c:916-929,1120-1127"
       ],
-      "source_alias": "SITH_SURFACE_80"
+      "source_alias": "SITH_SURFACE_80",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "physics",
@@ -85,7 +138,25 @@
         "MotS 0x51C644-0x51C663; registered CreateThingAtPos 0x552E00",
         "World/sithThing.c:1107-1108"
       ],
-      "source_alias": "SITH_PF_20000"
+      "source_alias": "SITH_PF_20000",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "actor",
@@ -102,7 +173,25 @@
         "MotS 0x40D303-0x40D30C and following blocking checks",
         "Gameplay/jkSaber.c:264-307"
       ],
-      "source_alias": "SITH_AF_BLEEDS; historical THING_TYPEFLAGS_ISBLOCKING"
+      "source_alias": "SITH_AF_BLEEDS; historical THING_TYPEFLAGS_ISBLOCKING",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "actor",
@@ -119,7 +208,25 @@
         "MotS gate 0x527852-0x52785C; look call 0x5278A3",
         "Devices/sithControl.c:1025-1053"
       ],
-      "source_alias": "SITH_AF_CONTROLSDISABLED; historical THING_TYPEFLAGS_IMMOBILE"
+      "source_alias": "SITH_AF_CONTROLSDISABLED; historical THING_TYPEFLAGS_IMMOBILE",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "ai",
@@ -136,7 +243,25 @@
         "MotS AISetFireTarget 0x551C30; writes 0x551C64-0x551C94",
         "Cog/sithCogFunctionAI.c:389-424"
       ],
-      "source_alias": "SITHAI_MODE_TOUGHSKIN"
+      "source_alias": "SITHAI_MODE_TOUGHSKIN",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "ai",
@@ -153,7 +278,25 @@
         "MotS AISetMode 0x551670; dispatcher 0x537DD0-0x537E03",
         "AI/sithAI.c:429-456"
       ],
-      "source_alias": "SITHAI_MODE_UNK100"
+      "source_alias": "SITHAI_MODE_UNK100",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "jk",
@@ -170,7 +313,25 @@
         "MotS 0x40CED7-0x40CEFD",
         "Gameplay/jkSaber.c:368-374; Engine/sithPuppet.c:762-764"
       ],
-      "source_alias": "JKFLAG_40"
+      "source_alias": "JKFLAG_40",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "jk",
@@ -187,7 +348,25 @@
         "MotS destroy 0x40F440-0x40F46C; query 0x40F560-0x40F58D",
         "Main/jkEpisode.c:709-791"
       ],
-      "source_alias": "JKFLAG_100"
+      "source_alias": "JKFLAG_100",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "not-established",
+          "evidence_lane": "not-established",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "multiplayer",
@@ -204,7 +383,25 @@
         "MotS 0x53B6F3-0x53B71D; helper 0x517890",
         "GetMultiModeFlags JK 0x507EE0 / MotS 0x559940; GetPlayerTeam JK 0x4E10F0 / MotS 0x530280"
       ],
-      "source_alias": "MULTIMODEFLAG_2"
+      "source_alias": "MULTIMODEFLAG_2",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "weapon",
@@ -233,6 +430,24 @@
           "MotS 0x5221F0-0x52221A, target 0x5225F0",
           "World/sithWeapon.c:57-84,246-407"
         ]
+      },
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
       }
     },
     {
@@ -252,7 +467,25 @@
         "JK DrawFace 0x4467D0-0x446ADF end-exclusive; forwards flags 0x446AA7-0x446AB0 without this override",
         "Primitives/rdModel3.c:1713-1724,1731-1733"
       ],
-      "source_alias": "RD_FF_TEX_FILTER_NEAREST"
+      "source_alias": "RD_FF_TEX_FILTER_NEAREST",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "absent-in-compared-render-routine",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "light",
@@ -272,7 +505,25 @@
         "JK DrawHNode 0x4462E0-0x44635E; DrawMesh 0x446360-0x4467C8, ordinary cap 0x446452-0x44646C",
         "Primitives/rdModel3.c:1453-1461,1533-1547,1629,1646-1652; rdModel3.h:157-178"
       ],
-      "source_alias": "RD_LIGHTMODE_6_UNK"
+      "source_alias": "RD_LIGHTMODE_6_UNK",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "absent-in-compared-render-routine",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "jk",
@@ -289,7 +540,25 @@
         "MotS length routine 0x40CC60-0x40CDEF; bit branch 0x40CD87-0x40CDAB; caller test 0x40F02B",
         "Gameplay/jkSaber.c:179-187"
       ],
-      "source_alias": "JKFLAG_SABERFORCEON"
+      "source_alias": "JKFLAG_SABERFORCEON",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "physics",
@@ -308,7 +577,25 @@
         "MotS dispatcher attachment mask 0x54649A; attached drag test 0x5488AD; skipped call 0x548945",
         "Engine/sithPhysics.c:222,924-942"
       ],
-      "source_alias": "SITH_PF_8000"
+      "source_alias": "SITH_PF_8000",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "actor",
@@ -325,7 +612,25 @@
         "MotS AI initializer observer binding 0x537AC9; complete sight helper 0x53AA60-0x53AC4C; bit test 0x53AB10",
         "AI/sithAI.c:245-294,1608-1658"
       ],
-      "source_alias": "SITH_AF_SEEINDARK"
+      "source_alias": "SITH_AF_SEEINDARK",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "attach",
@@ -343,7 +648,25 @@
         "Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD",
         "World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039"
       ],
-      "source_alias": "SITH_ATTACH_SURFACE"
+      "source_alias": "SITH_ATTACH_SURFACE",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "attach",
@@ -361,7 +684,25 @@
         "Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD",
         "World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039"
       ],
-      "source_alias": "SITH_ATTACH_THINGFACE"
+      "source_alias": "SITH_ATTACH_THINGFACE",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "attach",
@@ -379,7 +720,25 @@
         "Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD",
         "World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039"
       ],
-      "source_alias": "SITH_ATTACH_THING"
+      "source_alias": "SITH_ATTACH_THING",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "sound",
@@ -397,7 +756,25 @@
         "Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5",
         "Devices/sithSoundMixer.c: owner-free and positional-update paths"
       ],
-      "source_alias": "SITHSOUNDFLAG_LOOP"
+      "source_alias": "SITHSOUNDFLAG_LOOP",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "sound",
@@ -415,7 +792,25 @@
         "Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5",
         "Devices/sithSoundMixer.c: owner-free and positional-update paths"
       ],
-      "source_alias": "SITHSOUNDFLAG_ABSOLUTE"
+      "source_alias": "SITHSOUNDFLAG_ABSOLUTE",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "sound",
@@ -433,7 +828,25 @@
         "Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5",
         "Devices/sithSoundMixer.c: owner-free and positional-update paths"
       ],
-      "source_alias": "SITHSOUNDFLAG_FOLLOWSTHING"
+      "source_alias": "SITHSOUNDFLAG_FOLLOWSTHING",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "weapon",
@@ -450,7 +863,25 @@
         "Complete handlers: JK 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53",
         "World/sithWeapon.c:246-407"
       ],
-      "source_alias": "SITH_WF_DAMAGE_DECAY"
+      "source_alias": "SITH_WF_DAMAGE_DECAY",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     },
     {
       "family": "weapon",
@@ -467,7 +898,25 @@
         "MotS first trail loop 0x5226B5-0x522A37; no-hit trail 0x522BC1-0x522F40; creation calls 0x5229DC/0x522EE1",
         "World/sithWeapon.c:265-313,362-403"
       ],
-      "source_alias": "SITH_WF_OBJECT_TRAIL"
+      "source_alias": "SITH_WF_OBJECT_TRAIL",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
     }
   ],
   "remaining_gaps": [
@@ -623,8 +1072,430 @@
       "sha256": "34e86325b8d0b2b30a56aa3e93fae02337bba566759c92233bf9192005acfcf4"
     }
   ],
-  "release_version": "0.1.6",
   "followup_original_render_date": "2026-10-03",
-  "initial_audit_release": "0.1.4",
-  "followup_date_utc": "2026-10-04"
+  "followup_date_utc": "2026-10-04",
+  "document_type": "maintained-master-reference",
+  "last_updated": "2026-10-04",
+  "canonical_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAG_DISCOVERIES.html",
+  "machine_readable_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/corpus/reference/flag-discoveries.json",
+  "snapshot_provenance": {
+    "baseline_release": "0.1.5",
+    "release_version": "0.1.6",
+    "initial_audit_release": "0.1.4",
+    "meaning": "Historical package provenance only; the master reference is not bound to these releases."
+  },
+  "schema_notes": [
+    "Schema 2 adds explicit per-target evidence and the separate Indy reconstruction comparison; schema_version identifies the JSON format, not a workshop release.",
+    "Release provenance moved to snapshot_provenance. Existing retail_jk and retail_mots per-finding fields are retained; use targets for explicit game, static and runtime distinctions.",
+    "A bounded original-static finding proves only its stated path. Absent-in-compared-render-routine is not a game-wide absence claim. No runtime or connected-client result is established here."
+  ],
+  "target_definitions": {
+    "jkdf2_1_01": {
+      "name": "Jedi Knight: Dark Forces II 1.01",
+      "evidence_lane": "original-executable-static",
+      "binary_identity_key": "jk101",
+      "runtime_status": "not-tested"
+    },
+    "mots": {
+      "name": "Mysteries of the Sith",
+      "evidence_lane": "original-executable-static",
+      "binary_identity_key": "mots",
+      "runtime_status": "not-tested"
+    },
+    "indy": {
+      "name": "Indiana Jones and the Infernal Machine",
+      "original_binary_status": "not-established",
+      "runtime_status": "not-tested",
+      "comparison_lane": "pinned-reconstruction-source",
+      "repository": "smlu/OpenJones3D",
+      "revision": "a675b395a5d5cff238332d091368483b849e8b5b"
+    }
+  },
+  "indy_comparison": {
+    "repository": "smlu/OpenJones3D",
+    "revision": "a675b395a5d5cff238332d091368483b849e8b5b",
+    "thing_entries": [
+      {
+        "value": 1,
+        "hex": "0x00000001",
+        "symbol": "SITH_TF_EMITLIGHT",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 62,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 2,
+        "hex": "0x00000002",
+        "symbol": "SITH_TF_DESTROYED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 63,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 4,
+        "hex": "0x00000004",
+        "symbol": "SITH_TF_NOWEAPONCOLLIDE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 64,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 8,
+        "hex": "0x00000008",
+        "symbol": "SITH_TF_WHIPCLIMB",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 65,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 16,
+        "hex": "0x00000010",
+        "symbol": "SITH_TF_INVISIBLE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 66,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 32,
+        "hex": "0x00000020",
+        "symbol": "SITH_TF_UNKNOWN_20",
+        "evidence": "unresolved-name",
+        "source": "indy:Libs/sith/types.h",
+        "line": 67,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 64,
+        "hex": "0x00000040",
+        "symbol": "SITH_TF_STANDON",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 68,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 128,
+        "hex": "0x00000080",
+        "symbol": "SITH_TF_MOUNTABLE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 69,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 256,
+        "hex": "0x00000100",
+        "symbol": "SITH_TF_REMOTE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 70,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 512,
+        "hex": "0x00000200",
+        "symbol": "SITH_TF_DYING",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 71,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 1024,
+        "hex": "0x00000400",
+        "symbol": "SITH_TF_COGLINKED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 72,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 2048,
+        "hex": "0x00000800",
+        "symbol": "SITH_TF_NOCRUSH",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 73,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 4096,
+        "hex": "0x00001000",
+        "symbol": "SITH_TF_UNKNOWN_1000",
+        "evidence": "unresolved-name",
+        "source": "indy:Libs/sith/types.h",
+        "line": 74,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 8192,
+        "hex": "0x00002000",
+        "symbol": "SITH_TF_WOOD",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 75,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 16384,
+        "hex": "0x00004000",
+        "symbol": "SITH_TF_SHADOW",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 76,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 32768,
+        "hex": "0x00008000",
+        "symbol": "SITH_TF_JEEPSTOP",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 77,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 65536,
+        "hex": "0x00010000",
+        "symbol": "SITH_TF_SNOW",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 78,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 131072,
+        "hex": "0x00020000",
+        "symbol": "SITH_TF_PULSESET",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 79,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 262144,
+        "hex": "0x00040000",
+        "symbol": "SITH_TF_TIMERSET",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 80,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 524288,
+        "hex": "0x00080000",
+        "symbol": "SITH_TF_DISABLED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 81,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 1048576,
+        "hex": "0x00100000",
+        "symbol": "SITH_TF_SEEN",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 82,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 2097152,
+        "hex": "0x00200000",
+        "symbol": "SITH_TF_UNKNOWN_200000",
+        "evidence": "unresolved-name",
+        "source": "indy:Libs/sith/types.h",
+        "line": 83,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 4194304,
+        "hex": "0x00400000",
+        "symbol": "SITH_TF_METAL",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 84,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 8388608,
+        "hex": "0x00800000",
+        "symbol": "SITH_TF_EARTH",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 85,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 16777216,
+        "hex": "0x01000000",
+        "symbol": "SITH_TF_NOSOUND",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 86,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 33554432,
+        "hex": "0x02000000",
+        "symbol": "SITH_TF_SUBMERGED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 87,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 67108864,
+        "hex": "0x04000000",
+        "symbol": "SITH_TF_CLIMBCRATE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 88,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 134217728,
+        "hex": "0x08000000",
+        "symbol": "SITH_TF_WATERDESTROYED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 89,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 268435456,
+        "hex": "0x10000000",
+        "symbol": "SITH_TF_AIRDESTROYED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 90,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 536870912,
+        "hex": "0x20000000",
+        "symbol": "SITH_TF_SPLASH",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 91,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 1073741824,
+        "hex": "0x40000000",
+        "symbol": "SITH_TF_MOVABLE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 92,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 2147483648,
+        "hex": "0x80000000",
+        "symbol": "SITH_TF_WHIPSWING",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 93,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      }
+    ],
+    "boundary": "Comparison of reconstructed declarations, with selected wrapper/world consumers. No original Indy runtime or per-bit JK transfer is established.",
+    "evidence_lane": "pinned-reconstruction-source",
+    "original_binary_status": "not-established",
+    "runtime_status": "not-tested",
+    "source_observations": [
+      {
+        "id": "indy-thingflags-wrapper",
+        "family": "thing",
+        "value": null,
+        "evidence": "reconstruction-source-consumer",
+        "meaning": "The compared reconstructed ThingFlags setters OR nonzero masks; clearers AND the complement of nonzero masks.",
+        "anchors": [
+          "Libs/sith/Cog/sithCogFunctionThing.c:2935-2988"
+        ],
+        "limits": "Wrapper operations do not prove per-bit meanings, original Indy executable behavior or equivalence with JKDF2/MotS.",
+        "game": "indy",
+        "repository": "smlu/OpenJones3D",
+        "revision": "a675b395a5d5cff238332d091368483b849e8b5b",
+        "original_binary_status": "not-established",
+        "runtime_status": "not-tested"
+      },
+      {
+        "id": "indy-snow-material",
+        "family": "thing",
+        "value": 65536,
+        "hex": "0x00010000",
+        "evidence": "reconstruction-source-consumer",
+        "meaning": "The Jones SNOW bit has material-sound consumers in the compared reconstructed world code.",
+        "anchors": [
+          "Libs/sith/World/sithThing.c:1524-1555,2800-2816"
+        ],
+        "limits": "This differs from the independently traced original JK/MotS placement-exclusion role for the same number. No original Indy binary or runtime test.",
+        "game": "indy",
+        "repository": "smlu/OpenJones3D",
+        "revision": "a675b395a5d5cff238332d091368483b849e8b5b",
+        "original_binary_status": "not-established",
+        "runtime_status": "not-tested"
+      },
+      {
+        "id": "indy-water-entry-routing",
+        "family": "thing",
+        "value": null,
+        "evidence": "reconstruction-source-consumer",
+        "meaning": "The compared Jones water-entry path routes splash messages to the entering Thing own COGs.",
+        "anchors": [
+          "Libs/sith/World/sithThing.c:1981-1990"
+        ],
+        "limits": "Source-level integration comparison only; it does not establish original Indy behavior or upgrade the compared JK source path to original-binary evidence.",
+        "game": "indy",
+        "repository": "smlu/OpenJones3D",
+        "revision": "a675b395a5d5cff238332d091368483b849e8b5b",
+        "original_binary_status": "not-established",
+        "runtime_status": "not-tested"
+      }
+    ]
+  },
+  "coverage": {
+    "original_jk_mots_findings": 25,
+    "indy_reconstruction_observations": 3,
+    "indy_thing_declarations": 32,
+    "runtime_tested_findings": 0
+  }
 }
