@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "research_date": "2026-10-03",
-  "baseline_release": "0.1.4",
+  "baseline_release": "0.1.5",
   "status": "released",
   "scope": "Target-specific supplement for unresolved or misleading flag entries; supersedes only the described interpretations, not the entire baseline catalog.",
   "evidence_policy": {
@@ -210,18 +210,30 @@
       "family": "weapon",
       "value": 65536,
       "hex": "0x00010000",
-      "title": "Select the special collision/trail update handler",
+      "title": "Select the range-based collision-query and optional trail handler",
       "evidence": "original-retail-static",
       "retail_jk": "bounded-original-static",
       "retail_mots": "bounded-original-static",
-      "meaning": "Both original update routines first test weapon 0x2000. Only when it is clear does 0x10000 dispatch to a distinct handler and return. Current source maps that handler to a collision search with optional trail/impact/damage handling and destruction.",
-      "limits": "The original proof for both targets is dispatch and priority, not every detail of the reconstructed callee. The full MotS handler was not retraced. The bit alone does not create a trail without the required flags/template/parameters. The old short-throw suggestion is not an established contract.",
+      "meaning": "In both original dispatchers, weapon 0x10000 selects this handler after the higher-priority 0x2000 branch. The complete handler traverses returned adjoin crossings and handles the first returned non-adjoin result. Thing hits call damage and can independently attempt force; world hits call surface impact. A non-null impact template enables a creation attempt. The final callee marks the weapon Thing.flags 0x2 for destruction.",
+      "limits": "The query uses moveSize as well as range, so this is not established as a zero-width ray. One terminal result is handled; collision ordering and penetration are not established. Destruction is marked, not an immediate storage free. Full downstream helper behavior, successful allocation, visuals and networking remain untested.",
       "anchors": [
         "JK 0x4D3830-0x4D385A, target 0x4D3C20",
         "MotS 0x5221F0-0x52221A, target 0x5225F0",
-        "World/sithWeapon.c:57-84,246-407"
+        "World/sithWeapon.c:57-84,246-407",
+        "Complete bodies: JK 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53",
+        "MotS terminal calls: damage 0x522AAF, force 0x522B12, surface 0x522B31, impact creation 0x522B9F",
+        "Final mark callees: JK 0x4CCA70-0x4CCA93; MotS 0x51B160-0x51B183"
       ],
-      "source_alias": "SITH_WF_10000"
+      "source_alias": "SITH_WF_10000",
+      "previous_release_interpretation": {
+        "meaning": "Both original update routines first test weapon 0x2000. Only when it is clear does 0x10000 dispatch to a distinct handler and return. Current source maps that handler to a collision search with optional trail/impact/damage handling and destruction.",
+        "limits": "The original proof for both targets is dispatch and priority, not every detail of the reconstructed callee. The full MotS handler was not retraced. The bit alone does not create a trail without the required flags/template/parameters. The old short-throw suggestion is not an established contract.",
+        "anchors": [
+          "JK 0x4D3830-0x4D385A, target 0x4D3C20",
+          "MotS 0x5221F0-0x52221A, target 0x5225F0",
+          "World/sithWeapon.c:57-84,246-407"
+        ]
+      }
     },
     {
       "family": "face",
@@ -261,6 +273,201 @@
         "Primitives/rdModel3.c:1453-1461,1533-1547,1629,1646-1652; rdModel3.h:157-178"
       ],
       "source_alias": "RD_LIGHTMODE_6_UNK"
+    },
+    {
+      "family": "jk",
+      "value": 128,
+      "hex": "0x00000080",
+      "title": "Force maximum saber length on the eligible update branch",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "When neither the extend-4 nor retract-8 branch is selected, bit 0x80 sets saber length to its configured maximum, writes about 0.6 to the source-named timeLeftLengthChange field, clears 4/8 and sets 1. Both original branches retain 0x80; current enhanced source clears it.",
+      "limits": "The inspected callers already require JK flag 1 and the routine needs valid player information. Setting 0x80 alone does not enter that caller path. Extend/retract branches take priority. This is not a universal unretractable-saber or runtime appearance claim.",
+      "anchors": [
+        "JK length routine 0x40B950-0x40BADB; bit branch 0x40BA77-0x40BA9B; caller 0x40D820-0x40D837",
+        "MotS length routine 0x40CC60-0x40CDEF; bit branch 0x40CD87-0x40CDAB; caller test 0x40F02B",
+        "Gameplay/jkSaber.c:179-187"
+      ],
+      "source_alias": "JKFLAG_SABERFORCEON"
+    },
+    {
+      "family": "physics",
+      "value": 32768,
+      "hex": "0x00008000",
+      "title": "Pending bypass of the inspected attached-physics drag application",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The original ApplyForce implementation sets 0x8000 while adding force divided by positive mass to a physics mover velocity, even when the supplied force vector is zero. In the inspected surface/Thing-face attached-physics block, nonzero velocity and nonzero surface drag lead to a bit test: if set, the block clears 0x8000 and skips its linear drag call.",
+      "limits": "This is a conditional consumed marker, not permanent friction immunity. If those block prerequisites are not reached it is not consumed there, so a one-frame lifetime is unproved. Setting the bit alone does not apply an impulse. Other drag paths and runtime motion remain untested.",
+      "anchors": [
+        "JK ApplyForce wrapper 0x503520; native 0x4F5C20-0x4F5CE1; OR at 0x4F5CCD",
+        "MotS ApplyForce wrapper 0x554210; native 0x5464F0-0x5465B1; OR at 0x54659D",
+        "JK dispatcher attachment mask 0x4F5BCA; attached drag test 0x4F7C7A; skipped call 0x4F7D12",
+        "MotS dispatcher attachment mask 0x54649A; attached drag test 0x5488AD; skipped call 0x548945",
+        "Engine/sithPhysics.c:222,924-942"
+      ],
+      "source_alias": "SITH_PF_8000"
+    },
+    {
+      "family": "actor",
+      "value": 33554432,
+      "hex": "0x02000000",
+      "title": "Skip the target-sector darkness penalty in an AI sight check",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The observer actor bit bypasses the target-sector ambient-light multiplier in the inspected sight-acceptance threshold calculation in both originals. The branch is reached inside the distance and target-light-state gates.",
+      "limits": "It does not guarantee detection or sight through geometry. Distance, movement, invisibility, observer blindness, threshold clamping and the final random comparison retain their own effects. Other visibility helpers and runtime probabilities were not established.",
+      "anchors": [
+        "JK AI initializer observer binding 0x4E9FC6; complete sight helper 0x4EC3A0-0x4EC58B; bit test 0x4EC450",
+        "MotS AI initializer observer binding 0x537AC9; complete sight helper 0x53AA60-0x53AC4C; bit test 0x53AB10",
+        "AI/sithAI.c:245-294,1608-1658"
+      ],
+      "source_alias": "SITH_AF_SEEINDARK"
+    },
+    {
+      "family": "attach",
+      "value": 1,
+      "hex": "0x00000001",
+      "title": "Surface attachment discriminator",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The native surface attachment setter records its target and writes discriminator 1 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.",
+      "limits": "Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.",
+      "anchors": [
+        "JK discriminator store 0x4CE18B; GetAttachFlags 0x503780; detach 0x4CE660-0x4CE814",
+        "MotS discriminator store 0x51C8AB; GetAttachFlags 0x5544A0; detach 0x51CD70-0x51CF24",
+        "Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD",
+        "World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039"
+      ],
+      "source_alias": "SITH_ATTACH_SURFACE"
+    },
+    {
+      "family": "attach",
+      "value": 2,
+      "hex": "0x00000002",
+      "title": "Thing-face attachment discriminator",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The native Thing-face attachment setter records its target and writes discriminator 2 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.",
+      "limits": "Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.",
+      "anchors": [
+        "JK discriminator store 0x4CE37A; GetAttachFlags 0x503780; detach 0x4CE660-0x4CE814",
+        "MotS discriminator store 0x51CA8A; GetAttachFlags 0x5544A0; detach 0x51CD70-0x51CF24",
+        "Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD",
+        "World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039"
+      ],
+      "source_alias": "SITH_ATTACH_THINGFACE"
+    },
+    {
+      "family": "attach",
+      "value": 4,
+      "hex": "0x00000004",
+      "title": "Ordinary thing attachment discriminator",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The native ordinary Thing attachment setter records its target and writes discriminator 4 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.",
+      "limits": "Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.",
+      "anchors": [
+        "JK discriminator store 0x4CE5CD; GetAttachFlags 0x503780; detach 0x4CE660-0x4CE814",
+        "MotS discriminator store 0x51CCDD; GetAttachFlags 0x5544A0; detach 0x51CD70-0x51CF24",
+        "Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD",
+        "World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039"
+      ],
+      "source_alias": "SITH_ATTACH_THING"
+    },
+    {
+      "family": "sound",
+      "value": 1,
+      "hex": "0x00000001",
+      "title": "Looping attached sound cleanup when its owner is freed",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "In the inspected owner-free cleanup, a matching sound with FOLLOWSTHING 0x80 and LOOP 0x1 takes the channel cleanup branch, conditionally stopping active playback and freeing its channel. The matching nonloop branch instead detaches the sound to the last position.",
+      "limits": "This adds an original lifecycle consumer of LOOP, not a complete looping/playback contract or an audibility test. The channel must pass owner and follow-state tests. Sound flags are separate from Thing.flags.",
+      "anchors": [
+        "JK owner cleanup 0x4DD1B0-0x4DD2C4; FOLLOW test 0x4DD1E0; LOOP test 0x4DD1F1",
+        "MotS owner cleanup 0x52EBE0-0x52ECF4; FOLLOW test 0x52EC10; LOOP test 0x52EC21",
+        "Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5",
+        "Devices/sithSoundMixer.c: owner-free and positional-update paths"
+      ],
+      "source_alias": "SITHSOUNDFLAG_LOOP"
+    },
+    {
+      "family": "sound",
+      "value": 64,
+      "hex": "0x00000040",
+      "title": "Absolute stored position after a nonlooping sound loses its owner",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The matching nonlooping FOLLOWSTHING sound has bit 0x80 cleared and bit 0x40 set during owner-free cleanup, and receives the owner final position. The inspected position update selects the stored position when 0x40 is set.",
+      "limits": "This verifies the transition and position selection, not successful playback or audibility. Existing source-based PlaySoundPos behavior is retained in the prior interpretation. It establishes no Thing.flags 0x01000000 meaning.",
+      "anchors": [
+        "JK owner cleanup 0x4DD1B0-0x4DD2C4; FOLLOW test 0x4DD1E0; LOOP test 0x4DD1F1",
+        "MotS owner cleanup 0x52EBE0-0x52ECF4; FOLLOW test 0x52EC10; LOOP test 0x52EC21",
+        "Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5",
+        "Devices/sithSoundMixer.c: owner-free and positional-update paths"
+      ],
+      "source_alias": "SITHSOUNDFLAG_ABSOLUTE"
+    },
+    {
+      "family": "sound",
+      "value": 128,
+      "hex": "0x00000080",
+      "title": "Followed-owner sound lookup and detachment at owner cleanup",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "Owner-free cleanup selects channels carrying 0x80 whose owner pointer matches the freed Thing. Looping channels enter channel cleanup; nonlooping channels clear 0x80, set absolute-position 0x40 and copy the owner final position.",
+      "limits": "This is sound-channel state, not Thing.flags. Other creation and playback gates, networking and runtime audio remain outside this original-static finding.",
+      "anchors": [
+        "JK owner cleanup 0x4DD1B0-0x4DD2C4; FOLLOW test 0x4DD1E0; LOOP test 0x4DD1F1",
+        "MotS owner cleanup 0x52EBE0-0x52ECF4; FOLLOW test 0x52EC10; LOOP test 0x52EC21",
+        "Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5",
+        "Devices/sithSoundMixer.c: owner-free and positional-update paths"
+      ],
+      "source_alias": "SITHSOUNDFLAG_FOLLOWSTHING"
+    },
+    {
+      "family": "weapon",
+      "value": 16384,
+      "hex": "0x00004000",
+      "title": "Distance-based damage reduction in the 0x10000 handler",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "At a terminal collision in the original 0x10000 handler, this bit subtracts rate times hit distance from the local damage amount and floors it at minDamage in both games.",
+      "limits": "This updates a local hit amount, not the persistent weapon damage field. Preserve the separately documented ordinary-update decay difference between current source and original JK. Finite-value control flow is established; downstream damage acceptance and runtime outcomes are not.",
+      "anchors": [
+        "JK 0x4D408E-0x4D40C7; MotS 0x522A5E-0x522A97",
+        "Complete handlers: JK 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53",
+        "World/sithWeapon.c:246-407"
+      ],
+      "source_alias": "SITH_WF_DAMAGE_DECAY"
+    },
+    {
+      "family": "weapon",
+      "value": 32768,
+      "hex": "0x00008000",
+      "title": "Conditional segmented object-trail creation in the 0x10000 handler",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The original handler attempts trail-template creation along a locally advanced orientation when bit 0x8000, a trail template and the step/projection versus hit-distance or range gates permit it. The no-hit tail can also create a trail up to range.",
+      "limits": "Creation return values are ignored, so allocation and visuals are not proved. The loops have no explicit iteration cap or general progress guard: termination depends on advancing configured step/orientation. This is not a reproduced hang, networking proof or a universal trail contract.",
+      "anchors": [
+        "JK complete handler 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53",
+        "MotS first trail loop 0x5226B5-0x522A37; no-hit trail 0x522BC1-0x522F40; creation calls 0x5229DC/0x522EE1",
+        "World/sithWeapon.c:265-313,362-403"
+      ],
+      "source_alias": "SITH_WF_OBJECT_TRAIL"
     }
   ],
   "remaining_gaps": [
@@ -272,7 +479,7 @@
         "0x40000000"
       ],
       "status": "unresolved-original-semantics",
-      "note": "Additional field-aware masks/source checks did not establish a dedicated Thing.flags consumer. Do not import Indy NOSOUND/MOVABLE or use as spare bits."
+      "note": "Sound-owner cleanup and physical attachment paths did not establish a Thing 0x01000000 consumer. Attachment and sound masks occupy different fields. The other listed Thing bits received no new productive lead. No game-wide nonuse claim."
     },
     {
       "family": "actor",
@@ -281,11 +488,25 @@
         "0x00004000",
         "0x04000000"
       ],
-      "status": "unresolved-original-semantics"
+      "status": "unresolved-original-semantics",
+      "note": "Field-aware bounded source and original-code lead searches did not establish actor consumers. Shared weapon/actor union offsets alone do not establish actor semantics."
     },
     {
       "family": "render-and-other",
       "note": "Other physics, surface, weapon, item, explosion, light and texture entries retain baseline uncertainty. This pass is not a complete original-engine proof."
+    },
+    {
+      "family": "weapon",
+      "values": [
+        "0x2",
+        "0x10",
+        "0x20",
+        "0x40",
+        "0x20000",
+        "0x100000"
+      ],
+      "status": "unresolved-by-inspected-handler",
+      "note": "Collision-result masks in the handler are not weapon flags. No whole-engine absence claim."
     }
   ],
   "method_corrections": [
@@ -385,8 +606,25 @@
       "path": "src/types.h",
       "lane": "current-source-individually-hashed",
       "sha256": "bac0814a9350275e0099007a07ebd6a6fa852699002b7b5c47065a950b0388d5"
+    },
+    {
+      "path": "src/Engine/sithPhysics.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "2ca84d9124350f261a358408f2096e8c50ec47b1a22244a7e89258c53aadc8cf"
+    },
+    {
+      "path": "src/Devices/sithSoundMixer.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "3fa0f801c60a8e46cd29b4956f263c046a8c1122fbc36d40bb3630a141280719"
+    },
+    {
+      "path": "src/Cog/sithCogFunctionThing.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "34e86325b8d0b2b30a56aa3e93fae02337bba566759c92233bf9192005acfcf4"
     }
   ],
-  "release_version": "0.1.5",
-  "followup_original_render_date": "2026-10-03"
+  "release_version": "0.1.6",
+  "followup_original_render_date": "2026-10-03",
+  "initial_audit_release": "0.1.4",
+  "followup_date_utc": "2026-10-04"
 }

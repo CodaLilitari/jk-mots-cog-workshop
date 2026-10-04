@@ -1,10 +1,10 @@
 # JKDF2 and MotS: unresolved flag findings
 
-Research dated 2026-10-03, published in **COG Workshop 0.1.5**. This supplement extends the 0.1.4 audit; its findings are incorporated in the matching main-catalog entries.
+Research dated 2026-10-03 local time, updated 2026-10-04 UTC in **COG Workshop 0.1.6**. This cumulative supplement extends the 0.1.4 audit and 0.1.5 findings; matching main-catalog rows carry the same meanings and limits.
 
-This pass produced **14 bounded findings with original-executable evidence for at least one target, including two newly mapped original-MotS rendering paths**. Some establish a missing behavior; others correct a misleading alias or separate an event from a persistent flag. They do not prove every meaning of every bit.
+There are **25 bounded flag/value findings with original-executable evidence for at least one target**. This release adds eleven clarifications and expands weapon 0x10000 from dispatch to its complete handler. These are documented behaviors, not a claim of eleven historically novel discoveries or a complete proof of all flag meanings.
 
-Original-static means selected code paths in the exact original JK1.01 and MotS executables, checked against their bytes. It does not mean the game was run or multiplayer behavior was tested. Original JK and MotS evidence remains separate; the new rendering paths are established for MotS only within the compared routines. The matching main-catalog rows summarize these findings; this supplement supplies the full evidence and limits.
+Original-static means selected code paths in the exact original JK1.01 and MotS executables checked against their bytes. No game, runtime audio/visual, or connected-client test was performed. Original JK, original MotS and current enhanced source remain separate evidence lanes.
 
 ## Findings by field
 
@@ -21,11 +21,22 @@ Original-static means selected code paths in the exact original JK1.01 and MotS 
 | jk `0x00000040` | Consume-once saber hit-history reset | Verified code path | Verified code path |
 | jk `0x00000100` | MotS bubble-owner registration marker | Not established | Verified code path |
 | multiplayer `0x00000002` | Conditional same-team player health-damage suppression | Verified code path | Verified code path |
-| weapon `0x00010000` | Select the special collision/trail update handler | Verified code path | Verified code path |
-| face `0x00000010` | Initial model-face lighting-mode override | Absent from compared routine | Verified code path |
-| light `0x00000006` | Inherit and propagate a stored mesh lighting scalar | Absent from compared routines | Verified code path |
+| weapon `0x00010000` | Select the range-based collision-query and optional trail handler | Verified code path | Verified code path |
+| face `0x00000010` | Original MotS model-face path initially selects lighting mode 1 | Absent from compared routine | Verified code path |
+| light `0x00000006` | Original MotS mode 6 propagates an inherited stored lighting scalar | Absent from compared routine | Verified code path |
+| jk `0x00000080` | Force maximum saber length on the eligible update branch | Verified code path | Verified code path |
+| physics `0x00008000` | Pending bypass of the inspected attached-physics drag application | Verified code path | Verified code path |
+| actor `0x02000000` | Skip the target-sector darkness penalty in an AI sight check | Verified code path | Verified code path |
+| attach `0x00000001` | Surface attachment discriminator | Verified code path | Verified code path |
+| attach `0x00000002` | Thing-face attachment discriminator | Verified code path | Verified code path |
+| attach `0x00000004` | Ordinary thing attachment discriminator | Verified code path | Verified code path |
+| sound `0x00000001` | Looping attached sound cleanup when its owner is freed | Verified code path | Verified code path |
+| sound `0x00000040` | Absolute stored position after a nonlooping sound loses its owner | Verified code path | Verified code path |
+| sound `0x00000080` | Followed-owner sound lookup and detachment at owner cleanup | Verified code path | Verified code path |
+| weapon `0x00004000` | Distance-based damage reduction in the 0x10000 handler | Verified code path | Verified code path |
+| weapon `0x00008000` | Conditional segmented object-trail creation in the 0x10000 handler | Verified code path | Verified code path |
 
-The table identifies fields as well as values: `thing`, `actor`, `physics`, `jk`, and AI state are different namespaces. Light mode 6 is a scalar value. Descriptive names below are research labels, not recovered developer symbols.
+Fields are separate namespaces; light mode 6 is a scalar. Source aliases remain search aids, not recovered original developer names.
 
 ## thing 0x00010000: Level-placement exclusion in the non-multiplayer loading branch
 
@@ -137,13 +148,13 @@ Evidence anchors: `JK 0x4ECFEA-0x4ED014; helper 0x4C9250`; `MotS 0x53B6F3-0x53B7
 
 Existing source alias: `MULTIMODEFLAG_2`. Evidence grade: `original-retail-static`.
 
-## weapon 0x00010000: Select the special collision/trail update handler
+## weapon 0x00010000: Select the range-based collision-query and optional trail handler
 
-Both original update routines first test weapon 0x2000. Only when it is clear does 0x10000 dispatch to a distinct handler and return. Current source maps that handler to a collision search with optional trail/impact/damage handling and destruction.
+In both original dispatchers, weapon 0x10000 selects this handler after the higher-priority 0x2000 branch. The complete handler traverses returned adjoin crossings and handles the first returned non-adjoin result. Thing hits call damage and can independently attempt force; world hits call surface impact. A non-null impact template enables a creation attempt. The final callee marks the weapon Thing.flags 0x2 for destruction.
 
-**Limits and authoring consequence.** The original proof for both targets is dispatch and priority, not every detail of the reconstructed callee. The full MotS handler was not retraced. The bit alone does not create a trail without the required flags/template/parameters. The old short-throw suggestion is not an established contract.
+**Limits and authoring consequence.** The query uses moveSize as well as range, so this is not established as a zero-width ray. One terminal result is handled; collision ordering and penetration are not established. Destruction is marked, not an immediate storage free. Full downstream helper behavior, successful allocation, visuals and networking remain untested.
 
-Evidence anchors: `JK 0x4D3830-0x4D385A, target 0x4D3C20`; `MotS 0x5221F0-0x52221A, target 0x5225F0`; `World/sithWeapon.c:57-84,246-407`.
+Evidence anchors: `JK 0x4D3830-0x4D385A, target 0x4D3C20`; `MotS 0x5221F0-0x52221A, target 0x5225F0`; `World/sithWeapon.c:57-84,246-407`; `Complete bodies: JK 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53`; `MotS terminal calls: damage 0x522AAF, force 0x522B12, surface 0x522B31, impact creation 0x522B9F`; `Final mark callees: JK 0x4CCA70-0x4CCA93; MotS 0x51B160-0x51B183`.
 
 Existing source alias: `SITH_WF_10000`. Evidence grade: `original-retail-static`.
 
@@ -167,11 +178,129 @@ Evidence anchors: `MotS DrawHNode 0x449F80-0x44A04E; mode write 0x449FB7; ancest
 
 Existing source alias: `RD_LIGHTMODE_6_UNK`. Evidence grade: `original-retail-static`.
 
+## jk 0x00000080: Force maximum saber length on the eligible update branch
+
+When neither the extend-4 nor retract-8 branch is selected, bit 0x80 sets saber length to its configured maximum, writes about 0.6 to the source-named timeLeftLengthChange field, clears 4/8 and sets 1. Both original branches retain 0x80; current enhanced source clears it.
+
+**Limits and authoring consequence.** The inspected callers already require JK flag 1 and the routine needs valid player information. Setting 0x80 alone does not enter that caller path. Extend/retract branches take priority. This is not a universal unretractable-saber or runtime appearance claim.
+
+Evidence anchors: `JK length routine 0x40B950-0x40BADB; bit branch 0x40BA77-0x40BA9B; caller 0x40D820-0x40D837`; `MotS length routine 0x40CC60-0x40CDEF; bit branch 0x40CD87-0x40CDAB; caller test 0x40F02B`; `Gameplay/jkSaber.c:179-187`.
+
+Existing source alias: `JKFLAG_SABERFORCEON`. Evidence grade: `original-retail-static`.
+
+## physics 0x00008000: Pending bypass of the inspected attached-physics drag application
+
+The original ApplyForce implementation sets 0x8000 while adding force divided by positive mass to a physics mover velocity, even when the supplied force vector is zero. In the inspected surface/Thing-face attached-physics block, nonzero velocity and nonzero surface drag lead to a bit test: if set, the block clears 0x8000 and skips its linear drag call.
+
+**Limits and authoring consequence.** This is a conditional consumed marker, not permanent friction immunity. If those block prerequisites are not reached it is not consumed there, so a one-frame lifetime is unproved. Setting the bit alone does not apply an impulse. Other drag paths and runtime motion remain untested.
+
+Evidence anchors: `JK ApplyForce wrapper 0x503520; native 0x4F5C20-0x4F5CE1; OR at 0x4F5CCD`; `MotS ApplyForce wrapper 0x554210; native 0x5464F0-0x5465B1; OR at 0x54659D`; `JK dispatcher attachment mask 0x4F5BCA; attached drag test 0x4F7C7A; skipped call 0x4F7D12`; `MotS dispatcher attachment mask 0x54649A; attached drag test 0x5488AD; skipped call 0x548945`; `Engine/sithPhysics.c:222,924-942`.
+
+Existing source alias: `SITH_PF_8000`. Evidence grade: `original-retail-static`.
+
+## actor 0x02000000: Skip the target-sector darkness penalty in an AI sight check
+
+The observer actor bit bypasses the target-sector ambient-light multiplier in the inspected sight-acceptance threshold calculation in both originals. The branch is reached inside the distance and target-light-state gates.
+
+**Limits and authoring consequence.** It does not guarantee detection or sight through geometry. Distance, movement, invisibility, observer blindness, threshold clamping and the final random comparison retain their own effects. Other visibility helpers and runtime probabilities were not established.
+
+Evidence anchors: `JK AI initializer observer binding 0x4E9FC6; complete sight helper 0x4EC3A0-0x4EC58B; bit test 0x4EC450`; `MotS AI initializer observer binding 0x537AC9; complete sight helper 0x53AA60-0x53AC4C; bit test 0x53AB10`; `AI/sithAI.c:245-294,1608-1658`.
+
+Existing source alias: `SITH_AF_SEEINDARK`. Evidence grade: `original-retail-static`.
+
+## attach 0x00000001: Surface attachment discriminator
+
+The native surface attachment setter records its target and writes discriminator 1 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.
+
+**Limits and authoring consequence.** Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.
+
+Evidence anchors: `JK discriminator store 0x4CE18B; GetAttachFlags 0x503780; detach 0x4CE660-0x4CE814`; `MotS discriminator store 0x51C8AB; GetAttachFlags 0x5544A0; detach 0x51CD70-0x51CF24`; `Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD`; `World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039`.
+
+Existing source alias: `SITH_ATTACH_SURFACE`. Evidence grade: `original-retail-static`.
+
+## attach 0x00000002: Thing-face attachment discriminator
+
+The native Thing-face attachment setter records its target and writes discriminator 2 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.
+
+**Limits and authoring consequence.** Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.
+
+Evidence anchors: `JK discriminator store 0x4CE37A; GetAttachFlags 0x503780; detach 0x4CE660-0x4CE814`; `MotS discriminator store 0x51CA8A; GetAttachFlags 0x5544A0; detach 0x51CD70-0x51CF24`; `Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD`; `World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039`.
+
+Existing source alias: `SITH_ATTACH_THINGFACE`. Evidence grade: `original-retail-static`.
+
+## attach 0x00000004: Ordinary thing attachment discriminator
+
+The native ordinary Thing attachment setter records its target and writes discriminator 4 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.
+
+**Limits and authoring consequence.** Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.
+
+Evidence anchors: `JK discriminator store 0x4CE5CD; GetAttachFlags 0x503780; detach 0x4CE660-0x4CE814`; `MotS discriminator store 0x51CCDD; GetAttachFlags 0x5544A0; detach 0x51CD70-0x51CF24`; `Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD`; `World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039`.
+
+Existing source alias: `SITH_ATTACH_THING`. Evidence grade: `original-retail-static`.
+
+## sound 0x00000001: Looping attached sound cleanup when its owner is freed
+
+In the inspected owner-free cleanup, a matching sound with FOLLOWSTHING 0x80 and LOOP 0x1 takes the channel cleanup branch, conditionally stopping active playback and freeing its channel. The matching nonloop branch instead detaches the sound to the last position.
+
+**Limits and authoring consequence.** This adds an original lifecycle consumer of LOOP, not a complete looping/playback contract or an audibility test. The channel must pass owner and follow-state tests. Sound flags are separate from Thing.flags.
+
+Evidence anchors: `JK owner cleanup 0x4DD1B0-0x4DD2C4; FOLLOW test 0x4DD1E0; LOOP test 0x4DD1F1`; `MotS owner cleanup 0x52EBE0-0x52ECF4; FOLLOW test 0x52EC10; LOOP test 0x52EC21`; `Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5`; `Devices/sithSoundMixer.c: owner-free and positional-update paths`.
+
+Existing source alias: `SITHSOUNDFLAG_LOOP`. Evidence grade: `original-retail-static`.
+
+## sound 0x00000040: Absolute stored position after a nonlooping sound loses its owner
+
+The matching nonlooping FOLLOWSTHING sound has bit 0x80 cleared and bit 0x40 set during owner-free cleanup, and receives the owner final position. The inspected position update selects the stored position when 0x40 is set.
+
+**Limits and authoring consequence.** This verifies the transition and position selection, not successful playback or audibility. Existing source-based PlaySoundPos behavior is retained in the prior interpretation. It establishes no Thing.flags 0x01000000 meaning.
+
+Evidence anchors: `JK owner cleanup 0x4DD1B0-0x4DD2C4; FOLLOW test 0x4DD1E0; LOOP test 0x4DD1F1`; `MotS owner cleanup 0x52EBE0-0x52ECF4; FOLLOW test 0x52EC10; LOOP test 0x52EC21`; `Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5`; `Devices/sithSoundMixer.c: owner-free and positional-update paths`.
+
+Existing source alias: `SITHSOUNDFLAG_ABSOLUTE`. Evidence grade: `original-retail-static`.
+
+## sound 0x00000080: Followed-owner sound lookup and detachment at owner cleanup
+
+Owner-free cleanup selects channels carrying 0x80 whose owner pointer matches the freed Thing. Looping channels enter channel cleanup; nonlooping channels clear 0x80, set absolute-position 0x40 and copy the owner final position.
+
+**Limits and authoring consequence.** This is sound-channel state, not Thing.flags. Other creation and playback gates, networking and runtime audio remain outside this original-static finding.
+
+Evidence anchors: `JK owner cleanup 0x4DD1B0-0x4DD2C4; FOLLOW test 0x4DD1E0; LOOP test 0x4DD1F1`; `MotS owner cleanup 0x52EBE0-0x52ECF4; FOLLOW test 0x52EC10; LOOP test 0x52EC21`; `Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5`; `Devices/sithSoundMixer.c: owner-free and positional-update paths`.
+
+Existing source alias: `SITHSOUNDFLAG_FOLLOWSTHING`. Evidence grade: `original-retail-static`.
+
+## weapon 0x00004000: Distance-based damage reduction in the 0x10000 handler
+
+At a terminal collision in the original 0x10000 handler, this bit subtracts rate times hit distance from the local damage amount and floors it at minDamage in both games.
+
+**Limits and authoring consequence.** This updates a local hit amount, not the persistent weapon damage field. Preserve the separately documented ordinary-update decay difference between current source and original JK. Finite-value control flow is established; downstream damage acceptance and runtime outcomes are not.
+
+Evidence anchors: `JK 0x4D408E-0x4D40C7; MotS 0x522A5E-0x522A97`; `Complete handlers: JK 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53`; `World/sithWeapon.c:246-407`.
+
+Existing source alias: `SITH_WF_DAMAGE_DECAY`. Evidence grade: `original-retail-static`.
+
+## weapon 0x00008000: Conditional segmented object-trail creation in the 0x10000 handler
+
+The original handler attempts trail-template creation along a locally advanced orientation when bit 0x8000, a trail template and the step/projection versus hit-distance or range gates permit it. The no-hit tail can also create a trail up to range.
+
+**Limits and authoring consequence.** Creation return values are ignored, so allocation and visuals are not proved. The loops have no explicit iteration cap or general progress guard: termination depends on advancing configured step/orientation. This is not a reproduced hang, networking proof or a universal trail contract.
+
+Evidence anchors: `JK complete handler 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53`; `MotS first trail loop 0x5226B5-0x522A37; no-hit trail 0x522BC1-0x522F40; creation calls 0x5229DC/0x522EE1`; `World/sithWeapon.c:265-313,362-403`.
+
+Existing source alias: `SITH_WF_OBJECT_TRAIL`. Evidence grade: `original-retail-static`.
+
 ## What remains unresolved
 
-ThingFlags `0x20`, `0x01000000`, and `0x40000000` still lack established original-JK/MotS meanings after the additional bounded checks. In particular, Indy's NOSOUND and MOVABLE names are not evidence for those JK/MotS bits. Actor `0x1000`, `0x4000`, and `0x04000000`, plus numerous other family entries, also remain unresolved. Unknown does not mean unused or safe for private script storage.
+Thing `0x20`, `0x01000000`, and `0x40000000` still lack established original-JK/MotS meanings. Sound-owner cleanup and physical attachment did not resolve `0x01000000`; those routines use distinct sound and attachment fields. Do not import Indy NOSOUND/MOVABLE labels or treat unknown bits as safe storage.
 
-Weapon `0x10000` has a verified dispatch role in both originals, but the entire MotS callee remains untraced. AI `0x100` has a verified event role; a dedicated persistent-mode behavior remains unproved. Face `0x10` and light mode 6 now have bounded original-MotS paths; whole-renderer behavior, final visual results and other original-JK consumers remain unproved.
+Actor `0x1000`, `0x4000`, and `0x04000000` remain unresolved after field-aware checks. Shared actor/weapon union offsets and numeric matches are not actor-consumer proof. Weapon `0x2`, `0x10`, `0x20`, `0x40`, `0x20000`, and `0x100000` were not resolved by the completed handler; nearby collision-result masks belong to another domain. Attachment `0x8` and `0x10` received no new original meaning in this pass.
+
+AI `0x100` retains its verified event role without a proved dedicated persistent-mode behavior. Rendering findings remain bounded to their compared routines; final visual results and other original-JK consumers remain unproved.
+
+## Additional attachment and parity observations
+
+At the inspected attachment call sites, entered-message calls require the child Thing mask `0x80100` to be clear; exited-message calls test `0x100` locally. Downstream dispatch was not fully traced, so this does not guarantee delivered events. Face-attachment landing material checks read parent Thing `0x400000` / `0x800000`, not `0x01000000`.
+
+Both original saber 0x80 branches retain that bit, whereas the compared current source clears it. A modern-source one-shot interpretation must not be silently assigned to the original games. The impulse marker is consumed only when the inspected drag block reaches its test, not necessarily on the next frame.
 
 ## Research method and parity limits
 
@@ -191,4 +320,4 @@ Original identities:
 - jk101: SHA-256 `4509cd690634ba20e132bd16e713f91e144b17e2beaaad5e678f1ddb189b51d9`, 1388544 bytes.
 - mots: SHA-256 `23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974`, 1759744 bytes.
 
-The companion `flag-discoveries.json` contains the same 14 findings, target grades, anchors, remaining gaps and current-source hashes. These findings are included in release 0.1.5; the publication receipts separately record deployment and package verification.
+The companion `flag-discoveries.json` contains the same 25 findings, target grades, anchors, remaining gaps and current-source hashes. These findings are included in release 0.1.6; the publication receipts separately record deployment and package verification.
