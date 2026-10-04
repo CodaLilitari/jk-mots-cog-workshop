@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "version": "0.1.4",
+  "scope": "Original authored flag and value reference, matching public and skill machine catalogs, and maintained guide/workflow links. Frozen research source catalogs and measured registry snapshots remain unchanged. The initial PUBLICATION_AUDIT.json records the original projection; this supplement identifies maintained revisions.",
+  "review": "Exact changed-file identities and focused reference-shape checks are recorded here. Editorial evidence alignment and independent review are separate release requirements; this script does not certify every flag meaning or target.",
+  "excluded": "Raw retail assets, third-party source bodies and packages, private communications and identifying capture metadata.",
+  "runtime_claims": "No new original retail execution or connected-client result is established by this reference build.",
+  "coverage": {
+    "reference_files": [
+      "docs/FLAGS.md",
+      "corpus/reference/flags.json",
+      "skill/jk-mots-cog-workflow/references/flags.md",
+      "skill/jk-mots-cog-workflow/data/flags.json"
+    ],
+    "thing_single_bit_entries": 32,
+    "catalog_families": 31,
+    "all_entry_semantics_verified": false,
+    "source_catalog_refreshed": false,
+    "indy_comparison_separate": true
+  },
+  "reviewed_changes": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "7b82c426e869653e02617fd0752f5a0ea8c076fb29d815a72837b593a21b435f",
+      "action": "update"
+    },
+    {
+      "path": "README.md",
+      "sha256": "4aa56e10e3a45e3920dc1460e7471d8dd44a8cc8ecc61a5bdb630076e0f647f2",
+      "action": "update"
+    },
+    {
+      "path": "corpus/README.md",
+      "sha256": "1efb186ef5369ff99b8dd31baf7ad2476baf24647b58a44b008fa5d703c2a2f7",
+      "action": "update"
+    },
+    {
+      "path": "corpus/notes/flag-reference.md",
+      "sha256": "040a7cec2db55ed0350a4f81cffa27ddaf79b4b95713e05a1c5e324174b9420c",
+      "action": "create"
+    },
+    {
+      "path": "corpus/reference/flags.json",
+      "sha256": "fee64344e2346f734b2b19bf51e6afdc55722ba04284049fe3cfacc6b29b295c",
+      "action": "create"
+    },
+    {
+      "path": "corpus/stats.json",
+      "sha256": "d1ef9296da8a8e533e4b3e4940469239d8f44d92ae453edd02304effd539ec43",
+      "action": "update"
+    },
+    {
+      "path": "docs/COMPATIBILITY.md",
+      "sha256": "abe54d22aff15ee249d448dbe0308d75e08c4ee2ceac850abac71737698034a8",
+      "action": "update"
+    },
+    {
+      "path": "docs/FLAGS.md",
+      "sha256": "a79ec4fc1f2564533c745f6dfdd8152fe4294647815dfe98b73bf53deb147aca",
+      "action": "create"
+    },
+    {
+      "path": "docs/GUIDE.md",
+      "sha256": "5ffdb26945df575a888f8f92a7a4e1904a997e2a838e2258aba42f66c366b50e",
+      "action": "update"
+    },
+    {
+      "path": "release.json",
+      "sha256": "bc3f34ee9d7a6c7bde77da8d0a8debf852d37528564e2c9b19f3a6934f1fe076",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/SKILL.md",
+      "sha256": "415d13af1e1dc049a3429966073918e0a834834f798f1ded0724b037ec0d7f5c",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/data/flags.json",
+      "sha256": "fee64344e2346f734b2b19bf51e6afdc55722ba04284049fe3cfacc6b29b295c",
+      "action": "create"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/data/stats.json",
+      "sha256": "d1ef9296da8a8e533e4b3e4940469239d8f44d92ae453edd02304effd539ec43",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/references/flags.md",
+      "sha256": "a79ec4fc1f2564533c745f6dfdd8152fe4294647815dfe98b73bf53deb147aca",
+      "action": "create"
+    },
+    {
+      "path": "tools/render_site.mjs",
+      "sha256": "5c550f3dd5fd0d9af83c9e1f07f64e5e2f01880134562d20da1471d0ab573b84",
+      "action": "update"
+    }
+  ]
+}

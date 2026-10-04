@@ -15,6 +15,7 @@ Distinguish original JK 1.01, original MotS, a specific patch, a specific enhanc
 
 | Task | Evidence to start with |
 | --- | --- |
+| Flag/mask or numeric-mode question | Select the owning field in [flags and numeric values](references/flags.md), or retrieve the relevant family/bit from `data/flags.json`; do not load all source bodies |
 | Door, elevator, objective, trap, camera | Same-game stock example, JKL parameter order, thing frames and resources; [pattern atlas](references/pattern-atlas.md) |
 | Weapon, inventory or Force behavior | Same-game script, ITEMS.DAT and class/template messages; [verb families](references/verb-families.md) |
 | Multiplayer behavior | Authority, execution location, verb-specific transport, object identity, late joins and cleanup; [language/execution](references/language-and-execution.md) |
@@ -47,6 +48,8 @@ For classic God sabers, faders, or legacy level integration, read [classic COG a
 Use [authoring decisions](references/authoring-decisions.md) to select a discriminating check, [BeefCaike's integration study](references/beefcaike-cog-study.md) for substantial community systems, and [generalized recovered lessons](references/case-lessons.md) for advanced lifecycle, cache and protocol pitfalls.
 
 For the newer weapon-domain, timer, visibility, SM HQ and model-ownership findings, read [target contracts and lifecycle](references/target-contracts-and-lifecycle.md). In inspected original MotS, `GetCurInvWeapon2` already returns a bin; the studied enhanced binding differs. Validate the exact result domain before mapping or restoring it. Repeated timer IDs do not imply replacement, counted acknowledgements need participant/operation identity, and sentinel values need explicit branches. Keep current-local implementation evidence separate from pinned source and original-game execution. Acquisition of a historical pack is not completed analysis or retail compatibility.
+
+For flags, distinguish the setter’s accepted integer mask from per-bit behavior. `data/flags.json` catalogs all 26 historical table families plus related domains, with exact source hashes and unresolved meanings. Source names and Jones annotations are not original-game support. `SetThingFlags` ORs, `ClearThingFlags` clears and neither returns a value in the inspected original JK/MotS wrappers; invalid getters return -1. A conditional sync request does not prove delivery. Prefer lifecycle operations for engine-maintained state. Use the [flag reference](references/flags.md) selectively, and preserve scalar-versus-mask and original-versus-enhanced distinctions.
 
 ## Portable retrieval and private data
 

@@ -1,5 +1,13 @@
 # Changes
 
+## 0.1.4 — 2026-10-03
+
+- Replace unqualified historical flag tables with an original reference covering all 26 Massassi table families and five related domains: 385 entries, with all 32 ThingFlags positions accounted for.
+- Add byte-identical public and skill JSON catalogs with owning fields, values, source identities, evidence grades, unresolved positions and separate JK/MotS target limits.
+- Record original JK/MotS ThingFlags bitwise wrapper and bounded queue/serializer findings separately from enhanced-source per-bit analysis. No new game or connected-client run is claimed.
+- Correct specific animation, particle, surface, inventory and mask interpretations; preserve conflicting aliases and uncertain names. Compare Indy/OpenJones3D independently without importing its bit meanings into JK/MotS.
+- Preserve workload safeguards, frozen source catalogs, portfolio updater and optional draft-only reporter. No raw private communications, retail assets or copied community source bodies are added.
+
 ## 0.1.3 — 2026-10-03
 
 - Correct the original MotS versus enhanced-engine weapon getter contract, selection thresholds and bin/ordinal guidance in both human and machine references.

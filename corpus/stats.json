@@ -13,8 +13,8 @@
     "compatibility_rows": 586,
     "reviewed_adapted_notes": 9,
     "reviewed_adapted_note_bytes": 147454,
-    "total_authored_research_notes": 14,
-    "total_authored_research_note_bytes": 201890
+    "total_authored_research_notes": 15,
+    "total_authored_research_note_bytes": 202864
   },
   "scope": "Public metadata and authored analysis. Includes only approved public-source and retail identities. No raw retail/custom script bodies or private communications are included.",
   "game_labels": "Source/catalog association, not a declaration that the body works in that engine. Use measured registry preflight and target tests.",

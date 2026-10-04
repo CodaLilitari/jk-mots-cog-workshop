@@ -1,5 +1,7 @@
 # Writing COGs for Jedi Knight and Mysteries of the Sith
 
+For flag-based behavior, use the [flags and numeric values reference](FLAGS.md). It separates ThingFlags, actor/type, physics, JK, inventory, surface, rendering and animation domains; covers all 26 historical table families; and marks unresolved meanings and target limits. The original JK/MotS setter contract is separate from enhanced-source behavior. Retrieve one relevant family or bit at a time rather than loading the entire research library.
+
 This guide takes you from a linked switch to a maintainable gameplay system. It is written for humans; the bundled skill supplies the corresponding agent workflow. The examples are original teaching code, and the explanations draw on measured original-game registrations, inspected engine source, owned retail examples and historical community research. No proprietary game scripts or private conversations are reproduced here.
 
 Start by choosing **stock JK 1.01**, **stock Mysteries of the Sith**, or an **explicitly identified enhanced engine or extension**. A script that uses a familiar name may still belong to the wrong game. Keep [COMPATIBILITY.md](COMPATIBILITY.md) beside this guide. It lists the target differences and labels which claims come from original binaries, source interpretation or bounded tests.

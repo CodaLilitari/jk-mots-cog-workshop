@@ -1,5 +1,7 @@
 # Target compatibility: JK 1.01, MotS and extensions
 
+The [flag reference](FLAGS.md) and its machine catalog keep original JK, original MotS, pinned enhanced source, current source and Indy reconstruction separate. A native accepting a 32-bit mask is not proof that every bit has the same effect in both games. New original-binary evidence covers Get/Set/ClearThingFlags and a bounded synchronization path, not every per-bit meaning or remote outcome.
+
 This is an authoring and evidence matrix, not a blanket certification that every registered verb works in every situation. **JK** below means the inspected original JK 1.01 executable; **MotS** means the inspected original Mysteries of the Sith executable. Unless explicitly labeled as separately hashed current-local evidence or another pinned extension revision in the [target-contract study](../corpus/notes/target-contracts-and-lifecycle.md), enhanced-engine behavior is tied to source commit `b1be98bd4f170b5384cb71b15443a274aac6a937`, inspected on 30 September 2026. Other revisions, unofficial patches and extension versions need their own checks.
 
 ## Evidence labels
