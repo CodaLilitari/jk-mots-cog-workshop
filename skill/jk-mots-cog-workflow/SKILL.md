@@ -9,7 +9,7 @@ Implement the requested behavior from a close, inspected example and verify it i
 
 For a skill installed with the Workshop's `install-skill` command, begin substantive work with `python scripts/workshop.py version`. This delegates to the registered Workshop launcher and its portfolio check, at most once per 24 hours; a newer verified release can also refresh an unchanged installed public skill. If an update occurs, reread the skill and relevant references before relying on them. Honor offline or update opt-out preferences with `--offline`, `--no-auto-update`, `COG_WORKSHOP_OFFLINE=1`, or `COG_WORKSHOP_AUTO_UPDATE=0`. Direct corpus, inspection, import and report-draft helpers remain offline; reading this skill does not itself execute an update. If the launcher is unavailable, continue with local evidence and state the freshness limit; restore or reconnect the extracted Workshop instead of creating a new updater.
 
-For the unresolved or conflicting flag entries studied after 0.1.4, read [the flag discoveries supplement](references/flag-discoveries.md) and `data/flag-discoveries.json` before the matching base-catalog row. It distinguishes original JK/MotS code paths from source-only findings, preserves remaining gaps, and is incorporated into the matching 0.1.5 catalog entries.
+For the unresolved or conflicting flag entries studied after 0.1.4, read [the flag discoveries supplement](references/flag-discoveries.md) and `data/flag-discoveries.json` before the matching base-catalog row. It distinguishes original JK/MotS code paths from source-only findings, preserves remaining gaps, and is incorporated into the matching 0.1.6 catalog entries.
 
 ## Choose the target and integration role
 

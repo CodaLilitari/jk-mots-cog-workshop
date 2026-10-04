@@ -1,5 +1,13 @@
 # Changes
 
+## 0.1.6 — 2026-10-04
+
+- Add eleven bounded original-JK/MotS flag clarifications: saber 0x80, physics 0x8000, actor SEEINDARK, three attachment states, three sound lifecycle roles, and two weapon-handler flags.
+- Complete the original weapon 0x10000 handler trace, including dispatch priority, terminal hit handling, conditional trail/impact creation, damage floor and deferred destruction mark.
+- Document the original/current-source saber-bit retention difference and conditional drag-marker consumption. Preserve unresolved Thing, actor, weapon and attachment meanings.
+- Keep all 31 flag families and 385 catalog entries, with 25 cumulative findings and 28 matching rows including legacy aliases. Original static evidence is not runtime, visual, audio or multiplayer proof.
+- Keep raw retail/private source material private. Acquisition, broad indexing and reporter behavior are unchanged; research pauses at this checkpoint.
+
 ## 0.1.5 — 2026-10-03
 
 - Incorporate 14 reviewed flag findings into human and machine references: fourteen findings with bounded original-executable evidence for at least one target.
