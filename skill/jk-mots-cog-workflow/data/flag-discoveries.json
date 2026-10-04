@@ -917,6 +917,80 @@
           "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
         }
       }
+    },
+    {
+      "family": "item",
+      "value": 16,
+      "hex": "0x00000010",
+      "title": "Permit an item through the MotS weapon-collision entry filter",
+      "evidence": "original-retail-static",
+      "retail_jk": "absent-in-compared-collision-handler",
+      "retail_mots": "bounded-original-static",
+      "meaning": "In original MotS, the registered weapon-versus-item collision handler checks whether the collided thing is type 5 (item). An item lacking item flag 0x10 immediately returns 0. A non-item or an item carrying the bit continues into subsequent weapon-collision processing. The compared original JK handler lacks this initial item-bit filter.",
+      "limits": "Shootable powerup is a useful shorthand for this gate, not a complete damage or destruction contract. Later weapon/item settings and paths still matter. The JK result describes only the compared handler entry, not game-wide absence of all possible item-bit uses. No in-game collision or damage test was run.",
+      "anchors": [
+        "MotS handler 0x5236D0; type test 0x5236DE; item mask 0x5236E3; return 0x5236EC-0x5236F5; continuation 0x5236F6",
+        "MotS weapon/type-5 collision registration 0x53491C-0x534925",
+        "JK compared handler 0x4D4BC0; weapon-proximity check 0x4D4BCB",
+        "World/sithWeapon.c:637-650; types_enums.h:1273-1275"
+      ],
+      "source_alias": "SITH_ITEM_10",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "absent-in-compared-collision-handler",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS findings do not transfer to Indy."
+        }
+      }
+    },
+    {
+      "family": "physics",
+      "value": 8388608,
+      "hex": "0x00800000",
+      "title": "MotS water-entry writer and skipped vertical-velocity reduction",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "On the eligible original MotS water-entry path, the code ORs physics flags with 0x00800000, stores the result, and branches if that result is nonzero. The OR guarantees a nonzero result, so the following velocity.z *= 0.25 block is skipped whether the bit was previously clear or set. The corresponding original JK path performs that vertical-velocity multiplication and has no equivalent physics-bit OR/test there. The mapped MotS water-exit routine has no direct read or clear of this physics bit.",
+      "limits": "The writer requires entry into an underwater sector, the separate Thing water-state bit previously absent, no drowning branch, the no-splash/no-notify argument zero, and physics movement. This is not a slow-once test. Broader intended meaning remains unresolved; no claim of all drag being disabled, game-wide permanent retention, or demonstrated sinking/fall-damage behavior. The current reconstruction reproduces this original branch anomaly. Runtime remains untested.",
+      "anchors": [
+        "MotS SetThingPosEx 0x553DD0 -> SetSector 0x51BBA0 -> EnterSector 0x51BC80 -> EnterWater 0x51BD30",
+        "MotS OR/store/JNE 0x51BE26-0x51BE37; skipped vertical-velocity block 0x51BE39-0x51BE45",
+        "MotS mapped ExitWater 0x51BE50-0x51BF3D (end exclusive)",
+        "JK EnterWater 0x4CD640; vertical-velocity multiplication 0x4CD736-0x4CD748; constant at 0x522E8C = 0.25",
+        "World/sithThing.c:816-904"
+      ],
+      "source_alias": "SITH_PF_800000",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested",
+          "note": "Verified comparison: the eligible JK path quarters vertical velocity without the MotS physics-bit operation; no general JK meaning is assigned to this bit."
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS findings do not transfer to Indy."
+        }
+      }
     }
   ],
   "remaining_gaps": [
@@ -955,14 +1029,23 @@
         "0x100000"
       ],
       "status": "unresolved-by-inspected-handler",
-      "note": "Collision-result masks in the handler are not weapon flags. No whole-engine absence claim."
+      "note": "Collision-result masks in the handler are not weapon flags. No whole-engine absence claim. A later focused 0x20 investigation also remains unresolved; see investigations for field-aware searches and excluded actor/explosion/physics matches."
+    },
+    {
+      "family": "physics",
+      "values": [
+        "0x02000000"
+      ],
+      "status": "unresolved-original-semantics",
+      "note": "Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no bit-specific gameplay consumer was established."
     }
   ],
   "method_corrections": [
     "Current engine-header virtual addresses can point to different functions in JK1.01. Reconcile via registered verbs, pointer fields, call chains and verified bytes; do not assume a uniform delta.",
     "Named-symbol searches miss literal consumers. Conversely, a matching numeric value in physics, sound, collision, animation or another field does not establish Thing.flags semantics.",
     "Source symbols are preserved as search aliases, not official historical names or automatic semantic authority.",
-    "Private executable/source/disassembly data is excluded; this supplement contains authored explanations and identities/anchors."
+    "Private executable/source/disassembly data is excluded; this supplement contains authored explanations and identities/anchors.",
+    "MotS physics 0x00800000 water-entry code uses OR/store/JNE, not a pre-existing-bit test. Its nonzero result skips the nearby quarter-Z-velocity block in the original executable too; do not silently repair the condition when describing retail behavior."
   ],
   "parity_caution": "The nearby current weapon damage-decay branch resets damage to minDamage only when the computed value is <=0; the inspected JK1.01 branch compares against minDamage itself. Matching one flag dispatch does not establish whole-function parity. Original MotS hierarchy mode 6 transfers mesh+0x44 lighting data, while the current enhanced source assigns radius at the corresponding step. Original radius is separately parsed and consumed at mesh+0x48; do not infer whole-path parity.",
   "source_files": [
@@ -1493,9 +1576,90 @@
     ]
   },
   "coverage": {
-    "original_jk_mots_findings": 25,
+    "original_jk_mots_findings": 27,
     "indy_reconstruction_observations": 3,
     "indy_thing_declarations": 32,
-    "runtime_tested_findings": 0
-  }
+    "runtime_tested_findings": 0,
+    "focused_unresolved_investigations": 2
+  },
+  "investigations": [
+    {
+      "family": "physics",
+      "value": 33554432,
+      "hex": "0x02000000",
+      "date": "2026-10-04",
+      "status": "unresolved-original-semantics",
+      "result": "Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no bit-specific gameplay consumer was established.",
+      "scope": "Checked registered wrappers, the CreateThing-to-template-copy chain, position-message field writes/reads, and selected checksum call sites. Exact mask/complement searches returned 14 hits per executable; upper-byte/word displacement and immediate bit-25 shift/bit-operation searches returned zero matches. Whole-field displacement counts were 172 JK and 160 MotS syntactic references, not proven consumer counts. The checksum call site supplies all four physics-flags bytes, but the helper and full join chain were not re-audited here.",
+      "excluded_matches": "Thing water-state 0x02000000 reads offset zero, and actor 0x02000000 reads the type-specific parameter field. Neither establishes physics meaning. The inspected MotS position-send suppression gate uses physics 0x04000000, a different bit.",
+      "limits": "No unused, droid-specific, water-specific or no-position-sync alias is justified. Negative text-pattern searches are not full data-flow analysis: alternate pointer bases, register aliases, composite or computed masks and indirect paths may escape them. Copy preservation is bounded to the inspected operation; later initialization may change state. Static packet handling does not prove delivery, immediate synchronization or connected-client convergence. Checksum input is not a demonstrated join failure. Runtime was not tested.",
+      "anchors": [
+        "JK Get/Set/ClearPhysicsFlags 0x504980, 0x5049C0, 0x504A30; physics field +0x1D0",
+        "MotS Get/Set/ClearPhysicsFlags 0x5557F0, 0x555830, 0x5558A0; physics field +0x1DC",
+        "JK position-word write 0x4F3434-0x4F3440 and read/store 0x4F35AA-0x4F35B1",
+        "MotS position-word write 0x5437D4-0x5437E0 and read/store 0x54394A-0x543951; distinct 0x04000000 gate at 0x543746",
+        "JK template-copy 0x4CDB70, REP MOVSD 0x4CDBAF (0x2B0 bytes); MotS 0x51C270, REP MOVSD 0x51C2AF (0x2C4 bytes)",
+        "JK physics checksum input 0x4CF6EA-0x4CF6F3; MotS 0x51DE5A-0x51DE63"
+      ],
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-generic-storage-evidence",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-generic-storage-evidence",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "gameplay_meaning": "not-audited",
+          "evidence_lane": "not-audited-for-this-investigation",
+          "runtime_status": "not-tested"
+        }
+      }
+    },
+    {
+      "family": "weapon",
+      "value": 32,
+      "hex": "0x00000020",
+      "date": "2026-10-04",
+      "status": "unresolved-original-semantics",
+      "result": "No verified weapon-specific 0x20 consumer was established in the reviewed original JK 1.01 or MotS update, firing, parser, collision and lifecycle region. The hexadecimal weaponflags parser stores the complete parsed word without a per-bit mask in both originals. The named current-source identifier remains a numeric declaration. Matching mask values in actor, explosion and physics code were rejected after checking their field and type context.",
+      "scope": "Selected flag loads and operations were reviewed within byte-checked regions JK 0x4D3830-0x4D5571 and MotS 0x5221F0-0x524118 (end exclusive), plus selected typed collision, damage, explosion and checksum paths. This is not a semantic audit of every instruction or downstream call; the JK endpoint does not encompass the complete final helper. Exact shared-union-offset references were used only as candidates (167 JK, 194 MotS); union offset alone does not identify a weapon. Original type-3 checksum call sites supply the full four-byte weapon-flags field; no bit-specific checksum rule or full join result is inferred.",
+      "excluded_matches": "MotS actor-death 0x53BB01 and explosion creation 0x54CA8D, with JK explosion counterpart 0x4FBA9D, operate on other typed parameter domains. Surface-collision 0x20/0xDF operations read physics flags, not weapon flags. A high-byte 0x20 test on a loaded weapon word means whole-word 0x2000, not 0x20.",
+      "limits": "This is not proof of game-wide nonuse or inertness. Computed masks, pointer aliases, indirect paths and uninspected code remain outside the bounded result. Template occurrence does not establish purpose, and no underwater-grenade behavior is assigned. Changing template input may affect checksum processing even without a demonstrated gameplay consumer. No retail runtime or multiplayer test was run.",
+      "anchors": [
+        "JK reviewed weapon region 0x4D3830-0x4D5571; MotS 0x5221F0-0x524118 (end exclusive)",
+        "JK unmasked parsed-weaponflags store 0x4D46DA; MotS 0x5230AA; Current World/sithWeapon.c:409-423",
+        "MotS typed actor damage dispatch 0x51B190-0x51B271; actor-death candidate 0x53BB01",
+        "JK explosion 0x4FBA9D; MotS explosion 0x54CA8D; type-6 creation dispatch 0x51C5BF-0x51C5E8",
+        "JK type-3 checksum input in 0x4CF6A0-0x4CF7C1; MotS 0x51DE10-0x51DF31",
+        "Current types_enums.h:139, SITH_WF_20 declaration"
+      ],
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-search-no-dedicated-consumer-established",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-search-no-dedicated-consumer-established",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "gameplay_meaning": "not-audited",
+          "evidence_lane": "not-audited-for-this-investigation",
+          "runtime_status": "not-tested"
+        }
+      }
+    }
+  ]
 }

@@ -13,7 +13,11 @@
 | **Indy / Infernal Machine — pinned OpenJones3D reconstruction** | Three selected source observations and a 32-position ThingFlags declaration comparison | Original Indy binary verification, original Indy runtime behavior, or automatic transfer of JKDF2/MotS meanings |
 | **Enhanced JK/MotS engines — current source** | Individually identified source consumers and recorded differences from the originals | Retail equivalence inferred from source names or successful enhanced-engine behavior |
 
-There are **25 original-JK/MotS findings**, plus **three separate Indy reconstruction observations**. A verified path proves only the stated behavior under its stated conditions. “Not established” is an evidence gap; “absent in compared routine” is a bounded comparison. Neither means a bit is globally unused. No game-runtime or multiplayer test is claimed here.
+There are **27 original-JK/MotS findings**, plus **three separate Indy reconstruction observations**. A verified path proves only the stated behavior under its stated conditions. “Not established” is an evidence gap; “absent in compared routine” is a bounded comparison. Neither means a bit is globally unused. No game-runtime or multiplayer test is claimed here.
+
+## Focused follow-up: four MotS masks
+
+Two additional original-binary findings are established below: the item `0x10` collision gate and the physics `0x00800000` water-entry writer. Physics `0x02000000` and weapon `0x20` received deeper field-aware investigation but retain unresolved gameplay meanings. Their search scope, positive generic storage evidence and rejected numeric matches are recorded under [Unresolved masks investigated](#unresolved-masks-investigated). Original Indy meanings remain unestablished for all four.
 
 ## Findings by field and game
 
@@ -44,6 +48,8 @@ There are **25 original-JK/MotS findings**, plus **three separate Indy reconstru
 | sound `0x00000080` | Followed-owner sound lookup and detachment at owner cleanup | Verified selected code path | Verified selected code path | Not established |
 | weapon `0x00004000` | Distance-based damage reduction in the 0x10000 handler | Verified selected code path | Verified selected code path | Not established |
 | weapon `0x00008000` | Conditional segmented object-trail creation in the 0x10000 handler | Verified selected code path | Verified selected code path | Not established |
+| item `0x00000010` | Permit an item through the MotS weapon-collision entry filter | Absent in compared handler entry only | Verified selected code path | Not established |
+| physics `0x00800000` | MotS water-entry writer and skipped vertical-velocity reduction | Verified selected code path | Verified selected code path | Not established |
 
 Thing, actor, physics, JK, sound and attachment flags are separate fields. Light mode 6 is a scalar. Source aliases are search aids, not proof of original developer names. Indy reconstruction evidence appears in its own section below and must not be read as original-executable proof.
 
@@ -347,6 +353,30 @@ Evidence anchors: `JK complete handler 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53
 
 Existing source alias: `SITH_WF_OBJECT_TRAIL`. Evidence grade: `original-retail-static`.
 
+## item 0x00000010: Permit an item through the MotS weapon-collision entry filter
+
+**JKDF2 1.01:** Absent in compared handler entry only. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
+In original MotS, the registered weapon-versus-item collision handler checks whether the collided thing is type 5 (item). An item lacking item flag 0x10 immediately returns 0. A non-item or an item carrying the bit continues into subsequent weapon-collision processing. The compared original JK handler lacks this initial item-bit filter.
+
+**Limits and authoring consequence.** Shootable powerup is a useful shorthand for this gate, not a complete damage or destruction contract. Later weapon/item settings and paths still matter. The JK result describes only the compared handler entry, not game-wide absence of all possible item-bit uses. No in-game collision or damage test was run.
+
+Evidence anchors: `MotS handler 0x5236D0; type test 0x5236DE; item mask 0x5236E3; return 0x5236EC-0x5236F5; continuation 0x5236F6`; `MotS weapon/type-5 collision registration 0x53491C-0x534925`; `JK compared handler 0x4D4BC0; weapon-proximity check 0x4D4BCB`; `World/sithWeapon.c:637-650; types_enums.h:1273-1275`.
+
+Existing source alias: `SITH_ITEM_10`. Evidence grade: `original-retail-static`.
+
+## physics 0x00800000: MotS water-entry writer and skipped vertical-velocity reduction
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
+On the eligible original MotS water-entry path, the code ORs physics flags with 0x00800000, stores the result, and branches if that result is nonzero. The OR guarantees a nonzero result, so the following velocity.z *= 0.25 block is skipped whether the bit was previously clear or set. The corresponding original JK path performs that vertical-velocity multiplication and has no equivalent physics-bit OR/test there. The mapped MotS water-exit routine has no direct read or clear of this physics bit.
+
+**Limits and authoring consequence.** The writer requires entry into an underwater sector, the separate Thing water-state bit previously absent, no drowning branch, the no-splash/no-notify argument zero, and physics movement. This is not a slow-once test. Broader intended meaning remains unresolved; no claim of all drag being disabled, game-wide permanent retention, or demonstrated sinking/fall-damage behavior. The current reconstruction reproduces this original branch anomaly. Runtime remains untested.
+
+Evidence anchors: `MotS SetThingPosEx 0x553DD0 -> SetSector 0x51BBA0 -> EnterSector 0x51BC80 -> EnterWater 0x51BD30`; `MotS OR/store/JNE 0x51BE26-0x51BE37; skipped vertical-velocity block 0x51BE39-0x51BE45`; `MotS mapped ExitWater 0x51BE50-0x51BF3D (end exclusive)`; `JK EnterWater 0x4CD640; vertical-velocity multiplication 0x4CD736-0x4CD748; constant at 0x522E8C = 0.25`; `World/sithThing.c:816-904`.
+
+Existing source alias: `SITH_PF_800000`. Evidence grade: `original-retail-static`.
+
 ## Indy: reconstruction evidence, separately scoped
 
 Here “Indy” means **Indiana Jones and the Infernal Machine**. The comparison uses [OpenJones3D](https://github.com/smlu/OpenJones3D/tree/a675b395a5d5cff238332d091368483b849e8b5b), pinned at `a675b395a5d5cff238332d091368483b849e8b5b`. These are inspected reconstruction-source observations, not verified original-Indy executable or runtime results.
@@ -398,6 +428,38 @@ These 32 entries preserve the reconstruction declarations and their grades. A me
 
 In particular, Indy `NOSOUND` (`0x01000000`), `MOVABLE` (`0x40000000`), and `WHIPSWING` (`0x80000000`) are separate declarations. They do not resolve the corresponding JKDF2/MotS unknowns or replace the inspected MotS deferred-render interpretation. Indy `SNOW` (`0x10000`) has the source consumer above; original JK/MotS instead have the documented placement-exclusion path.
 
+## Unresolved masks investigated
+
+These are bounded research results, not additional resolved flag meanings. Generic storage/copy behavior is original-static evidence for the word containing a bit; it does not establish a dedicated gameplay consumer. Both games remain untested at runtime, and Indy was not audited for these masks.
+
+### physics 0x02000000
+
+**Status:** unresolved-original-semantics.
+
+Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no bit-specific gameplay consumer was established.
+
+**Scope.** Checked registered wrappers, the CreateThing-to-template-copy chain, position-message field writes/reads, and selected checksum call sites. Exact mask/complement searches returned 14 hits per executable; upper-byte/word displacement and immediate bit-25 shift/bit-operation searches returned zero matches. Whole-field displacement counts were 172 JK and 160 MotS syntactic references, not proven consumer counts. The checksum call site supplies all four physics-flags bytes, but the helper and full join chain were not re-audited here.
+
+**Excluded matches.** Thing water-state 0x02000000 reads offset zero, and actor 0x02000000 reads the type-specific parameter field. Neither establishes physics meaning. The inspected MotS position-send suppression gate uses physics 0x04000000, a different bit.
+
+**Limits.** No unused, droid-specific, water-specific or no-position-sync alias is justified. Negative text-pattern searches are not full data-flow analysis: alternate pointer bases, register aliases, composite or computed masks and indirect paths may escape them. Copy preservation is bounded to the inspected operation; later initialization may change state. Static packet handling does not prove delivery, immediate synchronization or connected-client convergence. Checksum input is not a demonstrated join failure. Runtime was not tested.
+
+Evidence anchors: `JK Get/Set/ClearPhysicsFlags 0x504980, 0x5049C0, 0x504A30; physics field +0x1D0`; `MotS Get/Set/ClearPhysicsFlags 0x5557F0, 0x555830, 0x5558A0; physics field +0x1DC`; `JK position-word write 0x4F3434-0x4F3440 and read/store 0x4F35AA-0x4F35B1`; `MotS position-word write 0x5437D4-0x5437E0 and read/store 0x54394A-0x543951; distinct 0x04000000 gate at 0x543746`; `JK template-copy 0x4CDB70, REP MOVSD 0x4CDBAF (0x2B0 bytes); MotS 0x51C270, REP MOVSD 0x51C2AF (0x2C4 bytes)`; `JK physics checksum input 0x4CF6EA-0x4CF6F3; MotS 0x51DE5A-0x51DE63`.
+
+### weapon 0x00000020
+
+**Status:** unresolved-original-semantics.
+
+No verified weapon-specific 0x20 consumer was established in the reviewed original JK 1.01 or MotS update, firing, parser, collision and lifecycle region. The hexadecimal weaponflags parser stores the complete parsed word without a per-bit mask in both originals. The named current-source identifier remains a numeric declaration. Matching mask values in actor, explosion and physics code were rejected after checking their field and type context.
+
+**Scope.** Selected flag loads and operations were reviewed within byte-checked regions JK 0x4D3830-0x4D5571 and MotS 0x5221F0-0x524118 (end exclusive), plus selected typed collision, damage, explosion and checksum paths. This is not a semantic audit of every instruction or downstream call; the JK endpoint does not encompass the complete final helper. Exact shared-union-offset references were used only as candidates (167 JK, 194 MotS); union offset alone does not identify a weapon. Original type-3 checksum call sites supply the full four-byte weapon-flags field; no bit-specific checksum rule or full join result is inferred.
+
+**Excluded matches.** MotS actor-death 0x53BB01 and explosion creation 0x54CA8D, with JK explosion counterpart 0x4FBA9D, operate on other typed parameter domains. Surface-collision 0x20/0xDF operations read physics flags, not weapon flags. A high-byte 0x20 test on a loaded weapon word means whole-word 0x2000, not 0x20.
+
+**Limits.** This is not proof of game-wide nonuse or inertness. Computed masks, pointer aliases, indirect paths and uninspected code remain outside the bounded result. Template occurrence does not establish purpose, and no underwater-grenade behavior is assigned. Changing template input may affect checksum processing even without a demonstrated gameplay consumer. No retail runtime or multiplayer test was run.
+
+Evidence anchors: `JK reviewed weapon region 0x4D3830-0x4D5571; MotS 0x5221F0-0x524118 (end exclusive)`; `JK unmasked parsed-weaponflags store 0x4D46DA; MotS 0x5230AA; Current World/sithWeapon.c:409-423`; `MotS typed actor damage dispatch 0x51B190-0x51B271; actor-death candidate 0x53BB01`; `JK explosion 0x4FBA9D; MotS explosion 0x54CA8D; type-6 creation dispatch 0x51C5BF-0x51C5E8`; `JK type-3 checksum input in 0x4CF6A0-0x4CF7C1; MotS 0x51DE10-0x51DF31`; `Current types_enums.h:139, SITH_WF_20 declaration`.
+
 ## What remains unresolved
 
 Thing `0x20`, `0x01000000`, and `0x40000000` still lack established original-JK/MotS meanings. Sound-owner cleanup and physical attachment did not resolve `0x01000000`; those routines use distinct sound and attachment fields. Do not import Indy NOSOUND/MOVABLE labels or treat unknown bits as safe storage.
@@ -423,7 +485,7 @@ The nearby current weapon damage-decay branch resets damage to minDamage only wh
 
 The newly mapped original-MotS hierarchy transfers stored lighting at mesh+0x44, whereas current source assigns radius. Original radius is parsed and used at +0x48. This source mismatch is recorded without changing the engine.
 
-The private evidence packet retains selected byte receipts and review notes. The public-facing supplement contains no retail scripts, executable payloads, disassembly copies, Discord excerpts, or private local paths. The broad crawl and acquisition goal remain paused.
+The private evidence packet retains selected byte receipts and review notes. The focused follow-up also records unresolved investigation scope in the machine-readable `investigations` array. The public-facing supplement contains no retail scripts, executable payloads, disassembly copies, Discord excerpts, or private local paths. The broad crawl and acquisition goal remain paused.
 
 Original identities:
 

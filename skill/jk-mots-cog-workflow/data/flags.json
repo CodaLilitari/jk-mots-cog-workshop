@@ -2393,14 +2393,38 @@
           "value": 16,
           "hex": "0x00000010",
           "symbol": "SITH_ITEM_10",
-          "evidence": "source-consumer",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 176,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit",
-          "description": "In one MotS-guarded projectile collision branch, item targets lacking this bit return before ordinary handling. Not a complete shootability or damage contract.",
-          "anchors": "C: World/sithWeapon.c:635-650"
+          "retail_jk": "absent-in-compared-collision-handler",
+          "retail_mots": "bounded-original-static",
+          "description": "In original MotS, the registered weapon-versus-item collision handler checks whether the collided thing is type 5 (item). An item lacking item flag 0x10 immediately returns 0. A non-item or an item carrying the bit continues into subsequent weapon-collision processing. The compared original JK handler lacks this initial item-bit filter.",
+          "anchors": "MotS handler 0x5236D0; type test 0x5236DE; item mask 0x5236E3; return 0x5236EC-0x5236F5; continuation 0x5236F6; MotS weapon/type-5 collision registration 0x53491C-0x534925; JK compared handler 0x4D4BC0; weapon-proximity check 0x4D4BCB; World/sithWeapon.c:637-650; types_enums.h:1273-1275",
+          "prior_interpretation_before_2026_10_04_followup": {
+            "evidence": "source-consumer",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit",
+            "description": "In one MotS-guarded projectile collision branch, item targets lacking this bit return before ordinary handling. Not a complete shootability or damage contract.",
+            "anchors": "C: World/sithWeapon.c:635-650"
+          },
+          "caveat": "Shootable powerup is a useful shorthand for this gate, not a complete damage or destruction contract. Later weapon/item settings and paths still matter. The JK result describes only the compared handler entry, not game-wide absence of all possible item-bit uses. No in-game collision or damage test was run.",
+          "followup": {
+            "family": "item",
+            "value": 16,
+            "title": "Permit an item through the MotS weapon-collision entry filter",
+            "anchors": [
+              "MotS handler 0x5236D0; type test 0x5236DE; item mask 0x5236E3; return 0x5236EC-0x5236F5; continuation 0x5236F6",
+              "MotS weapon/type-5 collision registration 0x53491C-0x534925",
+              "JK compared handler 0x4D4BC0; weapon-proximity check 0x4D4BCB",
+              "World/sithWeapon.c:637-650; types_enums.h:1273-1275"
+            ],
+            "source_alias": "SITH_ITEM_10",
+            "file": "flag-discoveries.json",
+            "declaration_source_preserved": true,
+            "reference_type": "maintained-master-reference",
+            "canonical_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAG_DISCOVERIES.html"
+          }
         }
       ],
       "unlisted_bit_positions": [
@@ -3326,12 +3350,37 @@
           "value": 8388608,
           "hex": "0x00800000",
           "symbol": "SITH_PF_800000",
-          "evidence": "unresolved-name",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 1178,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_before_2026_10_04_followup": {
+            "evidence": "unresolved-name",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "On the eligible original MotS water-entry path, the code ORs physics flags with 0x00800000, stores the result, and branches if that result is nonzero. The OR guarantees a nonzero result, so the following velocity.z *= 0.25 block is skipped whether the bit was previously clear or set. The corresponding original JK path performs that vertical-velocity multiplication and has no equivalent physics-bit OR/test there. The mapped MotS water-exit routine has no direct read or clear of this physics bit.",
+          "caveat": "The writer requires entry into an underwater sector, the separate Thing water-state bit previously absent, no drowning branch, the no-splash/no-notify argument zero, and physics movement. This is not a slow-once test. Broader intended meaning remains unresolved; no claim of all drag being disabled, game-wide permanent retention, or demonstrated sinking/fall-damage behavior. The current reconstruction reproduces this original branch anomaly. Runtime remains untested.",
+          "anchors": "MotS SetThingPosEx 0x553DD0 -> SetSector 0x51BBA0 -> EnterSector 0x51BC80 -> EnterWater 0x51BD30; MotS OR/store/JNE 0x51BE26-0x51BE37; skipped vertical-velocity block 0x51BE39-0x51BE45; MotS mapped ExitWater 0x51BE50-0x51BF3D (end exclusive); JK EnterWater 0x4CD640; vertical-velocity multiplication 0x4CD736-0x4CD748; constant at 0x522E8C = 0.25; World/sithThing.c:816-904",
+          "followup": {
+            "family": "physics",
+            "value": 8388608,
+            "title": "MotS water-entry writer and skipped vertical-velocity reduction",
+            "anchors": [
+              "MotS SetThingPosEx 0x553DD0 -> SetSector 0x51BBA0 -> EnterSector 0x51BC80 -> EnterWater 0x51BD30",
+              "MotS OR/store/JNE 0x51BE26-0x51BE37; skipped vertical-velocity block 0x51BE39-0x51BE45",
+              "MotS mapped ExitWater 0x51BE50-0x51BF3D (end exclusive)",
+              "JK EnterWater 0x4CD640; vertical-velocity multiplication 0x4CD736-0x4CD748; constant at 0x522E8C = 0.25",
+              "World/sithThing.c:816-904"
+            ],
+            "source_alias": "SITH_PF_800000",
+            "file": "flag-discoveries.json",
+            "declaration_source_preserved": true,
+            "reference_type": "maintained-master-reference",
+            "canonical_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAG_DISCOVERIES.html"
+          }
         },
         {
           "value": 16777216,
@@ -3353,7 +3402,17 @@
           "line": 1180,
           "annotation": "",
           "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_mots": "not-established-per-bit",
+          "description": "Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no bit-specific gameplay consumer was established.",
+          "caveat": "No unused, droid-specific, water-specific or no-position-sync alias is justified. Negative text-pattern searches are not full data-flow analysis: alternate pointer bases, register aliases, composite or computed masks and indirect paths may escape them. Copy preservation is bounded to the inspected operation; later initialization may change state. Static packet handling does not prove delivery, immediate synchronization or connected-client convergence. Checksum input is not a demonstrated join failure. Runtime was not tested.",
+          "investigation": {
+            "date": "2026-10-04",
+            "status": "unresolved-original-semantics",
+            "file": "flag-discoveries.json",
+            "family": "physics",
+            "value": 33554432,
+            "canonical_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAG_DISCOVERIES.html"
+          }
         },
         {
           "value": 67108864,
@@ -4870,7 +4929,17 @@
           "line": 139,
           "annotation": "",
           "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_mots": "not-established-per-bit",
+          "description": "No verified weapon-specific 0x20 consumer was established in the reviewed original JK 1.01 or MotS update, firing, parser, collision and lifecycle region. The hexadecimal weaponflags parser stores the complete parsed word without a per-bit mask in both originals. The named current-source identifier remains a numeric declaration. Matching mask values in actor, explosion and physics code were rejected after checking their field and type context.",
+          "caveat": "This is not proof of game-wide nonuse or inertness. Computed masks, pointer aliases, indirect paths and uninspected code remain outside the bounded result. Template occurrence does not establish purpose, and no underwater-grenade behavior is assigned. Changing template input may affect checksum processing even without a demonstrated gameplay consumer. No retail runtime or multiplayer test was run.",
+          "investigation": {
+            "date": "2026-10-04",
+            "status": "unresolved-original-semantics",
+            "file": "flag-discoveries.json",
+            "family": "weapon",
+            "value": 32,
+            "canonical_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAG_DISCOVERIES.html"
+          }
         },
         {
           "value": 64,
@@ -6573,10 +6642,12 @@
     "file": "flag-discoveries.json",
     "canonical_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAG_DISCOVERIES.html",
     "machine_readable_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/corpus/reference/flag-discoveries.json",
-    "canonical_findings": 25,
-    "original_static_findings": 25,
+    "canonical_findings": 27,
+    "original_static_findings": 27,
     "source_only_findings": 0,
     "indy_reconstruction_observations": 3,
-    "runtime_tested": false
-  }
+    "runtime_tested": false,
+    "focused_unresolved_investigations": 2
+  },
+  "last_evidence_update": "2026-10-04"
 }
