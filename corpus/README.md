@@ -1,5 +1,7 @@
 # Public COG research corpus
 
+The 0.1.4 [flag reference](../docs/FLAGS.md) covers every historical Massassi flag/value table, plus five related domains. [reference/flags.json](reference/flags.json) contains 31 families, 385 entries, owning fields, source hashes/anchors, evidence limits and separate Indy comparison data. Every ThingFlags bit is accounted for, with unresolved semantics retained. This adds original synthesis; it does not change the frozen COG catalog or establish new retail runtime coverage.
+
 This initial release publishes substantive original analysis, measured JK/MotS registries, a source bibliography and exact COG identity/lexical metadata. It does not redistribute raw retail scripts, community packages, copied manuals, private messages or capture data. Public availability of a referenced work is not a blanket redistribution license.
 
 The frozen local research snapshot contains 70,346 COG occurrences and 25,364 distinct bodies. The public subset is deliberately smaller: consult [stats.json](stats.json) for generated counts. It contains only identities with approved public-source or retail provenance. Game labels on catalog records describe that provenance; they do not prove that every packaged script works in the named engine.
