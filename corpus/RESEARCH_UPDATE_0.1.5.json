@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "version": "0.1.5",
+  "scope": "Fourteen reviewed flag/value findings, with bounded original-executable evidence for at least one target; main human/machine rows and both workflow references updated. Two new original-MotS rendering paths were traced during the follow-up.",
+  "review": "Original-byte integrity and independently inspected source/call/field chains; original JK1.01 and MotS separated. Matching current enhanced-source paths do not establish complete retail parity.",
+  "excluded": "Original executables, disassembly copies, raw retail/custom scripts and packages, private communications and capture identifiers.",
+  "runtime_claims": "No game/client execution, rendering result, or connected-client behavior test.",
+  "coverage": {
+    "reference_families": 31,
+    "catalog_entries": 385,
+    "canonical_findings": 14,
+    "main_rows_updated_including_aliases": 16,
+    "original_static_findings": 14,
+    "all_entry_semantics_verified": false,
+    "source_catalog_refreshed": false,
+    "renderer_promotions": [
+      "face:0x10",
+      "light:6"
+    ],
+    "bulk_goal_resumed": false
+  },
+  "reviewed_changes": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "96d616cc2b1e0d5be3226ae6e0d4b2e9489b0921577a2cb9600c012cf157e0ce",
+      "action": "update"
+    },
+    {
+      "path": "README.md",
+      "sha256": "bf15a12f64e5d5ee505dc9dafa2459bf5c75520fe32033465f9b94bf5c67c9ef",
+      "action": "update"
+    },
+    {
+      "path": "corpus/reference/flag-discoveries.json",
+      "sha256": "2676fe761d285a4e8c71d6c52ffba75663ee1b8776c95b2bb426ba8f9e2c2ee8",
+      "action": "create"
+    },
+    {
+      "path": "corpus/reference/flags.json",
+      "sha256": "6898db656e9fbcc2debf6247252d2962684fdcfe13f28faa2364f9bba5c00477",
+      "action": "update"
+    },
+    {
+      "path": "docs/FLAGS.md",
+      "sha256": "883cc9464f3bd9fff5750b57736f928904fedac7b8b33ffac2c8619870971128",
+      "action": "update"
+    },
+    {
+      "path": "docs/FLAG_DISCOVERIES.md",
+      "sha256": "420a363a135c9ea2f985c358d049a2f12d16d0ccc4b45dbe81e1584c483bb5ed",
+      "action": "create"
+    },
+    {
+      "path": "release.json",
+      "sha256": "8020a8dbac4b07e30c498143b4b973bd547686e629b0337cda535faf629538ee",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/SKILL.md",
+      "sha256": "3b44a3c7589954e8d94afbd517937d6419b58ae9da5b3cbb14bdb6ff9d7e6620",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/data/flag-discoveries.json",
+      "sha256": "2676fe761d285a4e8c71d6c52ffba75663ee1b8776c95b2bb426ba8f9e2c2ee8",
+      "action": "create"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/data/flags.json",
+      "sha256": "6898db656e9fbcc2debf6247252d2962684fdcfe13f28faa2364f9bba5c00477",
+      "action": "update"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/references/flag-discoveries.md",
+      "sha256": "420a363a135c9ea2f985c358d049a2f12d16d0ccc4b45dbe81e1584c483bb5ed",
+      "action": "create"
+    },
+    {
+      "path": "skill/jk-mots-cog-workflow/references/flags.md",
+      "sha256": "72b67a27549a6b3b3b462954587d0b41308925b9aa3766a128362975bda85e31",
+      "action": "update"
+    },
+    {
+      "path": "tools/render_site.mjs",
+      "sha256": "47d5ea0a37bbaa4783d63b37b795abd835e5e20f95f79dd8b3f8bf76f97c8248",
+      "action": "update"
+    }
+  ]
+}
