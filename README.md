@@ -12,7 +12,7 @@ boundary and [the corpus guide](corpus/README.md) for public coverage.
 | Start here | What it gives you |
 | --- | --- |
 | [Human COG-writing guide](docs/GUIDE.md) | A practical path from symbols and messages to complete game systems |
-| [Flag discoveries](docs/FLAG_DISCOVERIES.md) | Twenty-five bounded original-executable findings, with separate JK/MotS limits |
+| [Master flag findings](docs/FLAG_DISCOVERIES.md) | Maintained human and machine reference with separate JKDF2, MotS and Indy evidence |
 | [Flags and numeric values](docs/FLAGS.md) | All 26 historical table families, all 32 ThingFlags positions, source/retail evidence and a separate Indy comparison |
 | [JKDF2 versus MotS](docs/COMPATIBILITY.md) | Stock-game differences, shared names with different contracts, and extension boundaries |
 | [Classic COG case studies](corpus/notes/classic-cogs-and-binding-lessons.md) | Bolt-hilt God sabers, faders, and complete level-binding analysis |

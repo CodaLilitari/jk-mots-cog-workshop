@@ -1,44 +1,55 @@
-# JKDF2 and MotS: unresolved flag findings
+# Flag findings: JKDF2, MotS, and Indy
 
-Research dated 2026-10-03 local time, updated 2026-10-04 UTC in **COG Workshop 0.1.6**. This cumulative supplement extends the 0.1.4 audit and 0.1.5 findings; matching main-catalog rows carry the same meanings and limits.
+**Maintained master reference.** Findings and corrections are consolidated here at the same URL. This reference develops independently of downloadable workshop snapshots; use this page for the current interpretation. Last evidence update: **4 October 2026**.
 
-There are **25 bounded flag/value findings with original-executable evidence for at least one target**. This release adds eleven clarifications and expands weapon 0x10000 from dispatch to its complete handler. These are documented behaviors, not a claim of eleven historically novel discoveries or a complete proof of all flag meanings.
+[Machine-readable master JSON](../data/flag-discoveries.json) · [Complete flag catalog](flags.md) · [Machine-readable full catalog](../data/flags.json)
 
-Original-static means selected code paths in the exact original JK1.01 and MotS executables checked against their bytes. No game, runtime audio/visual, or connected-client test was performed. Original JK, original MotS and current enhanced source remain separate evidence lanes.
+## What is established for each game
 
-## Findings by field
+| Game / evidence lane | Established scope | Not established |
+| --- | --- | --- |
+| **JKDF2 1.01 — original executable** | Selected paths in the hash-identified original executable, with the per-finding status and limits below | Uninspected paths, game-wide nonuse, runtime appearance or connected-client behavior |
+| **MotS — original executable** | Selected paths in the separately identified original MotS executable; differences from JKDF2 stay explicit | Uninspected paths, runtime appearance or connected-client behavior |
+| **Indy / Infernal Machine — pinned OpenJones3D reconstruction** | Three selected source observations and a 32-position ThingFlags declaration comparison | Original Indy binary verification, original Indy runtime behavior, or automatic transfer of JKDF2/MotS meanings |
+| **Enhanced JK/MotS engines — current source** | Individually identified source consumers and recorded differences from the originals | Retail equivalence inferred from source names or successful enhanced-engine behavior |
 
-| Field/value | Finding | Original JK1.01 | Original MotS |
-| --- | --- | --- | --- |
-| thing `0x00010000` | Level-placement exclusion in the non-multiplayer loading branch | Verified code path | Verified code path |
-| thing `0x80000000` | One deferred eligible thing in the MotS renderer | Absent from compared routine | Verified code path |
-| surface `0x00000080` | Suppress the inspected surface-collision impact damage | Verified code path | Verified code path |
-| physics `0x00020000` | Skip initial velocity rotation on creation | Verified code path | Verified code path |
-| actor `0x00002000` | Eligibility for the saber-blocking branch | Verified code path | Verified code path |
-| actor `0x00200000` | Gate player controls, with different look handling | Verified code path | Verified code path |
-| ai `0x00000020` | Fire-target state maintained by AISetFireTarget | Verified code path | Verified code path |
-| ai `0x00000100` | Mode-change event; persistent-mode meaning remains unproved | Verified code path | Verified code path |
-| jk `0x00000040` | Consume-once saber hit-history reset | Verified code path | Verified code path |
-| jk `0x00000100` | MotS bubble-owner registration marker | Not established | Verified code path |
-| multiplayer `0x00000002` | Conditional same-team player health-damage suppression | Verified code path | Verified code path |
-| weapon `0x00010000` | Select the range-based collision-query and optional trail handler | Verified code path | Verified code path |
-| face `0x00000010` | Original MotS model-face path initially selects lighting mode 1 | Absent from compared routine | Verified code path |
-| light `0x00000006` | Original MotS mode 6 propagates an inherited stored lighting scalar | Absent from compared routine | Verified code path |
-| jk `0x00000080` | Force maximum saber length on the eligible update branch | Verified code path | Verified code path |
-| physics `0x00008000` | Pending bypass of the inspected attached-physics drag application | Verified code path | Verified code path |
-| actor `0x02000000` | Skip the target-sector darkness penalty in an AI sight check | Verified code path | Verified code path |
-| attach `0x00000001` | Surface attachment discriminator | Verified code path | Verified code path |
-| attach `0x00000002` | Thing-face attachment discriminator | Verified code path | Verified code path |
-| attach `0x00000004` | Ordinary thing attachment discriminator | Verified code path | Verified code path |
-| sound `0x00000001` | Looping attached sound cleanup when its owner is freed | Verified code path | Verified code path |
-| sound `0x00000040` | Absolute stored position after a nonlooping sound loses its owner | Verified code path | Verified code path |
-| sound `0x00000080` | Followed-owner sound lookup and detachment at owner cleanup | Verified code path | Verified code path |
-| weapon `0x00004000` | Distance-based damage reduction in the 0x10000 handler | Verified code path | Verified code path |
-| weapon `0x00008000` | Conditional segmented object-trail creation in the 0x10000 handler | Verified code path | Verified code path |
+There are **25 original-JK/MotS findings**, plus **three separate Indy reconstruction observations**. A verified path proves only the stated behavior under its stated conditions. “Not established” is an evidence gap; “absent in compared routine” is a bounded comparison. Neither means a bit is globally unused. No game-runtime or multiplayer test is claimed here.
 
-Fields are separate namespaces; light mode 6 is a scalar. Source aliases remain search aids, not recovered original developer names.
+## Findings by field and game
+
+| Field/value | Finding | JKDF2 1.01 — original static | MotS — original static | Indy — original static |
+| --- | --- | --- | --- | --- |
+| thing `0x00010000` | Level-placement exclusion in the non-multiplayer loading branch | Verified selected code path | Verified selected code path | Not established |
+| thing `0x80000000` | One deferred eligible thing in the MotS renderer | Absent in compared routine only | Verified selected code path | Not established |
+| surface `0x00000080` | Suppress the inspected surface-collision impact damage | Verified selected code path | Verified selected code path | Not established |
+| physics `0x00020000` | Skip initial velocity rotation on creation | Verified selected code path | Verified selected code path | Not established |
+| actor `0x00002000` | Eligibility for the saber-blocking branch | Verified selected code path | Verified selected code path | Not established |
+| actor `0x00200000` | Gate player controls, with different look handling | Verified selected code path | Verified selected code path | Not established |
+| ai `0x00000020` | Fire-target state maintained by AISetFireTarget | Verified selected code path | Verified selected code path | Not established |
+| ai `0x00000100` | Mode-change event; persistent-mode meaning remains unproved | Verified selected code path | Verified selected code path | Not established |
+| jk `0x00000040` | Consume-once saber hit-history reset | Verified selected code path | Verified selected code path | Not established |
+| jk `0x00000100` | MotS bubble-owner registration marker | Not established | Verified selected code path | Not established |
+| multiplayer `0x00000002` | Conditional same-team player health-damage suppression | Verified selected code path | Verified selected code path | Not established |
+| weapon `0x00010000` | Select the range-based collision-query and optional trail handler | Verified selected code path | Verified selected code path | Not established |
+| face `0x00000010` | Original MotS model-face path initially selects lighting mode 1 | Absent in compared routine only | Verified selected code path | Not established |
+| light `0x00000006` | Original MotS mode 6 propagates an inherited stored lighting scalar | Absent in compared routine only | Verified selected code path | Not established |
+| jk `0x00000080` | Force maximum saber length on the eligible update branch | Verified selected code path | Verified selected code path | Not established |
+| physics `0x00008000` | Pending bypass of the inspected attached-physics drag application | Verified selected code path | Verified selected code path | Not established |
+| actor `0x02000000` | Skip the target-sector darkness penalty in an AI sight check | Verified selected code path | Verified selected code path | Not established |
+| attach `0x00000001` | Surface attachment discriminator | Verified selected code path | Verified selected code path | Not established |
+| attach `0x00000002` | Thing-face attachment discriminator | Verified selected code path | Verified selected code path | Not established |
+| attach `0x00000004` | Ordinary thing attachment discriminator | Verified selected code path | Verified selected code path | Not established |
+| sound `0x00000001` | Looping attached sound cleanup when its owner is freed | Verified selected code path | Verified selected code path | Not established |
+| sound `0x00000040` | Absolute stored position after a nonlooping sound loses its owner | Verified selected code path | Verified selected code path | Not established |
+| sound `0x00000080` | Followed-owner sound lookup and detachment at owner cleanup | Verified selected code path | Verified selected code path | Not established |
+| weapon `0x00004000` | Distance-based damage reduction in the 0x10000 handler | Verified selected code path | Verified selected code path | Not established |
+| weapon `0x00008000` | Conditional segmented object-trail creation in the 0x10000 handler | Verified selected code path | Verified selected code path | Not established |
+
+Thing, actor, physics, JK, sound and attachment flags are separate fields. Light mode 6 is a scalar. Source aliases are search aids, not proof of original developer names. Indy reconstruction evidence appears in its own section below and must not be read as original-executable proof.
 
 ## thing 0x00010000: Level-placement exclusion in the non-multiplayer loading branch
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 The loader adds this bit to its rejection mask when submode bit 1 is clear. A populated level thing whose flags intersect that mask is freed. The corresponding multiplayer branch adds 0x8000 instead. Source multiplayer startup sets the submode bit, supporting the shorthand single-player placement exclusion.
 
@@ -50,6 +61,8 @@ Existing source alias: `SITH_TF_10000`. Evidence grade: `original-retail-static`
 
 ## thing 0x80000000: One deferred eligible thing in the MotS renderer
 
+**JKDF2 1.01:** Absent in compared routine only. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 Original MotS stores an eligible flagged thing in one local pointer slot and skips its ordinary draw. Later eligible flagged things overwrite that slot. After normal traversal, the final stored thing is drawn once. The corresponding complete JK1.01 routine lacks this test and slot.
 
 **Limits and authoring consequence.** This is not a queue for all flagged things, and it does not establish through-wall rendering. Earlier eligibility/clipping applies. The inspected JK difference is function-specific, not proof of game-wide bit nonuse. No visual runtime result is claimed.
@@ -59,6 +72,8 @@ Evidence anchors: `MotS 0x516270,0x5166B5-0x516719`; `JK corresponding routine 0
 Existing source alias: `SITH_TF_80000000`. Evidence grade: `original-retail-static`.
 
 ## surface 0x00000080: Suppress the inspected surface-collision impact damage
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 For the inspected physics thing-versus-surface collision path, the surface bit becomes the fourth argument to the collision response. A set bit bypasses that response branch's impact-damage calculation, hit-damaged sound and FALL-class DamageThing call.
 
@@ -70,6 +85,8 @@ Existing source alias: `SITH_SURFACE_80`. Evidence grade: `original-retail-stati
 
 ## physics 0x00020000: Skip initial velocity rotation on creation
 
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 In CreateThingAtPos, a physics thing normally has its initial velocity transformed by its created orientation. A set 0x20000 skips that transform in both originals.
 
 **Limits and authoring consequence.** This is not a general angular-velocity, continuous-spin or object-orientation disable flag. MotS can apply the COG-supplied look vector after native creation; the transform uses the orientation at native creation time, not necessarily the final look-vector orientation. Setting the flag later does not undo the transform.
@@ -79,6 +96,8 @@ Evidence anchors: `JK 0x4CDF28-0x4CDF47; registered CreateThingAtPos 0x502520`; 
 Existing source alias: `SITH_PF_20000`. Evidence grade: `original-retail-static`.
 
 ## actor 0x00002000: Eligibility for the saber-blocking branch
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 The saber-hit path checks this bit on an actor/player being hit before admitting it to field-of-view and chance-based blocking checks, which also reject an invisible attacker. A clear bit goes to the damage path.
 
@@ -90,6 +109,8 @@ Existing source alias: `SITH_AF_BLEEDS; historical THING_TYPEFLAGS_ISBLOCKING`. 
 
 ## actor 0x00200000: Gate player controls, with different look handling
 
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 On the inspected player control path, a set bit skips movement, activation and map handling. Original JK calls its look handler before the flag gate. Original MotS places the look call after the gate, so the flagged path skips it as well.
 
 **Limits and authoring consequence.** This controls processing of these inputs; it does not freeze all physics or prevent every scripted move. Preserve the JK/MotS difference instead of reducing the meaning to immobile.
@@ -99,6 +120,8 @@ Evidence anchors: `JK look call 0x4D8C5F; gate 0x4D8C6F-0x4D8C79`; `MotS gate 0x
 Existing source alias: `SITH_AF_CONTROLSDISABLED; historical THING_TYPEFLAGS_IMMOBILE`. Evidence grade: `original-retail-static`.
 
 ## ai 0x00000020: Fire-target state maintained by AISetFireTarget
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 AISetFireTarget stores the target pointer and timestamp, then sets this AI-control-block bit when the target is non-null and clears it otherwise. If the flags change, it emits the mode-change event. Both original wrappers agree.
 
@@ -110,6 +133,8 @@ Existing source alias: `SITHAI_MODE_TOUGHSKIN`. Evidence grade: `original-retail
 
 ## ai 0x00000100: Mode-change event; persistent-mode meaning remains unproved
 
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 The inspected use is an AI event identifier and instinct event-subscription mask. AISetMode emits event 0x100 whenever its OR changes the mode word. The event dispatcher sends COG AIEVENT with first extended parameter 256.0 in original JK, but current AI flags converted to float in original MotS.
 
 **Limits and authoring consequence.** This resolves an event role, not a special persistent AI mode. Generic mode setters can store 0x100; that does not prove a dedicated mode behavior. The dispatcher has living/class/disabled/sleeping gates. MotS float conversion need not preserve every high-bit integer exactly.
@@ -119,6 +144,8 @@ Evidence anchors: `JK AISetMode 0x5011E0; dispatcher 0x4EA26D-0x4EA28C`; `MotS A
 Existing source alias: `SITHAI_MODE_UNK100`. Evidence grade: `original-retail-static`.
 
 ## jk 0x00000040: Consume-once saber hit-history reset
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 When the eligible saber collision path sees this bit, it clears the bit and resets the counts of already-hit things and surfaces. The stored histories are pointer lists. The separate saber-damage-enable bit is tested afterward.
 
@@ -130,6 +157,8 @@ Existing source alias: `JKFLAG_40`. Evidence grade: `original-retail-static`.
 
 ## jk 0x00000100: MotS bubble-owner registration marker
 
+**JKDF2 1.01:** Not established. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 jkCreateBubble registers owner/radius-squared/type in the bubble array and sets this bit on the owner. jkDestroyBubble clears both the record and bit. A query removes a registered record if its owner no longer has the bit.
 
 **Limits and authoring consequence.** This marks the bubble owner, not a thing merely located inside a bubble. Setting the bit alone does not allocate a bubble record or specify radius/type. Use the bubble verbs. An original-JK meaning is not established; lack of bubble verbs is not proof that the bit is universally unused.
@@ -139,6 +168,8 @@ Evidence anchors: `MotS jkCreateBubble 0x40C620 calls 0x40F390; set 0x40F41E-0x4
 Existing source alias: `JKFLAG_100`. Evidence grade: `original-retail-static`.
 
 ## multiplayer 0x00000002: Conditional same-team player health-damage suppression
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 The original actor/player damage paths test multiplayer mode bit 0x2 and return zero before health subtraction when a same-team helper succeeds. That helper also requires teams bit 0x1, distinct player things, non-null player records, and equal nonzero team numbers. The source parent is compared with the victim.
 
@@ -150,6 +181,8 @@ Existing source alias: `MULTIMODEFLAG_2`. Evidence grade: `original-retail-stati
 
 ## weapon 0x00010000: Select the range-based collision-query and optional trail handler
 
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 In both original dispatchers, weapon 0x10000 selects this handler after the higher-priority 0x2000 branch. The complete handler traverses returned adjoin crossings and handles the first returned non-adjoin result. Thing hits call damage and can independently attempt force; world hits call surface impact. A non-null impact template enables a creation attempt. The final callee marks the weapon Thing.flags 0x2 for destruction.
 
 **Limits and authoring consequence.** The query uses moveSize as well as range, so this is not established as a zero-width ray. One terminal result is handled; collision ordering and penetration are not established. Destruction is marked, not an immediate storage free. Full downstream helper behavior, successful allocation, visuals and networking remain untested.
@@ -159,6 +192,8 @@ Evidence anchors: `JK 0x4D3830-0x4D385A, target 0x4D3C20`; `MotS 0x5221F0-0x5222
 Existing source alias: `SITH_WF_10000`. Evidence grade: `original-retail-static`.
 
 ## face 0x00000010: Original MotS model-face path initially selects lighting mode 1
+
+**JKDF2 1.01:** Absent in compared routine only. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 Original MotS reads model face flags at face+4 and, when 0x10 is set, overrides the initially selected render-entry lighting mode with scalar 1 (source alias NOTLIT). The complete compared JK1.01 model-face routine lacks this override. This proves a lighting consumer beyond the nearest-filter enum label.
 
@@ -170,6 +205,8 @@ Existing source alias: `RD_FF_TEX_FILTER_NEAREST`. Evidence grade: `original-ret
 
 ## light 0x00000006: Original MotS mode 6 propagates an inherited stored lighting scalar
 
+**JKDF2 1.01:** Absent in compared routine only. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 In original MotS, hierarchy node flag 2 selects mesh lighting mode 6 and copies the stored lighting scalar at mesh+0x44 from the first ancestor without node flag 2. Mode 6 bypasses the ordinary mesh lighting cap and copies that scalar into every face extraLight field at face+0x30. One original producer stores the mean of computed scalar vertex-light outputs in mesh+0x44. The compared JK1.01 hierarchy/mesh routines lack this inheritance, cap exception and mode-6 copy.
 
 **Limits and authoring consequence.** Scalar mode, not a flag bit. Requires a valid ancestor chain and mesh; the original walk lacks the modern null checks. Stored values can be stale, and culling, draw order, face-mode caps and later rendering still matter. It is not proof of fullbright, per-vertex RGB or a dynamic-only value. Current source instead transfers radius at this hierarchy step; original MotS parses and uses radius at mesh+0x48, distinct from the transferred +0x44. No runtime proof.
@@ -179,6 +216,8 @@ Evidence anchors: `MotS DrawHNode 0x449F80-0x44A04E; mode write 0x449FB7; ancest
 Existing source alias: `RD_LIGHTMODE_6_UNK`. Evidence grade: `original-retail-static`.
 
 ## jk 0x00000080: Force maximum saber length on the eligible update branch
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 When neither the extend-4 nor retract-8 branch is selected, bit 0x80 sets saber length to its configured maximum, writes about 0.6 to the source-named timeLeftLengthChange field, clears 4/8 and sets 1. Both original branches retain 0x80; current enhanced source clears it.
 
@@ -190,6 +229,8 @@ Existing source alias: `JKFLAG_SABERFORCEON`. Evidence grade: `original-retail-s
 
 ## physics 0x00008000: Pending bypass of the inspected attached-physics drag application
 
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 The original ApplyForce implementation sets 0x8000 while adding force divided by positive mass to a physics mover velocity, even when the supplied force vector is zero. In the inspected surface/Thing-face attached-physics block, nonzero velocity and nonzero surface drag lead to a bit test: if set, the block clears 0x8000 and skips its linear drag call.
 
 **Limits and authoring consequence.** This is a conditional consumed marker, not permanent friction immunity. If those block prerequisites are not reached it is not consumed there, so a one-frame lifetime is unproved. Setting the bit alone does not apply an impulse. Other drag paths and runtime motion remain untested.
@@ -199,6 +240,8 @@ Evidence anchors: `JK ApplyForce wrapper 0x503520; native 0x4F5C20-0x4F5CE1; OR 
 Existing source alias: `SITH_PF_8000`. Evidence grade: `original-retail-static`.
 
 ## actor 0x02000000: Skip the target-sector darkness penalty in an AI sight check
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 The observer actor bit bypasses the target-sector ambient-light multiplier in the inspected sight-acceptance threshold calculation in both originals. The branch is reached inside the distance and target-light-state gates.
 
@@ -210,6 +253,8 @@ Existing source alias: `SITH_AF_SEEINDARK`. Evidence grade: `original-retail-sta
 
 ## attach 0x00000001: Surface attachment discriminator
 
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 The native surface attachment setter records its target and writes discriminator 1 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.
 
 **Limits and authoring consequence.** Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.
@@ -219,6 +264,8 @@ Evidence anchors: `JK discriminator store 0x4CE18B; GetAttachFlags 0x503780; det
 Existing source alias: `SITH_ATTACH_SURFACE`. Evidence grade: `original-retail-static`.
 
 ## attach 0x00000002: Thing-face attachment discriminator
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 The native Thing-face attachment setter records its target and writes discriminator 2 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.
 
@@ -230,6 +277,8 @@ Existing source alias: `SITH_ATTACH_THINGFACE`. Evidence grade: `original-retail
 
 ## attach 0x00000004: Ordinary thing attachment discriminator
 
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 The native ordinary Thing attachment setter records its target and writes discriminator 4 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.
 
 **Limits and authoring consequence.** Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.
@@ -239,6 +288,8 @@ Evidence anchors: `JK discriminator store 0x4CE5CD; GetAttachFlags 0x503780; det
 Existing source alias: `SITH_ATTACH_THING`. Evidence grade: `original-retail-static`.
 
 ## sound 0x00000001: Looping attached sound cleanup when its owner is freed
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 In the inspected owner-free cleanup, a matching sound with FOLLOWSTHING 0x80 and LOOP 0x1 takes the channel cleanup branch, conditionally stopping active playback and freeing its channel. The matching nonloop branch instead detaches the sound to the last position.
 
@@ -250,6 +301,8 @@ Existing source alias: `SITHSOUNDFLAG_LOOP`. Evidence grade: `original-retail-st
 
 ## sound 0x00000040: Absolute stored position after a nonlooping sound loses its owner
 
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 The matching nonlooping FOLLOWSTHING sound has bit 0x80 cleared and bit 0x40 set during owner-free cleanup, and receives the owner final position. The inspected position update selects the stored position when 0x40 is set.
 
 **Limits and authoring consequence.** This verifies the transition and position selection, not successful playback or audibility. Existing source-based PlaySoundPos behavior is retained in the prior interpretation. It establishes no Thing.flags 0x01000000 meaning.
@@ -259,6 +312,8 @@ Evidence anchors: `JK owner cleanup 0x4DD1B0-0x4DD2C4; FOLLOW test 0x4DD1E0; LOO
 Existing source alias: `SITHSOUNDFLAG_ABSOLUTE`. Evidence grade: `original-retail-static`.
 
 ## sound 0x00000080: Followed-owner sound lookup and detachment at owner cleanup
+
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
 
 Owner-free cleanup selects channels carrying 0x80 whose owner pointer matches the freed Thing. Looping channels enter channel cleanup; nonlooping channels clear 0x80, set absolute-position 0x40 and copy the owner final position.
 
@@ -270,6 +325,8 @@ Existing source alias: `SITHSOUNDFLAG_FOLLOWSTHING`. Evidence grade: `original-r
 
 ## weapon 0x00004000: Distance-based damage reduction in the 0x10000 handler
 
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 At a terminal collision in the original 0x10000 handler, this bit subtracts rate times hit distance from the local damage amount and floors it at minDamage in both games.
 
 **Limits and authoring consequence.** This updates a local hit amount, not the persistent weapon damage field. Preserve the separately documented ordinary-update decay difference between current source and original JK. Finite-value control flow is established; downstream damage acceptance and runtime outcomes are not.
@@ -280,6 +337,8 @@ Existing source alias: `SITH_WF_DAMAGE_DECAY`. Evidence grade: `original-retail-
 
 ## weapon 0x00008000: Conditional segmented object-trail creation in the 0x10000 handler
 
+**JKDF2 1.01:** Verified selected code path. **MotS:** Verified selected code path. **Indy original:** not established for this finding. **Runtime:** not tested.
+
 The original handler attempts trail-template creation along a locally advanced orientation when bit 0x8000, a trail template and the step/projection versus hit-distance or range gates permit it. The no-hit tail can also create a trail up to range.
 
 **Limits and authoring consequence.** Creation return values are ignored, so allocation and visuals are not proved. The loops have no explicit iteration cap or general progress guard: termination depends on advancing configured step/orientation. This is not a reproduced hang, networking proof or a universal trail contract.
@@ -287,6 +346,57 @@ The original handler attempts trail-template creation along a locally advanced o
 Evidence anchors: `JK complete handler 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53`; `MotS first trail loop 0x5226B5-0x522A37; no-hit trail 0x522BC1-0x522F40; creation calls 0x5229DC/0x522EE1`; `World/sithWeapon.c:265-313,362-403`.
 
 Existing source alias: `SITH_WF_OBJECT_TRAIL`. Evidence grade: `original-retail-static`.
+
+## Indy: reconstruction evidence, separately scoped
+
+Here “Indy” means **Indiana Jones and the Infernal Machine**. The comparison uses [OpenJones3D](https://github.com/smlu/OpenJones3D/tree/a675b395a5d5cff238332d091368483b849e8b5b), pinned at `a675b395a5d5cff238332d091368483b849e8b5b`. These are inspected reconstruction-source observations, not verified original-Indy executable or runtime results.
+
+| Indy observation | Evidence | Limits |
+| --- | --- | --- |
+| The compared reconstructed ThingFlags setters OR nonzero masks; clearers AND the complement of nonzero masks. | `reconstruction-source-consumer`; `Libs/sith/Cog/sithCogFunctionThing.c:2935-2988` | Wrapper operations do not prove per-bit meanings, original Indy executable behavior or equivalence with JKDF2/MotS. |
+| The Jones SNOW bit has material-sound consumers in the compared reconstructed world code. | `reconstruction-source-consumer`; `Libs/sith/World/sithThing.c:1524-1555,2800-2816` | This differs from the independently traced original JK/MotS placement-exclusion role for the same number. No original Indy binary or runtime test. |
+| The compared Jones water-entry path routes splash messages to the entering Thing own COGs. | `reconstruction-source-consumer`; `Libs/sith/World/sithThing.c:1981-1990` | Source-level integration comparison only; it does not establish original Indy behavior or upgrade the compared JK source path to original-binary evidence. |
+
+### Indy ThingFlags declaration inventory
+
+These 32 entries preserve the reconstruction declarations and their grades. A meaningful name alone is not proof of a consumer. The three source observations above are independently labeled and do not upgrade every declaration.
+
+| Value | Indy reconstruction symbol | Declaration evidence | Original Indy binary / runtime |
+| --- | --- | --- | --- |
+| `0x00000001` | `SITH_TF_EMITLIGHT` | `declaration-only`; `Libs/sith/types.h:62` | Not established / not tested |
+| `0x00000002` | `SITH_TF_DESTROYED` | `declaration-only`; `Libs/sith/types.h:63` | Not established / not tested |
+| `0x00000004` | `SITH_TF_NOWEAPONCOLLIDE` | `declaration-only`; `Libs/sith/types.h:64` | Not established / not tested |
+| `0x00000008` | `SITH_TF_WHIPCLIMB` | `declaration-only`; `Libs/sith/types.h:65` | Not established / not tested |
+| `0x00000010` | `SITH_TF_INVISIBLE` | `declaration-only`; `Libs/sith/types.h:66` | Not established / not tested |
+| `0x00000020` | `SITH_TF_UNKNOWN_20` | `unresolved-name`; `Libs/sith/types.h:67` | Not established / not tested |
+| `0x00000040` | `SITH_TF_STANDON` | `declaration-only`; `Libs/sith/types.h:68` | Not established / not tested |
+| `0x00000080` | `SITH_TF_MOUNTABLE` | `declaration-only`; `Libs/sith/types.h:69` | Not established / not tested |
+| `0x00000100` | `SITH_TF_REMOTE` | `declaration-only`; `Libs/sith/types.h:70` | Not established / not tested |
+| `0x00000200` | `SITH_TF_DYING` | `declaration-only`; `Libs/sith/types.h:71` | Not established / not tested |
+| `0x00000400` | `SITH_TF_COGLINKED` | `declaration-only`; `Libs/sith/types.h:72` | Not established / not tested |
+| `0x00000800` | `SITH_TF_NOCRUSH` | `declaration-only`; `Libs/sith/types.h:73` | Not established / not tested |
+| `0x00001000` | `SITH_TF_UNKNOWN_1000` | `unresolved-name`; `Libs/sith/types.h:74` | Not established / not tested |
+| `0x00002000` | `SITH_TF_WOOD` | `declaration-only`; `Libs/sith/types.h:75` | Not established / not tested |
+| `0x00004000` | `SITH_TF_SHADOW` | `declaration-only`; `Libs/sith/types.h:76` | Not established / not tested |
+| `0x00008000` | `SITH_TF_JEEPSTOP` | `declaration-only`; `Libs/sith/types.h:77` | Not established / not tested |
+| `0x00010000` | `SITH_TF_SNOW` | `declaration-only`; `Libs/sith/types.h:78` | Not established / not tested |
+| `0x00020000` | `SITH_TF_PULSESET` | `declaration-only`; `Libs/sith/types.h:79` | Not established / not tested |
+| `0x00040000` | `SITH_TF_TIMERSET` | `declaration-only`; `Libs/sith/types.h:80` | Not established / not tested |
+| `0x00080000` | `SITH_TF_DISABLED` | `declaration-only`; `Libs/sith/types.h:81` | Not established / not tested |
+| `0x00100000` | `SITH_TF_SEEN` | `declaration-only`; `Libs/sith/types.h:82` | Not established / not tested |
+| `0x00200000` | `SITH_TF_UNKNOWN_200000` | `unresolved-name`; `Libs/sith/types.h:83` | Not established / not tested |
+| `0x00400000` | `SITH_TF_METAL` | `declaration-only`; `Libs/sith/types.h:84` | Not established / not tested |
+| `0x00800000` | `SITH_TF_EARTH` | `declaration-only`; `Libs/sith/types.h:85` | Not established / not tested |
+| `0x01000000` | `SITH_TF_NOSOUND` | `declaration-only`; `Libs/sith/types.h:86` | Not established / not tested |
+| `0x02000000` | `SITH_TF_SUBMERGED` | `declaration-only`; `Libs/sith/types.h:87` | Not established / not tested |
+| `0x04000000` | `SITH_TF_CLIMBCRATE` | `declaration-only`; `Libs/sith/types.h:88` | Not established / not tested |
+| `0x08000000` | `SITH_TF_WATERDESTROYED` | `declaration-only`; `Libs/sith/types.h:89` | Not established / not tested |
+| `0x10000000` | `SITH_TF_AIRDESTROYED` | `declaration-only`; `Libs/sith/types.h:90` | Not established / not tested |
+| `0x20000000` | `SITH_TF_SPLASH` | `declaration-only`; `Libs/sith/types.h:91` | Not established / not tested |
+| `0x40000000` | `SITH_TF_MOVABLE` | `declaration-only`; `Libs/sith/types.h:92` | Not established / not tested |
+| `0x80000000` | `SITH_TF_WHIPSWING` | `declaration-only`; `Libs/sith/types.h:93` | Not established / not tested |
+
+In particular, Indy `NOSOUND` (`0x01000000`), `MOVABLE` (`0x40000000`), and `WHIPSWING` (`0x80000000`) are separate declarations. They do not resolve the corresponding JKDF2/MotS unknowns or replace the inspected MotS deferred-render interpretation. Indy `SNOW` (`0x10000`) has the source consumer above; original JK/MotS instead have the documented placement-exclusion path.
 
 ## What remains unresolved
 
@@ -320,4 +430,9 @@ Original identities:
 - jk101: SHA-256 `4509cd690634ba20e132bd16e713f91e144b17e2beaaad5e678f1ddb189b51d9`, 1388544 bytes.
 - mots: SHA-256 `23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974`, 1759744 bytes.
 
-The companion `flag-discoveries.json` contains the same 25 findings, target grades, anchors, remaining gaps and current-source hashes. These findings are included in release 0.1.6; the publication receipts separately record deployment and package verification.
+
+## Machine-readable contract
+
+The [master JSON](../data/flag-discoveries.json) uses `schema_version: 2` for its data format, not a workshop release. Each finding has `targets.jkdf2_1_01`, `targets.mots`, and `targets.indy`, with separate static status, evidence lane and runtime status. Existing `retail_jk` and `retail_mots` fields remain for readers of the earlier format.
+
+`indy_comparison.source_observations` contains the three reconstruction-only observations; `indy_comparison.thing_entries` preserves all 32 declaration grades. `original_executables`, `source_files`, anchors and limits retain provenance. `snapshot_provenance` is historical download provenance, not the identity of this master page. Future corrections belong at these same human and machine URLs.

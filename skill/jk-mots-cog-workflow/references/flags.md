@@ -1,8 +1,8 @@
 # COG flags and numeric values: an evidence-backed reference
 
-> Updated in 0.1.6: read the [JK/MotS flag discoveries](flag-discoveries.md) for corrected meanings and new original-executable evidence on the listed entries. Other rows retain their existing evidence grades.
+> Read the [master flag findings](flag-discoveries.md) for the current interpretations, explicit JKDF2/MotS/Indy evidence and machine-readable companion. Other catalog rows retain their existing evidence grades.
 
-COG Workshop 0.1.6 • 2026-10-04
+Maintained flag catalog • Evidence updated 2026-10-04
 
 This replaces the working reference for every flag/value family on the historical Massassi page: **26 historical families, 31 total families, 385 catalog entries and all 32 ThingFlags bit positions**. Completeness means coverage of those families and positions. It does **not** mean every meaning has been proven in original JK, original MotS or every enhanced engine. Unknowns and conflicting names remain visible.
 
