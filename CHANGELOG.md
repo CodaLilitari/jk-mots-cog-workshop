@@ -1,5 +1,13 @@
 # Changes
 
+## 0.1.5 — 2026-10-03
+
+- Incorporate 14 reviewed flag findings into human and machine references: fourteen findings with bounded original-executable evidence for at least one target.
+- Correct misleading actor/AI aliases; explain creation-time velocity rotation, saber hit-history reset, MotS bubble ownership, conditional friendly fire and the weapon update branch.
+- Establish the original MotS deferred-render path and loading/surface-impact predicates while preserving target differences, remaining gaps and method corrections.
+- Retain declaration provenance and previous interpretations in the catalog. Original-static evidence is not a retail runtime or multiplayer test.
+- Keep acquisition catalogs, workload limits, updater behavior and the optional draft-only reporter unchanged. Raw binaries, game scripts and private communications are excluded.
+
 ## 0.1.4 — 2026-10-03
 
 - Replace unqualified historical flag tables with an original reference covering all 26 Massassi table families and five related domains: 385 entries, with all 32 ThingFlags positions accounted for.

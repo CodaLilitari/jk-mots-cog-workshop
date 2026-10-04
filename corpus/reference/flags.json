@@ -1,15 +1,16 @@
 {
   "schema_version": 1,
-  "version": "0.1.4",
+  "version": "0.1.5",
   "scope": "Replacement reference covering all historical Massassi flag/value table families, plus related domains. All32 ThingFlags positions accounted for; not every per-bit meaning or retail target is proven.",
   "evidence_policy": {
     "declaration-only": "Source symbol and numeric identity; no inspected per-bit consumer promised.",
     "bounded-source-analysis": "Named readers/writers in selected source; not original retail execution.",
     "unresolved-consumer": "No meaning established by the bounded investigation. Not safe spare state.",
     "source-consumer": "Specific inspected source consumer; target caveats apply.",
-    "original-retail-static": "Only the separately described Get/Set/ClearThingFlags wrapper/queue/serializer contract has the new original-binary evidence.",
+    "original-retail-static": "Selected byte-verified original JK1.01/MotS code paths, including the separately described ThingFlags wrapper/queue/serializer contract and explicitly marked 0.1.5 per-value findings. Not a runtime test or proof of every consumer.",
     "target_separation": "Pinned enhanced snapshot, current local source, original JK, original MotS, and Indy reconstruction remain distinct.",
-    "unresolved-name": "Numeric or explicitly unknown declaration label. No meaning is certified by the name; dedicated consumers may still exist."
+    "unresolved-name": "Numeric or explicitly unknown declaration label. No meaning is certified by the name; dedicated consumers may still exist.",
+    "current-source-consumer": "Individually hashed current enhanced-source reader/writer; original-game meaning remains unestablished unless separately stated."
   },
   "sources": [
     {
@@ -604,14 +605,35 @@
           "value": 65536,
           "hex": "0x00010000",
           "symbol": "SITH_TF_10000",
-          "evidence": "unresolved-consumer",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 1340,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit",
-          "description": "**Unresolved.** Enum entry P:1340; no named consumer found by targeted searches.",
-          "caveat": "Do not label unused or import another game's meaning. Literal/composite masks, other repositories/builds, and original binaries were not exhausted."
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "description": "The loader adds this bit to its rejection mask when submode bit 1 is clear. A populated level thing whose flags intersect that mask is freed. The corresponding multiplayer branch adds 0x8000 instead. Source multiplayer startup sets the submode bit, supporting the shorthand single-player placement exclusion.",
+          "caveat": "This is a loading condition. Setting it after loading does not by itself hide or destroy the thing. The precise original predicate is submode bit 1 clear; other rejection bits, including difficulty, still apply.",
+          "prior_interpretation_0_1_4": {
+            "evidence": "unresolved-consumer",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit",
+            "description": "**Unresolved.** Enum entry P:1340; no named consumer found by targeted searches.",
+            "caveat": "Do not label unused or import another game's meaning. Literal/composite masks, other repositories/builds, and original binaries were not exhausted."
+          },
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "thing",
+            "value": 65536,
+            "title": "Level-placement exclusion in the non-multiplayer loading branch",
+            "anchors": [
+              "JK 0x4CEC5D-0x4CEC70 and 0x4CEE07-0x4CEE1A",
+              "MotS 0x51D36B-0x51D37E and 0x51D527-0x51D53A",
+              "World/sithThing.c:1547-1552,1599-1601; Dss/sithMulti.c:211"
+            ],
+            "source_alias": "SITH_TF_10000",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 131072,
@@ -799,14 +821,35 @@
           "value": 2147483648,
           "hex": "0x80000000",
           "symbol": "SITH_TF_80000000",
-          "evidence": "bounded-source-analysis",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 1355,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit",
-          "description": "**Current renderer's single deferred-thing slot.** C Engine/sithRender.c:2736–2737 initializes lastDrawn; :2970–2973 stores eligible thing and skips ordinary draw; :2984–2997 flushes, draws lastDrawn once, then flushes again.",
-          "caveat": "Multiple eligible flagged things overwrite the single pointer; only the final stored thing is drawn by this deferred block. This is a conditional source consequence, not an observed rendering bug. Earlier filtering/clipping still applies (:2770–2835). “MoTS added” comments exist, but no runtime Main_bMotsCompat guard surrounds this consumer. Do not claim a general ordered queue, through-wall rendering, or retail MotS behavior."
+          "retail_jk": "absent-in-compared-render-routine",
+          "retail_mots": "bounded-original-static",
+          "description": "Original MotS stores an eligible flagged thing in one local pointer slot and skips its ordinary draw. Later eligible flagged things overwrite that slot. After normal traversal, the final stored thing is drawn once. The corresponding complete JK1.01 routine lacks this test and slot.",
+          "caveat": "This is not a queue for all flagged things, and it does not establish through-wall rendering. Earlier eligibility/clipping applies. The inspected JK difference is function-specific, not proof of game-wide bit nonuse. No visual runtime result is claimed.",
+          "prior_interpretation_0_1_4": {
+            "evidence": "bounded-source-analysis",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit",
+            "description": "**Current renderer's single deferred-thing slot.** C Engine/sithRender.c:2736–2737 initializes lastDrawn; :2970–2973 stores eligible thing and skips ordinary draw; :2984–2997 flushes, draws lastDrawn once, then flushes again.",
+            "caveat": "Multiple eligible flagged things overwrite the single pointer; only the final stored thing is drawn by this deferred block. This is a conditional source consequence, not an observed rendering bug. Earlier filtering/clipping still applies (:2770–2835). “MoTS added” comments exist, but no runtime Main_bMotsCompat guard surrounds this consumer. Do not claim a general ordered queue, through-wall rendering, or retail MotS behavior."
+          },
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "thing",
+            "value": 2147483648,
+            "title": "One deferred eligible thing in the MotS renderer",
+            "anchors": [
+              "MotS 0x516270,0x5166B5-0x516719",
+              "JK corresponding routine 0x4C7DD0-0x4C8241 (end exclusive)",
+              "Engine/sithRender.c:2736-2737,2970-2997"
+            ],
+            "source_alias": "SITH_TF_80000000",
+            "declaration_source_preserved": true
+          }
         }
       ],
       "unlisted_bit_positions": [],
@@ -983,13 +1026,34 @@
           "value": 8192,
           "hex": "0x00002000",
           "symbol": "SITH_AF_BLEEDS",
-          "evidence": "declaration-only",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 1409,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit",
-          "legacy_alias": "THING_TYPEFLAGS_ISBLOCKING"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "legacy_alias": "THING_TYPEFLAGS_ISBLOCKING",
+          "prior_interpretation_0_1_4": {
+            "evidence": "declaration-only",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "The saber-hit path checks this bit on an actor/player being hit before admitting it to field-of-view and chance-based blocking checks, which also reject an invisible attacker. A clear bit goes to the damage path.",
+          "caveat": "The bit permits this blocking path; it does not guarantee a block. BLEEDS is a misleading source alias for this inspected JK/MotS consumer. Other possible consumers have not been exhaustively excluded.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "actor",
+            "value": 8192,
+            "title": "Eligibility for the saber-blocking branch",
+            "anchors": [
+              "JK 0x40BD9F-0x40BDA8 and following blocking checks",
+              "MotS 0x40D303-0x40D30C and following blocking checks",
+              "Gameplay/jkSaber.c:264-307"
+            ],
+            "source_alias": "SITH_AF_BLEEDS; historical THING_TYPEFLAGS_ISBLOCKING",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 16384,
@@ -1079,13 +1143,34 @@
           "value": 2097152,
           "hex": "0x00200000",
           "symbol": "SITH_AF_CONTROLSDISABLED",
-          "evidence": "declaration-only",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 1417,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit",
-          "legacy_alias": "THING_TYPEFLAGS_IMMOBILE"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "legacy_alias": "THING_TYPEFLAGS_IMMOBILE",
+          "prior_interpretation_0_1_4": {
+            "evidence": "declaration-only",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "On the inspected player control path, a set bit skips movement, activation and map handling. Original JK calls its look handler before the flag gate. Original MotS places the look call after the gate, so the flagged path skips it as well.",
+          "caveat": "This controls processing of these inputs; it does not freeze all physics or prevent every scripted move. Preserve the JK/MotS difference instead of reducing the meaning to immobile.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "actor",
+            "value": 2097152,
+            "title": "Gate player controls, with different look handling",
+            "anchors": [
+              "JK look call 0x4D8C5F; gate 0x4D8C6F-0x4D8C79",
+              "MotS gate 0x527852-0x52785C; look call 0x5278A3",
+              "Devices/sithControl.c:1025-1053"
+            ],
+            "source_alias": "SITH_AF_CONTROLSDISABLED; historical THING_TYPEFLAGS_IMMOBILE",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 4194304,
@@ -1277,12 +1362,33 @@
           "value": 32,
           "hex": "0x00000020",
           "symbol": "SITHAI_MODE_TOUGHSKIN",
-          "evidence": "declaration-only",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 867,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "declaration-only",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "AISetFireTarget stores the target pointer and timestamp, then sets this AI-control-block bit when the target is non-null and clears it otherwise. If the flags change, it emits the mode-change event. Both original wrappers agree.",
+          "caveat": "TOUGHSKIN is not evidence of armor here. Setting the bit alone does not assign a target pointer or cause firing; use AISetFireTarget. Other possible consumers are not exhaustively excluded.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "ai",
+            "value": 32,
+            "title": "Fire-target state maintained by AISetFireTarget",
+            "anchors": [
+              "JK AISetFireTarget 0x501550; writes 0x501584-0x5015B4",
+              "MotS AISetFireTarget 0x551C30; writes 0x551C64-0x551C94",
+              "Cog/sithCogFunctionAI.c:389-424"
+            ],
+            "source_alias": "SITHAI_MODE_TOUGHSKIN",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 64,
@@ -1310,12 +1416,33 @@
           "value": 256,
           "hex": "0x00000100",
           "symbol": "SITHAI_MODE_UNK100",
-          "evidence": "unresolved-name",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 870,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "unresolved-name",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "The inspected use is an AI event identifier and instinct event-subscription mask. AISetMode emits event 0x100 whenever its OR changes the mode word. The event dispatcher sends COG AIEVENT with first extended parameter 256.0 in original JK, but current AI flags converted to float in original MotS.",
+          "caveat": "This resolves an event role, not a special persistent AI mode. Generic mode setters can store 0x100; that does not prove a dedicated mode behavior. The dispatcher has living/class/disabled/sleeping gates. MotS float conversion need not preserve every high-bit integer exactly.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "ai",
+            "value": 256,
+            "title": "Mode-change event; persistent-mode meaning remains unproved",
+            "anchors": [
+              "JK AISetMode 0x5011E0; dispatcher 0x4EA26D-0x4EA28C",
+              "MotS AISetMode 0x551670; dispatcher 0x537DD0-0x537E03",
+              "AI/sithAI.c:429-456"
+            ],
+            "source_alias": "SITHAI_MODE_UNK100",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 512,
@@ -2293,12 +2420,33 @@
           "value": 64,
           "hex": "0x00000040",
           "symbol": "JKFLAG_40",
-          "evidence": "unresolved-name",
+          "evidence": "original-retail-static",
           "source": "current:src/World/jkPlayer.h",
           "line": 74,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "unresolved-name",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "When the eligible saber collision path sees this bit, it clears the bit and resets the counts of already-hit things and surfaces. The stored histories are pointer lists. The separate saber-damage-enable bit is tested afterward.",
+          "caveat": "This requests a reset when the path next consumes it; it does not itself enable damage or guarantee another hit. Source puppet marker 0xE sets it, but the original marker dispatch table was not independently reconstructed in this pass.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "jk",
+            "value": 64,
+            "title": "Consume-once saber hit-history reset",
+            "anchors": [
+              "JK 0x40BBB2-0x40BBDE; list consumers 0x40BD5C,0x40C074,0x40C13E",
+              "MotS 0x40CED7-0x40CEFD",
+              "Gameplay/jkSaber.c:368-374; Engine/sithPuppet.c:762-764"
+            ],
+            "source_alias": "JKFLAG_40",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 128,
@@ -2315,12 +2463,33 @@
           "value": 256,
           "hex": "0x00000100",
           "symbol": "JKFLAG_100",
-          "evidence": "unresolved-name",
+          "evidence": "original-retail-static",
           "source": "current:src/World/jkPlayer.h",
           "line": 76,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "not-established",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "unresolved-name",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "jkCreateBubble registers owner/radius-squared/type in the bubble array and sets this bit on the owner. jkDestroyBubble clears both the record and bit. A query removes a registered record if its owner no longer has the bit.",
+          "caveat": "This marks the bubble owner, not a thing merely located inside a bubble. Setting the bit alone does not allocate a bubble record or specify radius/type. Use the bubble verbs. An original-JK meaning is not established; lack of bubble verbs is not proof that the bit is universally unused.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "jk",
+            "value": 256,
+            "title": "MotS bubble-owner registration marker",
+            "anchors": [
+              "MotS jkCreateBubble 0x40C620 calls 0x40F390; set 0x40F41E-0x40F430",
+              "MotS destroy 0x40F440-0x40F46C; query 0x40F560-0x40F58D",
+              "Main/jkEpisode.c:709-791"
+            ],
+            "source_alias": "JKFLAG_100",
+            "declaration_source_preserved": true
+          }
         }
       ],
       "unlisted_bit_positions": [
@@ -2374,12 +2543,33 @@
           "value": 2,
           "hex": "0x00000002",
           "symbol": "MULTIMODEFLAG_2",
-          "evidence": "unresolved-name",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 630,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "unresolved-name",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "The original actor/player damage paths test multiplayer mode bit 0x2 and return zero before health subtraction when a same-team helper succeeds. That helper also requires teams bit 0x1, distinct player things, non-null player records, and equal nonzero team numbers. The source parent is compared with the victim.",
+          "caveat": "Self-damage, team zero and unequal teams do not meet this predicate. Earlier COG/inventory callbacks may already have run. This does not promise suppression of all messages, every other damage path or network convergence.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "multiplayer",
+            "value": 2,
+            "title": "Conditional same-team player health-damage suppression",
+            "anchors": [
+              "JK 0x4ECFEA-0x4ED014; helper 0x4C9250",
+              "MotS 0x53B6F3-0x53B71D; helper 0x517890",
+              "GetMultiModeFlags JK 0x507EE0 / MotS 0x559940; GetPlayerTeam JK 0x4E10F0 / MotS 0x530280"
+            ],
+            "source_alias": "MULTIMODEFLAG_2",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 4,
@@ -2898,12 +3088,33 @@
           "value": 131072,
           "hex": "0x00020000",
           "symbol": "SITH_PF_20000",
-          "evidence": "unresolved-name",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 1172,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "unresolved-name",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "In CreateThingAtPos, a physics thing normally has its initial velocity transformed by its created orientation. A set 0x20000 skips that transform in both originals.",
+          "caveat": "This is not a general angular-velocity, continuous-spin or object-orientation disable flag. MotS can apply the COG-supplied look vector after native creation; the transform uses the orientation at native creation time, not necessarily the final look-vector orientation. Setting the flag later does not undo the transform.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "physics",
+            "value": 131072,
+            "title": "Skip initial velocity rotation on creation",
+            "anchors": [
+              "JK 0x4CDF28-0x4CDF47; registered CreateThingAtPos 0x502520",
+              "MotS 0x51C644-0x51C663; registered CreateThingAtPos 0x552E00",
+              "World/sithThing.c:1107-1108"
+            ],
+            "source_alias": "SITH_PF_20000",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 262144,
@@ -3582,12 +3793,33 @@
           "value": 128,
           "hex": "0x00000080",
           "symbol": "SITH_SURFACE_80",
-          "evidence": "unresolved-name",
+          "evidence": "original-retail-static",
           "source": "current:src/World/sithSurface.h",
           "line": 60,
           "annotation": "Jones specific: AETHERIUM",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "unresolved-name",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "For the inspected physics thing-versus-surface collision path, the surface bit becomes the fourth argument to the collision response. A set bit bypasses that response branch's impact-damage calculation, hit-damaged sound and FALL-class DamageThing call.",
+          "caveat": "The collision response itself still runs. This is not universal damage immunity or a guarantee that every source of fall damage honors the bit. The flagged surface must be the actual contact surface in this path.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "surface",
+            "value": 128,
+            "title": "Suppress the inspected surface-collision impact damage",
+            "anchors": [
+              "JK 0x4E8E0D,0x4E8E27,0x4E9707-0x4E9767",
+              "MotS 0x5365BD,0x5365D7,0x536ED3-0x536F33",
+              "Engine/sithCollision.c:916-929,1120-1127"
+            ],
+            "source_alias": "SITH_SURFACE_80",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 512,
@@ -3911,7 +4143,7 @@
       "title": "Light mode values",
       "kind": "scalar",
       "domain": "render lighting mode",
-      "notes": "Higher declared values4/5/6 are unknown labels here. Renderer caps and target implementations affect the final mode.",
+      "notes": "Values4/5 remain unresolved. Mode6 has a bounded original-MotS inherited-lighting path, absent in the compared JK routines. Renderer caps and later processing still affect the result.",
       "entries": [
         {
           "value": 0,
@@ -3983,12 +4215,36 @@
           "value": 6,
           "hex": "0x00000006",
           "symbol": "RD_LIGHTMODE_6_UNK",
-          "evidence": "unresolved-name",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 28,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "absent-in-compared-render-routine",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "unresolved-name",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "In original MotS, hierarchy node flag 2 selects mesh lighting mode 6 and copies the stored lighting scalar at mesh+0x44 from the first ancestor without node flag 2. Mode 6 bypasses the ordinary mesh lighting cap and copies that scalar into every face extraLight field at face+0x30. One original producer stores the mean of computed scalar vertex-light outputs in mesh+0x44. The compared JK1.01 hierarchy/mesh routines lack this inheritance, cap exception and mode-6 copy.",
+          "caveat": "Scalar mode, not a flag bit. Requires a valid ancestor chain and mesh; the original walk lacks the modern null checks. Stored values can be stale, and culling, draw order, face-mode caps and later rendering still matter. It is not proof of fullbright, per-vertex RGB or a dynamic-only value. Current source instead transfers radius at this hierarchy step; original MotS parses and uses radius at mesh+0x48, distinct from the transferred +0x44. No runtime proof.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "light",
+            "value": 6,
+            "title": "Original MotS mode 6 propagates an inherited stored lighting scalar",
+            "anchors": [
+              "MotS DrawHNode 0x449F80-0x44A04E; mode write 0x449FB7; ancestor scalar transfer 0x449FD4-0x449FDE",
+              "MotS mode cap exception 0x44A161-0x44A17F; six-way table 0x44A5FC; mode-6 face copies 0x44A4F9-0x44A50F",
+              "MotS mean-light producer 0x44A4EA-0x44A4EF, callee 0x4507D0-0x450A3A; sum/divide 0x4509EF-0x450A36",
+              "MotS radius parser destination 0x4489B6-0x4489C0 and culling read 0x44A0B1",
+              "JK DrawHNode 0x4462E0-0x44635E; DrawMesh 0x446360-0x4467C8, ordinary cap 0x446452-0x44646C",
+              "Primitives/rdModel3.c:1453-1461,1533-1547,1629,1646-1652; rdModel3.h:157-178"
+            ],
+            "source_alias": "RD_LIGHTMODE_6_UNK",
+            "declaration_source_preserved": true
+          }
         }
       ]
     },
@@ -4047,12 +4303,35 @@
           "value": 16,
           "hex": "0x00000010",
           "symbol": "RD_FF_TEX_FILTER_NEAREST",
-          "evidence": "declaration-only",
+          "evidence": "original-retail-static",
           "source": "current:src/Raster/rdFace.h",
           "line": 22,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "absent-in-compared-render-routine",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "declaration-only",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "Original MotS reads model face flags at face+4 and, when 0x10 is set, overrides the initially selected render-entry lighting mode with scalar 1 (source alias NOTLIT). The complete compared JK1.01 model-face routine lacks this override. This proves a lighting consumer beyond the nearest-filter enum label.",
+          "caveat": "This is an initial mode override in the model-face path. Later ambient/colormap handling can replace mode 1 with mode 0 or 2; no final black/fullbright appearance is established. Nearest filtering, other surface/cache/backend consumers and global JK nonuse are not established. No runtime rendering test.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "face",
+            "value": 16,
+            "title": "Original MotS model-face path initially selects lighting mode 1",
+            "anchors": [
+              "MotS DrawFace 0x44A620-0x44A9E6 end-exclusive; face flags test 0x44A673, lighting store 0x44A678",
+              "MotS later ambient/colormap branches 0x44A827-0x44A95F",
+              "MotS model loader face flags 0x448DFB-0x448E18; model-face caller 0x44A5CB",
+              "JK DrawFace 0x4467D0-0x446ADF end-exclusive; forwards flags 0x446AA7-0x446AB0 without this override",
+              "Primitives/rdModel3.c:1713-1724,1731-1733"
+            ],
+            "source_alias": "RD_FF_TEX_FILTER_NEAREST",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 32,
@@ -4488,12 +4767,33 @@
           "value": 65536,
           "hex": "0x00010000",
           "symbol": "SITH_WF_10000",
-          "evidence": "unresolved-name",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 150,
           "annotation": "short throw? unsure",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "unresolved-name",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "Both original update routines first test weapon 0x2000. Only when it is clear does 0x10000 dispatch to a distinct handler and return. Current source maps that handler to a collision search with optional trail/impact/damage handling and destruction.",
+          "caveat": "The original proof for both targets is dispatch and priority, not every detail of the reconstructed callee. The full MotS handler was not retraced. The bit alone does not create a trail without the required flags/template/parameters. The old short-throw suggestion is not an established contract.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "weapon",
+            "value": 65536,
+            "title": "Select the special collision/trail update handler",
+            "anchors": [
+              "JK 0x4D3830-0x4D385A, target 0x4D3C20",
+              "MotS 0x5221F0-0x52221A, target 0x5225F0",
+              "World/sithWeapon.c:57-84,246-407"
+            ],
+            "source_alias": "SITH_WF_10000",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 131072,
@@ -4967,12 +5267,33 @@
           "value": 8192,
           "hex": "0x00002000",
           "symbol": "THING_TYPEFLAGS_ISBLOCKING",
-          "evidence": "declaration-only",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 1373,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "declaration-only",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "The saber-hit path checks this bit on an actor/player being hit before admitting it to field-of-view and chance-based blocking checks, which also reject an invisible attacker. A clear bit goes to the damage path.",
+          "caveat": "The bit permits this blocking path; it does not guarantee a block. BLEEDS is a misleading source alias for this inspected JK/MotS consumer. Other possible consumers have not been exhaustively excluded.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "actor",
+            "value": 8192,
+            "title": "Eligibility for the saber-blocking branch",
+            "anchors": [
+              "JK 0x40BD9F-0x40BDA8 and following blocking checks",
+              "MotS 0x40D303-0x40D30C and following blocking checks",
+              "Gameplay/jkSaber.c:264-307"
+            ],
+            "source_alias": "SITH_AF_BLEEDS; historical THING_TYPEFLAGS_ISBLOCKING",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 16384,
@@ -5055,12 +5376,33 @@
           "value": 2097152,
           "hex": "0x00200000",
           "symbol": "THING_TYPEFLAGS_IMMOBILE",
-          "evidence": "declaration-only",
+          "evidence": "original-retail-static",
           "source": "pinned:src/types_enums.h",
           "line": 1381,
           "annotation": "",
-          "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit"
+          "retail_jk": "bounded-original-static",
+          "retail_mots": "bounded-original-static",
+          "prior_interpretation_0_1_4": {
+            "evidence": "declaration-only",
+            "retail_jk": "not-established-per-bit",
+            "retail_mots": "not-established-per-bit"
+          },
+          "description": "On the inspected player control path, a set bit skips movement, activation and map handling. Original JK calls its look handler before the flag gate. Original MotS places the look call after the gate, so the flagged path skips it as well.",
+          "caveat": "This controls processing of these inputs; it does not freeze all physics or prevent every scripted move. Preserve the JK/MotS difference instead of reducing the meaning to immobile.",
+          "followup": {
+            "release": "0.1.5",
+            "file": "flag-discoveries.json",
+            "family": "actor",
+            "value": 2097152,
+            "title": "Gate player controls, with different look handling",
+            "anchors": [
+              "JK look call 0x4D8C5F; gate 0x4D8C6F-0x4D8C79",
+              "MotS gate 0x527852-0x52785C; look call 0x5278A3",
+              "Devices/sithControl.c:1025-1053"
+            ],
+            "source_alias": "SITH_AF_CONTROLSDISABLED; historical THING_TYPEFLAGS_IMMOBILE",
+            "declaration_source_preserved": true
+          }
         },
         {
           "value": 4194304,
@@ -5927,5 +6269,13 @@
     "operation": "Get reads DWORD at thing+0 or returns0xFFFFFFFF on null resolution. Set ORs; Clear ANDs complement; nonzero mask and nonnull resolution required. Mutators push no result and have no per-bit whitelist.",
     "sync": "Conditional deferred request(thing,2); pending queue merges entries, up to16 distinct pointers. Immediate bit2 serializer copies whole flags at drain time. Transport/receive/runtime convergence untraced.",
     "method": "Existing disassembly decoding checked against fresh hash-matched original PE instruction bytes; no fresh Capstone decode, execution or binary payload publication."
+  },
+  "followup_reference": {
+    "release": "0.1.5",
+    "file": "flag-discoveries.json",
+    "canonical_findings": 14,
+    "original_static_findings": 14,
+    "source_only_findings": 0,
+    "runtime_tested": false
   }
 }
