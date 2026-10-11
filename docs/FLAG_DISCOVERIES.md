@@ -1,23 +1,94 @@
 # Flag findings: JKDF2, MotS, and Indy
 
-**Maintained master reference.** Findings and corrections are consolidated here at the same URL. This reference develops independently of downloadable workshop snapshots; use this page for the current interpretation. Last evidence update: **4 October 2026**.
+**Maintained master reference.** Findings and corrections are consolidated here at the same URL. This reference develops independently of downloadable workshop snapshots; use this page for the current interpretation. Last evidence update: **11 October 2026**.
 
-[Machine-readable master JSON](../corpus/reference/flag-discoveries.json) · [Complete flag catalog](FLAGS.md) · [Machine-readable full catalog](../corpus/reference/flags.json)
+[Machine-readable master JSON](https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/corpus/reference/flag-discoveries.json) · [Complete flag catalog](https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAGS.html) · [Machine-readable full catalog](https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/corpus/reference/flags.json)
 
 ## What is established for each game
 
 | Game / evidence lane | Established scope | Not established |
 | --- | --- | --- |
-| **JKDF2 1.01 — original executable** | Selected paths in the hash-identified original executable, with the per-finding status and limits below | Uninspected paths, game-wide nonuse, runtime appearance or connected-client behavior |
-| **MotS — original executable** | Selected paths in the separately identified original MotS executable; differences from JKDF2 stay explicit | Uninspected paths, runtime appearance or connected-client behavior |
+| **JKDF2 1.01 — original executable** | Selected original-binary paths; 20 original-executable bit-30 runtime trials under Wine/Xvfb, with limits below | Uninspected paths, game-wide nonuse, untested runtime contexts or connected-client behavior |
+| **MotS — original executable** | Selected original-binary paths; stock COG contracts and 20 original-executable bit-30 runtime trials under Wine/Xvfb | Uninspected paths, untested runtime contexts or connected-client behavior |
 | **Indy / Infernal Machine — pinned OpenJones3D reconstruction** | Three selected source observations and a 32-position ThingFlags declaration comparison | Original Indy binary verification, original Indy runtime behavior, or automatic transfer of JKDF2/MotS meanings |
 | **Enhanced JK/MotS engines — current source** | Individually identified source consumers and recorded differences from the originals | Retail equivalence inferred from source names or successful enhanced-engine behavior |
 
-There are **27 original-JK/MotS findings**, plus **three separate Indy reconstruction observations**. A verified path proves only the stated behavior under its stated conditions. “Not established” is an evidence gap; “absent in compared routine” is a bounded comparison. Neither means a bit is globally unused. No game-runtime or multiplayer test is claimed here.
+There are **27 original-JK/MotS findings**, plus **three separate Indy reconstruction observations**. A verified path proves only the stated behavior under its stated conditions. “Not established” is an evidence gap; “absent in compared routine” is a bounded comparison. Neither means a bit is globally unused. The bit-30 investigation adds **40 bounded original-executable runtime trials** (20 per game); it does not upgrade the runtime status of other findings. No connected-client test is claimed. One separate original-stock-COG observation identifies the MotS carbonite targeting filter.
 
-## Focused follow-up: four MotS masks
+## Physics 0x40000000: original purpose still unresolved
 
-Two additional original-binary findings are established below: the item `0x10` collision gate and the physics `0x00800000` water-entry writer. Physics `0x02000000` and weapon `0x20` received deeper field-aware investigation but retain unresolved gameplay meanings. Their search scope, positive generic storage evidence and rejected numeric matches are recorded under [Unresolved masks investigated](#unresolved-masks-investigated). Original Indy meanings remain unestablished for all four.
+**This bit has verified script uses; a distinct native gameplay effect has not been established.** It is bit 30, not physics `0x04000000`, and it is unrelated to identically numbered ThingFlags or ActorFlags.
+
+| Target | What was actually checked | Result and boundary |
+| --- | --- | --- |
+| Original JKDF2 1.01 | Separate original-binary audit and 20 original-executable trials under Wine/Xvfb | No dedicated reader established in inspected paths. Hover matched exactly; worst moving A/B differences were below the larger repeat maximum. Custom-script reuse is not evidence of necessity. |
+| Original MotS | Stock flight-script source and level bindings, separate original-binary audit, 20 original-executable trials under Wine/Xvfb | Hover matched exactly. Moving traces retain a small unresolved residual; no reproducible effect has been attributed to the bit. |
+| Indy / Infernal Machine | No bit-30 physics investigation in this pass | Original binary and runtime meaning remain unexamined. Indy ThingFlags `MOVABLE` is a different field. |
+| Enhanced JK/MotS engines | Navigation/comparison source | Not substituted for either original executable or treated as retail proof. |
+
+### Where the original script uses it
+
+MotS `s4l1_fly.cog` sets flight `0x2000`, clears gravity `0x1`, and sets `0x40000000` on its entry-link crossing. Its other-link branch applies the inverse operations to the saved local player. The source is 710 bytes, SHA-256 `309e082f11ce97819c5406b46ec9c2e931454380d46849fcf7241c73b23df604`.
+
+The stock `s4l1_escortship.jkl` binds this COG three times: entries `4680/1280` with exits `3238/3225`; entry `3312` with exit `3322`; and entries `3400/3399` with **no bound exit surfaces**. Thus even the original placements do not all supply an inverse transition. Darsi Minor contains a byte-identical copy in a custom JK package; that package was inspected, not played in this investigation.
+
+### Other uses found in the bounded corpus audit
+
+**Zee Gee**, a MotS level by **Mara Yates**, dated March 1998, contains a second code body: `nograv.cog`. Its `newplayer` handler obtains the player with `GetSenderRef()`, sets flight `0x2000`, clears gravity `0x1`, and sets `0x40000000`. It has no exit/undo handler. The actual `nograv.jkl` declares the script at line 4540 and instantiates it at line 4567. Its README credits **“Cogking for showing me how to fix the cog.”** This is a historical lead, not evidence isolating the bit's effect or attributing its design to that collaborator.
+
+The 355-byte script has SHA-256 `e1d9be80dd021b4e7153a7860dfd19d2cda6e0b7719296d0a55b9f1bb947de2f`. [Zee Gee archive provenance](https://jkdf2.net/JKBot/JKArchive/JKDF2/JKDF2/Game%20Files/motsmp/zeegee.zip) identifies the locally inspected package. The identical script is also contained in **Alternative Saber Levels**, by **Rob Fuller II**, dated May 1998, for MotS; its inspected JKLs contain no `nograv` reference, so invocation there is **not established**. [Alternative Saber archive provenance](https://jkdf2.net/JKBot/JKArchive/JKDF2/JKDF2/Game%20Files/motsmp/alt-saber.zip). These stored provenance URLs were not freshly checked for network availability in this audit.
+
+The read-only scan covered **38,158 indexed COG rows / 25,365 recorded source hashes**, from the October 1 index snapshot, including extracted tutorial/forum code blocks. The independent stock scan covered **540 JK COG members and 777 MotS COG members**, 75 JKLs and six DAT files across ten owned archives. It found **no additional specific stock use** beyond MotS `s4l1_fly.cog`, and **no bit-30-containing value in 1,690 explicit stock `physflags` fields**. Case, leading zeroes, decimal `1073741824`, and safely evaluable constant combinations were considered. Three specific raw source hashes reduce to two code bodies: the third differs from the stock flight COG only by its final NUL versus space byte.
+
+Broad `ClearPhysicsFlags(...,-1)` calls in JK **Oxyd CTF**, **MarbleBlastJK**, and MotS **MarbleBlast** incidentally include bit 30. JK **Gunrunner** saves the whole physics word and attempts a broad clear using the nine-digit literal `0xFFFFFFFFF`; its original-engine parsing remains unverified. These are whole-word operations, not evidence of a dedicated purpose. Other `0x40000000` matches in ThingFlags, ActorFlags, SurfaceFlags and SectorFlags address different fields.
+
+This is not exhaustive dataflow analysis: variable masks, cross-statement or cross-COG construction, unindexed later acquisitions and undiscovered archives remain outside the scan. The custom packages were inspected, not runtime tested. No Indy result is inferred.
+
+### What the 40 original-game trials establish
+
+Each game completed 20 trials: repeated ABBA hover and free-impulse conditions, followed by gravity/hover controls. A and B retained full physics words `0x6B4E` and `0x40006B4E`, differing by exactly this bit. Nonzero setter-call counts and order matched, controlling the generic synchronization-marking side effect. The moving condition applied velocity `(0.05, 0.025, 0.025)` once and let it evolve freely. All trials completed; movement and gravity controls worked; every hover trace stayed exactly stationary.
+
+These were **unchanged original executables under Wine 8/Xvfb**, using owned stock geometry, a diagnostic world COG and the stock player class COG. They entered through single-player Debug. No connected multiplayer peers or native-Windows execution were tested. The observer read process memory without writing it or injecting code. Both clients and their owned services stopped, and source-preservation/cleanup receipts were retained.
+
+The primary comparison uses the first consistent observation per engine millisecond, aligns to the first sample-0 observation, and interpolates over 750 ms on a 10 ms grid. Maximum position differences over all trial pairs were:
+
+| Game | A/A maximum | B/B maximum | A/B maximum |
+| --- | ---: | ---: | ---: |
+| JKDF2 1.01 | 0.002302402 | 0.001329071 | 0.002165313 |
+| MotS | 0.001658743 | 0.001798522 | 0.002120895 |
+
+Values are world units. **MotS's worst A/B difference is about 18% above its larger repeat maximum**, reducing to about 4.7% with alternative clock-observation handling. Those percentages compare experimental difference extrema; they do not mean an 18% or 4.7% change in game physics. Group-mean comparisons do not replace this worst-pair result. This was not a formal statistical equivalence test.
+
+Repeated readings at a single game-clock value sometimes contained different motion states despite the consistency screen. A subsequent original-byte audit verified a retained per-Thing fractional physics-step remainder at **JK `+0x240` / MotS `+0x24C`**. The originals use nominal 20 ms steps with downward-rounding conversion; the reconstruction's `+0.5` term is absent. **The completed traces did not record that remainder.** It is a plausible source of timing variation, not a measured explanation of the MotS residual.
+
+### Original JK control callbacks: the additional path checked
+
+The original JK 1.01 startup routine at `0x402860` registers four callbacks: player controls `0x4D8830`, weapons `0x4D5B40`, inventory/skills `0x4D2C20`, and HUD `0x4028E0`. Registration at `0x4D6F60` writes the supplied pointer to the table at `0x833A48`; the update's indirect call is at `0x4D705F`. Original bytes corroborate the four startup calls and the registration/dispatch structure. This is static registration evidence, not a captured runtime table.
+
+The newly inspected weapon, inventory/skills and HUD handler bodies did not establish a dedicated reader of the physics word at Thing `+0x1D0`. A tempting weapon-handler `TEST AH,0x40` follows `FNSTSW AX` and tests FPU status, not physics bit 30. The narrow verification covers 14 original-byte ranges totaling 5,508 bytes; its evidence receipt SHA-256 is `461363523ed071e9e5de7f7fde15e9d3f902b777decec9e3d1b905e279c56b0e`.
+
+**Remaining boundary:** COG activation/deactivation/autoselect, deeper weapon selection, HUD/camera/save/device calls and other reachable helpers are not a whole-program transitive audit. This callback follow-up is JK-specific; no equivalent MotS callback closure or new runtime trial is claimed.
+
+### Tests that can still distinguish the hypotheses
+
+1. Repeat A/B with controlled forward/backward/vertical flight input while recording the remainder, thrust, orientation and angular velocity. Keep original-time comparisons and matched setter calls.
+2. Exercise the actual Escort Ship entry/exit surfaces, repeated crossings and the placement without exit surfaces. This checks the context in which the programmer used the bit.
+3. Isolate wall/slope contact, water transitions and non-player physics movers with positive controls and reversed trial order.
+4. Use original connected peers to separate ownership/replication behavior from the generic setter's synchronization request.
+
+These follow-up runtime tests are **planned, not completed results**. A separate independent execution review is pending. This page does not attribute an endorsement or test result to that review.
+
+The appropriate authoring advice is to preserve the bit when reproducing a historical script until its role is resolved. Do not label it a universal flight flag, a proven vestige, or a safe spare bit. The observed flight/gravity operations already have functional consumers; a working combined script cannot identify the contribution of each line.
+
+## Separate discovery: physics 0x02000000 in stock MotS carbonite
+
+The stock `weap_carbgun_m.cog` supplies a positive **COG-defined** use for a different unresolved physics mask: its normal `fire`/`vire` target-selection path skips the targeting/freezing block when a target has `0x02000000`. The script's separate `user0` forced-freeze path lacks that test. This supports **normal stock-carbonite targeting exclusion**, not universal immunity to all freezing, damage or direct script intervention.
+
+This is original MotS **script-source evidence**, not a newly discovered native-engine bit-test or a runtime carbonite result. No equivalent JKDF2 or original-Indy contract was established. Source SHA-256: `314237ce0285bd4beff16569d7144c56121b46472048200910683545e75e1ce3`; target enumeration near line 227, bit guard at lines 239–240. The COG-defined contract can explain meaningful template usage even when a matching native reader has not been found.
+
+## Earlier focused follow-up: four MotS masks
+
+Two additional original-binary findings are established below: the item `0x10` collision gate and the physics `0x00800000` water-entry writer. Physics `0x02000000` and weapon `0x20` received deeper field-aware native-code investigation. Their native meanings remain unresolved; the newer stock-MotS carbonite COG contract for `0x02000000` is described above. Their search scope, positive generic storage evidence and rejected numeric matches are recorded under [Unresolved masks investigated](#unresolved-masks-investigated). Original Indy meanings remain unestablished for all four.
 
 ## Findings by field and game
 
@@ -430,13 +501,13 @@ In particular, Indy `NOSOUND` (`0x01000000`), `MOVABLE` (`0x40000000`), and `WHI
 
 ## Unresolved masks investigated
 
-These are bounded research results, not additional resolved flag meanings. Generic storage/copy behavior is original-static evidence for the word containing a bit; it does not establish a dedicated gameplay consumer. Both games remain untested at runtime, and Indy was not audited for these masks.
+These are bounded research results, not additional resolved flag meanings. Generic storage/copy behavior is original-static evidence for the word containing a bit; it does not establish a dedicated gameplay consumer. The separate bit-30 investigation above has bounded runtime results; the older masks below remain untested at runtime. Indy was not audited for these masks.
 
 ### physics 0x02000000
 
 **Status:** unresolved-original-semantics.
 
-Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no bit-specific gameplay consumer was established.
+Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no dedicated native gameplay consumer was established in those inspected paths. The later stock-MotS carbonite targeting exclusion is separate COG-source evidence, described above.
 
 **Scope.** Checked registered wrappers, the CreateThing-to-template-copy chain, position-message field writes/reads, and selected checksum call sites. Exact mask/complement searches returned 14 hits per executable; upper-byte/word displacement and immediate bit-25 shift/bit-operation searches returned zero matches. Whole-field displacement counts were 172 JK and 160 MotS syntactic references, not proven consumer counts. The checksum call site supplies all four physics-flags bytes, but the helper and full join chain were not re-audited here.
 
@@ -495,6 +566,8 @@ Original identities:
 
 ## Machine-readable contract
 
-The [master JSON](../corpus/reference/flag-discoveries.json) uses `schema_version: 2` for its data format, not a workshop release. Each finding has `targets.jkdf2_1_01`, `targets.mots`, and `targets.indy`, with separate static status, evidence lane and runtime status. Existing `retail_jk` and `retail_mots` fields remain for readers of the earlier format.
+The [master JSON](https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/corpus/reference/flag-discoveries.json) uses `schema_version: 2` for its data format, not a workshop release. Each finding has `targets.jkdf2_1_01`, `targets.mots`, and `targets.indy`, with separate static status, evidence lane and runtime status. Existing `retail_jk` and `retail_mots` fields remain for readers of the earlier format.
 
 `indy_comparison.source_observations` contains the three reconstruction-only observations; `indy_comparison.thing_entries` preserves all 32 declaration grades. `original_executables`, `source_files`, anchors and limits retain provenance. `snapshot_provenance` is historical download provenance, not the identity of this master page. Future corrections belong at these same human and machine URLs.
+
+The machine contract also includes `stock_cog_observations` and per-investigation `runtime`, `stock_context` and `next_tests` records. Runtime trial counts are separate from resolved native flag meanings.
