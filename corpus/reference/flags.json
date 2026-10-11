@@ -10,7 +10,9 @@
     "original-retail-static": "Selected byte-verified original JK1.01/MotS code paths, including the separately described ThingFlags wrapper/queue/serializer contract and explicitly marked 0.1.5 per-value findings. Not a runtime test or proof of every consumer.",
     "target_separation": "Pinned enhanced snapshot, current local source, original JK, original MotS, and Indy reconstruction remain distinct.",
     "unresolved-name": "Numeric or explicitly unknown declaration label. No meaning is certified by the name; dedicated consumers may still exist.",
-    "current-source-consumer": "Individually hashed current enhanced-source reader/writer; original-game meaning remains unestablished unless separately stated."
+    "current-source-consumer": "Individually hashed current enhanced-source reader/writer; original-game meaning remains unestablished unless separately stated.",
+    "original-retail-cog-source": "Complete hash-identified original COG and relevant bindings inspected; source contract is distinct from runtime execution and native-engine consumers.",
+    "original-retail-runtime-wine": "Unchanged hash-identified original executable actually run under the stated Wine/Xvfb fixture; results apply only to tested contexts and observation limits."
   },
   "sources": [
     {
@@ -3039,7 +3041,7 @@
       "title": "Physics flags",
       "kind": "bitmask",
       "domain": "physics movement parameters",
-      "notes": "Requires physics movement. Set ORs; Clear clears and lacks Set’s explicit sync request in the inspected wrapper. Template physflags= replaces the field. Undeclared top four bits remain unresolved.",
+      "notes": "Requires physics movement. Set ORs; Clear clears and lacks Set’s explicit sync request in the inspected wrapper. Template physflags= replaces the field. Bit 30 is documented from original COG use and bounded runtime evidence; its dedicated meaning and the other undeclared high bits remain unresolved.",
       "entries": [
         {
           "value": 1,
@@ -3397,22 +3399,23 @@
           "value": 33554432,
           "hex": "0x02000000",
           "symbol": "SITH_PF_2000000",
-          "evidence": "unresolved-name",
+          "evidence": "original-retail-cog-source",
           "source": "pinned:src/types_enums.h",
           "line": 1180,
           "annotation": "",
           "retail_jk": "not-established-per-bit",
-          "retail_mots": "not-established-per-bit",
-          "description": "Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no bit-specific gameplay consumer was established.",
-          "caveat": "No unused, droid-specific, water-specific or no-position-sync alias is justified. Negative text-pattern searches are not full data-flow analysis: alternate pointer bases, register aliases, composite or computed masks and indirect paths may escape them. Copy preservation is bounded to the inspected operation; later initialization may change state. Static packet handling does not prove delivery, immediate synchronization or connected-client convergence. Checksum input is not a demonstrated join failure. Runtime was not tested.",
+          "retail_mots": "verified-stock-cog-contract",
+          "description": "The normal fire/vire target-selection path in stock weap_carbgun_m.cog skips its targeting/freezing block when the target has PhysicsFlags 0x02000000. Original generic wrappers, copies and packet fields also preserve the word.",
+          "caveat": "The same script has a user0 forced-freeze handler without this test. This is a COG-defined contract, not universal freezing immunity or a verified dedicated native-engine consumer. No runtime carbonite test was performed. No equivalent JKDF2 or original-Indy contract was established.",
           "investigation": {
-            "date": "2026-10-04",
+            "date": "2026-10-11",
             "status": "unresolved-original-semantics",
             "file": "flag-discoveries.json",
             "family": "physics",
             "value": 33554432,
             "canonical_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAG_DISCOVERIES.html"
-          }
+          },
+          "stock_cog_observation": "mots-carbonite-normal-target-filter"
         },
         {
           "value": 67108864,
@@ -3435,12 +3438,31 @@
           "annotation": "",
           "retail_jk": "not-established-per-bit",
           "retail_mots": "not-established-per-bit"
+        },
+        {
+          "value": 1073741824,
+          "hex": "0x40000000",
+          "symbol": "BIT_30_UNRESOLVED",
+          "annotation": "Descriptive catalog label; no original native symbol is established.",
+          "evidence": "unresolved-original-semantics",
+          "source": "original-retail-cog-and-bounded-runtime",
+          "description": "Original purpose unresolved. No dedicated consumer established in inspected original JK 1.01/MotS paths. Original-executable tests showed identical hover and no reproducible free-impulse effect attributable to the bit; MotS retains a timing-sensitive numerical residual.",
+          "caveat": "Not a whole-program nonuse or vestigial proof. No native-Windows or connected-peer run. Controlled flight input, stock surface entry/exit, other actor types, water and save/load remain untested. Physics integration remainder was not recorded in the completed traces.",
+          "retail_jk": "bounded-runtime-no-resolved-effect",
+          "retail_mots": "bounded-runtime-residual-unresolved",
+          "investigation": {
+            "date": "2026-10-11",
+            "status": "unresolved-original-semantics",
+            "file": "flag-discoveries.json",
+            "family": "physics",
+            "value": 1073741824,
+            "canonical_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAG_DISCOVERIES.html"
+          }
         }
       ],
       "unlisted_bit_positions": [
         "0x10000000",
         "0x20000000",
-        "0x40000000",
         "0x80000000"
       ],
       "unlisted_meaning": "Not declared in this selected source inventory; unresolved, not proved unused or safe."
@@ -6610,7 +6632,7 @@
   "completeness": {
     "historical_table_families": 26,
     "all_families": 31,
-    "entries": 385,
+    "entries": 386,
     "thing_bit_positions": 32,
     "unknown_semantics_preserved": true,
     "all_retail_semantics_verified": false
@@ -6646,8 +6668,11 @@
     "original_static_findings": 27,
     "source_only_findings": 0,
     "indy_reconstruction_observations": 3,
-    "runtime_tested": false,
-    "focused_unresolved_investigations": 2
+    "runtime_tested": true,
+    "focused_unresolved_investigations": 3,
+    "runtime_tested_investigations": 1,
+    "original_executable_runtime_trials": 40,
+    "stock_cog_observations": 1
   },
-  "last_evidence_update": "2026-10-04"
+  "last_evidence_update": "2026-10-11"
 }

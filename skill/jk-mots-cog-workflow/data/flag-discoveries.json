@@ -5,7 +5,9 @@
   "scope": "Cumulative flag findings, target-specific evidence and unresolved meanings; updated at the same canonical URLs independently of downloadable package snapshots.",
   "evidence_policy": {
     "original-retail-static": "Selected control-flow/field evidence from hash-identified original executables; no game execution or network test.",
-    "current-source-consumer": "Selected reader/writer in individually hashed enhanced source; no original-retail equivalence claimed."
+    "current-source-consumer": "Selected reader/writer in individually hashed enhanced source; no original-retail equivalence claimed.",
+    "original-retail-cog-source": "Complete hash-identified original COG and relevant bindings inspected; source contract is distinct from runtime execution and native-engine consumers.",
+    "original-retail-runtime-wine": "Unchanged hash-identified original executable actually run under the stated Wine/Xvfb fixture; results apply only to tested contexts and observation limits."
   },
   "original_executables": {
     "jk101": {
@@ -1158,7 +1160,7 @@
   "followup_original_render_date": "2026-10-03",
   "followup_date_utc": "2026-10-04",
   "document_type": "maintained-master-reference",
-  "last_updated": "2026-10-04",
+  "last_updated": "2026-10-11",
   "canonical_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAG_DISCOVERIES.html",
   "machine_readable_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/corpus/reference/flag-discoveries.json",
   "snapshot_provenance": {
@@ -1580,7 +1582,10 @@
     "indy_reconstruction_observations": 3,
     "indy_thing_declarations": 32,
     "runtime_tested_findings": 0,
-    "focused_unresolved_investigations": 2
+    "focused_unresolved_investigations": 3,
+    "stock_cog_observations": 1,
+    "runtime_tested_investigations": 1,
+    "original_executable_runtime_trials": 40
   },
   "investigations": [
     {
@@ -1589,10 +1594,10 @@
       "hex": "0x02000000",
       "date": "2026-10-04",
       "status": "unresolved-original-semantics",
-      "result": "Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no bit-specific gameplay consumer was established.",
+      "result": "Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no dedicated native gameplay consumer was established in those inspected paths.",
       "scope": "Checked registered wrappers, the CreateThing-to-template-copy chain, position-message field writes/reads, and selected checksum call sites. Exact mask/complement searches returned 14 hits per executable; upper-byte/word displacement and immediate bit-25 shift/bit-operation searches returned zero matches. Whole-field displacement counts were 172 JK and 160 MotS syntactic references, not proven consumer counts. The checksum call site supplies all four physics-flags bytes, but the helper and full join chain were not re-audited here.",
       "excluded_matches": "Thing water-state 0x02000000 reads offset zero, and actor 0x02000000 reads the type-specific parameter field. Neither establishes physics meaning. The inspected MotS position-send suppression gate uses physics 0x04000000, a different bit.",
-      "limits": "No unused, droid-specific, water-specific or no-position-sync alias is justified. Negative text-pattern searches are not full data-flow analysis: alternate pointer bases, register aliases, composite or computed masks and indirect paths may escape them. Copy preservation is bounded to the inspected operation; later initialization may change state. Static packet handling does not prove delivery, immediate synchronization or connected-client convergence. Checksum input is not a demonstrated join failure. Runtime was not tested.",
+      "limits": "No unused, droid-specific, water-specific or no-position-sync alias is justified. Negative text-pattern searches are not full data-flow analysis: alternate pointer bases, register aliases, composite or computed masks and indirect paths may escape them. Copy preservation is bounded to the inspected operation; later initialization may change state. Static packet handling does not prove delivery, immediate synchronization or connected-client convergence. Checksum input is not a demonstrated join failure. Runtime was not tested. A later original-stock-MotS COG inspection establishes its normal carbonite targeting exclusion, separately documented in stock_cog_observations.",
       "anchors": [
         "JK Get/Set/ClearPhysicsFlags 0x504980, 0x5049C0, 0x504A30; physics field +0x1D0",
         "MotS Get/Set/ClearPhysicsFlags 0x5557F0, 0x555830, 0x5558A0; physics field +0x1DC",
@@ -1620,7 +1625,8 @@
           "evidence_lane": "not-audited-for-this-investigation",
           "runtime_status": "not-tested"
         }
-      }
+      },
+      "stock_cog_followup": "mots-carbonite-normal-target-filter"
     },
     {
       "family": "weapon",
@@ -1657,6 +1663,380 @@
           "static_status": "not-established",
           "gameplay_meaning": "not-audited",
           "evidence_lane": "not-audited-for-this-investigation",
+          "runtime_status": "not-tested"
+        }
+      }
+    },
+    {
+      "family": "physics",
+      "value": 1073741824,
+      "hex": "0x40000000",
+      "date": "2026-10-11",
+      "status": "unresolved-original-semantics",
+      "result": "Original purpose unresolved. No dedicated consumer established in inspected original JK 1.01/MotS paths. Original-executable tests showed identical hover and no reproducible free-impulse effect attributable to the bit; MotS retains a timing-sensitive numerical residual.",
+      "scope": "Separate original-binary field-aware audits, stock/custom COG context, and 20 original-executable trials per game under Wine 8/Xvfb. Generic bit storage/copy/transport is established separately from any dedicated meaning.",
+      "limits": "Not a whole-program nonuse or vestigial proof. No native-Windows or connected-peer run. Controlled flight input, stock surface entry/exit, other actor types, water and save/load remain untested. Physics integration remainder was not recorded in the completed traces.",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-search-no-dedicated-consumer-established",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static-and-wine-runtime",
+          "runtime_status": "20-complete-bounded-trials",
+          "runtime_result": "identical-hover; impulse-worst-pairs-below-larger-repeat-maximum"
+        },
+        "mots": {
+          "static_status": "bounded-search-no-dedicated-consumer-established",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static-and-wine-runtime",
+          "runtime_status": "20-complete-bounded-trials",
+          "runtime_result": "identical-hover; impulse-residual-unresolved"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "gameplay_meaning": "not-audited",
+          "evidence_lane": "not-audited-for-this-investigation",
+          "runtime_status": "not-tested"
+        }
+      },
+      "stock_context": {
+        "game": "mots",
+        "member": "cog/s4l1_fly.cog",
+        "bytes": 710,
+        "sha256": "309e082f11ce97819c5406b46ec9c2e931454380d46849fcf7241c73b23df604",
+        "behavior": "On entry-link crossing, set flight 0x2000, clear gravity 0x1, and set 0x40000000. Other-link crossing applies inverse operations to the saved local player.",
+        "level": "jkl/s4l1_escortship.jkl",
+        "level_sha256": "ef121f70319360e9821f823bdb486a150c1df255d077daa82b77c4b4ff10ca3e",
+        "instances": [
+          {
+            "instance": 2,
+            "entry_surfaces": [
+              4680,
+              1280
+            ],
+            "exit_surfaces": [
+              3238,
+              3225
+            ]
+          },
+          {
+            "instance": 5,
+            "entry_surfaces": [
+              3312,
+              -1
+            ],
+            "exit_surfaces": [
+              3322,
+              -1
+            ]
+          },
+          {
+            "instance": 15,
+            "entry_surfaces": [
+              3400,
+              3399
+            ],
+            "exit_surfaces": [
+              -1,
+              -1
+            ]
+          }
+        ],
+        "limit": "The third binding has no exit surfaces. A working combined flight/gravity script does not establish the contribution of bit30."
+      },
+      "runtime": {
+        "date": "2026-10-11",
+        "total_trials": 40,
+        "trials_per_game": 20,
+        "environment": "Original executables, Wine 8 on a private Debian i386 environment under WSL2, private Xvfb; no enhanced-engine executable substitution.",
+        "fixture": "Private stock-geometry derivative, diagnostic world COG, stock player class COG, single-player Debug entry.",
+        "observer": "Read-only /proc/PID/mem; no process-memory writes, injected code or patched executables.",
+        "a_physics_word": "0x00006B4E",
+        "b_physics_word": "0x40006B4E",
+        "xor": "0x40000000",
+        "setter_calls_matched": true,
+        "order": "hover ABBA, impulse ABBA, hover ABBA, impulse ABBA, gravity/hover/gravity/hover",
+        "impulse_velocity": [
+          0.05,
+          0.025,
+          0.025
+        ],
+        "controls": "Each trial covered sample indices 0-30; each complete 20-trial run reached final marker 999999; movement and gravity controls passed; all hover position and velocity differences exactly zero.",
+        "primary_alignment": "First consistent observation per engine millisecond, trial origin at first sample-0 observation, interpolation on 10 ms grid for 750 ms; all pairwise extrema.",
+        "impulse_position_maxima": {
+          "jkdf2_1_01": {
+            "aa": 0.002302402,
+            "bb": 0.001329071,
+            "ab": 0.002165313
+          },
+          "mots": {
+            "aa": 0.001658743,
+            "bb": 0.001798522,
+            "ab": 0.002120895
+          }
+        },
+        "impulse_velocity_maxima": {
+          "jkdf2_1_01": {
+            "aa": 0.001162833,
+            "bb": 0.000671249,
+            "ab": 0.001093596
+          },
+          "mots": {
+            "aa": 0.000837351,
+            "bb": 0.000908374,
+            "ab": 0.001070936
+          }
+        },
+        "mots_residual": "Worst A/B position/velocity differences exceed the larger repeat maxima by about 18%; alternative clock-observation handling reduces that excess to about 4.7%. These are ratios of experimental difference extrema, not percentage changes in game physics.",
+        "formal_equivalence_test": false,
+        "observer_limit": "Same engine-clock values sometimes carry different observed states despite the consistency screen. It is not an atomic simulation snapshot.",
+        "integration_remainder": {
+          "original_byte_verified": true,
+          "jk_thing_offset": "0x240",
+          "mots_thing_offset": "0x24C",
+          "nominal_step_seconds": 0.02,
+          "conversion": "downward-rounding whole-step conversion; no reconstruction +0.5 term",
+          "recorded_in_completed_traces": false,
+          "caused_residual": "not-established"
+        },
+        "cleanup": "Both original runs and their owned display/audio services stopped; source preservation and cleanup receipts retained privately."
+      },
+      "next_tests": [
+        {
+          "priority": 1,
+          "test": "Matched scripted/held flight input with remainder, thrust, look and angular velocity logged",
+          "status": "planned-not-executed",
+          "purpose": "Exercise player-control integration omitted by the free-impulse fixture."
+        },
+        {
+          "priority": 2,
+          "test": "Actual stock Escort Ship entry/exit surfaces and repeated crossings",
+          "status": "planned-not-executed",
+          "purpose": "Test lifecycle, transition ordering and the binding without exit surfaces."
+        },
+        {
+          "priority": 3,
+          "test": "Wall/slope contact, water transitions and other mover types",
+          "status": "planned-not-executed",
+          "purpose": "Exercise context-specific physics branches while retaining valid controls."
+        },
+        {
+          "priority": 4,
+          "test": "Original connected peers with matched setter counts and ownership",
+          "status": "planned-not-executed",
+          "purpose": "Separate a dedicated bit effect from generic flag synchronization."
+        }
+      ],
+      "review_boundary": "Independent packet review led to an original-byte verification of the missing integration-remainder observation. A separate original-engine execution review is pending; no result or agreement is attributed to it.",
+      "usage_audit": {
+        "date": "2026-10-11",
+        "scope": {
+          "indexed_build_utc": "2026-10-01T04:09:49.184239+00:00",
+          "cog_rows": 38158,
+          "unique_recorded_source_hashes": 25365,
+          "indexed_text_characters": 142144312,
+          "retail": {
+            "jk": {
+              "archives": 5,
+              "cog_members": 540,
+              "jkl_members": 35,
+              "dat_members": 3,
+              "tpl_members": 0,
+              "explicit_physflags": 618,
+              "text_bytes_read": 44669375,
+              "bit30_fields": 0
+            },
+            "mots": {
+              "archives": 5,
+              "cog_members": 777,
+              "jkl_members": 40,
+              "dat_members": 3,
+              "tpl_members": 0,
+              "explicit_physflags": 1072,
+              "text_bytes_read": 61252393,
+              "bit30_fields": 0
+            }
+          },
+          "acquisition_performed": false,
+          "clients_launched": false,
+          "git_used": false
+        },
+        "new_specific_use": {
+          "title": "Zee Gee",
+          "author": "Mara Yates",
+          "date_as_stated": "March98",
+          "target_as_stated": "Mysteries of the Sith Addon",
+          "source_id": 33812,
+          "script": "cog/nograv.cog",
+          "script_sha256": "e1d9be80dd021b4e7153a7860dfd19d2cda6e0b7719296d0a55b9f1bb947de2f",
+          "script_bytes": 355,
+          "source_credit": "(C) Mara",
+          "readme_credit": "Cogking for showing me how to fix the cog",
+          "behavior": "COG flags 0x240; newplayer obtains GetSenderRef(), sets physics 0x2000, clears 0x1, then sets 0x40000000. No other handler or inverse clear in the 355-byte script.",
+          "bindings": [
+            {
+              "member": "jkl/nograv.jkl",
+              "sha256": "061f0425d728f2cc455f4e68442e636537ec3d2866dd89140f2bab1494aa30fc",
+              "declaration_line": 4540,
+              "instance_line": 4567,
+              "instance": "0: nograv.cog"
+            }
+          ],
+          "public_archive_url": "https://jkdf2.net/JKBot/JKArchive/JKDF2/JKDF2/Game%20Files/motsmp/zeegee.zip",
+          "zip_sha256": "79f2b8a551b656f3cd80c8bd2f9a1ec81381e1708dfa6245a3889c5748bedc60",
+          "runtime_validated": false,
+          "bit_specific_effect_established": false
+        },
+        "additional_identical_containment": {
+          "title": "Alternative Saber Levels",
+          "author_as_readme": "Rob Fuller II",
+          "date_as_readme": "5/98",
+          "target_as_readme": "Mysteries of the Sith",
+          "url": "https://jkdf2.net/JKBot/JKArchive/JKDF2/JKDF2/Game%20Files/motsmp/alt-saber.zip",
+          "zip_sha256": "6266bee95f37c460afa77abc764bbff70d16a02da5dd9d02c7502dd6d67a6137",
+          "script_same_sha256": true,
+          "nograv_binding_found": false,
+          "boundary": "Contained script is not evidence of invocation; scanned JKLs contained no nograv reference."
+        },
+        "distinct_specific_source_forms": {
+          "raw_hashes": 3,
+          "code_bodies": 2,
+          "forms": [
+            "stock s4l1_fly",
+            "s4l1_fly with final NUL replaced by a space",
+            "Mara nograv newplayer form"
+          ],
+          "variant_source_id": 33268,
+          "variant_sha256": "1ea65171b356ab690f317d0c8bc46a898cc16d9be247058691912d846abb3e9e",
+          "variant_difference": "Only byte709: stock00 -> variant20; instructions unchanged."
+        },
+        "broad_clear_all_contexts": [
+          {
+            "source_id": 26383,
+            "title": "Oxyd CTF woodupholder",
+            "game_catalog": "jk",
+            "line": 83,
+            "call": "ClearPhysicsFlags(Wood0[i],-1)",
+            "meaning": "Clears all physics flags when wood falls below a threshold, then stops/repositions it; no bit30-specific semantics."
+          },
+          {
+            "source_id": 28404,
+            "title": "MarbleBlastJK ball.cog",
+            "game_catalog": "jk",
+            "line": 219,
+            "call": "ClearPhysicsFlags(player,-1)",
+            "meaning": "Broad reset during ball/player setup."
+          },
+          {
+            "source_id": 33446,
+            "title": "MarbleBlast ball.cog",
+            "game_catalog": "mots",
+            "line": 236,
+            "call": "ClearPhysicsFlags(player,-1)",
+            "meaning": "Broad reset during ball/player setup."
+          },
+          {
+            "source_id": 21746,
+            "title": "Gunrunner hotkey_select4",
+            "game_catalog": "jk",
+            "lines": [
+              197,
+              334
+            ],
+            "call": "ClearPhysicsFlags(i,0xFFFFFFFFF)",
+            "meaning": "Saves the full physics word to a heap slot and attempts a broad clear before StopThing; literal is nine hex digits, outside uint32, so exact original parsing result is unverified."
+          }
+        ],
+        "negative_results": {
+          "new_stock_specific_uses": 0,
+          "stock_explicit_physflags_with_bit30": 0,
+          "additional_non_all_bits_constant_physics_composite_masks": 0,
+          "explicit_physics_bit30_reader_identified": false,
+          "decimal_equivalent_specific_physics_use_identified": false
+        },
+        "important_limits": [
+          "Existing indexed extracted sources only; no unindexed later objects or undiscovered archive guarantee.",
+          "Variable masks, multi-statement computed constants, cross-COG dataflow and dynamically constructed masks not exhausted.",
+          "Generic whole-word GetPhysicsFlags save/restore can transfer bit30 without examining it.",
+          "Many 0x40000000 matches are Thing/Actor/Surface/Sector flags, not PhysicsFlags.",
+          "No multiplayer or package runtime test; script integration and archived testimony do not isolate bit contribution.",
+          "Indy unexamined.",
+          "Public URLs are stored archive provenance, not fresh network-availability checks."
+        ]
+      },
+      "callback_followup": {
+        "game": "jkdf2_1_01",
+        "evidence": "original-retail-static",
+        "runtime_table_snapshot": false,
+        "startup": "0x402860",
+        "registration": "0x4D6F60",
+        "table": "0x833A48",
+        "dispatch": "0x4D705F",
+        "registered_handlers": [
+          {
+            "role": "player",
+            "address": "0x4D8830"
+          },
+          {
+            "role": "weapon",
+            "address": "0x4D5B40"
+          },
+          {
+            "role": "inventory-and-skills",
+            "address": "0x4D2C20"
+          },
+          {
+            "role": "hud",
+            "address": "0x4028E0"
+          }
+        ],
+        "physics_field": "Thing+0x1D0",
+        "verified_ranges": 14,
+        "verified_bytes": 5508,
+        "receipt_sha256": "461363523ed071e9e5de7f7fde15e9d3f902b777decec9e3d1b905e279c56b0e",
+        "result": "No dedicated physics bit30 reader established in newly inspected weapon, inventory/skills and HUD handlers; the player handler was audited previously.",
+        "rejected_match": "Weapon TEST AH,0x40 follows FNSTSW AX: FPU status, not physics flags.",
+        "open_edges": [
+          "COG activation/deactivation/autoselect",
+          "deeper weapon-selection calls",
+          "HUD/camera/save/device calls",
+          "other reachable helpers"
+        ],
+        "limits": "Static registration audit, not runtime table capture or whole-program call closure. MotS equivalent not audited in this follow-up."
+      }
+    }
+  ],
+  "stock_cog_observations": [
+    {
+      "id": "mots-carbonite-normal-target-filter",
+      "family": "physics",
+      "value": 33554432,
+      "hex": "0x02000000",
+      "date": "2026-10-11",
+      "evidence": "original-retail-cog-source",
+      "title": "Stock MotS carbonite normal-targeting exclusion",
+      "meaning": "The normal fire/vire target-selection path in stock weap_carbgun_m.cog skips its targeting/freezing block when the target has PhysicsFlags 0x02000000.",
+      "limits": "The same script has a user0 forced-freeze handler without this test. This is a COG-defined contract, not universal freezing immunity or a verified dedicated native-engine consumer. No runtime carbonite test was performed.",
+      "source": {
+        "game": "mots",
+        "member": "cog/weap_carbgun_m.cog",
+        "sha256": "314237ce0285bd4beff16569d7144c56121b46472048200910683545e75e1ce3",
+        "anchors": [
+          "normal fire/vire actor/player enumeration near line 227",
+          "physics bit test at lines 239-240",
+          "separate user0 handler"
+        ]
+      },
+      "targets": {
+        "jkdf2_1_01": {
+          "source_status": "not-established",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "source_status": "verified-stock-cog-contract",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "source_status": "not-audited",
           "runtime_status": "not-tested"
         }
       }
