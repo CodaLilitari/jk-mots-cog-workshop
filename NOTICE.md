@@ -12,6 +12,15 @@ third-party engines, community packages, manuals, forum posts or other works
 identified in the catalog. Bibliographic facts and hashes identify evidence;
 they do not confer redistribution rights.
 
+Version 0.1.7's original capacity checker and cross-project integration study
+were informed by **SM Sith Lord / COG Factory**, especially the published
+[P68 capacity findings](https://smsithlord.com/openjkdf2libretro/cogfactory/gen1/p68-survival-arena.html)
+and [P69 integration notes](https://smsithlord.com/openjkdf2libretro/cogfactory/gen1/p69-mod-menu.html).
+The study credits individual sources and preserves guest/contributor attribution.
+No COG Factory implementation, artwork, game assets or unpublished tools are
+included. Our source inspection and automated tests are distinct from the
+author's reported results and from unperformed game tests.
+
 This public edition contains derived research notes, source and compatibility
 metadata, a human guide, a machine workflow and original tools. It deliberately
 excludes owned retail source/assets and executable files, private conversation

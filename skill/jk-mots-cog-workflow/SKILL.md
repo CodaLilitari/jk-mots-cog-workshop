@@ -36,6 +36,8 @@ Distinguish original JK 1.01, original MotS, a specific patch, a specific enhanc
 
 ## Findings that materially change authoring
 
+For static-world/item integration, use [static COG capacity](references/static-capacity.md) and `python -B scripts/audit_static_capacity.py static.jkl items.dat --reserve 8` with an explicitly chosen reserve. This original preflight, informed by SM Sith Lord's P68 report, counts each authored instance binding rather than unique script names. It does not assess script-table capacity, resource loading or runtime compatibility.
+
 - The measured original tables expose 451 JK verbs/41 message spellings versus 538 MotS verbs/47 message spellings. Alias counts are not distinct event counts. MotS adds 88 verb spellings and omits JK's `GetCurInvWeapon`; it exposes `GetCurInvWeapon2`. A same-named verb can still have target-specific semantics.
 - In the pinned source, JK `CreateThingAtPos` interprets its final vector as Euler rotation; MotS uses a look direction. `CreateThingAtPosOld` is MotS's JK-style source path. This is implementation evidence, not an all-version runtime test.
 - A `local` symbol declaration, `0x40` local execution, `0x200` no-sync, explicit `SendTrigger`, and checksum acceptance are separate mechanisms. Generic float trigger parameters do not automatically convert a thing index to network identity.

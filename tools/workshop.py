@@ -474,6 +474,10 @@ def main(argv=None):
     inspect = sub.add_parser("inspect")
     inspect.add_argument("path", type=Path)
     inspect.add_argument("--target", choices=("jk", "mots"), required=True)
+    capacity = sub.add_parser("capacity", help="Read-only static.jkl / items.dat instance accounting. Never updates or writes files.")
+    capacity.add_argument("static_jkl", type=Path)
+    capacity.add_argument("items_dat", type=Path)
+    capacity.add_argument("--reserve", type=int, default=0)
     skill = sub.add_parser("install-skill", help="Opt in to installing and maintaining the public skill; unrelated content is preserved.")
     skill.add_argument("--destination", type=Path)
     from tools import reporting
@@ -486,6 +490,8 @@ def main(argv=None):
     try:
         if args.command == "report":
             return reporting.run(args)
+        if args.command == "capacity":
+            return subprocess.call([sys.executable, "-B", str(ROOT / "skill/jk-mots-cog-workflow/scripts/audit_static_capacity.py"), str(args.static_jkl.resolve()), str(args.items_dat.resolve()), "--reserve", str(args.reserve)])
         home = outside_checkout(home)
         if args.command in ("update", "check-update"):
             if offline:

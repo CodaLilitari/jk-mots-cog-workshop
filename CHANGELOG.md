@@ -1,5 +1,12 @@
 # Changes
 
+## 0.1.7 — 2026-10-25
+
+- Add an original offline static-world COG instance-capacity audit for explicit static JKL and inventory inputs, with conservative unknown-input handling, repeated-binding accounting and an explicit reserve.
+- Credit SM Sith Lord's P68/COG Factory capacity findings as the research lead; independently trace the instance accounting in our published engine source. A fit is an input budget, not game or retail validation.
+- Publish an attributed study and a separate 164-record source catalog covering the observed public linked JK website frontier, with review depth, historical/obsolete labels and uninspected download/media boundaries.
+- Apply the integration lessons across our COG, WBW, engine, editor and model workflows. Original author implementations and assets are not bundled; historical corpus counts remain unchanged.
+
 ## 0.1.6 — 2026-10-04
 
 - Add eleven bounded original-JK/MotS flag clarifications: saber 0x80, physics 0x8000, actor SEEINDARK, three attachment states, three sound lifecycle roles, and two weapon-handler flags.
