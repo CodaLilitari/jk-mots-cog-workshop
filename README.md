@@ -4,7 +4,7 @@ Write, understand, debug and port COG scripts for **Jedi Knight: Dark Forces II*
 and **Mysteries of the Sith**, using a human guide, a reusable Codex skill,
 measured compatibility tables and a source-backed research catalog.
 
-**Current release: 0.1.6.** The public edition contains authored research notes,
+**Current release: 0.1.7.** The public edition contains authored research notes,
 metadata, original examples and tools. Original game files and private source
 archives remain local. Read [the distribution notice](NOTICE.md) for the exact
 boundary and [the corpus guide](corpus/README.md) for public coverage.
@@ -15,6 +15,8 @@ boundary and [the corpus guide](corpus/README.md) for public coverage.
 | [Master flag findings](docs/FLAG_DISCOVERIES.md) | Maintained human and machine reference with separate JKDF2, MotS and Indy evidence |
 | [Flags and numeric values](docs/FLAGS.md) | All 26 historical table families, all 32 ThingFlags positions, source/retail evidence and a separate Indy comparison |
 | [JKDF2 versus MotS](docs/COMPATIBILITY.md) | Stock-game differences, shared names with different contracts, and extension boundaries |
+| [Static COG capacity](docs/STATIC_CAPACITY.md) | Original read-only instance-budget checker, informed by SM Sith Lord's P68 report; counts repeated item bindings and explicit reserves |
+| [SM Sith Lord website study](corpus/notes/smsithlord-website-lessons.md) | Credited lessons, source-by-source coverage, original applications and explicit untested boundaries |
 | [Classic COG case studies](corpus/notes/classic-cogs-and-binding-lessons.md) | Bolt-hilt God sabers, faders, and complete level-binding analysis |
 | [New target and lifecycle findings](corpus/notes/target-contracts-and-lifecycle.md) | Original MotS weapon domains, timers, visibility, SM HQ and recovery evidence |
 | [Original examples](examples/README.md) | Small teaching components with explicit targets and validation limits |
