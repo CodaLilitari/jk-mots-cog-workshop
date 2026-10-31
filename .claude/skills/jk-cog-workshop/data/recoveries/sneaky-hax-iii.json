@@ -1,0 +1,249 @@
+{
+  "schema": 1,
+  "release": "0.1.3",
+  "name": "CL0wN Sneaky Hax III",
+  "source_url": "http://six.clanhappy.com/sneaky_hax3.exe",
+  "public_archive_capture": "20020328112421",
+  "wrapper_sha256": "9a4c256a3273e04147604e4221447def9db8ea92000de891d9f3685b3798262b",
+  "wrapper_bytes": 320253,
+  "gob_sha256": "5664ded2ec20f4d2c2f91d83788a3893087926566e7b36bf2eef1502d398d1db",
+  "gob_bytes": 3236545,
+  "gob_member_count": 96,
+  "cog_member_count": 46,
+  "full_cog_body_reviews": 0,
+  "runtime_tested": false,
+  "source_bodies_redistributed": false,
+  "scope": "Acquisition and exact member identities; not merged into the frozen catalog, not a COG-maker or compatibility certification.",
+  "cogs": [
+    {
+      "name": "cog/force_absorb.cog",
+      "bytes": 5889,
+      "sha256": "f44a39daa47f417676f5a8e8d1fe081abba9d0248233c89affdafec81783ab87"
+    },
+    {
+      "name": "cog/force_blinding.cog",
+      "bytes": 5637,
+      "sha256": "605bdf549ffda40685063de4903c56f371784155d4c2a47ec2c7e5437e278cf1"
+    },
+    {
+      "name": "cog/force_deadlysight.cog",
+      "bytes": 5255,
+      "sha256": "a206166ab0908c9fc1c7e54961f0d51918eefad3debbc8944fe618a4f0234dc1"
+    },
+    {
+      "name": "cog/force_destruction.cog",
+      "bytes": 1831,
+      "sha256": "4fdb009248b4d76f5beefd503abdf5f7ab7edba0034ebcf97ed5e1e35a26139d"
+    },
+    {
+      "name": "cog/force_grip.cog",
+      "bytes": 7177,
+      "sha256": "0762b692a7d1448819ec2b92fcfadd88661a43d6603e5074ac2be246a848f150"
+    },
+    {
+      "name": "cog/force_heal.cog",
+      "bytes": 2862,
+      "sha256": "bdcb5f705aba01de1360f8e7b5062807932d49421fb423b08e5154848a0b809f"
+    },
+    {
+      "name": "cog/force_jump.cog",
+      "bytes": 4618,
+      "sha256": "87ad2936f4ffda0ca670cf1f3a4b424f67a0134972db9138580f8f1a4197dadd"
+    },
+    {
+      "name": "cog/force_lightning.cog",
+      "bytes": 3191,
+      "sha256": "ce731525862f1d696c2e35f7c12fc9a7f03e320995261d0abed3a5593cb033f1"
+    },
+    {
+      "name": "cog/force_persuasion.cog",
+      "bytes": 3490,
+      "sha256": "4f8c5ed885691db6f6336c359f0bbfe4a12543496788221552d97bdb427135ed"
+    },
+    {
+      "name": "cog/force_protection.cog",
+      "bytes": 4668,
+      "sha256": "de5a558b62d0a9ca4104fe74991712b5658d0fda6739db65eecc64dec01707f8"
+    },
+    {
+      "name": "cog/force_pull.cog",
+      "bytes": 7831,
+      "sha256": "2642c3781186d2ae08dbfea0c4d63ccd7f2493952a291fe752d0af5c37643eaa"
+    },
+    {
+      "name": "cog/force_seeing.cog",
+      "bytes": 4148,
+      "sha256": "bc3e27192ccf104d9779c571ffeb7c98f732c48184dc35a4d45e9e29e85919f6"
+    },
+    {
+      "name": "cog/force_speed.cog",
+      "bytes": 2904,
+      "sha256": "2b4daa4ca2bcd8c24b253a41283515c4c5432663ea063e8c882d8ff6f426c8b4"
+    },
+    {
+      "name": "cog/force_throw.cog",
+      "bytes": 4922,
+      "sha256": "e8eaca5292dbef51585a13ee8511ee6564694c723c8a8be18c0c8aac66febde4"
+    },
+    {
+      "name": "cog/force_well.cog",
+      "bytes": 1097,
+      "sha256": "6e9cc608dbe77a096e4e8ad513590bdb5a32fe3d9f78882897209dd49f35d69a"
+    },
+    {
+      "name": "cog/item_bacta.cog",
+      "bytes": 992,
+      "sha256": "2fc06be4dfa8ef7bf71841cd8e6e83b0acf5de758eb2c58ce5137073f5dd0b9b"
+    },
+    {
+      "name": "cog/item_datadisk.cog",
+      "bytes": 738,
+      "sha256": "8807f3b231fb7a5deb58fbc55e6c7e5f8269813ca4c41e54148efbd2026b026b"
+    },
+    {
+      "name": "cog/item_irgoggles.cog",
+      "bytes": 4897,
+      "sha256": "c21efb6c69f908eb40429804cfb3b0ddc53b1ea30366409c8ec2d431a83889aa"
+    },
+    {
+      "name": "cog/item_keyblue.cog",
+      "bytes": 730,
+      "sha256": "a6a53443c2804e16bb6d0b537df715a622530c177109824f2f05e1ec5bd699a2"
+    },
+    {
+      "name": "cog/item_keygreen.cog",
+      "bytes": 736,
+      "sha256": "d233df901edd8197eeff61fb404ff4eb4b87af22c6d8a4142f3b312ec2dfcddd"
+    },
+    {
+      "name": "cog/item_keyimperial.cog",
+      "bytes": 758,
+      "sha256": "c6726acf4b44121f5c4751803710213ce52e31092be774ccc87ccdbd0f9c6c05"
+    },
+    {
+      "name": "cog/item_keyred.cog",
+      "bytes": 716,
+      "sha256": "e7bc7623f436d2c3baab05a382eac59e24e0c7a08c7dc67905f6f8e3660917ea"
+    },
+    {
+      "name": "cog/item_keyyellow.cog",
+      "bytes": 717,
+      "sha256": "68ec4e8eae8a685c686873833e9f59ae18b0ed07464796ba9d26ca2c3a77b3a5"
+    },
+    {
+      "name": "cog/item_wrench.cog",
+      "bytes": 747,
+      "sha256": "450b77e0a14ce5b39cf108925a824d49dd146fc645275ad7aa60f7f4bf5b15c2"
+    },
+    {
+      "name": "cog/item_wrenchblue.cog",
+      "bytes": 716,
+      "sha256": "6af4dafe55ab123e127893fe0260b336161a4c0d15295cc1b6806f4226086199"
+    },
+    {
+      "name": "cog/item_wrenchyellow.cog",
+      "bytes": 741,
+      "sha256": "7a6c29ac90397e6d29c7966fb4c67fcd16da4046511d81a07ae4ddfd1321905c"
+    },
+    {
+      "name": "cog/kyle.cog",
+      "bytes": 15997,
+      "sha256": "fbfe7bfcdcef53b62970d7f29d0267c07e4d512229909f80dc30cc38b51094fd"
+    },
+    {
+      "name": "cog/pow_battery.cog",
+      "bytes": 3490,
+      "sha256": "6e26a02ed9bd06b572745f76d46774d03254dfe8991fcc249bde4200932527d7"
+    },
+    {
+      "name": "cog/pow_energy.cog",
+      "bytes": 4122,
+      "sha256": "307735927c718717b3f69fb95447465913acbe15aac5a6a60e61f1cfabac13cc"
+    },
+    {
+      "name": "cog/pow_health.cog",
+      "bytes": 3393,
+      "sha256": "a649bf2e84754d7993b103a4d78495211d3fc9f9059051bbbf5b07a88c5613c4"
+    },
+    {
+      "name": "cog/pow_powerboost.cog",
+      "bytes": 4875,
+      "sha256": "a3df62f18e63dd91ba7ca2f9cb7cf9e6ea0e5fe5213cb498b65cd4d5f2418df2"
+    },
+    {
+      "name": "cog/pow_railcharges.cog",
+      "bytes": 3951,
+      "sha256": "281d863520be5146e97ad2547feb152b283ef7b3093876a87a7c9bbc43f37d3f"
+    },
+    {
+      "name": "cog/pow_revive.cog",
+      "bytes": 3488,
+      "sha256": "5dfe08e9efab6d33db5d338d39a7f7327bd427a38bf6ca7fcc64dad090a3e8ef"
+    },
+    {
+      "name": "cog/pow_shields.cog",
+      "bytes": 3467,
+      "sha256": "aae950b3b3d1f1844053e4c102db0ca5723d3250182721f81f333ee5d43d3b05"
+    },
+    {
+      "name": "cog/pow_supershield.cog",
+      "bytes": 5111,
+      "sha256": "f1f959c38bbfcdb6f023dc0b3ffe38a32b2a290a8adfdeb3fa5c83ceba77ae52"
+    },
+    {
+      "name": "cog/pow_vest.cog",
+      "bytes": 3461,
+      "sha256": "e8fb0c6766cf9bd86ef98e905b71aedf539a1d55bd26bd5735118f9fdda6000f"
+    },
+    {
+      "name": "cog/weap_bryar.cog",
+      "bytes": 5612,
+      "sha256": "e3594a4d0d460bc1133d0fc4098cc8a3e2f99310df02dbf4d82ccd8d915ee040"
+    },
+    {
+      "name": "cog/weap_concrifle.cog",
+      "bytes": 6713,
+      "sha256": "49abe5969e2b142de6ffc091790f61affd87740ee0e47a6cfe4b8abfb7f83db3"
+    },
+    {
+      "name": "cog/weap_crossbow.cog",
+      "bytes": 8996,
+      "sha256": "324022864d72eecc945449d3ee23c0015e5db0d9cffe4d693d1c567a5c73828e"
+    },
+    {
+      "name": "cog/weap_fists.cog",
+      "bytes": 5099,
+      "sha256": "4658bd4cd177bab299564b0975b657ee3965e535f468cf59fe5a6bcd6d8e384e"
+    },
+    {
+      "name": "cog/weap_raildet.cog",
+      "bytes": 6425,
+      "sha256": "9b36f3965aa0584e632c14d566082d64708462fa05688074554f1962028ad809"
+    },
+    {
+      "name": "cog/weap_repeater.cog",
+      "bytes": 8265,
+      "sha256": "81969837261f93fb2c428caec3aea63920958e3ec8f1ef7a0caf78d615061ffc"
+    },
+    {
+      "name": "cog/weap_saber.cog",
+      "bytes": 15670,
+      "sha256": "dc9fcb4ddd85f915ed61fdfaeddefb293d9d46e1bc97cc14daa3efe407b96e5a"
+    },
+    {
+      "name": "cog/weap_seqcharge.cog",
+      "bytes": 5418,
+      "sha256": "bef8210920e68a9e31cb7502d971810692ecfcd23b68df56f324f03bad241e83"
+    },
+    {
+      "name": "cog/weap_strifle.cog",
+      "bytes": 5378,
+      "sha256": "e76ee5474d65e4a98ef5d89fcf1e4488faef0c8b0e45971a616d5b701104eca1"
+    },
+    {
+      "name": "cog/weap_thermdet.cog",
+      "bytes": 7718,
+      "sha256": "d6de981e4d0719e6834b863733387faef7036eaa27e61ce5826893d3ee458fb4"
+    }
+  ]
+}
