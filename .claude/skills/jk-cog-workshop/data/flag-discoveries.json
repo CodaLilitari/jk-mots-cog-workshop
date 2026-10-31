@@ -1,0 +1,2045 @@
+{
+  "schema_version": 2,
+  "research_date": "2026-10-03",
+  "status": "maintained",
+  "scope": "Cumulative flag findings, target-specific evidence and unresolved meanings; updated at the same canonical URLs independently of downloadable package snapshots.",
+  "evidence_policy": {
+    "original-retail-static": "Selected control-flow/field evidence from hash-identified original executables; no game execution or network test.",
+    "current-source-consumer": "Selected reader/writer in individually hashed enhanced source; no original-retail equivalence claimed.",
+    "original-retail-cog-source": "Complete hash-identified original COG and relevant bindings inspected; source contract is distinct from runtime execution and native-engine consumers.",
+    "original-retail-runtime-wine": "Unchanged hash-identified original executable actually run under the stated Wine/Xvfb fixture; results apply only to tested contexts and observation limits."
+  },
+  "original_executables": {
+    "jk101": {
+      "sha256": "4509cd690634ba20e132bd16e713f91e144b17e2beaaad5e678f1ddb189b51d9",
+      "bytes": 1388544
+    },
+    "mots": {
+      "sha256": "23cd064217f904d36d896f52d3cdd17635bb85441a12e0415c0637504191d974",
+      "bytes": 1759744
+    }
+  },
+  "findings": [
+    {
+      "family": "thing",
+      "value": 65536,
+      "hex": "0x00010000",
+      "title": "Level-placement exclusion in the non-multiplayer loading branch",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The loader adds this bit to its rejection mask when submode bit 1 is clear. A populated level thing whose flags intersect that mask is freed. The corresponding multiplayer branch adds 0x8000 instead. Source multiplayer startup sets the submode bit, supporting the shorthand single-player placement exclusion.",
+      "limits": "This is a loading condition. Setting it after loading does not by itself hide or destroy the thing. The precise original predicate is submode bit 1 clear; other rejection bits, including difficulty, still apply.",
+      "anchors": [
+        "JK 0x4CEC5D-0x4CEC70 and 0x4CEE07-0x4CEE1A",
+        "MotS 0x51D36B-0x51D37E and 0x51D527-0x51D53A",
+        "World/sithThing.c:1547-1552,1599-1601; Dss/sithMulti.c:211"
+      ],
+      "source_alias": "SITH_TF_10000",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "thing",
+      "value": 2147483648,
+      "hex": "0x80000000",
+      "title": "One deferred eligible thing in the MotS renderer",
+      "evidence": "original-retail-static",
+      "retail_jk": "absent-in-compared-render-routine",
+      "retail_mots": "bounded-original-static",
+      "meaning": "Original MotS stores an eligible flagged thing in one local pointer slot and skips its ordinary draw. Later eligible flagged things overwrite that slot. After normal traversal, the final stored thing is drawn once. The corresponding complete JK1.01 routine lacks this test and slot.",
+      "limits": "This is not a queue for all flagged things, and it does not establish through-wall rendering. Earlier eligibility/clipping applies. The inspected JK difference is function-specific, not proof of game-wide bit nonuse. No visual runtime result is claimed.",
+      "anchors": [
+        "MotS 0x516270,0x5166B5-0x516719",
+        "JK corresponding routine 0x4C7DD0-0x4C8241 (end exclusive)",
+        "Engine/sithRender.c:2736-2737,2970-2997"
+      ],
+      "source_alias": "SITH_TF_80000000",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "absent-in-compared-render-routine",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "surface",
+      "value": 128,
+      "hex": "0x00000080",
+      "title": "Suppress the inspected surface-collision impact damage",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "For the inspected physics thing-versus-surface collision path, the surface bit becomes the fourth argument to the collision response. A set bit bypasses that response branch's impact-damage calculation, hit-damaged sound and FALL-class DamageThing call.",
+      "limits": "The collision response itself still runs. This is not universal damage immunity or a guarantee that every source of fall damage honors the bit. The flagged surface must be the actual contact surface in this path.",
+      "anchors": [
+        "JK 0x4E8E0D,0x4E8E27,0x4E9707-0x4E9767",
+        "MotS 0x5365BD,0x5365D7,0x536ED3-0x536F33",
+        "Engine/sithCollision.c:916-929,1120-1127"
+      ],
+      "source_alias": "SITH_SURFACE_80",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "physics",
+      "value": 131072,
+      "hex": "0x00020000",
+      "title": "Skip initial velocity rotation on creation",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "In CreateThingAtPos, a physics thing normally has its initial velocity transformed by its created orientation. A set 0x20000 skips that transform in both originals.",
+      "limits": "This is not a general angular-velocity, continuous-spin or object-orientation disable flag. MotS can apply the COG-supplied look vector after native creation; the transform uses the orientation at native creation time, not necessarily the final look-vector orientation. Setting the flag later does not undo the transform.",
+      "anchors": [
+        "JK 0x4CDF28-0x4CDF47; registered CreateThingAtPos 0x502520",
+        "MotS 0x51C644-0x51C663; registered CreateThingAtPos 0x552E00",
+        "World/sithThing.c:1107-1108"
+      ],
+      "source_alias": "SITH_PF_20000",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "actor",
+      "value": 8192,
+      "hex": "0x00002000",
+      "title": "Eligibility for the saber-blocking branch",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The saber-hit path checks this bit on an actor/player being hit before admitting it to field-of-view and chance-based blocking checks, which also reject an invisible attacker. A clear bit goes to the damage path.",
+      "limits": "The bit permits this blocking path; it does not guarantee a block. BLEEDS is a misleading source alias for this inspected JK/MotS consumer. Other possible consumers have not been exhaustively excluded.",
+      "anchors": [
+        "JK 0x40BD9F-0x40BDA8 and following blocking checks",
+        "MotS 0x40D303-0x40D30C and following blocking checks",
+        "Gameplay/jkSaber.c:264-307"
+      ],
+      "source_alias": "SITH_AF_BLEEDS; historical THING_TYPEFLAGS_ISBLOCKING",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "actor",
+      "value": 2097152,
+      "hex": "0x00200000",
+      "title": "Gate player controls, with different look handling",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "On the inspected player control path, a set bit skips movement, activation and map handling. Original JK calls its look handler before the flag gate. Original MotS places the look call after the gate, so the flagged path skips it as well.",
+      "limits": "This controls processing of these inputs; it does not freeze all physics or prevent every scripted move. Preserve the JK/MotS difference instead of reducing the meaning to immobile.",
+      "anchors": [
+        "JK look call 0x4D8C5F; gate 0x4D8C6F-0x4D8C79",
+        "MotS gate 0x527852-0x52785C; look call 0x5278A3",
+        "Devices/sithControl.c:1025-1053"
+      ],
+      "source_alias": "SITH_AF_CONTROLSDISABLED; historical THING_TYPEFLAGS_IMMOBILE",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "ai",
+      "value": 32,
+      "hex": "0x00000020",
+      "title": "Fire-target state maintained by AISetFireTarget",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "AISetFireTarget stores the target pointer and timestamp, then sets this AI-control-block bit when the target is non-null and clears it otherwise. If the flags change, it emits the mode-change event. Both original wrappers agree.",
+      "limits": "TOUGHSKIN is not evidence of armor here. Setting the bit alone does not assign a target pointer or cause firing; use AISetFireTarget. Other possible consumers are not exhaustively excluded.",
+      "anchors": [
+        "JK AISetFireTarget 0x501550; writes 0x501584-0x5015B4",
+        "MotS AISetFireTarget 0x551C30; writes 0x551C64-0x551C94",
+        "Cog/sithCogFunctionAI.c:389-424"
+      ],
+      "source_alias": "SITHAI_MODE_TOUGHSKIN",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "ai",
+      "value": 256,
+      "hex": "0x00000100",
+      "title": "Mode-change event; persistent-mode meaning remains unproved",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The inspected use is an AI event identifier and instinct event-subscription mask. AISetMode emits event 0x100 whenever its OR changes the mode word. The event dispatcher sends COG AIEVENT with first extended parameter 256.0 in original JK, but current AI flags converted to float in original MotS.",
+      "limits": "This resolves an event role, not a special persistent AI mode. Generic mode setters can store 0x100; that does not prove a dedicated mode behavior. The dispatcher has living/class/disabled/sleeping gates. MotS float conversion need not preserve every high-bit integer exactly.",
+      "anchors": [
+        "JK AISetMode 0x5011E0; dispatcher 0x4EA26D-0x4EA28C",
+        "MotS AISetMode 0x551670; dispatcher 0x537DD0-0x537E03",
+        "AI/sithAI.c:429-456"
+      ],
+      "source_alias": "SITHAI_MODE_UNK100",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "jk",
+      "value": 64,
+      "hex": "0x00000040",
+      "title": "Consume-once saber hit-history reset",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "When the eligible saber collision path sees this bit, it clears the bit and resets the counts of already-hit things and surfaces. The stored histories are pointer lists. The separate saber-damage-enable bit is tested afterward.",
+      "limits": "This requests a reset when the path next consumes it; it does not itself enable damage or guarantee another hit. Source puppet marker 0xE sets it, but the original marker dispatch table was not independently reconstructed in this pass.",
+      "anchors": [
+        "JK 0x40BBB2-0x40BBDE; list consumers 0x40BD5C,0x40C074,0x40C13E",
+        "MotS 0x40CED7-0x40CEFD",
+        "Gameplay/jkSaber.c:368-374; Engine/sithPuppet.c:762-764"
+      ],
+      "source_alias": "JKFLAG_40",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "jk",
+      "value": 256,
+      "hex": "0x00000100",
+      "title": "MotS bubble-owner registration marker",
+      "evidence": "original-retail-static",
+      "retail_jk": "not-established",
+      "retail_mots": "bounded-original-static",
+      "meaning": "jkCreateBubble registers owner/radius-squared/type in the bubble array and sets this bit on the owner. jkDestroyBubble clears both the record and bit. A query removes a registered record if its owner no longer has the bit.",
+      "limits": "This marks the bubble owner, not a thing merely located inside a bubble. Setting the bit alone does not allocate a bubble record or specify radius/type. Use the bubble verbs. An original-JK meaning is not established; lack of bubble verbs is not proof that the bit is universally unused.",
+      "anchors": [
+        "MotS jkCreateBubble 0x40C620 calls 0x40F390; set 0x40F41E-0x40F430",
+        "MotS destroy 0x40F440-0x40F46C; query 0x40F560-0x40F58D",
+        "Main/jkEpisode.c:709-791"
+      ],
+      "source_alias": "JKFLAG_100",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "not-established",
+          "evidence_lane": "not-established",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "multiplayer",
+      "value": 2,
+      "hex": "0x00000002",
+      "title": "Conditional same-team player health-damage suppression",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The original actor/player damage paths test multiplayer mode bit 0x2 and return zero before health subtraction when a same-team helper succeeds. That helper also requires teams bit 0x1, distinct player things, non-null player records, and equal nonzero team numbers. The source parent is compared with the victim.",
+      "limits": "Self-damage, team zero and unequal teams do not meet this predicate. Earlier COG/inventory callbacks may already have run. This does not promise suppression of all messages, every other damage path or network convergence.",
+      "anchors": [
+        "JK 0x4ECFEA-0x4ED014; helper 0x4C9250",
+        "MotS 0x53B6F3-0x53B71D; helper 0x517890",
+        "GetMultiModeFlags JK 0x507EE0 / MotS 0x559940; GetPlayerTeam JK 0x4E10F0 / MotS 0x530280"
+      ],
+      "source_alias": "MULTIMODEFLAG_2",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "weapon",
+      "value": 65536,
+      "hex": "0x00010000",
+      "title": "Select the range-based collision-query and optional trail handler",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "In both original dispatchers, weapon 0x10000 selects this handler after the higher-priority 0x2000 branch. The complete handler traverses returned adjoin crossings and handles the first returned non-adjoin result. Thing hits call damage and can independently attempt force; world hits call surface impact. A non-null impact template enables a creation attempt. The final callee marks the weapon Thing.flags 0x2 for destruction.",
+      "limits": "The query uses moveSize as well as range, so this is not established as a zero-width ray. One terminal result is handled; collision ordering and penetration are not established. Destruction is marked, not an immediate storage free. Full downstream helper behavior, successful allocation, visuals and networking remain untested.",
+      "anchors": [
+        "JK 0x4D3830-0x4D385A, target 0x4D3C20",
+        "MotS 0x5221F0-0x52221A, target 0x5225F0",
+        "World/sithWeapon.c:57-84,246-407",
+        "Complete bodies: JK 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53",
+        "MotS terminal calls: damage 0x522AAF, force 0x522B12, surface 0x522B31, impact creation 0x522B9F",
+        "Final mark callees: JK 0x4CCA70-0x4CCA93; MotS 0x51B160-0x51B183"
+      ],
+      "source_alias": "SITH_WF_10000",
+      "previous_release_interpretation": {
+        "meaning": "Both original update routines first test weapon 0x2000. Only when it is clear does 0x10000 dispatch to a distinct handler and return. Current source maps that handler to a collision search with optional trail/impact/damage handling and destruction.",
+        "limits": "The original proof for both targets is dispatch and priority, not every detail of the reconstructed callee. The full MotS handler was not retraced. The bit alone does not create a trail without the required flags/template/parameters. The old short-throw suggestion is not an established contract.",
+        "anchors": [
+          "JK 0x4D3830-0x4D385A, target 0x4D3C20",
+          "MotS 0x5221F0-0x52221A, target 0x5225F0",
+          "World/sithWeapon.c:57-84,246-407"
+        ]
+      },
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "face",
+      "value": 16,
+      "hex": "0x00000010",
+      "title": "Original MotS model-face path initially selects lighting mode 1",
+      "evidence": "original-retail-static",
+      "retail_jk": "absent-in-compared-render-routine",
+      "retail_mots": "bounded-original-static",
+      "meaning": "Original MotS reads model face flags at face+4 and, when 0x10 is set, overrides the initially selected render-entry lighting mode with scalar 1 (source alias NOTLIT). The complete compared JK1.01 model-face routine lacks this override. This proves a lighting consumer beyond the nearest-filter enum label.",
+      "limits": "This is an initial mode override in the model-face path. Later ambient/colormap handling can replace mode 1 with mode 0 or 2; no final black/fullbright appearance is established. Nearest filtering, other surface/cache/backend consumers and global JK nonuse are not established. No runtime rendering test.",
+      "anchors": [
+        "MotS DrawFace 0x44A620-0x44A9E6 end-exclusive; face flags test 0x44A673, lighting store 0x44A678",
+        "MotS later ambient/colormap branches 0x44A827-0x44A95F",
+        "MotS model loader face flags 0x448DFB-0x448E18; model-face caller 0x44A5CB",
+        "JK DrawFace 0x4467D0-0x446ADF end-exclusive; forwards flags 0x446AA7-0x446AB0 without this override",
+        "Primitives/rdModel3.c:1713-1724,1731-1733"
+      ],
+      "source_alias": "RD_FF_TEX_FILTER_NEAREST",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "absent-in-compared-render-routine",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "light",
+      "value": 6,
+      "hex": "0x00000006",
+      "title": "Original MotS mode 6 propagates an inherited stored lighting scalar",
+      "evidence": "original-retail-static",
+      "retail_jk": "absent-in-compared-render-routine",
+      "retail_mots": "bounded-original-static",
+      "meaning": "In original MotS, hierarchy node flag 2 selects mesh lighting mode 6 and copies the stored lighting scalar at mesh+0x44 from the first ancestor without node flag 2. Mode 6 bypasses the ordinary mesh lighting cap and copies that scalar into every face extraLight field at face+0x30. One original producer stores the mean of computed scalar vertex-light outputs in mesh+0x44. The compared JK1.01 hierarchy/mesh routines lack this inheritance, cap exception and mode-6 copy.",
+      "limits": "Scalar mode, not a flag bit. Requires a valid ancestor chain and mesh; the original walk lacks the modern null checks. Stored values can be stale, and culling, draw order, face-mode caps and later rendering still matter. It is not proof of fullbright, per-vertex RGB or a dynamic-only value. Current source instead transfers radius at this hierarchy step; original MotS parses and uses radius at mesh+0x48, distinct from the transferred +0x44. No runtime proof.",
+      "anchors": [
+        "MotS DrawHNode 0x449F80-0x44A04E; mode write 0x449FB7; ancestor scalar transfer 0x449FD4-0x449FDE",
+        "MotS mode cap exception 0x44A161-0x44A17F; six-way table 0x44A5FC; mode-6 face copies 0x44A4F9-0x44A50F",
+        "MotS mean-light producer 0x44A4EA-0x44A4EF, callee 0x4507D0-0x450A3A; sum/divide 0x4509EF-0x450A36",
+        "MotS radius parser destination 0x4489B6-0x4489C0 and culling read 0x44A0B1",
+        "JK DrawHNode 0x4462E0-0x44635E; DrawMesh 0x446360-0x4467C8, ordinary cap 0x446452-0x44646C",
+        "Primitives/rdModel3.c:1453-1461,1533-1547,1629,1646-1652; rdModel3.h:157-178"
+      ],
+      "source_alias": "RD_LIGHTMODE_6_UNK",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "absent-in-compared-render-routine",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "jk",
+      "value": 128,
+      "hex": "0x00000080",
+      "title": "Force maximum saber length on the eligible update branch",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "When neither the extend-4 nor retract-8 branch is selected, bit 0x80 sets saber length to its configured maximum, writes about 0.6 to the source-named timeLeftLengthChange field, clears 4/8 and sets 1. Both original branches retain 0x80; current enhanced source clears it.",
+      "limits": "The inspected callers already require JK flag 1 and the routine needs valid player information. Setting 0x80 alone does not enter that caller path. Extend/retract branches take priority. This is not a universal unretractable-saber or runtime appearance claim.",
+      "anchors": [
+        "JK length routine 0x40B950-0x40BADB; bit branch 0x40BA77-0x40BA9B; caller 0x40D820-0x40D837",
+        "MotS length routine 0x40CC60-0x40CDEF; bit branch 0x40CD87-0x40CDAB; caller test 0x40F02B",
+        "Gameplay/jkSaber.c:179-187"
+      ],
+      "source_alias": "JKFLAG_SABERFORCEON",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "physics",
+      "value": 32768,
+      "hex": "0x00008000",
+      "title": "Pending bypass of the inspected attached-physics drag application",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The original ApplyForce implementation sets 0x8000 while adding force divided by positive mass to a physics mover velocity, even when the supplied force vector is zero. In the inspected surface/Thing-face attached-physics block, nonzero velocity and nonzero surface drag lead to a bit test: if set, the block clears 0x8000 and skips its linear drag call.",
+      "limits": "This is a conditional consumed marker, not permanent friction immunity. If those block prerequisites are not reached it is not consumed there, so a one-frame lifetime is unproved. Setting the bit alone does not apply an impulse. Other drag paths and runtime motion remain untested.",
+      "anchors": [
+        "JK ApplyForce wrapper 0x503520; native 0x4F5C20-0x4F5CE1; OR at 0x4F5CCD",
+        "MotS ApplyForce wrapper 0x554210; native 0x5464F0-0x5465B1; OR at 0x54659D",
+        "JK dispatcher attachment mask 0x4F5BCA; attached drag test 0x4F7C7A; skipped call 0x4F7D12",
+        "MotS dispatcher attachment mask 0x54649A; attached drag test 0x5488AD; skipped call 0x548945",
+        "Engine/sithPhysics.c:222,924-942"
+      ],
+      "source_alias": "SITH_PF_8000",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "actor",
+      "value": 33554432,
+      "hex": "0x02000000",
+      "title": "Skip the target-sector darkness penalty in an AI sight check",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The observer actor bit bypasses the target-sector ambient-light multiplier in the inspected sight-acceptance threshold calculation in both originals. The branch is reached inside the distance and target-light-state gates.",
+      "limits": "It does not guarantee detection or sight through geometry. Distance, movement, invisibility, observer blindness, threshold clamping and the final random comparison retain their own effects. Other visibility helpers and runtime probabilities were not established.",
+      "anchors": [
+        "JK AI initializer observer binding 0x4E9FC6; complete sight helper 0x4EC3A0-0x4EC58B; bit test 0x4EC450",
+        "MotS AI initializer observer binding 0x537AC9; complete sight helper 0x53AA60-0x53AC4C; bit test 0x53AB10",
+        "AI/sithAI.c:245-294,1608-1658"
+      ],
+      "source_alias": "SITH_AF_SEEINDARK",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "attach",
+      "value": 1,
+      "hex": "0x00000001",
+      "title": "Surface attachment discriminator",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The native surface attachment setter records its target and writes discriminator 1 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.",
+      "limits": "Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.",
+      "anchors": [
+        "JK discriminator store 0x4CE18B; GetAttachFlags 0x503780; detach 0x4CE660-0x4CE814",
+        "MotS discriminator store 0x51C8AB; GetAttachFlags 0x5544A0; detach 0x51CD70-0x51CF24",
+        "Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD",
+        "World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039"
+      ],
+      "source_alias": "SITH_ATTACH_SURFACE",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "attach",
+      "value": 2,
+      "hex": "0x00000002",
+      "title": "Thing-face attachment discriminator",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The native Thing-face attachment setter records its target and writes discriminator 2 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.",
+      "limits": "Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.",
+      "anchors": [
+        "JK discriminator store 0x4CE37A; GetAttachFlags 0x503780; detach 0x4CE660-0x4CE814",
+        "MotS discriminator store 0x51CA8A; GetAttachFlags 0x5544A0; detach 0x51CD70-0x51CF24",
+        "Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD",
+        "World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039"
+      ],
+      "source_alias": "SITH_ATTACH_THINGFACE",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "attach",
+      "value": 4,
+      "hex": "0x00000004",
+      "title": "Ordinary thing attachment discriminator",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The native ordinary Thing attachment setter records its target and writes discriminator 4 into attach_flags. Surface attachment stores a surface; Thing-face stores a parent and face; ordinary Thing attachment maintains parent/child links and a relative position. Detach selects its surface or shared Thing/face branch from this separate field.",
+      "limits": "Attachment flags are not Thing.flags: their offsets are JK +0x34 and MotS +0x3C. AttachThingToThingEx ORs its extra mask into this field after ordinary attachment. Arbitrary masks, movement propagation and complete message delivery are unproved; this does not resolve Thing 0x01000000 or attachment 0x8/0x10.",
+      "anchors": [
+        "JK discriminator store 0x4CE5CD; GetAttachFlags 0x503780; detach 0x4CE660-0x4CE814",
+        "MotS discriminator store 0x51CCDD; GetAttachFlags 0x5544A0; detach 0x51CD70-0x51CF24",
+        "Ex OR: JK 0x5038C8-0x5038DD; MotS 0x5545E8-0x5545FD",
+        "World/sithThing.c:1178-1455; Cog/sithCogFunctionThing.c:971-1039"
+      ],
+      "source_alias": "SITH_ATTACH_THING",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "sound",
+      "value": 1,
+      "hex": "0x00000001",
+      "title": "Looping attached sound cleanup when its owner is freed",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "In the inspected owner-free cleanup, a matching sound with FOLLOWSTHING 0x80 and LOOP 0x1 takes the channel cleanup branch, conditionally stopping active playback and freeing its channel. The matching nonloop branch instead detaches the sound to the last position.",
+      "limits": "This adds an original lifecycle consumer of LOOP, not a complete looping/playback contract or an audibility test. The channel must pass owner and follow-state tests. Sound flags are separate from Thing.flags.",
+      "anchors": [
+        "JK owner cleanup 0x4DD1B0-0x4DD2C4; FOLLOW test 0x4DD1E0; LOOP test 0x4DD1F1",
+        "MotS owner cleanup 0x52EBE0-0x52ECF4; FOLLOW test 0x52EC10; LOOP test 0x52EC21",
+        "Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5",
+        "Devices/sithSoundMixer.c: owner-free and positional-update paths"
+      ],
+      "source_alias": "SITHSOUNDFLAG_LOOP",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "sound",
+      "value": 64,
+      "hex": "0x00000040",
+      "title": "Absolute stored position after a nonlooping sound loses its owner",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The matching nonlooping FOLLOWSTHING sound has bit 0x80 cleared and bit 0x40 set during owner-free cleanup, and receives the owner final position. The inspected position update selects the stored position when 0x40 is set.",
+      "limits": "This verifies the transition and position selection, not successful playback or audibility. Existing source-based PlaySoundPos behavior is retained in the prior interpretation. It establishes no Thing.flags 0x01000000 meaning.",
+      "anchors": [
+        "JK owner cleanup 0x4DD1B0-0x4DD2C4; FOLLOW test 0x4DD1E0; LOOP test 0x4DD1F1",
+        "MotS owner cleanup 0x52EBE0-0x52ECF4; FOLLOW test 0x52EC10; LOOP test 0x52EC21",
+        "Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5",
+        "Devices/sithSoundMixer.c: owner-free and positional-update paths"
+      ],
+      "source_alias": "SITHSOUNDFLAG_ABSOLUTE",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "sound",
+      "value": 128,
+      "hex": "0x00000080",
+      "title": "Followed-owner sound lookup and detachment at owner cleanup",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "Owner-free cleanup selects channels carrying 0x80 whose owner pointer matches the freed Thing. Looping channels enter channel cleanup; nonlooping channels clear 0x80, set absolute-position 0x40 and copy the owner final position.",
+      "limits": "This is sound-channel state, not Thing.flags. Other creation and playback gates, networking and runtime audio remain outside this original-static finding.",
+      "anchors": [
+        "JK owner cleanup 0x4DD1B0-0x4DD2C4; FOLLOW test 0x4DD1E0; LOOP test 0x4DD1F1",
+        "MotS owner cleanup 0x52EBE0-0x52ECF4; FOLLOW test 0x52EC10; LOOP test 0x52EC21",
+        "Position consumers: JK 0x4DD420-0x4DD595; MotS 0x52EE50-0x52EFC5",
+        "Devices/sithSoundMixer.c: owner-free and positional-update paths"
+      ],
+      "source_alias": "SITHSOUNDFLAG_FOLLOWSTHING",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "weapon",
+      "value": 16384,
+      "hex": "0x00004000",
+      "title": "Distance-based damage reduction in the 0x10000 handler",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "At a terminal collision in the original 0x10000 handler, this bit subtracts rate times hit distance from the local damage amount and floors it at minDamage in both games.",
+      "limits": "This updates a local hit amount, not the persistent weapon damage field. Preserve the separately documented ordinary-update decay difference between current source and original JK. Finite-value control flow is established; downstream damage acceptance and runtime outcomes are not.",
+      "anchors": [
+        "JK 0x4D408E-0x4D40C7; MotS 0x522A5E-0x522A97",
+        "Complete handlers: JK 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53",
+        "World/sithWeapon.c:246-407"
+      ],
+      "source_alias": "SITH_WF_DAMAGE_DECAY",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "weapon",
+      "value": 32768,
+      "hex": "0x00008000",
+      "title": "Conditional segmented object-trail creation in the 0x10000 handler",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "The original handler attempts trail-template creation along a locally advanced orientation when bit 0x8000, a trail template and the step/projection versus hit-distance or range gates permit it. The no-hit tail can also create a trail up to range.",
+      "limits": "Creation return values are ignored, so allocation and visuals are not proved. The loops have no explicit iteration cap or general progress guard: termination depends on advancing configured step/orientation. This is not a reproduced hang, networking proof or a universal trail contract.",
+      "anchors": [
+        "JK complete handler 0x4D3C20-0x4D4583; MotS 0x5225F0-0x522F53",
+        "MotS first trail loop 0x5226B5-0x522A37; no-hit trail 0x522BC1-0x522F40; creation calls 0x5229DC/0x522EE1",
+        "World/sithWeapon.c:265-313,362-403"
+      ],
+      "source_alias": "SITH_WF_OBJECT_TRAIL",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS meanings do not transfer to Indy. Separate reconstructed-source observations are in indy_comparison."
+        }
+      }
+    },
+    {
+      "family": "item",
+      "value": 16,
+      "hex": "0x00000010",
+      "title": "Permit an item through the MotS weapon-collision entry filter",
+      "evidence": "original-retail-static",
+      "retail_jk": "absent-in-compared-collision-handler",
+      "retail_mots": "bounded-original-static",
+      "meaning": "In original MotS, the registered weapon-versus-item collision handler checks whether the collided thing is type 5 (item). An item lacking item flag 0x10 immediately returns 0. A non-item or an item carrying the bit continues into subsequent weapon-collision processing. The compared original JK handler lacks this initial item-bit filter.",
+      "limits": "Shootable powerup is a useful shorthand for this gate, not a complete damage or destruction contract. Later weapon/item settings and paths still matter. The JK result describes only the compared handler entry, not game-wide absence of all possible item-bit uses. No in-game collision or damage test was run.",
+      "anchors": [
+        "MotS handler 0x5236D0; type test 0x5236DE; item mask 0x5236E3; return 0x5236EC-0x5236F5; continuation 0x5236F6",
+        "MotS weapon/type-5 collision registration 0x53491C-0x534925",
+        "JK compared handler 0x4D4BC0; weapon-proximity check 0x4D4BCB",
+        "World/sithWeapon.c:637-650; types_enums.h:1273-1275"
+      ],
+      "source_alias": "SITH_ITEM_10",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "absent-in-compared-collision-handler",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS findings do not transfer to Indy."
+        }
+      }
+    },
+    {
+      "family": "physics",
+      "value": 8388608,
+      "hex": "0x00800000",
+      "title": "MotS water-entry writer and skipped vertical-velocity reduction",
+      "evidence": "original-retail-static",
+      "retail_jk": "bounded-original-static",
+      "retail_mots": "bounded-original-static",
+      "meaning": "On the eligible original MotS water-entry path, the code ORs physics flags with 0x00800000, stores the result, and branches if that result is nonzero. The OR guarantees a nonzero result, so the following velocity.z *= 0.25 block is skipped whether the bit was previously clear or set. The corresponding original JK path performs that vertical-velocity multiplication and has no equivalent physics-bit OR/test there. The mapped MotS water-exit routine has no direct read or clear of this physics bit.",
+      "limits": "The writer requires entry into an underwater sector, the separate Thing water-state bit previously absent, no drowning branch, the no-splash/no-notify argument zero, and physics movement. This is not a slow-once test. Broader intended meaning remains unresolved; no claim of all drag being disabled, game-wide permanent retention, or demonstrated sinking/fall-damage behavior. The current reconstruction reproduces this original branch anomaly. Runtime remains untested.",
+      "anchors": [
+        "MotS SetThingPosEx 0x553DD0 -> SetSector 0x51BBA0 -> EnterSector 0x51BC80 -> EnterWater 0x51BD30",
+        "MotS OR/store/JNE 0x51BE26-0x51BE37; skipped vertical-velocity block 0x51BE39-0x51BE45",
+        "MotS mapped ExitWater 0x51BE50-0x51BF3D (end exclusive)",
+        "JK EnterWater 0x4CD640; vertical-velocity multiplication 0x4CD736-0x4CD748; constant at 0x522E8C = 0.25",
+        "World/sithThing.c:816-904"
+      ],
+      "source_alias": "SITH_PF_800000",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested",
+          "note": "Verified comparison: the eligible JK path quarters vertical velocity without the MotS physics-bit operation; no general JK meaning is assigned to this bit."
+        },
+        "mots": {
+          "static_status": "bounded-original-static",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "evidence_lane": "not-audited-for-this-finding",
+          "runtime_status": "not-tested",
+          "note": "JK/MotS findings do not transfer to Indy."
+        }
+      }
+    }
+  ],
+  "remaining_gaps": [
+    {
+      "family": "thing",
+      "values": [
+        "0x00000020",
+        "0x01000000",
+        "0x40000000"
+      ],
+      "status": "unresolved-original-semantics",
+      "note": "Sound-owner cleanup and physical attachment paths did not establish a Thing 0x01000000 consumer. Attachment and sound masks occupy different fields. The other listed Thing bits received no new productive lead. No game-wide nonuse claim."
+    },
+    {
+      "family": "actor",
+      "values": [
+        "0x00001000",
+        "0x00004000",
+        "0x04000000"
+      ],
+      "status": "unresolved-original-semantics",
+      "note": "Field-aware bounded source and original-code lead searches did not establish actor consumers. Shared weapon/actor union offsets alone do not establish actor semantics."
+    },
+    {
+      "family": "render-and-other",
+      "note": "Other physics, surface, weapon, item, explosion, light and texture entries retain baseline uncertainty. This pass is not a complete original-engine proof."
+    },
+    {
+      "family": "weapon",
+      "values": [
+        "0x2",
+        "0x10",
+        "0x20",
+        "0x40",
+        "0x20000",
+        "0x100000"
+      ],
+      "status": "unresolved-by-inspected-handler",
+      "note": "Collision-result masks in the handler are not weapon flags. No whole-engine absence claim. A later focused 0x20 investigation also remains unresolved; see investigations for field-aware searches and excluded actor/explosion/physics matches."
+    },
+    {
+      "family": "physics",
+      "values": [
+        "0x02000000"
+      ],
+      "status": "unresolved-original-semantics",
+      "note": "Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no bit-specific gameplay consumer was established."
+    }
+  ],
+  "method_corrections": [
+    "Current engine-header virtual addresses can point to different functions in JK1.01. Reconcile via registered verbs, pointer fields, call chains and verified bytes; do not assume a uniform delta.",
+    "Named-symbol searches miss literal consumers. Conversely, a matching numeric value in physics, sound, collision, animation or another field does not establish Thing.flags semantics.",
+    "Source symbols are preserved as search aliases, not official historical names or automatic semantic authority.",
+    "Private executable/source/disassembly data is excluded; this supplement contains authored explanations and identities/anchors.",
+    "MotS physics 0x00800000 water-entry code uses OR/store/JNE, not a pre-existing-bit test. Its nonzero result skips the nearby quarter-Z-velocity block in the original executable too; do not silently repair the condition when describing retail behavior."
+  ],
+  "parity_caution": "The nearby current weapon damage-decay branch resets damage to minDamage only when the computed value is <=0; the inspected JK1.01 branch compares against minDamage itself. Matching one flag dispatch does not establish whole-function parity. Original MotS hierarchy mode 6 transfers mesh+0x44 lighting data, while the current enhanced source assigns radius at the corresponding step. Original radius is separately parsed and consumed at mesh+0x48; do not infer whole-path parity.",
+  "source_files": [
+    {
+      "path": "src/World/sithThing.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "24bb370e91397dadc510900d3f66aac237eec44ccb881d497e21233692422249"
+    },
+    {
+      "path": "src/Dss/sithMulti.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "9844cf21ea11690ed8ae2704d7c8ef9eb754836b34096b29d5801fcf32ff3a37"
+    },
+    {
+      "path": "src/Engine/sithRender.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "528391a9a20522cf9f695686c5095efde7934b91f290118c9bc53e3d4654769f"
+    },
+    {
+      "path": "src/Engine/sithCollision.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "5f78e078e825e17e05ccaceda35be700d357f3e745d0edbcc5724229f2adf3ce"
+    },
+    {
+      "path": "src/Devices/sithControl.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "9d770bef42fd7eec6b3a8a29dc6015013f629a53a20cc1b3a12da57fc6501f7c"
+    },
+    {
+      "path": "src/Gameplay/jkSaber.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "7a64f69de0decbfbd0e4e6aa97b252298b07bf6ae662d2b10e8dcd8b0e8b8e4e"
+    },
+    {
+      "path": "src/Cog/sithCogFunctionAI.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "72ede103fb12a0078e9d7b3cd886147faf09770880dc2b120143088ca862c4e8"
+    },
+    {
+      "path": "src/AI/sithAI.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "07b1ef306818ede5766bcb34cd31fbfe59f5d65d4b8cb6aae683901b65bf4a45"
+    },
+    {
+      "path": "src/Engine/sithPuppet.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "d4ac4d49fce7de99388b6d3f24fd27616773f558459ab787cbd93325b3390c69"
+    },
+    {
+      "path": "src/Main/jkEpisode.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "fa9bbd9011db14da9810f1680a0ee12d5b661a2a32f13eeba80bb80ca9dfc0af"
+    },
+    {
+      "path": "src/World/sithActor.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "f14a561c84c24b4d8d06452fc959b6f6fe0b2344a7877951a9b13e5b2f0d0f3a"
+    },
+    {
+      "path": "src/Gameplay/sithPlayer.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "a2ea82d4654e3bf7e08f87c81653117b316550e4fb9025877c07383fcf2dea75"
+    },
+    {
+      "path": "src/World/sithWeapon.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "a976486f897c10c74bf9da63d68ef969513368136ccd2ce903bbd2b8bd8273c1"
+    },
+    {
+      "path": "src/Primitives/rdModel3.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "19d60906b74d1aeaeaceca7fde9de94405047a581ff70c23eb1779f1f4cb3827"
+    },
+    {
+      "path": "src/Primitives/rdModel3.h",
+      "lane": "current-source-individually-hashed",
+      "sha256": "580dd842141643ac4cc1d002c53ef45de1dcb86d2fa9c74585097276113ba6f6"
+    },
+    {
+      "path": "src/Engine/rdLight.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "b0136c977b4fa72b2476aa2b5b5bda2625f9efb9a16bb483929a6d4f427695b1"
+    },
+    {
+      "path": "src/Raster/rdFace.h",
+      "lane": "current-source-individually-hashed",
+      "sha256": "bf4b0e791bace1d4e04068533bacf836c560fa2718776d895c5d53b1cefeb1fb"
+    },
+    {
+      "path": "src/types.h",
+      "lane": "current-source-individually-hashed",
+      "sha256": "bac0814a9350275e0099007a07ebd6a6fa852699002b7b5c47065a950b0388d5"
+    },
+    {
+      "path": "src/Engine/sithPhysics.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "2ca84d9124350f261a358408f2096e8c50ec47b1a22244a7e89258c53aadc8cf"
+    },
+    {
+      "path": "src/Devices/sithSoundMixer.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "3fa0f801c60a8e46cd29b4956f263c046a8c1122fbc36d40bb3630a141280719"
+    },
+    {
+      "path": "src/Cog/sithCogFunctionThing.c",
+      "lane": "current-source-individually-hashed",
+      "sha256": "34e86325b8d0b2b30a56aa3e93fae02337bba566759c92233bf9192005acfcf4"
+    }
+  ],
+  "followup_original_render_date": "2026-10-03",
+  "followup_date_utc": "2026-10-04",
+  "document_type": "maintained-master-reference",
+  "last_updated": "2026-10-11",
+  "canonical_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/docs/FLAG_DISCOVERIES.html",
+  "machine_readable_url": "https://richard-pemberton-research.darkahn.chatgpt.site/projects/jk-mots-cog-workshop/corpus/reference/flag-discoveries.json",
+  "snapshot_provenance": {
+    "baseline_release": "0.1.5",
+    "release_version": "0.1.6",
+    "initial_audit_release": "0.1.4",
+    "meaning": "Historical package provenance only; the master reference is not bound to these releases."
+  },
+  "schema_notes": [
+    "Schema 2 adds explicit per-target evidence and the separate Indy reconstruction comparison; schema_version identifies the JSON format, not a workshop release.",
+    "Release provenance moved to snapshot_provenance. Existing retail_jk and retail_mots per-finding fields are retained; use targets for explicit game, static and runtime distinctions.",
+    "A bounded original-static finding proves only its stated path. Absent-in-compared-render-routine is not a game-wide absence claim. No runtime or connected-client result is established here."
+  ],
+  "target_definitions": {
+    "jkdf2_1_01": {
+      "name": "Jedi Knight: Dark Forces II 1.01",
+      "evidence_lane": "original-executable-static",
+      "binary_identity_key": "jk101",
+      "runtime_status": "not-tested"
+    },
+    "mots": {
+      "name": "Mysteries of the Sith",
+      "evidence_lane": "original-executable-static",
+      "binary_identity_key": "mots",
+      "runtime_status": "not-tested"
+    },
+    "indy": {
+      "name": "Indiana Jones and the Infernal Machine",
+      "original_binary_status": "not-established",
+      "runtime_status": "not-tested",
+      "comparison_lane": "pinned-reconstruction-source",
+      "repository": "smlu/OpenJones3D",
+      "revision": "a675b395a5d5cff238332d091368483b849e8b5b"
+    }
+  },
+  "indy_comparison": {
+    "repository": "smlu/OpenJones3D",
+    "revision": "a675b395a5d5cff238332d091368483b849e8b5b",
+    "thing_entries": [
+      {
+        "value": 1,
+        "hex": "0x00000001",
+        "symbol": "SITH_TF_EMITLIGHT",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 62,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 2,
+        "hex": "0x00000002",
+        "symbol": "SITH_TF_DESTROYED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 63,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 4,
+        "hex": "0x00000004",
+        "symbol": "SITH_TF_NOWEAPONCOLLIDE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 64,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 8,
+        "hex": "0x00000008",
+        "symbol": "SITH_TF_WHIPCLIMB",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 65,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 16,
+        "hex": "0x00000010",
+        "symbol": "SITH_TF_INVISIBLE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 66,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 32,
+        "hex": "0x00000020",
+        "symbol": "SITH_TF_UNKNOWN_20",
+        "evidence": "unresolved-name",
+        "source": "indy:Libs/sith/types.h",
+        "line": 67,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 64,
+        "hex": "0x00000040",
+        "symbol": "SITH_TF_STANDON",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 68,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 128,
+        "hex": "0x00000080",
+        "symbol": "SITH_TF_MOUNTABLE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 69,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 256,
+        "hex": "0x00000100",
+        "symbol": "SITH_TF_REMOTE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 70,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 512,
+        "hex": "0x00000200",
+        "symbol": "SITH_TF_DYING",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 71,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 1024,
+        "hex": "0x00000400",
+        "symbol": "SITH_TF_COGLINKED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 72,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 2048,
+        "hex": "0x00000800",
+        "symbol": "SITH_TF_NOCRUSH",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 73,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 4096,
+        "hex": "0x00001000",
+        "symbol": "SITH_TF_UNKNOWN_1000",
+        "evidence": "unresolved-name",
+        "source": "indy:Libs/sith/types.h",
+        "line": 74,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 8192,
+        "hex": "0x00002000",
+        "symbol": "SITH_TF_WOOD",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 75,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 16384,
+        "hex": "0x00004000",
+        "symbol": "SITH_TF_SHADOW",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 76,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 32768,
+        "hex": "0x00008000",
+        "symbol": "SITH_TF_JEEPSTOP",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 77,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 65536,
+        "hex": "0x00010000",
+        "symbol": "SITH_TF_SNOW",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 78,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 131072,
+        "hex": "0x00020000",
+        "symbol": "SITH_TF_PULSESET",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 79,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 262144,
+        "hex": "0x00040000",
+        "symbol": "SITH_TF_TIMERSET",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 80,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 524288,
+        "hex": "0x00080000",
+        "symbol": "SITH_TF_DISABLED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 81,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 1048576,
+        "hex": "0x00100000",
+        "symbol": "SITH_TF_SEEN",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 82,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 2097152,
+        "hex": "0x00200000",
+        "symbol": "SITH_TF_UNKNOWN_200000",
+        "evidence": "unresolved-name",
+        "source": "indy:Libs/sith/types.h",
+        "line": 83,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 4194304,
+        "hex": "0x00400000",
+        "symbol": "SITH_TF_METAL",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 84,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 8388608,
+        "hex": "0x00800000",
+        "symbol": "SITH_TF_EARTH",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 85,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 16777216,
+        "hex": "0x01000000",
+        "symbol": "SITH_TF_NOSOUND",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 86,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 33554432,
+        "hex": "0x02000000",
+        "symbol": "SITH_TF_SUBMERGED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 87,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 67108864,
+        "hex": "0x04000000",
+        "symbol": "SITH_TF_CLIMBCRATE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 88,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 134217728,
+        "hex": "0x08000000",
+        "symbol": "SITH_TF_WATERDESTROYED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 89,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 268435456,
+        "hex": "0x10000000",
+        "symbol": "SITH_TF_AIRDESTROYED",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 90,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 536870912,
+        "hex": "0x20000000",
+        "symbol": "SITH_TF_SPLASH",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 91,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 1073741824,
+        "hex": "0x40000000",
+        "symbol": "SITH_TF_MOVABLE",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 92,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      },
+      {
+        "value": 2147483648,
+        "hex": "0x80000000",
+        "symbol": "SITH_TF_WHIPSWING",
+        "evidence": "declaration-only",
+        "source": "indy:Libs/sith/types.h",
+        "line": 93,
+        "annotation": "",
+        "original_indy_runtime": "not-tested"
+      }
+    ],
+    "boundary": "Comparison of reconstructed declarations, with selected wrapper/world consumers. No original Indy runtime or per-bit JK transfer is established.",
+    "evidence_lane": "pinned-reconstruction-source",
+    "original_binary_status": "not-established",
+    "runtime_status": "not-tested",
+    "source_observations": [
+      {
+        "id": "indy-thingflags-wrapper",
+        "family": "thing",
+        "value": null,
+        "evidence": "reconstruction-source-consumer",
+        "meaning": "The compared reconstructed ThingFlags setters OR nonzero masks; clearers AND the complement of nonzero masks.",
+        "anchors": [
+          "Libs/sith/Cog/sithCogFunctionThing.c:2935-2988"
+        ],
+        "limits": "Wrapper operations do not prove per-bit meanings, original Indy executable behavior or equivalence with JKDF2/MotS.",
+        "game": "indy",
+        "repository": "smlu/OpenJones3D",
+        "revision": "a675b395a5d5cff238332d091368483b849e8b5b",
+        "original_binary_status": "not-established",
+        "runtime_status": "not-tested"
+      },
+      {
+        "id": "indy-snow-material",
+        "family": "thing",
+        "value": 65536,
+        "hex": "0x00010000",
+        "evidence": "reconstruction-source-consumer",
+        "meaning": "The Jones SNOW bit has material-sound consumers in the compared reconstructed world code.",
+        "anchors": [
+          "Libs/sith/World/sithThing.c:1524-1555,2800-2816"
+        ],
+        "limits": "This differs from the independently traced original JK/MotS placement-exclusion role for the same number. No original Indy binary or runtime test.",
+        "game": "indy",
+        "repository": "smlu/OpenJones3D",
+        "revision": "a675b395a5d5cff238332d091368483b849e8b5b",
+        "original_binary_status": "not-established",
+        "runtime_status": "not-tested"
+      },
+      {
+        "id": "indy-water-entry-routing",
+        "family": "thing",
+        "value": null,
+        "evidence": "reconstruction-source-consumer",
+        "meaning": "The compared Jones water-entry path routes splash messages to the entering Thing own COGs.",
+        "anchors": [
+          "Libs/sith/World/sithThing.c:1981-1990"
+        ],
+        "limits": "Source-level integration comparison only; it does not establish original Indy behavior or upgrade the compared JK source path to original-binary evidence.",
+        "game": "indy",
+        "repository": "smlu/OpenJones3D",
+        "revision": "a675b395a5d5cff238332d091368483b849e8b5b",
+        "original_binary_status": "not-established",
+        "runtime_status": "not-tested"
+      }
+    ]
+  },
+  "coverage": {
+    "original_jk_mots_findings": 27,
+    "indy_reconstruction_observations": 3,
+    "indy_thing_declarations": 32,
+    "runtime_tested_findings": 0,
+    "focused_unresolved_investigations": 3,
+    "stock_cog_observations": 1,
+    "runtime_tested_investigations": 1,
+    "original_executable_runtime_trials": 40
+  },
+  "investigations": [
+    {
+      "family": "physics",
+      "value": 33554432,
+      "hex": "0x02000000",
+      "date": "2026-10-04",
+      "status": "unresolved-original-semantics",
+      "result": "Original JK 1.01 and MotS expose this bit through generic Get/Set/ClearPhysicsFlags. The inspected template-copy step includes the entire physics-flags word, and the position-message writer and reader copy that word without masking this bit. These are verified storage and transfer operations; no dedicated native gameplay consumer was established in those inspected paths.",
+      "scope": "Checked registered wrappers, the CreateThing-to-template-copy chain, position-message field writes/reads, and selected checksum call sites. Exact mask/complement searches returned 14 hits per executable; upper-byte/word displacement and immediate bit-25 shift/bit-operation searches returned zero matches. Whole-field displacement counts were 172 JK and 160 MotS syntactic references, not proven consumer counts. The checksum call site supplies all four physics-flags bytes, but the helper and full join chain were not re-audited here.",
+      "excluded_matches": "Thing water-state 0x02000000 reads offset zero, and actor 0x02000000 reads the type-specific parameter field. Neither establishes physics meaning. The inspected MotS position-send suppression gate uses physics 0x04000000, a different bit.",
+      "limits": "No unused, droid-specific, water-specific or no-position-sync alias is justified. Negative text-pattern searches are not full data-flow analysis: alternate pointer bases, register aliases, composite or computed masks and indirect paths may escape them. Copy preservation is bounded to the inspected operation; later initialization may change state. Static packet handling does not prove delivery, immediate synchronization or connected-client convergence. Checksum input is not a demonstrated join failure. Runtime was not tested. A later original-stock-MotS COG inspection establishes its normal carbonite targeting exclusion, separately documented in stock_cog_observations.",
+      "anchors": [
+        "JK Get/Set/ClearPhysicsFlags 0x504980, 0x5049C0, 0x504A30; physics field +0x1D0",
+        "MotS Get/Set/ClearPhysicsFlags 0x5557F0, 0x555830, 0x5558A0; physics field +0x1DC",
+        "JK position-word write 0x4F3434-0x4F3440 and read/store 0x4F35AA-0x4F35B1",
+        "MotS position-word write 0x5437D4-0x5437E0 and read/store 0x54394A-0x543951; distinct 0x04000000 gate at 0x543746",
+        "JK template-copy 0x4CDB70, REP MOVSD 0x4CDBAF (0x2B0 bytes); MotS 0x51C270, REP MOVSD 0x51C2AF (0x2C4 bytes)",
+        "JK physics checksum input 0x4CF6EA-0x4CF6F3; MotS 0x51DE5A-0x51DE63"
+      ],
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-generic-storage-evidence",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-generic-storage-evidence",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "gameplay_meaning": "not-audited",
+          "evidence_lane": "not-audited-for-this-investigation",
+          "runtime_status": "not-tested"
+        }
+      },
+      "stock_cog_followup": "mots-carbonite-normal-target-filter"
+    },
+    {
+      "family": "weapon",
+      "value": 32,
+      "hex": "0x00000020",
+      "date": "2026-10-04",
+      "status": "unresolved-original-semantics",
+      "result": "No verified weapon-specific 0x20 consumer was established in the reviewed original JK 1.01 or MotS update, firing, parser, collision and lifecycle region. The hexadecimal weaponflags parser stores the complete parsed word without a per-bit mask in both originals. The named current-source identifier remains a numeric declaration. Matching mask values in actor, explosion and physics code were rejected after checking their field and type context.",
+      "scope": "Selected flag loads and operations were reviewed within byte-checked regions JK 0x4D3830-0x4D5571 and MotS 0x5221F0-0x524118 (end exclusive), plus selected typed collision, damage, explosion and checksum paths. This is not a semantic audit of every instruction or downstream call; the JK endpoint does not encompass the complete final helper. Exact shared-union-offset references were used only as candidates (167 JK, 194 MotS); union offset alone does not identify a weapon. Original type-3 checksum call sites supply the full four-byte weapon-flags field; no bit-specific checksum rule or full join result is inferred.",
+      "excluded_matches": "MotS actor-death 0x53BB01 and explosion creation 0x54CA8D, with JK explosion counterpart 0x4FBA9D, operate on other typed parameter domains. Surface-collision 0x20/0xDF operations read physics flags, not weapon flags. A high-byte 0x20 test on a loaded weapon word means whole-word 0x2000, not 0x20.",
+      "limits": "This is not proof of game-wide nonuse or inertness. Computed masks, pointer aliases, indirect paths and uninspected code remain outside the bounded result. Template occurrence does not establish purpose, and no underwater-grenade behavior is assigned. Changing template input may affect checksum processing even without a demonstrated gameplay consumer. No retail runtime or multiplayer test was run.",
+      "anchors": [
+        "JK reviewed weapon region 0x4D3830-0x4D5571; MotS 0x5221F0-0x524118 (end exclusive)",
+        "JK unmasked parsed-weaponflags store 0x4D46DA; MotS 0x5230AA; Current World/sithWeapon.c:409-423",
+        "MotS typed actor damage dispatch 0x51B190-0x51B271; actor-death candidate 0x53BB01",
+        "JK explosion 0x4FBA9D; MotS explosion 0x54CA8D; type-6 creation dispatch 0x51C5BF-0x51C5E8",
+        "JK type-3 checksum input in 0x4CF6A0-0x4CF7C1; MotS 0x51DE10-0x51DF31",
+        "Current types_enums.h:139, SITH_WF_20 declaration"
+      ],
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-search-no-dedicated-consumer-established",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "static_status": "bounded-search-no-dedicated-consumer-established",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "gameplay_meaning": "not-audited",
+          "evidence_lane": "not-audited-for-this-investigation",
+          "runtime_status": "not-tested"
+        }
+      }
+    },
+    {
+      "family": "physics",
+      "value": 1073741824,
+      "hex": "0x40000000",
+      "date": "2026-10-11",
+      "status": "unresolved-original-semantics",
+      "result": "Original purpose unresolved. No dedicated consumer established in inspected original JK 1.01/MotS paths. Original-executable tests showed identical hover and no reproducible free-impulse effect attributable to the bit; MotS retains a timing-sensitive numerical residual.",
+      "scope": "Separate original-binary field-aware audits, stock/custom COG context, and 20 original-executable trials per game under Wine 8/Xvfb. Generic bit storage/copy/transport is established separately from any dedicated meaning.",
+      "limits": "Not a whole-program nonuse or vestigial proof. No native-Windows or connected-peer run. Controlled flight input, stock surface entry/exit, other actor types, water and save/load remain untested. Physics integration remainder was not recorded in the completed traces.",
+      "targets": {
+        "jkdf2_1_01": {
+          "static_status": "bounded-search-no-dedicated-consumer-established",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static-and-wine-runtime",
+          "runtime_status": "20-complete-bounded-trials",
+          "runtime_result": "identical-hover; impulse-worst-pairs-below-larger-repeat-maximum"
+        },
+        "mots": {
+          "static_status": "bounded-search-no-dedicated-consumer-established",
+          "gameplay_meaning": "unresolved",
+          "evidence_lane": "original-executable-static-and-wine-runtime",
+          "runtime_status": "20-complete-bounded-trials",
+          "runtime_result": "identical-hover; impulse-residual-unresolved"
+        },
+        "indy": {
+          "static_status": "not-established",
+          "gameplay_meaning": "not-audited",
+          "evidence_lane": "not-audited-for-this-investigation",
+          "runtime_status": "not-tested"
+        }
+      },
+      "stock_context": {
+        "game": "mots",
+        "member": "cog/s4l1_fly.cog",
+        "bytes": 710,
+        "sha256": "309e082f11ce97819c5406b46ec9c2e931454380d46849fcf7241c73b23df604",
+        "behavior": "On entry-link crossing, set flight 0x2000, clear gravity 0x1, and set 0x40000000. Other-link crossing applies inverse operations to the saved local player.",
+        "level": "jkl/s4l1_escortship.jkl",
+        "level_sha256": "ef121f70319360e9821f823bdb486a150c1df255d077daa82b77c4b4ff10ca3e",
+        "instances": [
+          {
+            "instance": 2,
+            "entry_surfaces": [
+              4680,
+              1280
+            ],
+            "exit_surfaces": [
+              3238,
+              3225
+            ]
+          },
+          {
+            "instance": 5,
+            "entry_surfaces": [
+              3312,
+              -1
+            ],
+            "exit_surfaces": [
+              3322,
+              -1
+            ]
+          },
+          {
+            "instance": 15,
+            "entry_surfaces": [
+              3400,
+              3399
+            ],
+            "exit_surfaces": [
+              -1,
+              -1
+            ]
+          }
+        ],
+        "limit": "The third binding has no exit surfaces. A working combined flight/gravity script does not establish the contribution of bit30."
+      },
+      "runtime": {
+        "date": "2026-10-11",
+        "total_trials": 40,
+        "trials_per_game": 20,
+        "environment": "Original executables, Wine 8 on a private Debian i386 environment under WSL2, private Xvfb; no enhanced-engine executable substitution.",
+        "fixture": "Private stock-geometry derivative, diagnostic world COG, stock player class COG, single-player Debug entry.",
+        "observer": "Read-only /proc/PID/mem; no process-memory writes, injected code or patched executables.",
+        "a_physics_word": "0x00006B4E",
+        "b_physics_word": "0x40006B4E",
+        "xor": "0x40000000",
+        "setter_calls_matched": true,
+        "order": "hover ABBA, impulse ABBA, hover ABBA, impulse ABBA, gravity/hover/gravity/hover",
+        "impulse_velocity": [
+          0.05,
+          0.025,
+          0.025
+        ],
+        "controls": "Each trial covered sample indices 0-30; each complete 20-trial run reached final marker 999999; movement and gravity controls passed; all hover position and velocity differences exactly zero.",
+        "primary_alignment": "First consistent observation per engine millisecond, trial origin at first sample-0 observation, interpolation on 10 ms grid for 750 ms; all pairwise extrema.",
+        "impulse_position_maxima": {
+          "jkdf2_1_01": {
+            "aa": 0.002302402,
+            "bb": 0.001329071,
+            "ab": 0.002165313
+          },
+          "mots": {
+            "aa": 0.001658743,
+            "bb": 0.001798522,
+            "ab": 0.002120895
+          }
+        },
+        "impulse_velocity_maxima": {
+          "jkdf2_1_01": {
+            "aa": 0.001162833,
+            "bb": 0.000671249,
+            "ab": 0.001093596
+          },
+          "mots": {
+            "aa": 0.000837351,
+            "bb": 0.000908374,
+            "ab": 0.001070936
+          }
+        },
+        "mots_residual": "Worst A/B position/velocity differences exceed the larger repeat maxima by about 18%; alternative clock-observation handling reduces that excess to about 4.7%. These are ratios of experimental difference extrema, not percentage changes in game physics.",
+        "formal_equivalence_test": false,
+        "observer_limit": "Same engine-clock values sometimes carry different observed states despite the consistency screen. It is not an atomic simulation snapshot.",
+        "integration_remainder": {
+          "original_byte_verified": true,
+          "jk_thing_offset": "0x240",
+          "mots_thing_offset": "0x24C",
+          "nominal_step_seconds": 0.02,
+          "conversion": "downward-rounding whole-step conversion; no reconstruction +0.5 term",
+          "recorded_in_completed_traces": false,
+          "caused_residual": "not-established"
+        },
+        "cleanup": "Both original runs and their owned display/audio services stopped; source preservation and cleanup receipts retained privately."
+      },
+      "next_tests": [
+        {
+          "priority": 1,
+          "test": "Matched scripted/held flight input with remainder, thrust, look and angular velocity logged",
+          "status": "planned-not-executed",
+          "purpose": "Exercise player-control integration omitted by the free-impulse fixture."
+        },
+        {
+          "priority": 2,
+          "test": "Actual stock Escort Ship entry/exit surfaces and repeated crossings",
+          "status": "planned-not-executed",
+          "purpose": "Test lifecycle, transition ordering and the binding without exit surfaces."
+        },
+        {
+          "priority": 3,
+          "test": "Wall/slope contact, water transitions and other mover types",
+          "status": "planned-not-executed",
+          "purpose": "Exercise context-specific physics branches while retaining valid controls."
+        },
+        {
+          "priority": 4,
+          "test": "Original connected peers with matched setter counts and ownership",
+          "status": "planned-not-executed",
+          "purpose": "Separate a dedicated bit effect from generic flag synchronization."
+        }
+      ],
+      "review_boundary": "Independent packet review led to an original-byte verification of the missing integration-remainder observation. A separate original-engine execution review is pending; no result or agreement is attributed to it.",
+      "usage_audit": {
+        "date": "2026-10-11",
+        "scope": {
+          "indexed_build_utc": "2026-10-01T04:09:49.184239+00:00",
+          "cog_rows": 38158,
+          "unique_recorded_source_hashes": 25365,
+          "indexed_text_characters": 142144312,
+          "retail": {
+            "jk": {
+              "archives": 5,
+              "cog_members": 540,
+              "jkl_members": 35,
+              "dat_members": 3,
+              "tpl_members": 0,
+              "explicit_physflags": 618,
+              "text_bytes_read": 44669375,
+              "bit30_fields": 0
+            },
+            "mots": {
+              "archives": 5,
+              "cog_members": 777,
+              "jkl_members": 40,
+              "dat_members": 3,
+              "tpl_members": 0,
+              "explicit_physflags": 1072,
+              "text_bytes_read": 61252393,
+              "bit30_fields": 0
+            }
+          },
+          "acquisition_performed": false,
+          "clients_launched": false,
+          "git_used": false
+        },
+        "new_specific_use": {
+          "title": "Zee Gee",
+          "author": "Mara Yates",
+          "date_as_stated": "March98",
+          "target_as_stated": "Mysteries of the Sith Addon",
+          "source_id": 33812,
+          "script": "cog/nograv.cog",
+          "script_sha256": "e1d9be80dd021b4e7153a7860dfd19d2cda6e0b7719296d0a55b9f1bb947de2f",
+          "script_bytes": 355,
+          "source_credit": "(C) Mara",
+          "readme_credit": "Cogking for showing me how to fix the cog",
+          "behavior": "COG flags 0x240; newplayer obtains GetSenderRef(), sets physics 0x2000, clears 0x1, then sets 0x40000000. No other handler or inverse clear in the 355-byte script.",
+          "bindings": [
+            {
+              "member": "jkl/nograv.jkl",
+              "sha256": "061f0425d728f2cc455f4e68442e636537ec3d2866dd89140f2bab1494aa30fc",
+              "declaration_line": 4540,
+              "instance_line": 4567,
+              "instance": "0: nograv.cog"
+            }
+          ],
+          "public_archive_url": "https://jkdf2.net/JKBot/JKArchive/JKDF2/JKDF2/Game%20Files/motsmp/zeegee.zip",
+          "zip_sha256": "79f2b8a551b656f3cd80c8bd2f9a1ec81381e1708dfa6245a3889c5748bedc60",
+          "runtime_validated": false,
+          "bit_specific_effect_established": false
+        },
+        "additional_identical_containment": {
+          "title": "Alternative Saber Levels",
+          "author_as_readme": "Rob Fuller II",
+          "date_as_readme": "5/98",
+          "target_as_readme": "Mysteries of the Sith",
+          "url": "https://jkdf2.net/JKBot/JKArchive/JKDF2/JKDF2/Game%20Files/motsmp/alt-saber.zip",
+          "zip_sha256": "6266bee95f37c460afa77abc764bbff70d16a02da5dd9d02c7502dd6d67a6137",
+          "script_same_sha256": true,
+          "nograv_binding_found": false,
+          "boundary": "Contained script is not evidence of invocation; scanned JKLs contained no nograv reference."
+        },
+        "distinct_specific_source_forms": {
+          "raw_hashes": 3,
+          "code_bodies": 2,
+          "forms": [
+            "stock s4l1_fly",
+            "s4l1_fly with final NUL replaced by a space",
+            "Mara nograv newplayer form"
+          ],
+          "variant_source_id": 33268,
+          "variant_sha256": "1ea65171b356ab690f317d0c8bc46a898cc16d9be247058691912d846abb3e9e",
+          "variant_difference": "Only byte709: stock00 -> variant20; instructions unchanged."
+        },
+        "broad_clear_all_contexts": [
+          {
+            "source_id": 26383,
+            "title": "Oxyd CTF woodupholder",
+            "game_catalog": "jk",
+            "line": 83,
+            "call": "ClearPhysicsFlags(Wood0[i],-1)",
+            "meaning": "Clears all physics flags when wood falls below a threshold, then stops/repositions it; no bit30-specific semantics."
+          },
+          {
+            "source_id": 28404,
+            "title": "MarbleBlastJK ball.cog",
+            "game_catalog": "jk",
+            "line": 219,
+            "call": "ClearPhysicsFlags(player,-1)",
+            "meaning": "Broad reset during ball/player setup."
+          },
+          {
+            "source_id": 33446,
+            "title": "MarbleBlast ball.cog",
+            "game_catalog": "mots",
+            "line": 236,
+            "call": "ClearPhysicsFlags(player,-1)",
+            "meaning": "Broad reset during ball/player setup."
+          },
+          {
+            "source_id": 21746,
+            "title": "Gunrunner hotkey_select4",
+            "game_catalog": "jk",
+            "lines": [
+              197,
+              334
+            ],
+            "call": "ClearPhysicsFlags(i,0xFFFFFFFFF)",
+            "meaning": "Saves the full physics word to a heap slot and attempts a broad clear before StopThing; literal is nine hex digits, outside uint32, so exact original parsing result is unverified."
+          }
+        ],
+        "negative_results": {
+          "new_stock_specific_uses": 0,
+          "stock_explicit_physflags_with_bit30": 0,
+          "additional_non_all_bits_constant_physics_composite_masks": 0,
+          "explicit_physics_bit30_reader_identified": false,
+          "decimal_equivalent_specific_physics_use_identified": false
+        },
+        "important_limits": [
+          "Existing indexed extracted sources only; no unindexed later objects or undiscovered archive guarantee.",
+          "Variable masks, multi-statement computed constants, cross-COG dataflow and dynamically constructed masks not exhausted.",
+          "Generic whole-word GetPhysicsFlags save/restore can transfer bit30 without examining it.",
+          "Many 0x40000000 matches are Thing/Actor/Surface/Sector flags, not PhysicsFlags.",
+          "No multiplayer or package runtime test; script integration and archived testimony do not isolate bit contribution.",
+          "Indy unexamined.",
+          "Public URLs are stored archive provenance, not fresh network-availability checks."
+        ]
+      },
+      "callback_followup": {
+        "game": "jkdf2_1_01",
+        "evidence": "original-retail-static",
+        "runtime_table_snapshot": false,
+        "startup": "0x402860",
+        "registration": "0x4D6F60",
+        "table": "0x833A48",
+        "dispatch": "0x4D705F",
+        "registered_handlers": [
+          {
+            "role": "player",
+            "address": "0x4D8830"
+          },
+          {
+            "role": "weapon",
+            "address": "0x4D5B40"
+          },
+          {
+            "role": "inventory-and-skills",
+            "address": "0x4D2C20"
+          },
+          {
+            "role": "hud",
+            "address": "0x4028E0"
+          }
+        ],
+        "physics_field": "Thing+0x1D0",
+        "verified_ranges": 14,
+        "verified_bytes": 5508,
+        "receipt_sha256": "461363523ed071e9e5de7f7fde15e9d3f902b777decec9e3d1b905e279c56b0e",
+        "result": "No dedicated physics bit30 reader established in newly inspected weapon, inventory/skills and HUD handlers; the player handler was audited previously.",
+        "rejected_match": "Weapon TEST AH,0x40 follows FNSTSW AX: FPU status, not physics flags.",
+        "open_edges": [
+          "COG activation/deactivation/autoselect",
+          "deeper weapon-selection calls",
+          "HUD/camera/save/device calls",
+          "other reachable helpers"
+        ],
+        "limits": "Static registration audit, not runtime table capture or whole-program call closure. MotS equivalent not audited in this follow-up."
+      }
+    }
+  ],
+  "stock_cog_observations": [
+    {
+      "id": "mots-carbonite-normal-target-filter",
+      "family": "physics",
+      "value": 33554432,
+      "hex": "0x02000000",
+      "date": "2026-10-11",
+      "evidence": "original-retail-cog-source",
+      "title": "Stock MotS carbonite normal-targeting exclusion",
+      "meaning": "The normal fire/vire target-selection path in stock weap_carbgun_m.cog skips its targeting/freezing block when the target has PhysicsFlags 0x02000000.",
+      "limits": "The same script has a user0 forced-freeze handler without this test. This is a COG-defined contract, not universal freezing immunity or a verified dedicated native-engine consumer. No runtime carbonite test was performed.",
+      "source": {
+        "game": "mots",
+        "member": "cog/weap_carbgun_m.cog",
+        "sha256": "314237ce0285bd4beff16569d7144c56121b46472048200910683545e75e1ce3",
+        "anchors": [
+          "normal fire/vire actor/player enumeration near line 227",
+          "physics bit test at lines 239-240",
+          "separate user0 handler"
+        ]
+      },
+      "targets": {
+        "jkdf2_1_01": {
+          "source_status": "not-established",
+          "runtime_status": "not-tested"
+        },
+        "mots": {
+          "source_status": "verified-stock-cog-contract",
+          "runtime_status": "not-tested"
+        },
+        "indy": {
+          "source_status": "not-audited",
+          "runtime_status": "not-tested"
+        }
+      }
+    }
+  ]
+}
