@@ -1,0 +1,45 @@
+# Original COG Workshop teaching example. SPDX-License-Identifier: MIT
+# Target: stock JK 1.01 and stock MotS; single-player level COG.
+# Parameters in order: mover, switchSurface, moveSpeed.
+# Requires a path mover with frames 0 and 1, initially stopped at frame 0.
+# A block stops travel; the next activation retries the pending destination.
+symbols
+thing mover linkid=1
+surface switchSurface linkid=2
+flex moveSpeed=4.0
+int destination=1 local
+int moving=0 local
+message startup
+message activated
+message arrived
+message blocked
+end
+
+code
+startup:
+    destination = 1;
+    moving = 0;
+    if (moveSpeed <= 0.0) moveSpeed = 4.0;
+    return;
+
+activated:
+    if (GetSenderID() != 2) return;
+    if (moving != 0) return;
+    moving = 1;
+    MoveToFrame(mover, destination, moveSpeed);
+    return;
+
+arrived:
+    if (GetSenderID() != 1) return;
+    if (moving == 0) return;
+    moving = 0;
+    destination = 1 - destination;
+    return;
+
+blocked:
+    if (GetSenderID() != 1) return;
+    if (moving == 0) return;
+    StopThing(mover);
+    moving = 0;
+    return;
+end

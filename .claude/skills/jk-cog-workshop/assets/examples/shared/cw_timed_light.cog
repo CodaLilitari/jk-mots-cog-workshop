@@ -1,0 +1,40 @@
+# Original COG Workshop teaching example. SPDX-License-Identifier: MIT
+# Target: stock JK 1.01 and stock MotS; single-player level COG.
+# Parameters in order: switchSurface, litSector, offLight, onLight, holdTime.
+# Owns this sector's extra light. Repeated activation while lit is ignored.
+symbols
+surface switchSurface linkid=1
+sector litSector nolink
+flex offLight=0.0
+flex onLight=0.5
+flex holdTime=3.0
+int busy=0 local
+message startup
+message activated
+message timer
+end
+
+code
+startup:
+    busy = 0;
+    if (offLight < 0.0) offLight = 0.0;
+    if (onLight < 0.0) onLight = 0.0;
+    if (holdTime <= 0.0) holdTime = 3.0;
+    SetTimer(0.0);
+    SetSectorLight(litSector, offLight, 0.0);
+    return;
+
+activated:
+    if (GetSenderID() != 1) return;
+    if (busy != 0) return;
+    busy = 1;
+    SetSectorLight(litSector, onLight, 0.0);
+    SetTimer(holdTime);
+    return;
+
+timer:
+    if (busy == 0) return;
+    SetSectorLight(litSector, offLight, 0.0);
+    busy = 0;
+    return;
+end
