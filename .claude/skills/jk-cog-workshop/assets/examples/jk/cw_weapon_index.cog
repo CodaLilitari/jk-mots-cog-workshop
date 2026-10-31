@@ -1,0 +1,18 @@
+# Original COG Workshop teaching example. SPDX-License-Identifier: MIT
+# Target: stock JK 1.01 only. Stock MotS lacks GetCurInvWeapon.
+# Single-player level diagnostic; ordered parameter: switchSurface.
+# Prints the query's raw result. Does not select or grant a weapon.
+symbols
+surface switchSurface linkid=1
+thing player local
+message activated
+end
+
+code
+activated:
+    if (GetSenderID() != 1) return;
+    player = GetLocalPlayerThing();
+    if (player < 0) return;
+    PrintInt(GetCurInvWeapon(player));
+    return;
+end
